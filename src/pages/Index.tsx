@@ -1,3 +1,4 @@
+
 import Navigation from "@/components/Navigation";
 import Hero from "@/components/Hero";
 import FloatingChat from "@/components/FloatingChat";
@@ -16,15 +17,6 @@ import Requesademobtn from "@/components/Requesademobtn";
 import FeatureTabsWithText from "@/components/FeatureTabsWithText";
 
 const Index = () => {
-  interface Step {
-    icon: React.ReactNode;
-    title: string;
-    href: string;
-  }
-
-  interface SAPStepsSectionProps {
-    sapSteps: Step[];
-  }
   const sapSteps = [
     {
       icon: <FaSearch />,
@@ -52,11 +44,13 @@ const Index = () => {
       href: "/sap-managed",
     },
   ];
+
   return (
     <div className="min-h-screen bg-white">
       <Navigation />
       <Hero />
       <FloatingChat />
+      
       <div className="py-20 bg-black w-full flex flex-row">
         <div className="w-1/2 flex justify-center items-center">
           <h1 className="text-4xl font-bold text-white ">
@@ -85,6 +79,7 @@ const Index = () => {
           </div>
         </div>
       </div>
+
       <div className="w-full bg-black flex-row flex justify-center ">
         <div className="w-3/4 px-4 py-10 flex flex-wrap justify-around gap-10 bg-black">
           <StatCard percentage="100+ " description="Projects Completed." />
@@ -102,7 +97,6 @@ const Index = () => {
       <div className="w-full h-[20vh] pb-20 bg-black flex flex-row justify-around">
         <h1 className="text-white">org1</h1>
         <h1 className="text-white">org2</h1>
-
         <h1 className="text-white">org3</h1>
         <h1 className="text-white">org4</h1>
       </div>
@@ -127,6 +121,7 @@ const Index = () => {
           </div>
         </div>
       </div>
+
       <div className="overflow-x-auto w-full flex justify-center bg-white py-10">
         <div className="flex flex-nowrap gap-2 md:gap-4 px-4">
           {sapSteps.map((step, index) => (
@@ -135,10 +130,7 @@ const Index = () => {
                 className="flex flex-col bg-gray-100 px-6 py-4 min-w-[240px] md:min-w-[280px] rounded-md shadow-sm
                          transition-all duration-300 transform hover:scale-105 hover:shadow-xl cursor-pointer"
               >
-                {/* Icon */}
                 <span className="text-2xl text-yellow-500">{step.icon}</span>
-
-                {/* Title + Arrow */}
                 <div className="flex items-center gap-2 mt-3 text-black text-sm md:text-base font-medium">
                   <span>{step.title}</span>
                   {index !== sapSteps.length - 1 && (
