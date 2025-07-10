@@ -1,4 +1,3 @@
-
 import React, { useState } from "react";
 import { Search, Globe, ChevronDown } from "lucide-react";
 import { Link } from "react-router-dom";
@@ -29,11 +28,20 @@ const Navigation: React.FC = () => {
   };
 
   const countries = [
-    "United States", "United Kingdom", "Singapore", "South Africa", 
-    "Saudi Arabia", "UAE", "Kuwait", "Greece", "Qatar", "India", "Egypt"
+    { name: "United States", flag: "🇺🇸" },
+    { name: "United Kingdom", flag: "🇬🇧" },
+    { name: "Singapore", flag: "🇸🇬" },
+    { name: "South Africa", flag: "🇿🇦" },
+    { name: "Saudi Arabia", flag: "🇸🇦" },
+    { name: "UAE", flag: "🇦🇪" },
+    { name: "Kuwait", flag: "🇰🇼" },
+    { name: "Greece", flag: "🇬🇷" },
+    { name: "Qatar", flag: "🇶🇦" },
+    { name: "India", flag: "🇮🇳" },
+    { name: "Egypt", flag: "🇪🇬" }
   ];
 
-  const MegaMenu: React.FC<MegaMenuProps> = ({ id, label, sections, width = "w-full", layout = "multi" }) => (
+  const MegaMenu: React.FC<MegaMenuProps> = ({ id, label, sections, width = "w-full max-w-7xl", layout = "multi" }) => (
     <div
       className="relative"
       onMouseEnter={() => handleMouseEnter(id)}
@@ -51,14 +59,14 @@ const Navigation: React.FC = () => {
           ? "opacity-100 visible translate-y-0"
           : "opacity-0 invisible -translate-y-4"
       }`}>
-        <div className="bg-gray-800 rounded-lg shadow-2xl border border-gray-700 py-8 px-8 mt-2">
+        <div className="bg-gray-800 rounded-lg shadow-2xl border border-gray-700 py-10 px-12 mt-2">
           {layout === "single" && (
-            <div className="space-y-3">
+            <div className="space-y-4">
               {sections[0]?.items.map((item, idx) => (
                 <a
                   key={idx}
                   href="#"
-                  className="block text-white hover:text-orange-300 transition-colors text-sm py-1"
+                  className="block text-white hover:text-orange-300 transition-colors text-base py-2"
                 >
                   {item}
                 </a>
@@ -67,18 +75,18 @@ const Navigation: React.FC = () => {
           )}
 
           {layout === "multi" && (
-            <div className="grid grid-cols-3 gap-12">
+            <div className="grid grid-cols-3 gap-16">
               {sections.map((section, idx) => (
                 <div key={idx}>
-                  <h4 className="text-white font-semibold mb-4 text-sm border-b border-gray-600 pb-2">
+                  <h4 className="text-white font-semibold mb-6 text-base border-b border-gray-600 pb-3">
                     {section.title}
                   </h4>
-                  <ul className="space-y-2">
+                  <ul className="space-y-3">
                     {section.items.map((item, index) => (
                       <li key={index}>
                         <a
                           href="#"
-                          className="text-gray-300 hover:text-orange-300 transition-colors text-sm py-1 block"
+                          className="text-gray-300 hover:text-orange-300 transition-colors text-base py-1 block"
                         >
                           {item}
                         </a>
@@ -91,19 +99,19 @@ const Navigation: React.FC = () => {
           )}
 
           {layout === "two-row" && (
-            <div className="space-y-8">
-              <div className="grid grid-cols-5 gap-8">
+            <div className="space-y-12">
+              <div className="grid grid-cols-5 gap-12">
                 {sections.slice(0, 5).map((section, idx) => (
                   <div key={idx}>
-                    <h4 className="text-white font-semibold mb-3 text-sm">
+                    <h4 className="text-white font-semibold mb-4 text-base">
                       {section.title}
                     </h4>
-                    <ul className="space-y-1">
+                    <ul className="space-y-2">
                       {section.items.map((item, index) => (
                         <li key={index}>
                           <a
                             href="#"
-                            className="text-gray-300 hover:text-orange-300 transition-colors text-xs py-0.5 block"
+                            className="text-gray-300 hover:text-orange-300 transition-colors text-sm py-1 block"
                           >
                             {item}
                           </a>
@@ -113,19 +121,19 @@ const Navigation: React.FC = () => {
                   </div>
                 ))}
               </div>
-              <div className="border-t border-gray-600 pt-6">
-                <div className="grid grid-cols-5 gap-8">
+              <div className="border-t border-gray-600 pt-8">
+                <div className="grid grid-cols-5 gap-12">
                   {sections.slice(5).map((section, idx) => (
                     <div key={idx}>
-                      <h4 className="text-white font-semibold mb-3 text-sm">
+                      <h4 className="text-white font-semibold mb-4 text-base">
                         {section.title}
                       </h4>
-                      <ul className="space-y-1">
+                      <ul className="space-y-2">
                         {section.items.map((item, index) => (
                           <li key={index}>
                             <a
                               href="#"
-                              className="text-gray-300 hover:text-orange-300 transition-colors text-xs py-0.5 block"
+                              className="text-gray-300 hover:text-orange-300 transition-colors text-sm py-1 block"
                             >
                               {item}
                             </a>
@@ -268,62 +276,65 @@ const Navigation: React.FC = () => {
   return (
     <div className="relative">
       <nav className="sticky top-0 w-full bg-gray-900 backdrop-blur-sm z-50 shadow-lg">
-        <div className="max-w-full mx-auto px-6">
+        <div className="max-w-screen-2xl mx-auto px-8">
           <div className="flex items-center justify-between h-16">
-            {/* Logo */}
-            <div className="flex items-center">
-              <Link to="/" className="text-2xl font-bold text-white">
+            {/* Logo - Moved more towards center */}
+            <div className="flex items-center ml-8">
+              <Link to="/" className="text-xl font-bold text-white">
                 <span className="text-orange-300">S</span>ria{" "}
                 <span className="text-orange-300">I</span>nfotech
               </Link>
             </div>
 
-            {/* Navigation Menu */}
-            <div className="hidden xl:flex items-center space-x-8">
+            {/* Navigation Menu - Centered */}
+            <div className="hidden xl:flex items-center space-x-6">
               <MegaMenu
                 id="products"
                 label="Products"
                 sections={productsSections}
                 layout="multi"
+                width="w-full max-w-6xl"
               />
               <MegaMenu
                 id="solutions"
                 label="Solutions"
                 sections={solutionsSections}
                 layout="two-row"
+                width="w-full max-w-7xl"
               />
               <MegaMenu
                 id="services"
                 label="Services"
                 sections={servicesSections}
                 layout="multi"
-                width="w-[600px]"
+                width="w-full max-w-4xl"
               />
               <MegaMenu
                 id="industries"
                 label="Industries"
                 sections={industriesSections}
                 layout="two-row"
+                width="w-full max-w-7xl"
               />
               <MegaMenu
                 id="insights"
                 label="Insights"
                 sections={insightsSections}
                 layout="single"
-                width="w-64"
+                width="w-80"
               />
               <MegaMenu
                 id="about"
                 label="About"
                 sections={aboutSections}
                 layout="single"
-                width="w-64"
+                width="w-80"
               />
             </div>
 
-            {/* Right Section */}
-            <div className="flex items-center space-x-4">
-              <Search className="w-5 h-5 text-white hover:text-orange-300 cursor-pointer transition-colors" />
+            {/* Right Section - Moved more towards center */}
+            <div className="flex items-center space-x-3 mr-8">
+              <Search className="w-4 h-4 text-white hover:text-orange-300 cursor-pointer transition-colors" />
               
               {/* Language Selector */}
               <div className="relative">
@@ -331,15 +342,15 @@ const Navigation: React.FC = () => {
                   onClick={() => setShowLanguages(true)}
                   onMouseEnter={() => setShowLanguages(true)}
                   onMouseLeave={() => setShowLanguages(false)}
-                  className="text-white flex items-center hover:text-orange-300 transition-colors"
+                  className="text-white flex items-center hover:text-orange-300 transition-colors text-sm"
                 >
-                  <Globe className="w-5 h-5 mr-1" />
+                  <Globe className="w-4 h-4 mr-1" />
                   Global
                 </button>
                 
                 {showLanguages && (
                   <div
-                    className="absolute top-full right-0 mt-2 w-48 bg-gray-800 rounded-lg shadow-xl border border-gray-700 py-2 z-50"
+                    className="absolute top-full right-0 mt-2 w-56 bg-gray-800 rounded-lg shadow-xl border border-gray-700 py-3 z-50"
                     onMouseEnter={() => setShowLanguages(true)}
                     onMouseLeave={() => setShowLanguages(false)}
                   >
@@ -347,9 +358,12 @@ const Navigation: React.FC = () => {
                       <React.Fragment key={idx}>
                         <a
                           href="#"
-                          className="block px-4 py-2 text-white hover:text-orange-300 hover:bg-gray-700 transition-colors text-sm"
+                          className="flex items-center px-4 py-3 text-white hover:text-orange-300 hover:bg-gray-700 transition-colors text-sm"
                         >
-                          {country}
+                          <div className="w-6 h-6 rounded-full bg-gray-600 flex items-center justify-center text-xs mr-3">
+                            {country.flag}
+                          </div>
+                          {country.name}
                         </a>
                         {idx < countries.length - 1 && (
                           <div className="border-t border-gray-600 mx-2"></div>
@@ -362,7 +376,7 @@ const Navigation: React.FC = () => {
 
               <Link
                 to="/contact"
-                className="bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 rounded font-medium transition-colors"
+                className="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded font-medium transition-colors text-sm"
               >
                 Contact Us →
               </Link>
