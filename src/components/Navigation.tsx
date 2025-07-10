@@ -41,7 +41,7 @@ const Navigation: React.FC = () => {
     { name: "Egypt", flag: "🇪🇬" }
   ];
 
-  const MegaMenu: React.FC<MegaMenuProps> = ({ id, label, sections, width = "w-full max-w-7xl", layout = "multi" }) => (
+  const MegaMenu: React.FC<MegaMenuProps> = ({ id, label, sections, width = "w-full max-w-8xl", layout = "multi" }) => (
     <div
       className="relative"
       onMouseEnter={() => handleMouseEnter(id)}
@@ -59,9 +59,9 @@ const Navigation: React.FC = () => {
           ? "opacity-100 visible translate-y-0"
           : "opacity-0 invisible -translate-y-4"
       }`}>
-        <div className="bg-gray-800 rounded-lg shadow-2xl border border-gray-700 py-10 px-12 mt-2">
+        <div className="bg-gray-800 rounded-lg shadow-2xl border border-gray-700 py-8 px-16 mt-2">
           {layout === "single" && (
-            <div className="space-y-4">
+            <div className="space-y-3">
               {sections[0]?.items.map((item, idx) => (
                 <a
                   key={idx}
@@ -75,10 +75,10 @@ const Navigation: React.FC = () => {
           )}
 
           {layout === "multi" && (
-            <div className="grid grid-cols-3 gap-16">
+            <div className="grid grid-cols-3 gap-20">
               {sections.map((section, idx) => (
                 <div key={idx}>
-                  <h4 className="text-white font-semibold mb-6 text-base border-b border-gray-600 pb-3">
+                  <h4 className="text-white font-semibold mb-5 text-base border-b border-gray-600 pb-3">
                     {section.title}
                   </h4>
                   <ul className="space-y-3">
@@ -99,8 +99,8 @@ const Navigation: React.FC = () => {
           )}
 
           {layout === "two-row" && (
-            <div className="space-y-12">
-              <div className="grid grid-cols-5 gap-12">
+            <div className="space-y-10">
+              <div className="grid grid-cols-5 gap-16">
                 {sections.slice(0, 5).map((section, idx) => (
                   <div key={idx}>
                     <h4 className="text-white font-semibold mb-4 text-base">
@@ -121,8 +121,8 @@ const Navigation: React.FC = () => {
                   </div>
                 ))}
               </div>
-              <div className="border-t border-gray-600 pt-8">
-                <div className="grid grid-cols-5 gap-12">
+              <div className="border-t border-gray-600 pt-6">
+                <div className="grid grid-cols-5 gap-16">
                   {sections.slice(5).map((section, idx) => (
                     <div key={idx}>
                       <h4 className="text-white font-semibold mb-4 text-base">
@@ -293,28 +293,28 @@ const Navigation: React.FC = () => {
                 label="Products"
                 sections={productsSections}
                 layout="multi"
-                width="w-full max-w-6xl"
+                width="w-full max-w-7xl"
               />
               <MegaMenu
                 id="solutions"
                 label="Solutions"
                 sections={solutionsSections}
                 layout="two-row"
-                width="w-full max-w-7xl"
+                width="w-full max-w-8xl"
               />
               <MegaMenu
                 id="services"
                 label="Services"
                 sections={servicesSections}
                 layout="multi"
-                width="w-full max-w-4xl"
+                width="w-full max-w-5xl"
               />
               <MegaMenu
                 id="industries"
                 label="Industries"
                 sections={industriesSections}
                 layout="two-row"
-                width="w-full max-w-7xl"
+                width="w-full max-w-8xl"
               />
               <MegaMenu
                 id="insights"
