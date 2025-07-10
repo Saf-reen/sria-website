@@ -41,7 +41,7 @@ const Navigation: React.FC = () => {
     { name: "Egypt", flag: "🇪🇬" }
   ];
 
-  const MegaMenu: React.FC<MegaMenuProps> = ({ id, label, sections, width = "w-full max-w-8xl", layout = "multi" }) => (
+  const MegaMenu: React.FC<MegaMenuProps> = ({ id, label, sections, width = "w-full", layout = "multi" }) => (
     <div
       className="relative"
       onMouseEnter={() => handleMouseEnter(id)}
@@ -54,64 +54,40 @@ const Navigation: React.FC = () => {
         }`} />
       </button>
 
-      <div className={`absolute top-full left-1/2 transform -translate-x-1/2 ${width} z-50 transition-all duration-300 ${
+      <div className={`fixed top-16 left-0 right-0 z-50 transition-all duration-300 ${
         activeDropdown === id
           ? "opacity-100 visible translate-y-0"
           : "opacity-0 invisible -translate-y-4"
       }`}>
-        <div className="bg-gray-800 rounded-lg shadow-2xl border border-gray-700 py-8 px-16 mt-2">
-          {layout === "single" && (
-            <div className="space-y-3">
-              {sections[0]?.items.map((item, idx) => (
-                <a
-                  key={idx}
-                  href="#"
-                  className="block text-white hover:text-orange-300 transition-colors text-base py-2"
-                >
-                  {item}
-                </a>
-              ))}
-            </div>
-          )}
+        <div className="max-w-screen-2xl mx-auto px-8">
+          <div className="bg-gray-800 rounded-lg shadow-2xl border border-gray-700 py-8 px-16 mt-2">
+            {layout === "single" && (
+              <div className="space-y-3">
+                {sections[0]?.items.map((item, idx) => (
+                  <a
+                    key={idx}
+                    href="#"
+                    className="block text-white hover:text-orange-300 transition-colors text-base py-2"
+                  >
+                    {item}
+                  </a>
+                ))}
+              </div>
+            )}
 
-          {layout === "multi" && (
-            <div className="grid grid-cols-3 gap-20">
-              {sections.map((section, idx) => (
-                <div key={idx}>
-                  <h4 className="text-white font-semibold mb-5 text-base border-b border-gray-600 pb-3">
-                    {section.title}
-                  </h4>
-                  <ul className="space-y-3">
-                    {section.items.map((item, index) => (
-                      <li key={index}>
-                        <a
-                          href="#"
-                          className="text-gray-300 hover:text-orange-300 transition-colors text-base py-1 block"
-                        >
-                          {item}
-                        </a>
-                      </li>
-                    ))}
-                  </ul>
-                </div>
-              ))}
-            </div>
-          )}
-
-          {layout === "two-row" && (
-            <div className="space-y-10">
-              <div className="grid grid-cols-5 gap-16">
-                {sections.slice(0, 5).map((section, idx) => (
+            {layout === "multi" && (
+              <div className="grid grid-cols-3 gap-20">
+                {sections.map((section, idx) => (
                   <div key={idx}>
-                    <h4 className="text-white font-semibold mb-4 text-base">
+                    <h4 className="text-white font-semibold mb-5 text-base border-b border-gray-600 pb-3">
                       {section.title}
                     </h4>
-                    <ul className="space-y-2">
+                    <ul className="space-y-3">
                       {section.items.map((item, index) => (
                         <li key={index}>
                           <a
                             href="#"
-                            className="text-gray-300 hover:text-orange-300 transition-colors text-sm py-1 block"
+                            className="text-gray-300 hover:text-orange-300 transition-colors text-base py-1 block"
                           >
                             {item}
                           </a>
@@ -121,9 +97,12 @@ const Navigation: React.FC = () => {
                   </div>
                 ))}
               </div>
-              <div className="border-t border-gray-600 pt-6">
+            )}
+
+            {layout === "two-row" && (
+              <div className="space-y-10">
                 <div className="grid grid-cols-5 gap-16">
-                  {sections.slice(5).map((section, idx) => (
+                  {sections.slice(0, 5).map((section, idx) => (
                     <div key={idx}>
                       <h4 className="text-white font-semibold mb-4 text-base">
                         {section.title}
@@ -143,9 +122,32 @@ const Navigation: React.FC = () => {
                     </div>
                   ))}
                 </div>
+                <div className="border-t border-gray-600 pt-6">
+                  <div className="grid grid-cols-5 gap-16">
+                    {sections.slice(5).map((section, idx) => (
+                      <div key={idx}>
+                        <h4 className="text-white font-semibold mb-4 text-base">
+                          {section.title}
+                        </h4>
+                        <ul className="space-y-2">
+                          {section.items.map((item, index) => (
+                            <li key={index}>
+                              <a
+                                href="#"
+                                className="text-gray-300 hover:text-orange-300 transition-colors text-sm py-1 block"
+                              >
+                                {item}
+                              </a>
+                            </li>
+                          ))}
+                        </ul>
+                      </div>
+                    ))}
+                  </div>
+                </div>
               </div>
-            </div>
-          )}
+            )}
+          </div>
         </div>
       </div>
     </div>
@@ -293,42 +295,36 @@ const Navigation: React.FC = () => {
                 label="Products"
                 sections={productsSections}
                 layout="multi"
-                width="w-full max-w-7xl"
               />
               <MegaMenu
                 id="solutions"
                 label="Solutions"
                 sections={solutionsSections}
                 layout="two-row"
-                width="w-full max-w-8xl"
               />
               <MegaMenu
                 id="services"
                 label="Services"
                 sections={servicesSections}
                 layout="multi"
-                width="w-full max-w-5xl"
               />
               <MegaMenu
                 id="industries"
                 label="Industries"
                 sections={industriesSections}
                 layout="two-row"
-                width="w-full max-w-8xl"
               />
               <MegaMenu
                 id="insights"
                 label="Insights"
                 sections={insightsSections}
                 layout="single"
-                width="w-80"
               />
               <MegaMenu
                 id="about"
                 label="About"
                 sections={aboutSections}
                 layout="single"
-                width="w-80"
               />
             </div>
 
