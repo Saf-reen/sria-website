@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 
 interface DropdownSection {
   title: string;
-  items: string[];
+  items: { label: string; link: string }[];
 }
 
 interface MegaMenuProps {
@@ -15,20 +15,35 @@ interface MegaMenuProps {
   layout?: "single" | "multi" | "two-row";
 }
 
-const Navigation: React.FC = () => {
+interface NavigationProps {
+  enableScrollEffect?: boolean; // New prop to control scroll effect
+}
+
+const Navigation: React.FC<NavigationProps> = ({
+  enableScrollEffect = false,
+}) => {
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [showLanguages, setShowLanguages] = useState(false);
   const [scrolled, setScrolled] = useState<boolean>(false);
 
+  const [hoverTimeout, setHoverTimeout] = useState<NodeJS.Timeout | null>(null);
+
   const handleMouseEnter = (dropdown: string) => {
+    if (hoverTimeout) clearTimeout(hoverTimeout); // cancel hide if hovering back
     setActiveDropdown(dropdown);
   };
 
   const handleMouseLeave = () => {
-    setActiveDropdown(null);
+    const timeout = setTimeout(() => {
+      setActiveDropdown(null);
+    }, 200); // delay hiding by 200ms
+    setHoverTimeout(timeout);
   };
 
   useEffect(() => {
+    // Only add scroll listener if scroll effect is enabled
+    if (!enableScrollEffect) return;
+
     const handleScroll = (): void => {
       setScrolled(window.scrollY > 50);
     };
@@ -38,7 +53,7 @@ const Navigation: React.FC = () => {
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [enableScrollEffect]);
 
   const countries = [
     { name: "United States", flag: "🇺🇸" },
@@ -84,7 +99,7 @@ const Navigation: React.FC = () => {
       >
         <div className="max-w-screen-2xl mx-auto px-8">
           <div
-            className="bg-[#0F0F0F] rounded-lg shadow-2xl border border-gray-700 py-8 px-16 "
+            className="bg-[#0F0F0F]  shadow-2xl border border-gray-700 py-8 px-16 "
             style={{
               fontFamily: "Questrial, Arial, Verdana, Tahoma, sans-serif",
               fontWeight: 400,
@@ -94,10 +109,11 @@ const Navigation: React.FC = () => {
               <div className="space-y-3">
                 {sections[0]?.items.map((item, idx) => (
                   <a
-                    href="#"
+                    key={idx}
+                    href={item.link}
                     className="text-gray-300 hover:text-orange-300 transition-colors text-base py-1 block font-normal font-[Questrial,Arial,Verdana,Tahoma,sans-serif]"
                   >
-                    {item}
+                    {item.label}
                   </a>
                 ))}
               </div>
@@ -114,10 +130,10 @@ const Navigation: React.FC = () => {
                       {section.items.map((item, index) => (
                         <li key={index}>
                           <a
-                            href="#"
+                            href={item.link}
                             className="text-gray-300 hover:text-orange-300 transition-colors text-base py-1 block font-normal font-[Questrial,Arial,Verdana,Tahoma,sans-serif]"
                           >
-                            {item}
+                            {item.label}
                           </a>
                         </li>
                       ))}
@@ -139,10 +155,10 @@ const Navigation: React.FC = () => {
                         {section.items.map((item, index) => (
                           <li key={index}>
                             <a
-                              href="#"
+                              href={item.link}
                               className="text-gray-300 hover:text-orange-300 transition-colors text-base py-1 block font-normal font-[Questrial,Arial,Verdana,Tahoma,sans-serif]"
                             >
-                              {item}
+                              {item.label}
                             </a>
                           </li>
                         ))}
@@ -161,10 +177,10 @@ const Navigation: React.FC = () => {
                           {section.items.map((item, index) => (
                             <li key={index}>
                               <a
-                                href="#"
+                                href={item.link}
                                 className="text-gray-300 hover:text-orange-300 transition-colors text-base py-1 block font-normal font-[Questrial,Arial,Verdana,Tahoma,sans-serif]"
                               >
-                                {item}
+                                {item.label}
                               </a>
                             </li>
                           ))}
@@ -181,34 +197,50 @@ const Navigation: React.FC = () => {
     </div>
   );
 
+  // Updated background logic - if enableScrollEffect is false, always use black background
+  const getNavBackground = () => {
+    if (!enableScrollEffect) {
+      return "bg-black shadow-lg"; // Always black background when scroll effect is disabled
+    }
+    return scrolled ? "bg-black shadow-lg backdrop-blur-sm" : "bg-transparent";
+  };
+
   const productsSections: DropdownSection[] = [
     {
       title: "Accelerated Products",
-      items: ["EXIM", "E-Invoice", "E-Way Bill", "GST"],
+      items: [
+        { label: "EXIM", link: "/products/exim" },
+        { label: "E-Invoice", link: "/products/e-invoice" },
+        { label: "E-Way Bill", link: "/products/e-way-bill" },
+        { label: "GST", link: "/products/gst" },
+      ],
     },
     {
       title: "Raapyd Products",
       items: [
-        "Vendor Management",
-        "Field Service Management",
-        "Real Estate Management",
-        "ICR AI Software",
-        "Distribution Management",
-        "Digital Retail Solution",
-        "Subscription Billing",
-        "Sales Force Automation",
-        "Dealer Management System",
-        "Asset Management",
+        { label: "Vendor Management", link: "/products/vendor-management" },
+        { label: "Field Service Management", link: "/products/field-service" },
+        { label: "Real Estate Management", link: "/products/real-estate" },
+        { label: "ICR AI Software", link: "/products/icr-ai" },
+        { label: "Distribution Management", link: "/products/distribution" },
+        { label: "Digital Retail Solution", link: "/products/retail" },
+        { label: "Subscription Billing", link: "/products/subscription" },
+        { label: "Sales Force Automation", link: "/products/sales-force" },
+        {
+          label: "Dealer Management System",
+          link: "/products/dealer-management",
+        },
+        { label: "Asset Management", link: "/products/asset-management" },
       ],
     },
     {
       title: "Eerly AI Products",
       items: [
-        "Eerly AI Brain",
-        "SAP AI Consultant",
-        "Recruitment AI",
-        "Insights AI",
-        "Process AI",
+        { label: "Eerly AI Brain", link: "/products/eerly-ai-brain" },
+        { label: "SAP AI Consultant", link: "/products/sap-ai-consultant" },
+        { label: "Recruitment AI", link: "/products/recruitment-ai" },
+        { label: "Insights AI", link: "/products/insights-ai" },
+        { label: "Process AI", link: "/products/process-ai" },
       ],
     },
   ];
@@ -216,57 +248,86 @@ const Navigation: React.FC = () => {
   const solutionsSections: DropdownSection[] = [
     {
       title: "SAP ERP",
-      items: ["SAP S/4HANA", "Public Cloud", "Private Cloud"],
+      items: [
+        { label: "SAP S/4HANA", link: "/solutions/sap-s4hana" },
+        { label: "Public Cloud", link: "/solutions/public-cloud" },
+        { label: "Private Cloud", link: "/solutions/private-cloud" },
+      ],
     },
     {
       title: "SAP Analytics Cloud",
       items: [
-        "SAP Financial Mgmt",
-        "Cloud Planning",
-        "Group Reporting",
-        "PaPM",
+        { label: "SAP Financial Mgmt", link: "/solutions/financial" },
+        { label: "Cloud Planning", link: "/solutions/cloud-planning" },
+        { label: "Group Reporting", link: "/solutions/group-reporting" },
+        { label: "PaPM", link: "/solutions/papm" },
       ],
     },
     {
       title: "SAP CRM",
-      items: ["Commerce Cloud", "Sales Cloud", "Service Cloud", "Emarsys"],
+      items: [
+        { label: "Commerce Cloud", link: "/solutions/commerce-cloud" },
+        { label: "Sales Cloud", link: "/solutions/sales-cloud" },
+        { label: "Service Cloud", link: "/solutions/service-cloud" },
+        { label: "Emarsys", link: "/solutions/emarsys" },
+      ],
     },
     {
       title: "SAP BTP",
-      items: ["CPI", "Build Apps"],
+      items: [
+        { label: "CPI", link: "/solutions/cpi" },
+        { label: "Build Apps", link: "/solutions/build-apps" },
+      ],
     },
     {
       title: "SAP HXM",
-      items: ["SuccessFactors"],
+      items: [{ label: "SuccessFactors", link: "/solutions/successfactors" }],
     },
     {
       title: "AI",
-      items: ["SAP Business AI"],
+      items: [{ label: "SAP Business AI", link: "/solutions/sap-business-ai" }],
     },
     {
       title: "Sustainability",
-      items: ["SAP Sustainability", "ESG Consulting", "E-Mobility"],
+      items: [
+        { label: "SAP Sustainability", link: "/solutions/sustainability" },
+        { label: "ESG Consulting", link: "/solutions/esg-consulting" },
+        { label: "E-Mobility", link: "/solutions/e-mobility" },
+      ],
     },
     {
       title: "Other Technologies",
-      items: ["Digital Transformation", "ECM", "RPA", "Blockchain", "IoT"],
+      items: [
+        {
+          label: "Digital Transformation",
+          link: "/solutions/digital-transformation",
+        },
+        { label: "ECM", link: "/solutions/ecm" },
+        { label: "RPA", link: "/solutions/rpa" },
+        { label: "Blockchain", link: "/solutions/blockchain" },
+        { label: "IoT", link: "/solutions/iot" },
+      ],
     },
   ];
 
   const servicesSections: DropdownSection[] = [
     {
       title: "Strategy and Consulting",
-      items: ["Business Consulting", "Process Consulting", "Tech Consulting"],
+      items: [
+        { label: "Business Consulting", link: "/services/strategy-consulting" },
+        { label: "Process Consulting", link: "/services/strategy-consulting" },
+        { label: "Tech Consulting", link: "/services/strategy-consulting" },
+      ],
     },
     {
       title: "SAP Support",
       items: [
-        "Managed Services",
-        "AMS",
-        "Migration",
-        "Discovery",
-        "Implementation",
-        "Upgrade",
+        { label: "Managed Services", link: "/sapmanagedservices" },
+        { label: "AMS", link: "/ams" },
+        { label: "Migration", link: "/migration" },
+        { label: "Discovery", link: "/discovery" },
+        { label: "Implementation", link: "/implementation" },
+        { label: "Upgrade", link: "/upgrade" },
       ],
     },
   ];
@@ -275,94 +336,168 @@ const Navigation: React.FC = () => {
     {
       title: "Retail",
       items: [
-        "Fashion & Apparel",
-        "Grocery",
-        "Specialty Retail",
-        "Healthcare & Wellness",
-        "Department Stores",
+        { label: "Fashion & Apparel", link: "/services/strategy-consulting" },
+        { label: "Grocery", link: "/services/strategy-consulting" },
+        { label: "Specialty Retail", link: "/services/strategy-consulting" },
+        {
+          label: "Healthcare & Wellness",
+          link: "/services/strategy-consulting",
+        },
+        { label: "Department Stores", link: "/services/strategy-consulting" },
       ],
     },
     {
       title: "Consumer Products",
-      items: ["Food & Beverage", "Consumer Durables", "Home & Personal Care"],
+      items: [
+        {
+          label: "Food & Beverage",
+          link: "/industries/consumer-products/food-beverage",
+        },
+        {
+          label: "Consumer Durables",
+          link: "/industries/consumer-products/consumer-durables",
+        },
+        {
+          label: "Home & Personal Care",
+          link: "/industries/consumer-products/home-personal-care",
+        },
+      ],
     },
     {
       title: "Manufacturing",
       items: [
-        "Automotive Manufacturing",
-        "Process Manufacturing",
-        "Discrete Manufacturing",
+        {
+          label: "Automotive Manufacturing",
+          link: "/industries/manufacturing/automotive",
+        },
+        {
+          label: "Process Manufacturing",
+          link: "/industries/manufacturing/process",
+        },
+        {
+          label: "Discrete Manufacturing",
+          link: "/industries/manufacturing/discrete",
+        },
       ],
     },
     {
       title: "E&C",
-      items: ["EC&O", "Real Estate"],
+      items: [
+        { label: "EC&O", link: "/industries/ec/ec-o" },
+        { label: "Real Estate", link: "/industries/ec/real-estate" },
+      ],
     },
     {
       title: "Oil, Gas, Energy",
       items: [
-        "Power Generation",
-        "Renewable Energy",
-        "Energy Retail",
-        "Smart Grid",
-        "Transmission & Distribution",
+        {
+          label: "Power Generation",
+          link: "/industries/energy/power-generation",
+        },
+        { label: "Renewable Energy", link: "/industries/energy/renewable" },
+        { label: "Energy Retail", link: "/industries/energy/retail" },
+        { label: "Smart Grid", link: "/industries/energy/smart-grid" },
+        {
+          label: "Transmission & Distribution",
+          link: "/industries/energy/transmission",
+        },
       ],
     },
     {
       title: "Prof. Services",
-      items: ["Information Technology", "Travel & Tourism"],
+      items: [
+        {
+          label: "Information Technology",
+          link: "/industries/professional-services/it",
+        },
+        {
+          label: "Travel & Tourism",
+          link: "/industries/professional-services/travel",
+        },
+      ],
     },
     {
       title: "Life Sciences",
       items: [
-        "Pharmaceutical & Biotech",
-        "Medical Devices",
-        "Hospital & Clinics",
+        {
+          label: "Pharmaceutical & Biotech",
+          link: "/industries/life-sciences/pharmaceutical",
+        },
+        { label: "Medical Devices", link: "/industries/life-sciences/devices" },
+        {
+          label: "Hospital & Clinics",
+          link: "/industries/life-sciences/hospitals",
+        },
       ],
     },
     {
       title: "BFSI",
-      items: ["Banking", "Insurance", "Financial Institutions"],
+      items: [
+        { label: "Banking", link: "/industries/bfsi/banking" },
+        { label: "Insurance", link: "/industries/bfsi/insurance" },
+        {
+          label: "Financial Institutions",
+          link: "/industries/bfsi/financial-institutions",
+        },
+      ],
     },
     {
       title: "Education",
-      items: ["Business Information Services", "Enterprise Services"],
+      items: [
+        {
+          label: "Business Information Services",
+          link: "/industries/education/business-services",
+        },
+        {
+          label: "Enterprise Services",
+          link: "/industries/education/enterprise-services",
+        },
+      ],
     },
     {
       title: "High-Tech",
       items: [
-        "Computer Peripherals",
-        "Contract Manufacturers",
-        "Distribution Companies",
+        {
+          label: "Computer Peripherals",
+          link: "/industries/high-tech/peripherals",
+        },
+        {
+          label: "Contract Manufacturers",
+          link: "/industries/high-tech/contract-manufacturers",
+        },
+        {
+          label: "Distribution Companies",
+          link: "/industries/high-tech/distribution",
+        },
       ],
     },
   ];
 
   const insightsSections: DropdownSection[] = [
     {
-      title: "",
+      title: "Insights",
       items: [
-        "Customer Stories",
-        "Blogs",
-        "Newsroom",
-        "White Papers",
-        "Videos",
-        "Brochures",
+        { label: "Customer Stories", link: "/insights/customer-stories" },
+        { label: "Blogs", link: "/insights/blogs" },
+        { label: "Newsroom", link: "/insights/newsroom" },
+        { label: "White Papers", link: "/insights/white-papers" },
+        { label: "Videos", link: "/insights/videos" },
+        { label: "Brochures", link: "/insights/brochures" },
       ],
     },
   ];
 
   const aboutSections: DropdownSection[] = [
     {
-      title: "",
+      title: "About Us",
       items: [
-        "Leadership",
-        "SAP Partner",
-        "Careers",
-        "Alliances",
-        "Partner With Us",
-        "Events",
-        "Locations",
+        { label: "Leadership", link: "/about/leadership" },
+        { label: "SAP Partner", link: "/about/sap-partner" },
+        { label: "Careers", link: "/about/careers" },
+        { label: "Alliances", link: "/about/alliances" },
+        { label: "Partner With Us", link: "/about/partner-with-us" },
+        { label: "Events", link: "/about/events" },
+        { label: "Locations", link: "/about/locations" },
       ],
     },
   ];
@@ -370,9 +505,7 @@ const Navigation: React.FC = () => {
   return (
     <div className="relative font-[Questrial,Arial,Verdana,Tahoma,sans-serif] font-normal">
       <nav
-        className={`fixed top-0 w-full z-50 transition-all duration-300 ${
-          scrolled ? "bg-black shadow-lg backdrop-blur-sm" : "bg-transparent"
-        }`}
+        className={`fixed top-0 w-full z-50 transition-all duration-300 ${getNavBackground()}`}
       >
         <div className="max-w-screen-2xl mx-auto px-8">
           <div className="flex items-center justify-between h-16">
@@ -450,7 +583,7 @@ const Navigation: React.FC = () => {
                       <React.Fragment key={idx}>
                         <a
                           href="#"
-                          className="text-gray-300 hover:text-orange-300 transition-colors text-base py-1 block font-normal font-[Questrial,Arial,Verdana,Tahoma,sans-serif]"
+                          className="flex items-center px-4 py-2 text-gray-300 hover:text-orange-300 hover:bg-gray-700 transition-colors text-sm font-normal font-[Questrial,Arial,Verdana,Tahoma,sans-serif]"
                         >
                           <div className="w-6 h-6 rounded-full bg-gray-600 flex items-center justify-center text-xs mr-3">
                             {country.flag}
@@ -467,7 +600,7 @@ const Navigation: React.FC = () => {
               </div>
 
               <Link
-                to="/contact"
+                to="/contactus"
                 className="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded font-medium transition-colors text-sm"
               >
                 Contact Us →

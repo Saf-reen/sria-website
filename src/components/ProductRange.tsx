@@ -60,13 +60,15 @@ const ProductRange: React.FC<ProductRangeProps> = ({
         {products.map((product, idx) => (
           <div
             key={idx}
-            className="w-[400px] bg-gray-50 p-4 rounded-md shadow-sm hover:shadow-md flex-shrink-0"
+            className="w-[400px]  bg-gray-50 p-4 rounded-md shadow-sm hover:shadow-md flex-shrink-0"
           >
             <span className="bg-green-100 text-green-800 text-xs px-2 py-1 rounded-full mb-3 inline-block">
               Raapyd
             </span>
-            <h3 className="text-sm font-semibold mb-1">{product.title}</h3>
-            <p className="text-xs text-gray-600 mb-4">{product.description}</p>
+            <h3 className="text-[21px] font-semibold mb-1">{product.title}</h3>
+            <p className="text-[16px] text-gray-600 mb-4">
+              {product.description}
+            </p>
             <a
               href="#"
               className="flex items-center text-sm font-medium hover:underline"

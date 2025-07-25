@@ -20,7 +20,10 @@ import { Search, Rocket, ArrowUp, Repeat, Settings, Box } from "lucide-react";
 import CombinedAnimatedFeatures from "@/components/CombinedAnimatedFeatures";
 import SolutionDropdownSection from "@/components/SolutionDropdownSection";
 import { it } from "node:test";
-import CustomerStoriesTestimonials from "@/components/CustomerStoriesTestimonials";
+import {
+  CustomerStories,
+  Testimonials,
+} from "@/components/CustomerStoriesTestimonials";
 import EventsNewsComponent from "@/components/EventsNewsComponent";
 
 const Index = () => {
@@ -268,7 +271,7 @@ const Index = () => {
 
   return (
     <div className="w-full min-h-screen font-[Questrial,Arial,Verdana,Tahoma,sans-serif] font-normal">
-      <Navigation />
+      <Navigation enableScrollEffect={true} />
       <Hero />
       <div className="h-32 w-full  bg-gradient-to-b from-transparent to-[#0F0F0F]">
         <div className="relative z-20 py-20 bg-[#0F0F0F] w-full flex flex-row justify-around">
@@ -430,15 +433,17 @@ const Index = () => {
             <SolutionDropdownSection sections={solutionSections} />
           </div>
         </div>
-        <div className="mb-20 ">
-          <CustomerStoriesTestimonials
-            customerStories={customerStories}
-            customerReviews={customerReviews}
-            overallRating={4.9}
-            totalStars={5}
-            companyName="Sria Infotech"
-            poweredByLogo="https://via.placeholder.com/120x30/6366f1/ffffff?text=Powered+By"
-          />
+        <div className="mb-20 w-full flex flex-row bg-black justify-around">
+          <div className=" w-[1400px]  flex justify-center flex-col">
+            <CustomerStories stories={customerStories} />
+            <Testimonials
+              reviews={customerReviews}
+              overallRating={4.9}
+              totalStars={5}
+              companyName="Sria Infotech"
+              poweredByLogo="https://via.placeholder.com/120x30/6366f1/ffffff?text=Powered+By"
+            />
+          </div>
         </div>
         <div className="mt-20">
           <EventsNewsComponent events={sampleEvents} news={sampleNews} />

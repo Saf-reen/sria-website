@@ -28,7 +28,7 @@ const SidebarMenu: React.FC<SidebarMenuProps> = ({ menuItems }) => {
   }, [menuItems]);
 
   return (
-    <div className="w-full lg:w-1/5 relative">
+    <div className="w-full lg:w-1/6  -ml-4 relative">
       {/* Toggle Button for screen < lg */}
       <button
         className="flex items-center gap-2 text-lg px-4 py-2 border rounded-md bg-gray-100 lg:hidden"

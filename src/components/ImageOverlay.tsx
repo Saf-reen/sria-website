@@ -14,16 +14,20 @@ const ImageOverlay: React.FC<ImageOverlayProps> = ({
 }) => {
   return (
     <div
-      className="mt-16 sticky top-0 h-[300px] md:h-[400px] w-full bg-cover bg-center z-10"
+      className=" sticky top-0 h-[600px] w-full bg-cover bg-center z-10 relative"
       style={{ backgroundImage: `url(${imageUrl})` }}
     >
-      <div className="absolute inset-0 bg-black/50"></div>
+      {/* Dark overlay */}
+      <div className="absolute inset-0 z-0 bg-black/50"></div>
 
-      <div className="relative z-10 h-full flex items-center px-6 md:px-12">
-        <div className="text-white max-w-2xl">
-          <h2 className="text-4xl md:text-6xl font-bold mb-4">{title}</h2>
-          <p className="text-lg md:text-xl mb-6">{description}</p>
-          <Requesademobtn text="Book a Consultation" />
+      {/* Centered & Responsive Content Container */}
+      <div className="relative z-10 h-full flex items-center">
+        <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
+          <div className="text-white max-w-2xl">
+            <h2 className="text-3xl md:text-5xl font-bold mb-4">{title}</h2>
+            <p className="text-base md:text-lg mb-6">{description}</p>
+            <Requesademobtn text="Book a Consultation" />
+          </div>
         </div>
       </div>
     </div>

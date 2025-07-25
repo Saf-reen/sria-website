@@ -1,4 +1,3 @@
-
 import { Toaster } from "@/components/ui/toaster";
 import { Toaster as Sonner } from "@/components/ui/sonner";
 import { TooltipProvider } from "@/components/ui/tooltip";
@@ -7,9 +6,11 @@ import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
 import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
-import SAPS4HANAPage from "@/pages/SAP-S-HANA-Implementation-Services";
 import AcceleraatedEximSolution from "./pages/AcceleraatedEximSolution";
 import SAPManagedServices from "./pages/SAPManagedServices";
+import ContactUs from "@/components/aboutus/ContactUs";
+import SapS4hana from "./pages/SapS4hana";
+import LeaderShip from "./pages/LeaderShip";
 
 const queryClient = new QueryClient();
 
@@ -24,8 +25,11 @@ const App = () => (
           <Route path="/contact" element={<Contact />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
-          <Route path="1" element={<SAPManagedServices />} />
-          <Route path="2" element={<AcceleraatedEximSolution />} />
+          <Route path="/sapmanagedservices" element={<SAPManagedServices />} />
+          <Route path="/products/exim" element={<AcceleraatedEximSolution />} />
+          <Route path="/contactus" element={<ContactUs />} />
+          <Route path="/solutions/sap-s4hana" element={<SapS4hana />} />
+          <Route path="/about/leadership" element={<LeaderShip />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>

@@ -28,6 +28,11 @@ import WorldMap from "@/components/aboutus/WorldMap";
 import BeautifulParallaxTailwind from "@/components/BeautifulParallaxTailwind";
 import Footer from "@/components/Footer";
 import StatCardStable from "@/components/StatCardStable";
+import InfoSection from "@/components/InfoSection";
+import ConsultationTabsSection from "@/components/services/ConsultationTabsSection";
+import { CustomerStories } from "@/components/CustomerStoriesTestimonials";
+import InsightsSection from "@/components/InsightsSection";
+import RelatedSolutions from "@/components/RelatedSolutions";
 
 const productData = [
   {
@@ -132,6 +137,82 @@ const tabs = [
   },
 ];
 
+const sampleSolutions = [
+  {
+    title: "Supervised infrastructure, migration, and equipping",
+    heading: "SAP security compliance",
+    description:
+      "Our SAP security services focus on data protection, security plans, and vulnerability assessments. Our strong governance approach offers role-based access management.",
+    points: [
+      "Round-the-clock Security Operation Center (SOC).",
+      "Up-to-date dashboards for events and alerts.",
+      "Adherence to geographic and industry-specific compliance rules.",
+      "Ensures improved SAP security.",
+    ],
+  },
+  {
+    title: "Regular monitoring and auditing",
+    heading: "Empower Your Workforce",
+    description:
+      "Drive workforce transformation and improve employee experience.",
+    points: [
+      "HR automation",
+      "Talent management",
+      "Performance tracking",
+      "Employee engagement",
+    ],
+  },
+  {
+    title: "Management and quality",
+    heading: "Empower Your Workforce",
+    description:
+      "Drive workforce transformation and improve employee experience.",
+    points: [
+      "HR automation",
+      "Talent management",
+      "Performance tracking",
+      "Employee engagement",
+    ],
+  },
+  {
+    title: "Downtime management and business progression",
+    heading: "Empower Your Workforce",
+    description:
+      "Drive workforce transformation and improve employee experience.",
+    points: [
+      "HR automation",
+      "Talent management",
+      "Performance tracking",
+      "Employee engagement",
+    ],
+  },
+  {
+    title: "SAP implementation and support",
+    heading: "Empower Your Workforce",
+    description:
+      "Drive workforce transformation and improve employee experience.",
+    points: [
+      "HR automation",
+      "Talent management",
+      "Performance tracking",
+      "Employee engagement",
+    ],
+  },
+  {
+    title: "SAP security compliance",
+    heading: "Empower Your Workforce",
+    description:
+      "Drive workforce transformation and improve employee experience.",
+    points: [
+      "HR automation",
+      "Talent management",
+      "Performance tracking",
+      "Employee engagement",
+    ],
+  },
+  // Add more items as needed
+];
+
 const menuItems = [
   "Overview",
   "Features",
@@ -142,7 +223,94 @@ const menuItems = [
   "Resources",
 ];
 
-function AcceleratedEximSolution() {
+const sapData = {
+  heading: "What is SAP S/4HANA?",
+  description:
+    "SAP S/4HANA is a next-generation ERP suite offering real-time analytics, streamlined workflows, and enhanced user experience for optimized business processes.",
+  imageUrl: "/Solutions/Banner-Image.png",
+  imageAlt: "Digital technology visualization",
+  items: [
+    {
+      title: "Public Cloud",
+      highlight: "SAP S/4HANA Public Cloud",
+      description:
+        "offers SaaS, rapid implementation, scalability, and standardized processes with minimal customization.",
+    },
+    {
+      title: "Private Cloud",
+      highlight: "SAP S/4HANA Private Cloud",
+      description:
+        "offers customization with cloud benefits like reduced infrastructure management.",
+    },
+    {
+      title: "On-Premise",
+      description:
+        "SAP S/4HANA on-premise enables maximum control, customization, suitable for strict regulatory needs.",
+    },
+  ],
+};
+
+const customerStories = [
+  {
+    id: 1,
+    image:
+      "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=300&fit=crop",
+    title: "Transforming Business Operations With Innovative Solutions",
+    readMoreLink: "#",
+  },
+  {
+    id: 2,
+    image:
+      "https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=300&fit=crop",
+    title: "Digital Innovation Success Through Strategic Partnership",
+    readMoreLink: "#",
+  },
+  {
+    id: 3,
+    image:
+      "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=400&h=300&fit=crop",
+    title: "Scaling New Heights in Technology Excellence",
+    readMoreLink: "#",
+  },
+];
+
+const insights = {
+  heading: "Explore related business solutions",
+  description:
+    "From strategy to execution, find the perfect solution to accelerate your journey toward success.",
+  ctaText: "Talk to an expert",
+  ctaLink: "/contact",
+  solutions: [
+    { title: "SAP S/4HANA Public Cloud", href: "/solutions/public-cloud" },
+    { title: "SAP S/4HANA Private Cloud", href: "/solutions/private-cloud" },
+  ],
+};
+
+const insightsData = [
+  {
+    title: "SAP S/4HANA Migration for Consumer Products",
+    imageUrl: "/images/sap-consumer.jpg",
+    imageAlt: "Consumer Products",
+    gradientFrom: "from-blue-600",
+    gradientTo: "to-blue-800",
+  },
+  {
+    title: "SAP S/4HANA Migration for EC&O",
+    imageUrl: "/images/sap-eco.jpg",
+    imageAlt: "EC&O Industry",
+    gradientFrom: "from-teal-600",
+    gradientTo: "to-cyan-700",
+  },
+  {
+    title: "Digital Transformation in Manufacturing",
+    imageUrl: "/images/digital-mfg.jpg",
+    imageAlt: "Digital Manufacturing",
+    gradientFrom: "from-purple-600",
+    gradientTo: "to-indigo-700",
+  },
+];
+
+function SapS4hana() {
   return (
     <div className="min-h-screen">
       <Navigation />
@@ -153,16 +321,16 @@ function AcceleratedEximSolution() {
           <TwoColumnLayout
             left={
               <LeftSection
-                title="Accelerated EXIM Solution"
-                description="Automate export-import compliance and documentation processes with SAP Certified, Accelerated EXIM. More control, visibility, and operational ease."
+                title="SAP S/4HANA"
+                description="Transform your business with SAP S/4HANA, a next-gen ERP system that uses intelligent automation, real-time analytics, and seamless integration to support fast, data-driven decisions."
               >
-                <Requesademobtn text="Request a Demo" />
+                <Requesademobtn text="Book a Consultation" />
               </LeftSection>
             }
             right={
               <RightSection>
                 <img
-                  src="/Axim.png"
+                  src="/Solutions/Banner-Image.png"
                   alt="Visual"
                   className="w-full h-full object-cover"
                 />
@@ -185,55 +353,23 @@ function AcceleratedEximSolution() {
         <div className="w-full lg:w-5/6 bg-white min-h-screen p-4 lg:p-6">
           {/* Overview Section */}
           <section id="overview" className="scroll-mt-24">
-            <h1 className="mt-5 text-3xl sm:text-4xl md:text-5xl lg:text-6xl font-bold leading-tight">
-              What is Accelerated EXIM Solution?
-            </h1>
-            <p className="mt-8 sm:mt-12 text-lg sm:text-xl md:text-2xl w-full lg:w-3/4 text-gray-500">
-              Our Accelerated EXIM solution is SAP certified, seamlessly
-              integrating with SAP to cover a wide range of export-import
-              processes at an affordable cost. Operating globally, we ensure
-              complete support and expert advice on legal, local, and statutory
-              needs.
-            </p>
+            <div className="bg-white">
+              <InfoSection {...sapData} />
+            </div>
           </section>
 
           {/* Features Section */}
           <section id="features" className="mt-12 sm:mt-16 scroll-mt-24">
             <div className="flex justify-center">
-              <div className="flex flex-col sm:flex-row gap-6 max-w-7xl w-full justify-center">
-                <FeatureCard
-                  title="SAP Certified"
-                  description="Officially certified by SAP, ensuring seamless and efficient integration with SAP systems."
-                />
-                <FeatureCard
-                  title="Global Support"
-                  description="With a robust global operation..."
-                />
-                <FeatureCard
-                  title="EXIM Expertise"
-                  description="Our EXIM experts offer implementation advice..."
-                />
-              </div>
+              <ConsultationTabsSection
+                solutions={sampleSolutions}
+                mainHeading="Explore our wide range of offerings"
+                mainDescription="SAP Managed Services provide the full range of functional, technical, and cloud possibilities."
+                ctaText="Get a Consultation"
+              />
             </div>
           </section>
 
-          {/* Key Features Section */}
-          <section id="key-features" className="mt-16 sm:mt-20 scroll-mt-24">
-            <div className="w-full lg:w-3/4">
-              <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold">
-                Key features
-              </h2>
-              <p className="mt-4 text-lg sm:text-xl md:text-2xl text-gray-500">
-                Accelerated EXIM solution offers license management, export
-                incentives, expense tracking, and automation.
-              </p>
-            </div>
-            <section className="my-8 sm:my-10 w-full">
-              <FeatureTabs />
-            </section>
-          </section>
-
-          {/* Insights Section */}
           <section id="insights" className="mt-16 sm:mt-20 w-full scroll-mt-24">
             <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold">
               Insights that define value
@@ -268,6 +404,24 @@ function AcceleratedEximSolution() {
             </div>
           </section>
 
+          {/* Key Features Section */}
+          <section id="key-features" className="mt-16 sm:mt-20 scroll-mt-24">
+            <div className="w-full lg:w-3/4">
+              <h2 className="text-2xl sm:text-3xl md:text-4xl font-semibold">
+                Key features
+              </h2>
+              <p className="mt-4 text-lg sm:text-xl md:text-2xl text-gray-500">
+                Accelerated EXIM solution offers license management, export
+                incentives, expense tracking, and automation.
+              </p>
+            </div>
+            <section className="my-8 sm:my-10 w-full">
+              <FeatureTabs />
+            </section>
+          </section>
+
+          {/* Insights Section */}
+
           {/* Benefits Section */}
           <section id="benefits" className="mt-16 sm:mt-20 w-full scroll-mt-24">
             <h2 className="text-2xl sm:text-3xl md:text-4xl w-full lg:w-3/4 font-semibold">
@@ -287,7 +441,11 @@ function AcceleratedEximSolution() {
               </div>
             </div>
           </section>
+          <div className="mt-16 sm:mt-20 w-full scroll-mt-24 text-black">
+            <CustomerStories stories={customerStories} />
+          </div>
 
+          {/* Consultation Section */}
           {/* FAQ Section */}
           <section
             id="find your answers"
@@ -321,16 +479,11 @@ function AcceleratedEximSolution() {
             </div>
           </section>
 
-          {/* Other Products Section */}
-          <section id="other products" className="mt-16 sm:mt-20 scroll-mt-24">
-            <ProductRange
-              heading="Explore other range of products"
-              paragraph="Discover products that complement your needs and drive business success."
-              products={productData}
-            />
-          </section>
-
           {/* Resources Section */}
+
+          <InsightsSection insights={insightsData} />
+          <RelatedSolutions {...insights} />
+
           <section id="resources" className="mt-12 sm:mt-16 scroll-mt-24">
             <Resource
               heading="Explore Our Resources"
@@ -378,4 +531,4 @@ function AcceleratedEximSolution() {
   );
 }
 
-export default AcceleratedEximSolution;
+export default SapS4hana;

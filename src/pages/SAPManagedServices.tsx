@@ -22,8 +22,94 @@ import {
   Settings,
 } from "lucide-react";
 import Footer from "@/components/Footer";
+import ConsultationTabsSection from "@/components/services/ConsultationTabsSection";
+import StatCardStable from "@/components/StatCardStable";
+import TabSection from "@/components/services/TabSection";
+import Section from "@/components/services/PartnersCarousel";
+
+import ParallaxScrollingComponent from "@/components/services/ParallaxScrollingComponent";
+import TopSectionWithTabs from "@/components/services/TopSectionWithTabs";
+
+import PartnersCarousel from "@/components/services/PartnersCarousel";
+import { CustomerStories } from "@/components/CustomerStoriesTestimonials";
 
 function SAPManagedServices() {
+  const sampleSolutions = [
+    {
+      title: "Supervised infrastructure, migration, and equipping",
+      heading: "SAP security compliance",
+      description:
+        "Our SAP security services focus on data protection, security plans, and vulnerability assessments. Our strong governance approach offers role-based access management.",
+      points: [
+        "Round-the-clock Security Operation Center (SOC).",
+        "Up-to-date dashboards for events and alerts.",
+        "Adherence to geographic and industry-specific compliance rules.",
+        "Ensures improved SAP security.",
+      ],
+    },
+    {
+      title: "Regular monitoring and auditing",
+      heading: "Empower Your Workforce",
+      description:
+        "Drive workforce transformation and improve employee experience.",
+      points: [
+        "HR automation",
+        "Talent management",
+        "Performance tracking",
+        "Employee engagement",
+      ],
+    },
+    {
+      title: "Management and quality",
+      heading: "Empower Your Workforce",
+      description:
+        "Drive workforce transformation and improve employee experience.",
+      points: [
+        "HR automation",
+        "Talent management",
+        "Performance tracking",
+        "Employee engagement",
+      ],
+    },
+    {
+      title: "Downtime management and business progression",
+      heading: "Empower Your Workforce",
+      description:
+        "Drive workforce transformation and improve employee experience.",
+      points: [
+        "HR automation",
+        "Talent management",
+        "Performance tracking",
+        "Employee engagement",
+      ],
+    },
+    {
+      title: "SAP implementation and support",
+      heading: "Empower Your Workforce",
+      description:
+        "Drive workforce transformation and improve employee experience.",
+      points: [
+        "HR automation",
+        "Talent management",
+        "Performance tracking",
+        "Employee engagement",
+      ],
+    },
+    {
+      title: "SAP security compliance",
+      heading: "Empower Your Workforce",
+      description:
+        "Drive workforce transformation and improve employee experience.",
+      points: [
+        "HR automation",
+        "Talent management",
+        "Performance tracking",
+        "Employee engagement",
+      ],
+    },
+    // Add more items as needed
+  ];
+
   const productData = [
     {
       title: "Field Service Management",
@@ -122,13 +208,37 @@ function SAPManagedServices() {
   ];
 
   const menuItems = [
-    "Overview",
-    "Features",
+    "Offerings",
     "Insights",
-    "Benifits",
-    "Find Your Answers",
-    "Other Products",
+    "Services",
+    "Benefits",
+    "Customer stories",
+    "Partners",
+    "Related services",
     "Resources",
+  ];
+  const customerStories = [
+    {
+      id: 1,
+      image:
+        "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=300&fit=crop",
+      title: "Transforming Business Operations With Innovative Solutions",
+      readMoreLink: "#",
+    },
+    {
+      id: 2,
+      image:
+        "https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=300&fit=crop",
+      title: "Digital Innovation Success Through Strategic Partnership",
+      readMoreLink: "#",
+    },
+    {
+      id: 3,
+      image:
+        "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=400&h=300&fit=crop",
+      title: "Scaling New Heights in Technology Excellence",
+      readMoreLink: "#",
+    },
   ];
 
   const highlightData = [
@@ -154,32 +264,41 @@ function SAPManagedServices() {
   return (
     <>
       <div className="scroll-smooth">
-        <Navigation />
+        <Navigation enableScrollEffect={true} />
 
         {/* Hero Pinned */}
-        <ImageOverlay
-          imageUrl="/your-background.jpg"
-          title="Accelerate Your EXIM Journey"
-          description="Automate your export-import processes with a certified SAP solution designed for scale."
-        />
 
-        {/* Scrollable content below */}
-        <section className=" sticky top-0 z-20 bg-black py-20 px-6 relative z-20">
-          <div className="max-w-7xl mx-auto">
-            {/* Heading + Description */}
-            <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 gap-6">
-              <h2 className="text-4xl font-bold text-white w-full md:w-1/2">
-                Accelerated EXIM Solution Advantages
-              </h2>
-              <p className="text-lg text-gray-300 w-full md:w-1/2">
-                The SAP Certified Accelerated EXIM Solution brings streamlined
-                automation, global compliance coverage, and seamless SAP
-                integration to scale your export-import operations with
-                efficiency and clarity.
-              </p>
+        <ImageOverlay
+          imageUrl="https://www.accely.com/wp-content/uploads/2024/12/SAP-Managed-Service-1.webp"
+          title="SAP Managed Services"
+          description="Achieve stability, reliability, and adaptability with Accely’s automation-driven SAP Managed Services."
+        />
+        <section className="relative min-h-[500px]  sticky top-0 z-20  bg-black bg-cover bg-center overflow-hidden">
+          {/* Dark Overlay */}
+          <div className="absolute inset-0 bg-black z-10" />
+
+          {/* Content Layer */}
+          <div className="relative z-10 max-w-[1400px] mx-auto px-6 py-24 text-white">
+            {/* Heading + Paragraph - 50/50 */}
+            <div className="flex flex-col md:flex-row justify-between gap-8 mb-10">
+              <div className="w-full md:w-1/2">
+                <h1 className="text-[47px]  leading-tight">
+                  Maximize your SAP investment with Accely
+                </h1>
+              </div>
+              <div className="w-full md:w-1/2">
+                <p className="text-base md:text-lg leading-relaxed">
+                  The management and optimization of your SAP environment are
+                  more important than ever in the current fast-paced digital
+                  world. One of the top SAP managed service providers, Accely
+                  offers all-inclusive solutions that will optimize your SAP
+                  operations and guarantee that they are effective, safe, and
+                  completely aligned with your business goals.
+                </p>
+              </div>
             </div>
 
-            {/* Highlight cards */}
+            {/* Highlight Cards */}
             <div className="flex flex-wrap gap-6">
               {highlightData.map((item, idx) => (
                 <HighlightCard key={idx} {...item} />
@@ -190,134 +309,61 @@ function SAPManagedServices() {
 
         {/* Main Content */}
         <div className="  sticky top-0 z-20   bg-white ">
-          <div className="   flex flex-col lg:flex-row w-full md:max-w-[100vw] lg:max-w-[80vw]  mt-20 mx-auto px-4">
+          <div className="  flex flex-col lg:flex-row w-full max-w-[1450px] mx-auto ">
             <SidebarMenu menuItems={menuItems} />
 
-            <div className="w-full lg:w-4/5 bg-gray-50 min-h-screen p-6">
+            <div className="w-full lg:w-5/6 min-h-screen p-2">
               {/* Overview */}
-              <section id="overview" className="scroll-mt-24">
-                <h1 className="mt-5 text-6xl font-bold">
-                  What is Accelerated EXIM Solution?
-                </h1>
-                <p className="mt-12 text-2xl w-3/4 text-gray-500">
-                  Our Accelerated EXIM solution is SAP certified, seamlessly
-                  integrating with SAP to cover a wide range of export-import
-                  processes at an affordable cost. Operating globally, we ensure
-                  complete support and expert advice on legal, local, and
-                  statutory needs.
-                </p>
-              </section>
-              {/* Features */}
-              <section id="features" className="mt-5 scroll-mt-24">
-                <div className="flex justify-center px-4 py-10">
-                  <div className="flex gap-6 flex-wrap md:flex-nowrap max-w-7xl w-full justify-center">
-                    <FeatureCard
-                      title="SAP Certified"
-                      description="Officially certified by SAP, ensuring seamless and efficient integration with SAP systems."
-                    />
-                    <FeatureCard
-                      title="Global Support"
-                      description="With a robust global operation..."
-                    />
-                    <FeatureCard
-                      title="EXIM Expertise"
-                      description="Our EXIM experts offer implementation advice..."
-                    />
-                  </div>
-                </div>
-              </section>
-              {/* Future Sections */}
-              <section id="features" className="mt-20  w-3/4 w- scroll-mt-24">
-                <h2 className="text-4xl font-semibold">Key features</h2>
-                <p className="mt-4 text-2xl text-gray-500">
-                  Accelerated EXIM solution offers license management, export
-                  incentives, expense tracking, and automation.
-                </p>
-                <section className="my-10 px-2">
-                  <FeatureTabs />
-                </section>
+              <section id="offerings" className="mt-5  scroll-mt-24">
+                <ConsultationTabsSection
+                  solutions={sampleSolutions}
+                  mainHeading="Explore our wide range of offerings"
+                  mainDescription="SAP Managed Services provide the full range of functional, technical, and cloud possibilities."
+                  ctaText="Get a Consultation"
+                />
               </section>
               <section id="insights" className="mt-20 scroll-mt-24">
-                <h2 className="text-4xl font-semibold">
-                  Insights that define value
+                <h2 className="text-[47px]  ">
+                  Resourceful insights of SAP Managed Services
                 </h2>
-                <div className="w-full px-4 py-10 flex flex-wrap justify-center gap-10 bg-white">
-                  <StatCard
-                    percentage="25%"
+                <div className="w-[1400px] py-10 flex flex-wrap gap-10 bg-white">
+                  <StatCardStable
+                    percentage="30%"
                     description="Reduction in direct and indirect expenses related to import-export activities within a year."
                   />
-                  <StatCard
+                  <StatCardStable
                     percentage="50%"
                     description="Improvement within the initial 6 months of implementation."
                   />
-                  <StatCard
-                    percentage="100%"
+                  <StatCardStable
+                    percentage="60%"
                     description="Productivity with seamless mobile integration in EXIM solution."
                   />
                 </div>
-
-                <div className="bg-gray-500 mt-10 w-full flex items-between">
-                  <h1 className="text-white p-10 w-3/4">
-                    Streamline your Export-Import operations with the SAP
-                    Certified Accelerated EXIM solution. Get a hold of complete
-                    control, visibility, and ease in compliance and
-                    documentation procedures.
-                  </h1>
-                  <div className="p-10 ">
-                    <Requesademobtn text="Book a demo" />
-                  </div>
-                </div>
               </section>
-              <section id="benifits" className="mt-20 w-full scroll-mt-24">
-                <h2 className="text-4xl w-3/4 font-semibold">
-                  Unlock powerful benefits
-                </h2>
-                <p className="mt-4 text-2xl w-3/4 text-gray-500">
-                  Accelerated EXIM solution enhances import-export management
-                  with tracking, SAP integration, and efficiency.
-                </p>
-
-                <div className="max-w-7xl mx-auto px-4 py-10">
-                  <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                    {tabs.map((tab, idx) => (
-                      <InfoTab key={idx} {...tab} />
-                    ))}
-                  </div>
-                </div>
+              <section id="services" className="mt-20 w-full scroll-mt-24">
+                <TabSection />
               </section>
-              <section
-                id="find your answers"
-                className="mt-20 w-full scroll-mt-24"
-              >
-                <FAQSection faqs={faqs} />
+              <section id="benefits" className="mt-20 w-[1250px] scroll-mt-24">
+                <TopSectionWithTabs />
               </section>{" "}
-              <section id="other products" className="mt-20 scroll-mt-24">
-                <div className="bg-gray-500 mt-10 w-full p-10 text-white">
-                  {/* Heading and button aligned horizontally */}
-                  <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-6">
-                    <h1 className="text-3xl lg:text-4xl font-semibold">
-                      Empowering global trade for businesses
-                    </h1>
-                    <Requesademobtn text="Book a demo" />
-                  </div>
-
-                  {/* Paragraph below the heading and button */}
-                  <p className="mt-6 text-lg lg:text-xl w-full lg:w-3/4 text-white">
-                    Streamline your Export-Import operations with the SAP
-                    Certified Accelerated EXIM solution. Get a hold of complete
-                    control, visibility, and ease in compliance and
-                    documentation procedures.
-                  </p>
-                </div>
+              <section id="customer stories" className=" w-[1250px] bg-black ">
+                <CustomerStories stories={customerStories} />
+              </section>{" "}
+              <section id="partners" className="w-[1250px]">
+                <PartnersCarousel />
+              </section>{" "}
+              <section id="partners" className="mt-20 scroll-mt-24">
+                <ParallaxScrollingComponent />
               </section>
-              <section id="other products" className="mt-20 scroll-mt-24">
+              <section id="related services" className="mt-20 scroll-mt-24">
                 <ProductRange
                   heading="Explore other range of products"
                   paragraph="Discover products that complement your needs and drive business success."
                   products={productData}
                 />
               </section>
-              <section id="resource" className="mt-10 scroll-mt-24">
+              <section id="resources" className="mt-10 scroll-mt-24">
                 <Resource
                   heading="Explore Our Resources"
                   paragraph="Helpful tools and insights for your export-import operations"
@@ -326,13 +372,38 @@ function SAPManagedServices() {
                       title: "Trade Guide",
                       description:
                         "Comprehensive guide to international trade practices.",
-                      image: "/images/trade-guide.jpg",
+                      image:
+                        "https://www.accely.com/wp-content/uploads/2022/07/What-Is-Included-In-SAP-Managed-Services.webp",
                     },
                   ]}
                 />
               </section>
             </div>
           </div>
+        </div>
+      </div>
+
+      <div className="p-8 rounded-lg mt-8">
+        <div className="flex flex-wrap justify-center items-center gap-8">
+          {[
+            { src: "/fixedIcons/1.png", label: "ISO 9001" },
+            { src: "/fixedIcons/2.png", label: "ISO 27001" },
+            { src: "/fixedIcons/3.png", label: "CMMI Level 5" },
+            { src: "/fixedIcons/4.png", label: "AWS Partner" },
+            { src: "/fixedIcons/5.png", label: "Microsoft Gold" },
+            { src: "/fixedIcons/6.png", label: "ISO 9001" },
+          ].map((item, index) => (
+            <div
+              key={index}
+              className="flex flex-col items-center justify-center w-40 h-40 p-2"
+            >
+              <img
+                src={item.src}
+                alt={item.label}
+                className="h-24 mb-2 object-contain"
+              />
+            </div>
+          ))}
         </div>
       </div>
       <div>

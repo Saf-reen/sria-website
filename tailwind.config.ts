@@ -9,6 +9,11 @@ export default {
     "./src/**/*.{ts,tsx}",
   ],
   prefix: "",
+
+    
+ 
+  
+  
   theme: {
     container: {
       center: true,
@@ -17,11 +22,14 @@ export default {
         "2xl": "1400px",
       },
     },
-    extend: {
-    animation: {
+      extend: {
+      letterSpacing: {
+        tightest: "-0.32px", // 👈 your custom class
+      },
+         animation: {
   marquee: "marquee 20s linear infinite",
 },
-keyframes: {
+   keyframes: {
   marquee: {
     "0%": { transform: "translateX(0%)" },
     "100%": { transform: "translateX(-50%)" },

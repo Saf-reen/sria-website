@@ -13,15 +13,15 @@ const LeftSection: React.FC<LeftSectionProps> = ({
   children,
 }) => {
   return (
-    <div className="w-full md:w-1/2 bg-blue-500 flex flex-col justify-between px-6 py-10 md:py-16 gap-6">
+    <div className="w-full md:w-1/2  flex flex-col justify-between px-6 py-10 md:py-16 gap-6">
       <div>
-        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-white">
+        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold text-black">
           {title}
         </h1>
       </div>
 
       <div className="flex flex-col gap-4">
-        <h2 className="text-base md:text-lg lg:text-xl text-white">
+        <h2 className="text-base md:text-lg lg:text-xl text-black">
           {description}
         </h2>
         {children}

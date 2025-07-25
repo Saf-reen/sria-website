@@ -61,12 +61,12 @@ const Resource: React.FC<ResourceProps> = ({
         {products.map((product, idx) => (
           <div
             key={idx}
-            className="w-[400px]  bg-gray-50 p-4 rounded-md shadow-sm hover:shadow-md flex-shrink-0"
+            className="w-[400px] h-[400px] bg-gray-50 p-4 rounded-md shadow-sm hover:shadow-md flex-shrink-0"
           >
             <img
               src={product.image}
               alt={product.title}
-              className="w-full h-40 object-cover rounded-md mb-3"
+              className="w-full h-3/4 object-cover rounded-md mb-3"
             />
             <h3 className="text-sm font-semibold mb-1">{product.title}</h3>
             <p className="text-xs text-gray-600 mb-4">{product.description}</p>
