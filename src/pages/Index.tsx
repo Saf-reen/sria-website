@@ -272,8 +272,9 @@ const Index = () => {
   return (
     <div className="w-full min-h-screen font-[Questrial,Arial,Verdana,Tahoma,sans-serif] font-normal">
       <Navigation enableScrollEffect={true} />
-      <Hero />
+
       <div className="h-32 w-full  bg-gradient-to-b from-transparent to-[#0F0F0F]">
+        <Hero />
         <div className="relative z-20 py-20 bg-[#0F0F0F] w-full flex flex-row justify-around">
           <div className="w-1/2 flex justify-center items-start">
             <h1 className="text-[61px] font-[Questrial,Arial,Verdana,Tahoma,sans-serif] font-normal font-bold text-white ">

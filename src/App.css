@@ -40,3 +40,26 @@
 .read-the-docs {
   color: #888;
 }
+
+html,
+body {
+  overflow-x: hidden;
+  height: 100%;
+}
+
+/* Prevent horizontal overflow on the root element */
+#root {
+  overflow-x: hidden;
+  min-height: 100vh;
+}
+
+/* Fix for any remaining scroll issues */
+* {
+  box-sizing: border-box;
+}
+
+/* Remove any default margins/paddings that might cause issues */
+body {
+  margin: 0;
+  padding: 0;
+}

@@ -15,25 +15,33 @@ import LeaderShip from "./pages/LeaderShip";
 const queryClient = new QueryClient();
 
 const App = () => (
-  <QueryClientProvider client={queryClient}>
-    <TooltipProvider>
-      <Toaster />
-      <Sonner />
-      <BrowserRouter>
-        <Routes>
-          <Route path="/" element={<Index />} />
-          <Route path="/contact" element={<Contact />} />
-          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-          <Route path="*" element={<NotFound />} />
-          <Route path="/sapmanagedservices" element={<SAPManagedServices />} />
-          <Route path="/products/exim" element={<AcceleraatedEximSolution />} />
-          <Route path="/contactus" element={<ContactUs />} />
-          <Route path="/solutions/sap-s4hana" element={<SapS4hana />} />
-          <Route path="/about/leadership" element={<LeaderShip />} />
-        </Routes>
-      </BrowserRouter>
-    </TooltipProvider>
-  </QueryClientProvider>
+  <div className="relative w-full overflow-x-hidden">
+    <QueryClientProvider client={queryClient}>
+      <TooltipProvider>
+        <Toaster />
+        <Sonner />
+        <BrowserRouter>
+          <Routes>
+            <Route path="/" element={<Index />} />
+            <Route path="/contact" element={<Contact />} />
+            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+            <Route path="*" element={<NotFound />} />
+            <Route
+              path="/sapmanagedservices"
+              element={<SAPManagedServices />}
+            />
+            <Route
+              path="/products/exim"
+              element={<AcceleraatedEximSolution />}
+            />
+            <Route path="/contactus" element={<ContactUs />} />
+            <Route path="/solutions/sap-s4hana" element={<SapS4hana />} />
+            <Route path="/about/leadership" element={<LeaderShip />} />
+          </Routes>
+        </BrowserRouter>
+      </TooltipProvider>
+    </QueryClientProvider>
+  </div>
 );
 
 export default App;
