@@ -52,8 +52,8 @@ const CompanyTimeline: React.FC = () => {
   const currentYear = new Date().getFullYear();
 
   // Filter events to only include those up to current year
-  const currentEvents = allEvents.filter(event => event.year <= currentYear);
-  
+  const currentEvents = allEvents.filter((event) => event.year <= currentYear);
+
   const visibleEvents = currentEvents.filter(
     (event) => event.year >= startYear && event.year < startYear + yearsPerView
   );
@@ -94,20 +94,22 @@ const CompanyTimeline: React.FC = () => {
               disabled={startYear >= maxStartYear}
               className="w-8 h-8 border border-gray-300 text-gray-600 flex items-center justify-center disabled:opacity-40 disabled:border-gray-300"
             >
-            >
-              →
+              {">"}→
             </button>
           </div>
         </div>
 
         {/* Timeline */}
         {/* Large screen: horizontal with up/down branches */}
-        <div className="hidden md:block relative" style={{ minHeight: '500px' }}>
+        <div
+          className="hidden md:block relative"
+          style={{ minHeight: "500px" }}
+        >
           {/* Content above timeline */}
           <div className="absolute top-0 left-0 right-0 h-48 flex justify-between">
             {visibleEvents.map((event, index) => {
               if (index % 2 !== 0) return <div key={index} className="w-1/5" />; // Skip odd indices (down items)
-              
+
               return (
                 <div key={index} className="w-1/5 flex justify-center">
                   <div className="text-center w-48">
@@ -138,13 +140,13 @@ const CompanyTimeline: React.FC = () => {
               <div key={index} className="w-1/5 flex justify-center relative">
                 {/* Timeline dot */}
                 <div className="w-3 h-3 bg-orange-500 rounded-full relative z-20 -mt-1.5" />
-                
+
                 {/* Branch line */}
-                <div 
+                <div
                   className={`absolute left-1/2 transform -translate-x-0.5 w-px border-l border-dotted border-orange-400 z-10 ${
-                    index % 2 === 0 
-                      ? 'bottom-1.5 h-16' // Up branch
-                      : 'top-1.5 h-16'    // Down branch
+                    index % 2 === 0
+                      ? "bottom-1.5 h-16" // Up branch
+                      : "top-1.5 h-16" // Down branch
                   }`}
                 />
               </div>
@@ -155,7 +157,7 @@ const CompanyTimeline: React.FC = () => {
           <div className="absolute bottom-0 left-0 right-0 h-48 flex justify-between">
             {visibleEvents.map((event, index) => {
               if (index % 2 === 0) return <div key={index} className="w-1/5" />; // Skip even indices (up items)
-              
+
               return (
                 <div key={index} className="w-1/5 flex justify-center">
                   <div className="text-center w-48">
