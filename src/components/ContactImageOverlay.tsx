@@ -23,7 +23,7 @@ const ContactImageOverlay: React.FC<ContactImageOverlayProps> = ({
       <div className="relative z-10 h-full flex items-center justify-center sm:justify-end">
         <div className="w-full max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8">
           <div className="text-white max-w-xs sm:max-w-sm md:max-w-md lg:max-w-2xl mx-auto sm:ml-auto text-center sm:text-right">
-            <h2 className="text-xl sm:text-2xl md:text-3xl lg:text-4xl xl:text-5xl font-bold mb-2 sm:mb-3 md:mb-4 leading-tight">
+            <h2 className="text-4xl sm:text-4xl md:text-4xl lg:text-4xl xl:text-5xl  mb-2 sm:mb-3 md:mb-4 leading-tight">
               {title}
             </h2>
           </div>

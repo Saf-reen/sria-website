@@ -526,7 +526,15 @@ function SapS4hana() {
         </div>
       </div>
 
-      <Footer />
+      <div className="w-full bg-black">
+        {" "}
+        {/* Full width container */}
+        <div className="max-w-[1400px] w-full mx-auto">
+          {" "}
+          {/* Centered max width container */}
+          <Footer />
+        </div>
+      </div>
     </div>
   );
 }

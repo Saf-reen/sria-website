@@ -28,7 +28,9 @@ const SolutionDropdownSection: React.FC<SolutionDropdownSectionProps> = ({
   };
 
   return (
-    <div className="w-full mx-auto my-10 px-4">
+    <div className="w-full mx-auto my-10 px-0">
+      {" "}
+      {/* px-0 so padding is controlled outside */}
       {sections.map((section, index) => (
         <div key={index} className="border-t first:border-b bg-[#f3f3f3]">
           <button

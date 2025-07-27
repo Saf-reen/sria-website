@@ -1,5 +1,5 @@
 import React, { useState, useEffect } from "react";
-import { Search, Globe, ChevronDown } from "lucide-react";
+import { Search, Globe, ChevronDown, Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
 
 interface DropdownSection {
@@ -25,6 +25,10 @@ const Navigation: React.FC<NavigationProps> = ({
   const [activeDropdown, setActiveDropdown] = useState<string | null>(null);
   const [showLanguages, setShowLanguages] = useState(false);
   const [scrolled, setScrolled] = useState<boolean>(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeMobileDropdown, setActiveMobileDropdown] = useState<
+    string | null
+  >(null);
 
   const [hoverTimeout, setHoverTimeout] = useState<NodeJS.Timeout | null>(null);
 
@@ -55,6 +59,23 @@ const Navigation: React.FC<NavigationProps> = ({
     };
   }, [enableScrollEffect]);
 
+  // Close mobile menu when clicking outside
+  useEffect(() => {
+    const handleClickOutside = (event: MouseEvent) => {
+      if (
+        isMobileMenuOpen &&
+        !(event.target as Element).closest(".mobile-menu-container")
+      ) {
+        setIsMobileMenuOpen(false);
+      }
+    };
+
+    document.addEventListener("mousedown", handleClickOutside);
+    return () => {
+      document.removeEventListener("mousedown", handleClickOutside);
+    };
+  }, [isMobileMenuOpen]);
+
   const countries = [
     { name: "United States", flag: "🇺🇸" },
     { name: "United Kingdom", flag: "🇬🇧" },
@@ -81,99 +102,75 @@ const Navigation: React.FC<NavigationProps> = ({
       onMouseEnter={() => handleMouseEnter(id)}
       onMouseLeave={handleMouseLeave}
     >
-      <button className="flex items-center text-white hover:text-orange-300 transition-colors font-normal text-sm whitespace-nowrap group font-[Questrial,Arial,Verdana,Tahoma,sans-serif]">
+      <Link
+        to={id === "about" ? "/aboutus" : "#"} // Only About navigates by default
+        className="flex items-center text-white hover:text-orange-300 transition-colors font-normal text-sm whitespace-nowrap group font-[Questrial,Arial,Verdana,Tahoma,sans-serif]"
+        onClick={(e) => {
+          if (id !== "about") {
+            e.preventDefault(); // prevent navigating away for other menus if wanted
+            setActiveDropdown(activeDropdown === id ? null : id);
+          }
+          // For About, clicking will navigate, dropdown opens on hover
+        }}
+        tabIndex={0}
+        aria-haspopup="true"
+        aria-expanded={activeDropdown === id}
+      >
         {label}
         <ChevronDown
           className={`w-3 h-3 ml-1 transition-transform duration-200 ${
             activeDropdown === id ? "rotate-180" : ""
           }`}
         />
-      </button>
+      </Link>
 
-      <div
-        className={`fixed top-16 left-0 right-0 z-50 transition-all duration-300 ${
-          activeDropdown === id
-            ? "opacity-100 visible translate-y-0"
-            : "opacity-0 invisible -translate-y-4"
-        }`}
-      >
-        <div className="max-w-screen-2xl mx-auto px-8">
-          <div
-            className="bg-[#0F0F0F]  shadow-2xl border border-gray-700 py-8 px-16 "
-            style={{
-              fontFamily: "Questrial, Arial, Verdana, Tahoma, sans-serif",
-              fontWeight: 400,
-            }}
-          >
-            {layout === "single" && (
-              <div className="space-y-3">
-                {sections[0]?.items.map((item, idx) => (
-                  <a
-                    key={idx}
-                    href={item.link}
-                    className="text-gray-300 hover:text-orange-300 transition-colors text-base py-1 block font-normal font-[Questrial,Arial,Verdana,Tahoma,sans-serif]"
-                  >
-                    {item.label}
-                  </a>
-                ))}
-              </div>
-            )}
-
-            {layout === "multi" && (
-              <div className="grid grid-cols-3 gap-20">
-                {sections.map((section, idx) => (
-                  <div key={idx}>
-                    <h4 className="text-white font-normal mb-5 text-base border-b border-gray-600 pb-3 font-[Questrial,Arial,Verdana,Tahoma,sans-serif]">
-                      {section.title}
-                    </h4>
-                    <ul className="space-y-3">
-                      {section.items.map((item, index) => (
-                        <li key={index}>
-                          <a
-                            href={item.link}
-                            className="text-gray-300 hover:text-orange-300 transition-colors text-base py-1 block font-normal font-[Questrial,Arial,Verdana,Tahoma,sans-serif]"
-                          >
-                            {item.label}
-                          </a>
-                        </li>
-                      ))}
-                    </ul>
-                  </div>
-                ))}
-              </div>
-            )}
-
-            {layout === "two-row" && (
-              <div className="space-y-10">
-                <div className="grid grid-cols-5 gap-16">
-                  {sections.slice(0, 5).map((section, idx) => (
-                    <div key={idx}>
-                      <h4 className="text-white font-normal mb-5 text-base border-b border-gray-600 pb-3 font-[Questrial,Arial,Verdana,Tahoma,sans-serif]">
-                        {section.title}
-                      </h4>
-                      <ul className="space-y-2">
-                        {section.items.map((item, index) => (
-                          <li key={index}>
-                            <a
-                              href={item.link}
-                              className="text-gray-300 hover:text-orange-300 transition-colors text-base py-1 block font-normal font-[Questrial,Arial,Verdana,Tahoma,sans-serif]"
-                            >
-                              {item.label}
-                            </a>
-                          </li>
-                        ))}
-                      </ul>
-                    </div>
-                  ))}
-                </div>
-                <div className="border-t border-gray-600 pt-6">
-                  <div className="grid grid-cols-5 gap-16">
-                    {sections.slice(5).map((section, idx) => (
+      {layout === "single" ? (
+        <div
+          className={`absolute left-0 right-0  z-50 top-10 transition-all duration-300 ${
+            activeDropdown === id
+              ? "opacity-100 visible translate-y-0"
+              : "opacity-0 invisible -translate-y-4"
+          }`}
+        >
+          <div className="bg-[#0F0F0F] shadow-2xl border border-gray-700  py-4 px-4 min-w-[200px]">
+            <div className="space-y-3 ">
+              {sections[0]?.items.map((item, idx) => (
+                <a
+                  key={idx}
+                  href={item.link}
+                  className="text-gray-300 hover:text-orange-300 transition-colors text-base py-1 block font-normal font-[Questrial,Arial,Verdana,Tahoma,sans-serif]"
+                >
+                  {item.label}
+                </a>
+              ))}
+            </div>
+          </div>
+        </div>
+      ) : (
+        <div
+          className={`fixed top-16 left-0 right-0 z-50 transition-all duration-300 ${
+            activeDropdown === id
+              ? "opacity-100 visible translate-y-0"
+              : "opacity-0 invisible -translate-y-4"
+          }`}
+        >
+          <div className="w-full px-4 sm:px-8 flex justify-center">
+            <div className="w-full max-w-screen-xl xl:max-w-[1400px]">
+              <div
+                className="bg-[#0F0F0F] shadow-2xl border border-gray-700 py-8 px-4 sm:px-16"
+                style={{
+                  fontFamily: "Questrial, Arial, Verdana, Tahoma, sans-serif",
+                  fontWeight: 400,
+                }}
+              >
+                {layout === "multi" && (
+                  <div className="grid grid-cols-1 md:grid-cols-3 gap-8 md:gap-20">
+                    {sections.map((section, idx) => (
                       <div key={idx}>
                         <h4 className="text-white font-normal mb-5 text-base border-b border-gray-600 pb-3 font-[Questrial,Arial,Verdana,Tahoma,sans-serif]">
                           {section.title}
                         </h4>
-                        <ul className="space-y-2">
+                        <ul className="space-y-3">
                           {section.items.map((item, index) => (
                             <li key={index}>
                               <a
@@ -188,11 +185,110 @@ const Navigation: React.FC<NavigationProps> = ({
                       </div>
                     ))}
                   </div>
-                </div>
+                )}
+
+                {layout === "two-row" && (
+                  <div className="space-y-10">
+                    <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-16">
+                      {sections.slice(0, 5).map((section, idx) => (
+                        <div key={idx}>
+                          <h4 className="text-white font-normal mb-5 text-base border-b border-gray-600 pb-3 font-[Questrial,Arial,Verdana,Tahoma,sans-serif]">
+                            {section.title}
+                          </h4>
+                          <ul className="space-y-2">
+                            {section.items.map((item, index) => (
+                              <li key={index}>
+                                <a
+                                  href={item.link}
+                                  className="text-gray-300 hover:text-orange-300 transition-colors text-base py-1 block font-normal font-[Questrial,Arial,Verdana,Tahoma,sans-serif]"
+                                >
+                                  {item.label}
+                                </a>
+                              </li>
+                            ))}
+                          </ul>
+                        </div>
+                      ))}
+                    </div>
+                    <div className="border-t border-gray-600 pt-6">
+                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-5 gap-8 lg:gap-16">
+                        {sections.slice(5).map((section, idx) => (
+                          <div key={idx}>
+                            <h4 className="text-white font-normal mb-5 text-base border-b border-gray-600 pb-3 font-[Questrial,Arial,Verdana,Tahoma,sans-serif]">
+                              {section.title}
+                            </h4>
+                            <ul className="space-y-2">
+                              {section.items.map((item, index) => (
+                                <li key={index}>
+                                  <a
+                                    href={item.link}
+                                    className="text-gray-300 hover:text-orange-300 transition-colors text-base py-1 block font-normal font-[Questrial,Arial,Verdana,Tahoma,sans-serif]"
+                                  >
+                                    {item.label}
+                                  </a>
+                                </li>
+                              ))}
+                            </ul>
+                          </div>
+                        ))}
+                      </div>
+                    </div>
+                  </div>
+                )}
               </div>
-            )}
+            </div>
           </div>
         </div>
+      )}
+    </div>
+  );
+
+  // Mobile Menu Item Component
+  const MobileMenuItem: React.FC<{
+    label: string;
+    sections: DropdownSection[];
+    id: string;
+  }> = ({ label, sections, id }) => (
+    <div className="border-b border-gray-700">
+      <button
+        onClick={() =>
+          setActiveMobileDropdown(activeMobileDropdown === id ? null : id)
+        }
+        className="w-full flex items-center justify-between py-4 text-white hover:text-orange-300 transition-colors font-normal text-base font-[Questrial,Arial,Verdana,Tahoma,sans-serif]"
+      >
+        {label}
+        <ChevronDown
+          className={`w-4 h-4 transition-transform duration-200 ${
+            activeMobileDropdown === id ? "rotate-180" : ""
+          }`}
+        />
+      </button>
+
+      <div
+        className={`overflow-hidden transition-all duration-300 ${
+          activeMobileDropdown === id ? "max-h-96 pb-4" : "max-h-0"
+        }`}
+      >
+        {sections.map((section, sectionIdx) => (
+          <div key={sectionIdx} className="mb-4">
+            <h5 className="text-orange-300 font-normal mb-2 text-sm font-[Questrial,Arial,Verdana,Tahoma,sans-serif]">
+              {section.title}
+            </h5>
+            <ul className="space-y-2 ml-4">
+              {section.items.map((item, itemIdx) => (
+                <li key={itemIdx}>
+                  <a
+                    href={item.link}
+                    className="text-gray-300 hover:text-orange-300 transition-colors text-sm block font-normal font-[Questrial,Arial,Verdana,Tahoma,sans-serif]"
+                    onClick={() => setIsMobileMenuOpen(false)}
+                  >
+                    {item.label}
+                  </a>
+                </li>
+              ))}
+            </ul>
+          </div>
+        ))}
       </div>
     </div>
   );
@@ -507,17 +603,17 @@ const Navigation: React.FC<NavigationProps> = ({
       <nav
         className={`fixed top-0 w-full z-50 transition-all duration-300 ${getNavBackground()}`}
       >
-        <div className="max-w-screen-2xl mx-auto px-8">
-          <div className="flex items-center justify-between h-16">
-            {/* Logo - Moved more towards center */}
-            <div className="flex items-center ml-8">
+        <div className="w-full px-4 sm:px-6 lg:px-8">
+          <div className="mx-auto w-full max-w-screen-xl xl:max-w-[1400px] flex items-center justify-between h-16">
+            {/* Logo */}
+            <div className="flex items-center">
               <Link to="/" className="text-xl font-bold text-white">
                 <span className="text-orange-300">S</span>ria{" "}
                 <span className="text-orange-300">I</span>nfotech
               </Link>
             </div>
 
-            {/* Navigation Menu - Centered */}
+            {/* Desktop Navigation Menu */}
             <div className="hidden xl:flex items-center space-x-6">
               <MegaMenu
                 id="products"
@@ -557,58 +653,142 @@ const Navigation: React.FC<NavigationProps> = ({
               />
             </div>
 
-            {/* Right Section - Moved more towards center */}
-            <div className="flex items-center space-x-3 mr-8">
-              <Search className="w-4 h-4 text-white hover:text-orange-300 cursor-pointer transition-colors" />
+            {/* Right Section */}
+            <div className="flex items-center space-x-3">
+              {/* Desktop Search and Language - Hidden on mobile */}
+              <div className="hidden md:flex items-center space-x-3">
+                <Search className="w-4 h-4 text-white hover:text-orange-300 cursor-pointer transition-colors" />
 
-              {/* Language Selector */}
-              <div className="relative">
-                <button
-                  onClick={() => setShowLanguages(true)}
-                  onMouseEnter={() => setShowLanguages(true)}
-                  onMouseLeave={() => setShowLanguages(false)}
-                  className="text-white flex items-center hover:text-orange-300 transition-colors text-sm"
-                >
-                  <Globe className="w-4 h-4 mr-1" />
-                  Global
-                </button>
-
-                {showLanguages && (
-                  <div
-                    className="absolute top-full right-0 mt-2 w-56 bg-gray-800 rounded-lg shadow-xl border border-gray-700 py-3 z-50"
+                {/* Language Selector */}
+                <div className="relative">
+                  <button
+                    onClick={() => setShowLanguages(true)}
                     onMouseEnter={() => setShowLanguages(true)}
                     onMouseLeave={() => setShowLanguages(false)}
+                    className="text-white flex items-center hover:text-orange-300 transition-colors text-sm"
                   >
-                    {countries.map((country, idx) => (
-                      <React.Fragment key={idx}>
-                        <a
-                          href="#"
-                          className="flex items-center px-4 py-2 text-gray-300 hover:text-orange-300 hover:bg-gray-700 transition-colors text-sm font-normal font-[Questrial,Arial,Verdana,Tahoma,sans-serif]"
-                        >
-                          <div className="w-6 h-6 rounded-full bg-gray-600 flex items-center justify-center text-xs mr-3">
-                            {country.flag}
-                          </div>
-                          {country.name}
-                        </a>
-                        {idx < countries.length - 1 && (
-                          <div className="border-t border-gray-600 mx-2"></div>
-                        )}
-                      </React.Fragment>
-                    ))}
-                  </div>
-                )}
+                    <Globe className="w-4 h-4 mr-1" />
+                    Global
+                  </button>
+
+                  {showLanguages && (
+                    <div
+                      className="absolute top-full right-0 mt-2 w-56 bg-gray-800 rounded-lg shadow-xl border border-gray-700 py-3 z-50"
+                      onMouseEnter={() => setShowLanguages(true)}
+                      onMouseLeave={() => setShowLanguages(false)}
+                    >
+                      {countries.map((country, idx) => (
+                        <React.Fragment key={idx}>
+                          <a
+                            href="#"
+                            className="flex items-center px-4 py-2 text-gray-300 hover:text-orange-300 hover:bg-gray-700 transition-colors text-sm font-normal font-[Questrial,Arial,Verdana,Tahoma,sans-serif]"
+                          >
+                            <div className="w-6 h-6 rounded-full bg-gray-600 flex items-center justify-center text-xs mr-3">
+                              {country.flag}
+                            </div>
+                            {country.name}
+                          </a>
+                          {idx < countries.length - 1 && (
+                            <div className="border-t border-gray-600 mx-2"></div>
+                          )}
+                        </React.Fragment>
+                      ))}
+                    </div>
+                  )}
+                </div>
               </div>
 
               <Link
                 to="/contactus"
-                className="bg-orange-500 hover:bg-orange-600 text-white px-4 py-2 rounded font-medium transition-colors text-sm"
+                className="bg-orange-500 hover:bg-orange-600 text-white px-3 py-2 sm:px-4 rounded font-medium transition-colors text-sm"
               >
                 Contact Us →
               </Link>
+
+              {/* Mobile Menu Button */}
+              <button
+                onClick={() => setIsMobileMenuOpen(true)}
+                className="xl:hidden text-white hover:text-orange-300 transition-colors"
+                aria-label="Open mobile menu"
+              >
+                <Menu className="w-6 h-6" />
+              </button>
             </div>
           </div>
         </div>
       </nav>
+
+      {/* Mobile Menu Overlay */}
+      {isMobileMenuOpen && (
+        <div className="fixed inset-0 z-[100] xl:hidden">
+          <div
+            className="fixed inset-0 bg-black bg-opacity-50"
+            onClick={() => setIsMobileMenuOpen(false)}
+          />
+
+          <div className="mobile-menu-container fixed top-0 right-0 h-full w-80 bg-gray-900 shadow-xl transform transition-transform duration-300 ease-in-out overflow-y-auto">
+            <div className="flex items-center justify-between p-4 border-b border-gray-700">
+              <h2 className="text-white text-lg font-semibold font-[Questrial,Arial,Verdana,Tahoma,sans-serif]">
+                Menu
+              </h2>
+              <button
+                onClick={() => setIsMobileMenuOpen(false)}
+                className="text-white hover:text-orange-300 transition-colors"
+                aria-label="Close mobile menu"
+              >
+                <X className="w-6 h-6" />
+              </button>
+            </div>
+
+            <div className="p-4 space-y-2">
+              <MobileMenuItem
+                label="Products"
+                sections={productsSections}
+                id="mobile-products"
+              />
+              <MobileMenuItem
+                label="Solutions"
+                sections={solutionsSections}
+                id="mobile-solutions"
+              />
+              <MobileMenuItem
+                label="Services"
+                sections={servicesSections}
+                id="mobile-services"
+              />
+              <MobileMenuItem
+                label="Industries"
+                sections={industriesSections}
+                id="mobile-industries"
+              />
+              <MobileMenuItem
+                label="Insights"
+                sections={insightsSections}
+                id="mobile-insights"
+              />
+              <MobileMenuItem
+                label="About"
+                sections={aboutSections}
+                id="mobile-about"
+              />
+
+              {/* Mobile Search and Language */}
+              <div className="border-t border-gray-700 pt-4 mt-4">
+                <div className="flex items-center space-x-4 mb-4">
+                  <button className="flex items-center text-white hover:text-orange-300 transition-colors">
+                    <Search className="w-4 h-4 mr-2" />
+                    Search
+                  </button>
+                  <button className="flex items-center text-white hover:text-orange-300 transition-colors">
+                    <Globe className="w-4 h-4 mr-2" />
+                    Global
+                  </button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      )}
     </div>
   );
 };

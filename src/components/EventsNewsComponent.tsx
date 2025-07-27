@@ -30,8 +30,8 @@ type Props = {
 };
 
 const EventsNewsComponent: React.FC<Props> = ({ events, news }) => {
-  const [eventScrollPosition, setEventScrollPosition] = useState(960);
-  const [newsScrollPosition, setNewsScrollPosition] = useState(960);
+  const [eventScrollPosition, setEventScrollPosition] = useState(0);
+  const [newsScrollPosition, setNewsScrollPosition] = useState(0);
 
   const nextEvent = () => {
     setEventScrollPosition((prev) => prev - 320);
@@ -48,42 +48,43 @@ const EventsNewsComponent: React.FC<Props> = ({ events, news }) => {
   const prevNews = () => {
     setNewsScrollPosition((prev) => prev + 320);
   };
+
   const getVisibleEvents = () => {
-    return events; // Return all events for smooth scrolling
+    return events;
   };
 
   const getVisibleNews = () => {
-    return news; // Return all news for smooth scrolling
+    return news;
   };
 
   return (
     <div
-      className="w-full  mx-auto p-6 bg-white"
+      className="w-full mx-auto bg-white"
       style={{ fontFamily: "Questrial, Arial, Verdana, Tahoma, sans-serif" }}
     >
-      <div className="bg-white p-8 ">
-        {/* Div 1: Upcoming Events */}
-        <div className="mb-12">
-          {/* Events Header with Navigation */}
-          <div className="flex items-center justify-around mb-8">
-            <h2 className="text-[61px]  text-gray-800">Upcoming Events</h2>
-            <div className="flex gap-2">
+      <div className="max-w-[1400px] mx-auto px-4 sm:px-6 lg:px-8 py-8">
+        {/* Upcoming Events Section */}
+        <div className="mb-16">
+          <div className="flex flex-row sm:flex-row items-center justify-between mb-8">
+            <h2 className="text-[42px] sm:text-[61px] text-gray-800 leading-tight">
+              Upcoming Events
+            </h2>
+            <div className="flex gap-2 mt-4 sm:mt-0">
               <button
                 onClick={prevEvent}
-                className="p-2  bg-gray-100 hover:bg-gray-200 transition-colors"
+                className="p-2 bg-gray-100 hover:bg-gray-200 transition-colors"
               >
                 <ChevronLeft className="w-6 h-6 text-gray-600" />
               </button>
               <button
                 onClick={nextEvent}
-                className="p-2  bg-gray-100 hover:bg-gray-200 transition-colors"
+                className="p-2 bg-gray-100 hover:bg-gray-200 transition-colors"
               >
                 <ChevronRight className="w-6 h-6 text-gray-600" />
               </button>
             </div>
           </div>
 
-          {/* Events Container - Horizontal Scrolling */}
           <div className="overflow-hidden">
             <div
               className="flex gap-6 transition-transform duration-500 ease-in-out"
@@ -92,7 +93,7 @@ const EventsNewsComponent: React.FC<Props> = ({ events, news }) => {
               {getVisibleEvents().map((event) => (
                 <div
                   key={event.id}
-                  className="bg-white   overflow-hidden hover:shadow-lg transition-shadow flex-shrink-0 w-80"
+                  className="bg-white hover:shadow-lg transition-shadow flex-shrink-0 w-full sm:w-80"
                 >
                   <img
                     src={event.image}
@@ -100,7 +101,7 @@ const EventsNewsComponent: React.FC<Props> = ({ events, news }) => {
                     className="w-full h-48 object-cover"
                   />
                   <div className="p-4">
-                    <h3 className="text-[21px]  text-gray-800 mb-2">
+                    <h3 className="text-[21px] text-gray-800 mb-2">
                       {event.title}
                     </h3>
                     <div className="mb-3">
@@ -123,15 +124,16 @@ const EventsNewsComponent: React.FC<Props> = ({ events, news }) => {
           </div>
         </div>
 
-        {/* Div 2: Latest News */}
-        <div className="mb-12 mt-20 pt-20">
-          {/* News Header with Navigation */}
-          <div className="flex items-center justify-around mb-8">
-            <h2 className="text-[61px]  text-gray-800">Latest News</h2>
-            <div className="flex gap-2">
+        {/* Latest News Section */}
+        <div className="mb-16">
+          <div className="flex flex-row sm:flex-row items-center justify-between mb-8">
+            <h2 className="text-[42px] sm:text-[61px] text-gray-800 leading-tight">
+              Latest News
+            </h2>
+            <div className="flex gap-2 mt-4 sm:mt-0">
               <button
                 onClick={prevNews}
-                className="p-2  bg-gray-100 hover:bg-gray-200 transition-colors"
+                className="p-2 bg-gray-100 hover:bg-gray-200 transition-colors"
               >
                 <ChevronLeft className="w-6 h-6 text-gray-600" />
               </button>
@@ -144,9 +146,7 @@ const EventsNewsComponent: React.FC<Props> = ({ events, news }) => {
             </div>
           </div>
 
-          {/* News Content */}
-          <div className="flex  flex-col gap-6">
-            {/* News Boxes - Horizontal Scrolling */}
+          <div className="flex flex-col gap-6">
             <div className="overflow-hidden">
               <div
                 className="flex gap-6 transition-transform duration-500 ease-in-out"
@@ -155,9 +155,9 @@ const EventsNewsComponent: React.FC<Props> = ({ events, news }) => {
                 {getVisibleNews().map((newsItem) => (
                   <div
                     key={newsItem.id}
-                    className="  p-6 hover:shadow-md transition-shadow flex-shrink-0 w-[26rem]"
+                    className="p-6 hover:shadow-md transition-shadow flex-shrink-0 w-full sm:w-[26rem]"
                   >
-                    <h3 className="text-[21px]  text-gray-800 mb-3">
+                    <h3 className="text-[21px] text-gray-800 mb-3">
                       {newsItem.title}
                     </h3>
                     <div className="mb-3">
@@ -177,9 +177,8 @@ const EventsNewsComponent: React.FC<Props> = ({ events, news }) => {
               </div>
             </div>
 
-            {/* Fixed News Info Box - Below the scrolling boxes */}
             <div className="flex justify-center mt-6">
-              <div className="bg-gray-50 flex w-1/2 text-[16px] flex-col justify-center  p-6">
+              <div className="bg-gray-50 w-full sm:w-1/2 text-[16px] flex flex-col justify-center p-6">
                 <p className="text-gray-700 mb-4">
                   Stay up to date with the latest news: includes articles,
                   in-depth studies, extras and stories about the collaborations
@@ -196,72 +195,6 @@ const EventsNewsComponent: React.FC<Props> = ({ events, news }) => {
               </div>
             </div>
           </div>
-        </div>
-      </div>
-
-      {/* CEO Statement Section */}
-      <div className="w-full h- flex justify-center p-8   mt-8">
-        <div className="w-3/4 flex gap-8 bg-gray-100 p-8  items-center">
-          {/* Text Content */}
-          <div className="w-1/3 h-[32rem]">
-            <h3 className="text-[16px]   text-gray-400 mb-2">CEO Statement</h3>
-            <h4 className="text-[47px] text-black mb-8 leading-[1.1]">
-              Innovating the Change
-            </h4>
-
-            <p className="text-gray-400 text-[16px] mb-4 leading-relaxed">
-              Accely uses Information Technology to make processes not just more
-              efficient, but also much more effective. We look at automation as
-              an opportunity to allow refined methodologies and innovation to
-              create a synergy of the latest technology and vast accumulated
-              experience. Once again, our differentiator is in the depth of
-              technical knowledge, project execution, and problem-solving skills
-              that enable us to provide high-value solutions, and rapid return
-              on investment.
-            </p>
-            <p className="text-gray-800 text-[16px] font-medium">
-              - Mr. Nilesh Shah, CEO at Accely Group
-            </p>
-          </div>
-
-          {/* Video Content */}
-          <div className="w-2/3 ">
-            <div className="bg-black  overflow-hidden">
-              <iframe
-                className="w-full h-[32rem] lg:h-[32rem]"
-                src="https://www.youtube.com/embed/dQw4w9WgXcQ"
-                title="CEO Statement Video"
-                frameBorder="0"
-                allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                allowFullScreen
-              ></iframe>
-            </div>
-          </div>
-        </div>
-      </div>
-
-      {/* Certifications Section */}
-      <div className="p-8 rounded-lg mt-8">
-        <div className="flex flex-wrap justify-center items-center gap-14">
-          {[
-            { src: "/fixedIcons/1.png", label: "ISO 9001" },
-            { src: "/fixedIcons/2.png", label: "ISO 27001" },
-            { src: "/fixedIcons/3.png", label: "CMMI Level 5" },
-            { src: "/fixedIcons/4.png", label: "AWS Partner" },
-            { src: "/fixedIcons/5.png", label: "Microsoft Gold" },
-            { src: "/fixedIcons/6.png", label: "ISO 9001" },
-          ].map((item, index) => (
-            <div
-              key={index}
-              className="flex flex-col items-center justify-center w-40 h-40 p-2"
-            >
-              <img
-                src={item.src}
-                alt={item.label}
-                className="h-24 mb-2 object-contain"
-              />
-            </div>
-          ))}
         </div>
       </div>
     </div>

@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useState } from "react";
 import Footer from "../components/Footer";
 import Hero from "@/components/Hero";
 import Navigation from "@/components/Navigation";
@@ -269,44 +269,64 @@ const Index = () => {
     },
   ];
 
-  return (
-    <div className="w-full min-h-screen font-[Questrial,Arial,Verdana,Tahoma,sans-serif] font-normal">
-      <Navigation enableScrollEffect={true} />
+  const useIsLargeScreen = () => {
+    const [isLarge, setIsLarge] = useState(false);
 
+    useEffect(() => {
+      const checkScreenSize = () => setIsLarge(window.innerWidth >= 1024);
+      checkScreenSize(); // Run once on mount
+
+      window.addEventListener("resize", checkScreenSize);
+      return () => window.removeEventListener("resize", checkScreenSize);
+    }, []);
+
+    return isLarge;
+  };
+
+  const isLargeScreen = useIsLargeScreen();
+  return (
+    <div className="w-full min-h-screen  font-[Questrial,Arial,Verdana,Tahoma,sans-serif] font-normal overflow-x-hidden lg:overflow-x-visible">
+      <Navigation enableScrollEffect={isLargeScreen} />
       <div className="h-32 w-full  bg-gradient-to-b from-transparent to-[#0F0F0F]">
-        <Hero />
-        <div className="relative z-20 py-20 bg-[#0F0F0F] w-full flex flex-row justify-around">
-          <div className="w-1/2 flex justify-center items-start">
-            <h1 className="text-[61px] font-[Questrial,Arial,Verdana,Tahoma,sans-serif] font-normal font-bold text-white ">
-              Innovation begins here
-            </h1>
-          </div>
-          <div className=" w-1/2 flex flex-col ">
-            <div className="w-3/4 ">
-              <h1 className="text-[rgba(255,255,255,0.72)]  font-[Questrial,Arial,Verdana,Tahoma,sans-serif] font-normal text-[21px]">
-                Accely offers top-tier SAP consulting services using refined
-                methodologies and innovation, thus creating a synergy of the
-                latest technology and vast accumulated experience. Renowned for
-                our technical expertise and rapid return on investment (ROI), we
-                serve small-medium businesses to Fortune 500 Companies. We
-                deliver high-value, end-to-end solutions as an SAP Value Added
-                Reseller (VAR) partner.
+        <div className=" bg-gradient-to-b from-transparent to-[#0F0F0F]">
+          <Hero />
+        </div>
+        <div className="bg-[#0F0F0F] py-20  w-full">
+          <div className="max-w-[1450px] mx-auto flex flex-col lg:flex-row items-center lg:items-start px-4 gap-10">
+            {/* Left Column */}
+            <div className="w-full  lg:w-1/2 flex justify-center lg:justify-end">
+              <h1 className="text-[42px] lg:text-[61px] text-white font-bold font-[Questrial,Arial,Verdana,Tahoma,sans-serif] text-left">
+                Innovation begins here
               </h1>
-              <div className="mt-4 flex flex-col gap-2">
-                <h1 className="text-white flex flex-row text-[16px]">
-                  Know more about us
-                  <ArrowRight />
-                </h1>
-                <h1 className="text-white flex flex-row text-[16px]">
-                  Download corporate profile
-                  <ArrowRight />
-                </h1>
+            </div>
+
+            {/* Right Column */}
+            <div className="w-full lg:w-1/2 ">
+              <div className="w-full lg:w-full ">
+                <p className="text-[18px] lg:text-[21px] text-[rgba(255,255,255,0.72)] font-[Questrial,Arial,Verdana,Tahoma,sans-serif] font-normal">
+                  Accely offers top-tier SAP consulting services using refined
+                  methodologies and innovation, thus creating a synergy of the
+                  latest technology and vast accumulated experience. Renowned
+                  for our technical expertise and rapid return on investment
+                  (ROI), we serve small-medium businesses to Fortune 500
+                  Companies. We deliver high-value, end-to-end solutions as an
+                  SAP Value Added Reseller (VAR) partner.
+                </p>
+
+                <div className="mt-4 flex flex-col gap-2">
+                  <p className="text-white flex items-center text-[16px]">
+                    Know more about us <ArrowRight className="ml-2" />
+                  </p>
+                  <p className="text-white flex items-center text-[16px]">
+                    Download corporate profile <ArrowRight className="ml-2" />
+                  </p>
+                </div>
               </div>
             </div>
           </div>
         </div>
-        <div className="w-full bg-[#0F0F0F] flex justify-center">
-          <div className="w-3/4 px-4 py-10 flex flex-wrap justify-around gap-10 bg-[#0F0F0F]">
+        <div className="w-full bg-[#0F0F0F] py-10">
+          <div className="max-w-[1400px] mx-auto px-4 grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             <StatCard
               percentage="480+"
               description="Projects Completed."
@@ -329,33 +349,38 @@ const Index = () => {
             />
           </div>
         </div>
-
-        <div className="bg-[#0F0F0F] pt-10 pb-20">
-          <StrategicPartners />
-        </div>
-
-        <div className="mt-20  py-20 bg-white w-full flex flex-row  ">
-          <div className="w-3/4 flex justify-center items-start">
-            <h1 className="text-[61px]  font-[Questrial,Arial,Verdana,Tahoma,sans-serif] font-normal  text-black ">
-              Explore our services
-            </h1>
+        <div className="bg-[#0F0F0F] w-full  py-10">
+          <div className="max-w-[1400px] mx-auto ">
+            <StrategicPartners />
           </div>
-          <div className=" w-2/4flex flex-col ">
-            <div className="w-3/4">
-              <h1 className=" pt-5 pb-8 text-[rgba(60,60,67,0.6)] text-[21px] font-[Questrial,Arial,Verdana,Tahoma,sans-serif] font-normal">
-                Our SAP consulting services transcend traditional boundaries,
-                empowering you to envision, plan, and implement transformative
-                solutions.
+        </div>
+        <div className="mt-20 py-20 bg-white w-full">
+          <div className="max-w-[1400px] mx-auto flex flex-col lg:flex-row items-center lg:items-start px-4 gap-10">
+            {/* Left Column */}
+            <div className="w-full lg:w-1/2 flex justify-start lg:justify-start">
+              <h1 className="text-[42px] lg:text-[61px] text-black font-[Questrial,Arial,Verdana,Tahoma,sans-serif] font-normal text-left">
+                Explore our services
               </h1>
-              <h1 className="mt-2 text-yellow-500 flex  text-[16px] font-[Questrial,Arial,Verdana,Tahoma,sans-serif] font-normal flex-row">
-                Request a consultation
-                <ArrowRight />
-              </h1>
+            </div>
+
+            {/* Right Column */}
+            <div className="w-full lg:w-1/2">
+              <div className="w-full">
+                <p className="pt-5 pb-8 text-[rgba(60,60,67,0.6)] text-[18px] lg:text-[21px] font-[Questrial,Arial,Verdana,Tahoma,sans-serif] font-normal">
+                  Our SAP consulting services transcend traditional boundaries,
+                  empowering you to envision, plan, and implement transformative
+                  solutions.
+                </p>
+                <p className="mt-2 text-yellow-500 flex items-center text-[16px] font-[Questrial,Arial,Verdana,Tahoma,sans-serif] font-normal">
+                  Request a consultation
+                  <ArrowRight className="ml-2" />
+                </p>
+              </div>
             </div>
           </div>
         </div>
-        <div className="w-full justify-around flex overflow-x-auto py-6">
-          <div className="flex bg-[rgb(247,247,247)] px-0 gap-0">
+        <div className="w-full flex justify-center py-6">
+          <div className="flex flex-wrap justify-center  max-w-[1400px] px-4">
             {sapSolutions.map((solution, index) => {
               let IconComponent = Box;
 
@@ -373,7 +398,7 @@ const Index = () => {
               return (
                 <div
                   key={index}
-                  className="group w-[260px] h-[150px] flex flex-col justify-between bg-[rgb(247,247,247)] border border-gray-300 backdrop-blur-sm text-black p-6 transition-all duration-300 hover:bg-white hover:scale-[1.03] hover:z-10 cursor-pointer"
+                  className="group w-full sm:w-[260px] h-auto min-h-[150px] flex flex-col justify-between bg-[rgb(247,247,247)] border border-gray-300 text-black p-6 transition-all duration-300 hover:bg-white hover:scale-[1.03] hover:z-10 cursor-pointer"
                 >
                   <div>
                     <IconComponent className="w-8 h-8 text-yellow-500 mb-4" />
@@ -389,53 +414,56 @@ const Index = () => {
             })}
           </div>
         </div>
-
-        <div className=" mt-20 pt-10 bg-white">
-          <div className="flex flex-row  justify-around">
-            <h1 className="text-[61px] font-[Questrial,Arial,Verdana,Tahoma,sans-serif] font-normal ">
-              Industries we modernize
-            </h1>
-            <h1 className="mt-10 text-yellow-500 flex  text-[16px] font-[Questrial,Arial,Verdana,Tahoma,sans-serif] font-normal flex-row">
-              Request a consultation
-              <ArrowRight />
-            </h1>
-          </div>
-        </div>
-        <div className=" mt-10 w-full flex flex-row  w- scroll-mt-24 justify-around">
-          <section className="w-3/4 ">
-            <CombinedAnimatedFeatures />
-          </section>
-        </div>
-
-        <div className=" py-10 w-full flex flex-row justify-around">
-          <div className="w-3/4 flex justify-center items-start">
-            <h1 className="text-[61px]  font-[Questrial,Arial,Verdana,Tahoma,sans-serif] font-normal  text-black ">
-              Redefining future
-            </h1>
-          </div>
-          <div className=" w-2/4 flex flex-col ">
-            <div className="w-3/4">
-              <h1 className=" pt-5 pb-8 text-[rgba(60,60,67,0.6)] text-[21px] font-[Questrial,Arial,Verdana,Tahoma,sans-serif] font-normal">
-                Being an SAP consulting company, we are a bunch of innovators
-                passionate about creating technologies and products that propel
-                your businesses to drive forward. Our value-added solutions will
-                help you redefine the future of your enterprise and emerge as a
-                leader in the industry.
+        <div className="mt-20 py-20 bg-white w-full">
+          <div className="max-w-[1400px] mx-auto flex flex-col lg:flex-row items-center lg:items-start px-4 gap-10">
+            <div className="w-full flex justify-between items-center">
+              <h1 className="text-[2rem] sm:text-[2.8rem] md:text-[3.2rem] lg:text-[61px] font-[Questrial,Arial,Verdana,Tahoma,sans-serif] font-normal text-black leading-tight text-left">
+                Industries we modernize
               </h1>
-              <h1 className="mt-2 text-yellow-500 flex  text-[16px] font-[Questrial,Arial,Verdana,Tahoma,sans-serif] font-normal flex-row">
-                Get in touch
+              <h1 className="text-yellow-500 flex items-center text-[16px] font-[Questrial,Arial,Verdana,Tahoma,sans-serif] font-normal flex-row gap-2 cursor-pointer text-right">
+                Request a consultation
                 <ArrowRight />
               </h1>
             </div>
           </div>
         </div>
-        <div className="w-full bg-white flex flex-row mb-20 justify-around">
-          <div className="bg-white w-3/4 flex-row py-10">
+        <div className="w-full bg-white">
+          <div className="max-w-[1400px] mx-auto px-4 ">
+            <CombinedAnimatedFeatures />
+          </div>
+        </div>
+        <div className="mt-5 py-10 bg-white w-full">
+          {" "}
+          {/* Outside wrapper: full width & background color */}
+          <div className="max-w-[1400px] mx-auto flex flex-col lg:flex-row items-center lg:items-start px-4 ">
+            {/* --- LEFT --- */}
+            <div className="w-full lg:w-3/4 flex justify-start items-start mb-8 lg:mb-0">
+              <h1 className="text-[2rem] sm:text-[2.8rem] md:text-[3.2rem] lg:text-[61px] font-[Questrial,Arial,Verdana,Tahoma,sans-serif] font-normal text-black leading-tight">
+                Redefining future
+              </h1>
+            </div>
+            {/* --- RIGHT --- */}
+            <div className="w-full lg:w-2/4 flex flex-col">
+              <div className="w-full lg:w-full">
+                <h1 className="pt-2 pb-6 text-[rgba(60,60,67,0.6)] text-base sm:text-lg md:text-xl font-[Questrial,Arial,Verdana,Tahoma,sans-serif] font-normal">
+                  Being an SAP consulting company, we are a bunch of innovators
+                  passionate about creating technologies...
+                </h1>
+                <h1 className="mt-2 text-yellow-500 flex items-center text-[15px] sm:text-[16px] font-[Questrial,Arial,Verdana,Tahoma,sans-serif] font-normal flex-row gap-2 cursor-pointer">
+                  Get in touch
+                  <ArrowRight />
+                </h1>
+              </div>
+            </div>
+          </div>
+        </div>
+        <div className="w-full bg-white flex flex-row mb-20 ">
+          <div className="max-w-[1400px] mx-auto w-full px-4 bg-white">
             <SolutionDropdownSection sections={solutionSections} />
           </div>
         </div>
-        <div className="mb-20 w-full flex flex-row bg-black justify-around">
-          <div className=" w-[1400px]  flex justify-center flex-col">
+        <div className="mb-20 w-full bg-black flex flex-col lg:flex-row justify-around">
+          <div className="max-w-[1400px] w-full mx-auto flex flex-col gap-16 px-0 sm:px-4 ">
             <CustomerStories stories={customerStories} />
             <Testimonials
               reviews={customerReviews}
@@ -446,10 +474,86 @@ const Index = () => {
             />
           </div>
         </div>
-        <div className="mt-20">
-          <EventsNewsComponent events={sampleEvents} news={sampleNews} />
+        <div className="mb-20 w-full bg-white flex flex-col lg:flex-row justify-around">
+          <div className="max-w-[1400px]  w-full mx-auto flex flex-col gap-16 px-4 sm:px-6 lg:px-0">
+            <EventsNewsComponent events={sampleEvents} news={sampleNews} />
+          </div>
         </div>
-        <Footer />
+
+        <div className="w-full flex justify-center px-4 sm:px-6 md:px-8 mt-8">
+          <div className="w-full max-w-[1400px] flex flex-col lg:flex-row gap-8 bg-gray-100 p-6 sm:p-8 rounded-lg">
+            {/* Text Content */}
+            <div className="lg:w-[35%]">
+              <h3 className="text-sm text-gray-400 mb-2">CEO Statement</h3>
+              <h4 className="text-3xl sm:text-4xl md:text-[42px] font-semibold text-black mb-6 leading-tight">
+                Innovating the Change
+              </h4>
+
+              <p className="text-gray-500 text-base mb-4 leading-relaxed">
+                Accely uses Information Technology to make processes not just
+                more efficient, but also much more effective. We look at
+                automation as an opportunity to allow refined methodologies and
+                innovation to create a synergy of the latest technology and vast
+                accumulated experience. Once again, our differentiator is in the
+                depth of technical knowledge, project execution, and
+                problem-solving skills that enable us to provide high-value
+                solutions, and rapid return on investment.
+              </p>
+
+              <p className="text-gray-800 text-base font-medium mt-2">
+                - Mr. Nilesh Shah, CEO at Accely Group
+              </p>
+            </div>
+
+            {/* Video Content */}
+            <div className="lg:w-[65%]">
+              <div className="w-full h-64 sm:h-80 md:h-[32rem] overflow-hidden  shadow-md bg-black">
+                <iframe
+                  className="w-full h-full"
+                  src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                  title="CEO Statement Video"
+                  frameBorder="0"
+                  allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                  allowFullScreen
+                ></iframe>
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <div className="p-4 lg:p-8 rounded-lg mt-8">
+          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-6 lg:gap-8 max-w-6xl mx-auto">
+            {[
+              { src: "/fixedIcons/1.png", label: "ISO 9001" },
+              { src: "/fixedIcons/2.png", label: "ISO 27001" },
+              { src: "/fixedIcons/3.png", label: "CMMI Level 5" },
+              { src: "/fixedIcons/4.png", label: "AWS Partner" },
+              { src: "/fixedIcons/5.png", label: "Microsoft Gold" },
+              { src: "/fixedIcons/6.png", label: "ISO 9001" },
+            ].map((item, index) => (
+              <div
+                key={index}
+                className="flex flex-col items-center justify-center p-2 lg:p-4"
+              >
+                <img
+                  src={item.src}
+                  alt={item.label}
+                  className="h-46 sm:h-40 lg:h-40 mb-2 object-contain"
+                />
+              </div>
+            ))}
+          </div>
+        </div>
+
+        <div className="w-full bg-black">
+          {" "}
+          {/* Full width container */}
+          <div className="max-w-[1400px] w-full mx-auto">
+            {" "}
+            {/* Centered max width container */}
+            <Footer />
+          </div>
+        </div>
         <FloatingChat />
       </div>
     </div>

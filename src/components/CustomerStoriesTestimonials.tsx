@@ -122,9 +122,9 @@ export const CustomerStories: React.FC<{
   const story = stories[index];
 
   return (
-    <div className="text-white p-10">
+    <div className="text-white mt-20 pt-20 px-4">
       <div className="flex justify-between items-center mb-8">
-        <h2 className="text-[61px] font-normal font-questrial">
+        <h2 className="text-[61px] sm:text-[61px] font-normal font-questrial leading-tight sm:leading-tight leading-[0.9]">
           Customer stories
         </h2>
         <div className="flex gap-2">
@@ -133,28 +133,34 @@ export const CustomerStories: React.FC<{
               setIndex((i) => (i - 1 + stories.length) % stories.length)
             }
             className="p-2 bg-gray-800 hover:bg-gray-700 "
+            aria-label="Previous Story"
           >
             <ChevronLeft className="w-6 h-6 text-white" />
           </button>
           <button
             onClick={() => setIndex((i) => (i + 1) % stories.length)}
             className="p-2 bg-gray-800 hover:bg-gray-700"
+            aria-label="Next Story"
           >
             <ChevronRight className="w-6 h-6 text-white" />
           </button>
         </div>
       </div>
 
-      <div className="flex gap-8 items-end">
-        <div className="w-1/2">
+      {/* Responsive layout: stacked vertical on small, horizontal on lg */}
+      <div className="flex flex-col lg:flex-row gap-8 items-end">
+        {/* Image */}
+        <div className="w-full lg:w-1/2">
           <img
             src={story.image}
             alt={story.title}
-            className="w-full h-80 object-cover"
+            className="w-full h-80 object-cover "
           />
         </div>
-        <div className="flex-1 flex flex-col justify-end h-80">
-          <div className="mb-6 w-2/3">
+
+        {/* Text content */}
+        <div className="flex-1 flex flex-col justify-end h-80 w-full">
+          <div className="mb-6 w-full lg:w-2/3">
             <h3 className="text-[27px] mb-8 font-normal leading-tight font-questrial">
               {story.title}
             </h3>
@@ -191,9 +197,9 @@ export const Testimonials: React.FC<{
   );
 
   return (
-    <div className="text-white mt-20 pt-20">
+    <div className="text-white mt-5 pt-5  mb-5 px-4">
       <div className="flex justify-between items-center mb-8">
-        <h2 className="text-[61px] font-normal font-questrial">
+        <h2 className="text-[61px] sm:text-[61px] font-normal font-questrial leading-tight sm:leading-tight leading-[0.9]">
           What Clients are Saying
         </h2>
         <div className="flex gap-2">
@@ -205,7 +211,8 @@ export const Testimonials: React.FC<{
                   Math.ceil(reviews.length / 2)
               )
             }
-            className="p-2 bg-gray-800 hover:bg-gray-700 rounded-full"
+            className="p-2 bg-gray-800 hover:bg-gray-700 "
+            aria-label="Previous Reviews"
           >
             <ChevronLeft className="w-6 h-6 text-white" />
           </button>
@@ -213,28 +220,36 @@ export const Testimonials: React.FC<{
             onClick={() =>
               setIndex((i) => (i + 1) % Math.ceil(reviews.length / 2))
             }
-            className="p-2 bg-gray-800 hover:bg-gray-700 rounded-full"
+            className="p-2 bg-gray-800 hover:bg-gray-700 "
+            aria-label="Next Reviews"
           >
             <ChevronRight className="w-6 h-6 text-white" />
           </button>
         </div>
       </div>
 
-      <div className="flex gap-8">
-        <div className="w-1/3 bg-black rounded-lg p-6">
+      {/* Responsive flex: stacked on small, horizontal on lg */}
+      <div className="flex flex-col lg:flex-row gap-8">
+        {/* Summary */}
+        <div className="w-full lg:w-1/3 bg-black  p-6">
           <div className="text-start">
             <div className="text-[24px] font-bold mb-2">{overallRating}</div>
             <div className="flex gap-1 mb-4">
               {renderStars(overallRating, totalStars)}
             </div>
             <div className="text-lg font-normal mb-4">{companyName}</div>
-            <img src={poweredByLogo} alt="Powered by" className="opacity-60" />
+            <img
+              src={poweredByLogo}
+              alt="Powered by"
+              className="opacity-60 max-w-full"
+            />
           </div>
         </div>
 
-        <div className="flex-1 grid grid-cols-2 gap-6">
+        {/* Reviews */}
+        <div className="flex-1 grid grid-cols-1 sm:grid-cols-2 gap-6">
           {reviewPair.map((r) => (
-            <div key={r.id} className="p-6">
+            <div key={r.id} className="p-6 bg-gray-900 rounded-lg">
               <div className="flex items-center gap-1 mb-2">
                 <span className="text-[24px] font-bold">{r.rating}</span>
                 <div className="flex gap-1">{renderStars(r.rating)}</div>
@@ -259,3 +274,5 @@ export const Testimonials: React.FC<{
     </div>
   );
 };
+
+// Example usage wrapper with max-width container and responsive stacking

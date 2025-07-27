@@ -49,7 +49,6 @@ body {
 
 /* Prevent horizontal overflow on the root element */
 #root {
-  overflow-x: hidden;
   min-height: 100vh;
 }
 

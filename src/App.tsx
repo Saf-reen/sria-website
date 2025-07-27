@@ -11,37 +11,31 @@ import SAPManagedServices from "./pages/SAPManagedServices";
 import ContactUs from "@/components/aboutus/ContactUs";
 import SapS4hana from "./pages/SapS4hana";
 import LeaderShip from "./pages/LeaderShip";
+import AboutUs from "./pages/AboutUs";
 
 const queryClient = new QueryClient();
 
 const App = () => (
-  <div className="relative w-full overflow-x-hidden">
-    <QueryClientProvider client={queryClient}>
-      <TooltipProvider>
-        <Toaster />
-        <Sonner />
-        <BrowserRouter>
-          <Routes>
-            <Route path="/" element={<Index />} />
-            <Route path="/contact" element={<Contact />} />
-            {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
-            <Route path="*" element={<NotFound />} />
-            <Route
-              path="/sapmanagedservices"
-              element={<SAPManagedServices />}
-            />
-            <Route
-              path="/products/exim"
-              element={<AcceleraatedEximSolution />}
-            />
-            <Route path="/contactus" element={<ContactUs />} />
-            <Route path="/solutions/sap-s4hana" element={<SapS4hana />} />
-            <Route path="/about/leadership" element={<LeaderShip />} />
-          </Routes>
-        </BrowserRouter>
-      </TooltipProvider>
-    </QueryClientProvider>
-  </div>
+  <QueryClientProvider client={queryClient}>
+    <TooltipProvider>
+      <Toaster />
+      <Sonner />
+      <BrowserRouter>
+        <Routes>
+          <Route path="/" element={<Index />} />
+          <Route path="/contact" element={<Contact />} />
+          {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
+          <Route path="*" element={<NotFound />} />
+          <Route path="/sapmanagedservices" element={<SAPManagedServices />} />
+          <Route path="/products/exim" element={<AcceleraatedEximSolution />} />
+          <Route path="/contactus" element={<ContactUs />} />
+          <Route path="/solutions/sap-s4hana" element={<SapS4hana />} />
+          <Route path="/about/leadership" element={<LeaderShip />} />
+          <Route path="/aboutus" element={<AboutUs />} />
+        </Routes>
+      </BrowserRouter>
+    </TooltipProvider>
+  </QueryClientProvider>
 );
 
 export default App;
