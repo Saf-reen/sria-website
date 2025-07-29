@@ -262,8 +262,8 @@ function SAPManagedServices() {
   ];
 
   return (
-    <>
-      <div className="scroll-smooth">
+    <div className="w-full relative overflow-x-hidden lg:overflow-x-visible">
+      <div className="scroll-smooth w-full relative ">
         <Navigation enableScrollEffect={true} />
 
         {/* Hero Pinned */}
@@ -308,52 +308,76 @@ function SAPManagedServices() {
         </section>
 
         {/* Main Content */}
-        <div className="  sticky top-0 z-20   bg-white ">
-          <div className="  flex flex-col lg:flex-row w-full max-w-[1450px] mx-auto ">
-            <SidebarMenu menuItems={menuItems} />
+        <div className=" relative  sticky top-0 z-20   bg-white ">
+          <div className="  flex flex-col lg:flex-row w-full max-w-[1400px] mx-auto ">
+            <div className="hidden lg:block lg:w-1/6">
+              <div className="sticky top-24">
+                <SidebarMenu menuItems={menuItems} />
+              </div>
+            </div>
 
             <div className="w-full lg:w-5/6 min-h-screen p-2">
               {/* Overview */}
-              <section id="offerings" className="mt-5  scroll-mt-24">
-                <ConsultationTabsSection
-                  solutions={sampleSolutions}
-                  mainHeading="Explore our wide range of offerings"
-                  mainDescription="SAP Managed Services provide the full range of functional, technical, and cloud possibilities."
-                  ctaText="Get a Consultation"
-                />
-              </section>
-              <section id="insights" className="mt-20 scroll-mt-24">
-                <h2 className="text-[47px]  ">
-                  Resourceful insights of SAP Managed Services
-                </h2>
-                <div className="w-[1400px] py-10 flex flex-wrap gap-10 bg-white">
-                  <StatCardStable
-                    percentage="30%"
-                    description="Reduction in direct and indirect expenses related to import-export activities within a year."
-                  />
-                  <StatCardStable
-                    percentage="50%"
-                    description="Improvement within the initial 6 months of implementation."
-                  />
-                  <StatCardStable
-                    percentage="60%"
-                    description="Productivity with seamless mobile integration in EXIM solution."
+              {/* Offerings Section */}
+              <section id="offerings" className="scroll-mt-24 py-16 bg-white">
+                <div className="max-w-[1400px] w-full px-4 mx-auto">
+                  <ConsultationTabsSection
+                    solutions={sampleSolutions}
+                    mainHeading="Explore our wide range of offerings"
+                    mainDescription="SAP Managed Services provide the full range of functional, technical, and cloud possibilities."
+                    ctaText="Get a Consultation"
                   />
                 </div>
               </section>
-              <section id="services" className="mt-20 w-full scroll-mt-24">
-                <TabSection />
+              {/* Insights Section */}
+              <section id="insights" className="scroll-mt-24 py-16 bg-white">
+                <div className="max-w-[1400px] w-full px-4 mx-auto">
+                  <h2 className="text-3xl sm:text-[47px] font-semibold mb-8">
+                    Resourceful insights of SAP Managed Services
+                  </h2>
+
+                  <div className="py-8 sm:py-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10 bg-white">
+                    <StatCardStable
+                      percentage="30%"
+                      description="Reduction in direct and indirect expenses related to import-export activities within a year."
+                    />
+                    <StatCardStable
+                      percentage="50%"
+                      description="Improvement within the initial 6 months of implementation."
+                    />
+                    <StatCardStable
+                      percentage="60%"
+                      description="Productivity with seamless mobile integration in EXIM solution."
+                    />
+                  </div>
+                </div>
               </section>
-              <section id="benefits" className="mt-20 w-[1250px] scroll-mt-24">
+              <section id="services" className="mt-20 w-full scroll-mt-24">
+                <div className="max-w-[1400px] w-full px-4 mx-auto">
+                  <TabSection />
+                </div>
+              </section>
+              <section
+                id="benefits"
+                className="mt-20 max-w-[1400px] scroll-mt-24"
+              >
                 <TopSectionWithTabs />
               </section>{" "}
-              <section id="customer stories" className=" w-[1250px] bg-black ">
+              <section
+                id="customer stories"
+                className=" max-w-[1400px]  w-full pb-10 bg-black "
+              >
                 <CustomerStories stories={customerStories} />
               </section>{" "}
-              <section id="partners" className="w-[1250px]">
-                <PartnersCarousel />
+              <section id="partners" className="max-w-[1400px]">
+                <div className="max-w-[1400px] w-full mx-auto ">
+                  <PartnersCarousel />
+                </div>
               </section>{" "}
-              <section id="partners" className="mt-20 scroll-mt-24">
+              <section
+                id="partners"
+                className="mt-20 hidden lg:block scroll-mt-24"
+              >
                 <ParallaxScrollingComponent />
               </section>
               <section id="related services" className="mt-20 scroll-mt-24">
@@ -417,7 +441,7 @@ function SAPManagedServices() {
           </div>
         </div>
       </div>
-    </>
+    </div>
   );
 }
 

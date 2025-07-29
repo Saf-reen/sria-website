@@ -15,7 +15,7 @@ const HeroSectionWithLinks: React.FC<HeroSectionWithLinksProps> = ({
 }) => {
   return (
     <div
-      className="relative w-full h-[300px] sm:h-[400px] md:h-[500px] bg-cover bg-top"
+      className=" sticky top-0 relative w-full h-[300px] sm:h-[400px] md:h-[500px] bg-cover bg-top"
       style={{ backgroundImage: `url(${imageUrl})` }}
     >
       {/* Dark overlay */}

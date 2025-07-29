@@ -50,51 +50,48 @@ const PartnersCarousel: React.FC = () => {
   const scrollBottom = (direction: "left" | "right") => {
     if (bottomScrollRef.current) {
       bottomScrollRef.current.scrollBy({
-        left: direction === "left" ? -300 : 300,
+        left: direction === "left" ? -360 : 360,
         behavior: "smooth",
       });
     }
   };
 
   return (
-    <div className="bg-[#222222] px-4 md:px-12 py-16 h-auto">
-      <div className="flex justify-between items-center mb-10">
-        <h2 className="text-white text-[47px] font-normal">
-          Partners in innovation
-        </h2>
-        <div className="flex gap-2">
-          <button
-            onClick={() => scrollBottom("left")}
-            className="p-2 border border-gray-400 hover:bg-gray-200 "
-          >
-            <ArrowLeft className="w-6 h-6 text-white" />
-          </button>
-          <button
-            onClick={() => scrollBottom("right")}
-            className="p-2 border border-gray-400 hover:bg-gray-200 "
-          >
-            <ArrowRight className="w-6 h-6 text-white" />
-          </button>
-        </div>
-      </div>
-
-      <div
-        ref={bottomScrollRef}
-        className="flex gap-6"
-        style={{
-          overflowX: "hidden",
-          scrollBehavior: "smooth",
-        }}
-      >
-        {Partnerstabs.map((tab, index) => (
-          <div
-            key={index}
-            className="flex-shrink-0 w-[calc(100%/3-16px)]  text-black p-4 flex flex-col items-start text-start "
-          >
-            <div className="mb-3">{tab.icon}</div>
-            <p className="text-[21px] text-white">{tab.description}</p>
+    <div className="bg-[#222222] px-4 sm:px-6 lg:px-8 py-16">
+      <div className="max-w-[1400px] mx-auto w-full">
+        {/* Header */}
+        <div className="flex justify-between items-center mb-10">
+          <h2 className="text-white text-[32px] sm:text-[40px] md:text-[47px] font-normal">
+            Partners in innovation
+          </h2>
+          <div className="flex gap-2">
+            <button
+              onClick={() => scrollBottom("left")}
+              className="p-2 border border-gray-400 hover:bg-gray-200"
+            >
+              <ArrowLeft className="w-6 h-6 text-white" />
+            </button>
+            <button
+              onClick={() => scrollBottom("right")}
+              className="p-2 border border-gray-400 hover:bg-gray-200"
+            >
+              <ArrowRight className="w-6 h-6 text-white" />
+            </button>
           </div>
-        ))}
+        </div>
+
+        {/* Carousel with arrows only (no manual scroll) */}
+        <div ref={bottomScrollRef} className="flex overflow-x-hidden">
+          {Partnerstabs.map((tab, index) => (
+            <div
+              key={index}
+              className="flex-shrink-0 w-[280px] sm:w-[320px] md:w-[360px] lg:w-[calc(100%/3-16px)]   p-4"
+            >
+              <div className="mb-3">{tab.icon}</div>
+              <p className="text-[18px] text-white">{tab.description}</p>
+            </div>
+          ))}
+        </div>
       </div>
     </div>
   );

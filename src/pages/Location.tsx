@@ -1,41 +1,28 @@
-import AboutCompany from "@/components/aboutus/AboutCompany";
-import CompanyTimeline from "@/components/aboutus/CompanyTimeline";
-import CreatingPositiveChange from "@/components/aboutus/CreatingPositiveChange";
 import GlobalOffices from "@/components/aboutus/GlobalOffices";
-import MissionStatement from "@/components/aboutus/MissionStatement";
-import ContactImageOverlay from "@/components/ContactImageOverlay";
 import Footer from "@/components/Footer";
+import HeroSectionWithLinks from "@/components/HeroSectionWIthLInks";
 import Navigation from "@/components/Navigation";
-import StoriesHero from "@/components/StoriesHero";
 import React from "react";
 
-function AboutUs() {
+function Location() {
   return (
-    <div>
-      {" "}
+    <div className="w-full min-h-screen">
       <Navigation enableScrollEffect={true} />
-      <ContactImageOverlay
-        imageUrl="https://www.accely.com/wp-content/uploads/2024/12/about-banner-1.webp"
-        title="About Sria Infotech"
+      <HeroSectionWithLinks
+        imageUrl="https://www.accely.com/wp-content/uploads/2024/12/Location.webp"
+        title="Global presence"
+        links={[
+          { label: "About us", href: "/aboutus" },
+          { label: "Meet the team", href: "/about/leadership" },
+        ]}
       />
-      <div className="w-full relative bg-black z-10">
-        <div className="w-full max-w-[1400px] mx-auto px-2 sm:px-4">
-          <AboutCompany />
-        </div>
-      </div>
-      <div className="w-full relative bg-white z-10">
-        <div className="w-full max-w-[1400px] mx-auto px-2 sm:px-4">
-          <CreatingPositiveChange />
-          <MissionStatement />
-          <CompanyTimeline />
-        </div>
-      </div>
       <div className="w-full relative bg-black z-10">
         <div className="w-full max-w-[1400px] mx-auto px-2 sm:px-4">
           <GlobalOffices />
         </div>
       </div>
-      <div className="p-4 lg:p-8   bg-white relative z-10">
+
+      <div className="p-4 lg:p-8 w-full bg-white relative z-10 ">
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-6 lg:gap-8 max-w-6xl mx-auto">
           {[
             { src: "/fixedIcons/1.png", label: "ISO 9001" },
@@ -52,13 +39,13 @@ function AboutUs() {
               <img
                 src={item.src}
                 alt={item.label}
-                className="h-46 sm:h-40 lg:h-40 mb-2 object-contain"
+                className="h-16 sm:h-20 lg:h-24 mb-2 object-contain"
               />
             </div>
           ))}
         </div>
       </div>
-      <div className="w-full bg-black relative z-10">
+      <div className="w-full  relative z-10 bg-black">
         {" "}
         {/* Full width container */}
         <div className="max-w-[1400px] w-full mx-auto">
@@ -71,4 +58,4 @@ function AboutUs() {
   );
 }
 
-export default AboutUs;
+export default Location;

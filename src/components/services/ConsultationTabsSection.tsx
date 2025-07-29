@@ -26,25 +26,19 @@ const ConsultationTabsSection = ({
   const [activeIndex, setActiveIndex] = useState(0);
 
   const handleCtaClick = () => {
-    if (onCtaClick) {
-      onCtaClick();
-    } else {
-      console.log("CTA clicked - no handler provided");
-    }
+    onCtaClick?.();
   };
 
   return (
-    <div className="w-full px-4 py-10 mx-auto bg-white text-black font-[Questrial,Arial,Verdana,Tahoma,sans-serif]">
+    <div className="w-full px-4 py-10 mx-auto max-w-[1400px] text-black font-[Questrial,Arial,Verdana,Tahoma,sans-serif]">
       {/* Heading */}
       <div className="mb-5">
-        <h1 className="text-[47px] font-[Questrial,Arial,Verdana,Tahoma,sans-serif]">
-          {mainHeading}
-        </h1>
+        <h1 className="text-[47px]">{mainHeading}</h1>
       </div>
 
       {/* Description + CTA */}
       <div className="flex flex-col md:flex-row justify-between items-start gap-6 mb-12">
-        <div className="md:w-4/5 text-[21px] text-[#484850] font-[Questrial,Arial,Verdana,Tahoma,sans-serif] font-normal">
+        <div className="md:w-4/5 text-[21px] text-[#484850] font-normal">
           {mainDescription}
         </div>
         <div className="md:w-1/5 flex items-center justify-end gap-2 whitespace-nowrap">
@@ -58,22 +52,62 @@ const ConsultationTabsSection = ({
         </div>
       </div>
 
-      {/* Tabs Section */}
-      <div className="flex flex-col h-[450px] md:flex-row gap-8">
-        {/* Left: Tab List */}
-        <div className="md:w-2/6 w-full h-[450px]">
-          <div className="flex flex-col justify-between h-full">
+      {/* Content & Tab List */}
+      <div className="flex flex-col-reverse md:flex-row w-full">
+        {/* --- Content --- */}
+        <div className="md:w-2/3 w-full bg-[#F7F7F7] p-6 md:p-8 flex flex-col">
+          <div className="space-y-6 flex-1">
+            <h2 className="text-2xl md:text-3xl">
+              {solutions[activeIndex]?.heading}
+            </h2>
+            <p className="text-[16px] text-[#484850] font-normal text-base md:text-lg">
+              {solutions[activeIndex]?.description}
+            </p>
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mt-4">
+              {solutions[activeIndex]?.points.map((point, idx) => (
+                <div key={idx} className="flex items-start pb-5 pt-5 gap-2">
+                  <div className="w-5 h-5 flex-shrink-0 rounded-full bg-black flex items-center justify-center text-white font-bold text-sm">
+                    ✓
+                  </div>
+                  <span className="text-black">{point}</span>
+                </div>
+              ))}
+            </div>
+          </div>
+        </div>
+
+        {/* --- Tab List --- */}
+        <div className="md:w-1/3 w-full md:bg-[#F7F7F7] p-2 flex flex-col md:order-none order-last">
+          {/* Mobile Tabs (horizontal scrollable) */}
+          <div className="md:hidden overflow-x-auto mb-4">
+            <div className="flex gap-4 w-max border-b border-gray-300">
+              {solutions.map((solution, index) => (
+                <button
+                  key={index}
+                  onClick={() => setActiveIndex(index)}
+                  className={`pb-2 text-[18px] whitespace-nowrap ${
+                    index === activeIndex
+                      ? "text-yellow-400 border-b-2 border-yellow-400"
+                      : "text-black"
+                  }`}
+                >
+                  {solution.title}
+                </button>
+              ))}
+            </div>
+          </div>
+
+          {/* Desktop Tabs (vertical) */}
+          <div className="hidden md:flex flex-col">
             {solutions.map((solution, index) => (
               <button
                 key={index}
                 onClick={() => setActiveIndex(index)}
-                className={`flex items-center justify-between px-4 py-3 w-full transition-all duration-200 text-[21px] group rounded-md
-                  ${
-                    index === activeIndex
-                      ? "text-yellow-400"
-                      : "text-black hover:text-gray-400 hover:scale-[1.02]"
-                  }`}
-                style={{ minWidth: "200px" }}
+                className={`flex items-center justify-between px-4 py-3 w-full transition-all duration-200 text-[21px] group rounded-md ${
+                  index === activeIndex
+                    ? "text-yellow-400"
+                    : "text-black hover:text-gray-400 hover:scale-[1.02]"
+                }`}
               >
                 <span className="text-left break-words whitespace-normal w-full">
                   {solution.title}
@@ -89,32 +123,9 @@ const ConsultationTabsSection = ({
             ))}
           </div>
         </div>
-
-        {/* Right: Tab Content */}
-        <div className="md:w-4/6 bg-[#F7F7F7] h-[450px] p-8 w-full">
-          <div className="space-y-6">
-            <h2 className="text-2xl md:text-3xl">
-              {solutions[activeIndex]?.heading}
-            </h2>
-            <p className="text-[16px] text-[#484850] font-[Questrial,Arial,Verdana,Tahoma,sans-serif] font-normal text-base md:text-lg">
-              {solutions[activeIndex]?.description}
-            </p>
-            <div className="grid grid-cols-1 text-black sm:grid-cols-2 gap-4 mt-4">
-              {solutions[activeIndex]?.points.map((point, idx) => (
-                <div key={idx} className="flex items-start pb-5 pt-5 gap-2">
-                  <div className="w-5 h-5 flex-shrink-0 rounded-full bg-black flex items-center justify-center text-white font-bold text-sm">
-                    ✓
-                  </div>
-                  <span className="text-black">{point}</span>
-                </div>
-              ))}
-            </div>
-          </div>
-        </div>
       </div>
     </div>
   );
 };
 
-// Example usage componen
 export default ConsultationTabsSection;

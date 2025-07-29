@@ -41,7 +41,7 @@ const Index = () => {
       image:
         "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=300&fit=crop",
       title: "Transforming Business Operations With Innovative Solutions",
-      readMoreLink: "#",
+      readMoreLink: "/customerstories1",
     },
     {
       id: 2,
@@ -245,6 +245,7 @@ const Index = () => {
       tag: "United States",
       description:
         "Major expansion announced across multiple continents to serve growing client base.",
+      link: "/news1",
     },
     {
       id: 2,
@@ -252,6 +253,7 @@ const Index = () => {
       tag: "Europe",
       description:
         "Strategic partnerships formed to enhance service delivery and innovation capabilities.",
+      link: "/news1",
     },
     {
       id: 3,
@@ -259,6 +261,7 @@ const Index = () => {
       tag: "Asia",
       description:
         "Recognition received for outstanding contributions to digital transformation initiatives.",
+      link: "/news1",
     },
     {
       id: 4,
@@ -266,6 +269,7 @@ const Index = () => {
       tag: "Canada",
       description:
         "State-of-the-art facility launched to drive innovation in emerging technologies.",
+      link: "/news1",
     },
   ];
 

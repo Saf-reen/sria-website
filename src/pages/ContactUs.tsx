@@ -1,11 +1,11 @@
 import React from "react";
-import Navigation from "../Navigation";
-import ImageOverlay from "../ImageOverlay";
-import ContactImageOverlay from "../ContactImageOverlay";
-import ContactForm from "./ContactForm";
-import GlobalOffices from "./GlobalOffices";
+import Navigation from "../components/Navigation";
+import ImageOverlay from "../components/ImageOverlay";
+import ContactImageOverlay from "../components/ContactImageOverlay";
+import ContactForm from "../components/aboutus/ContactForm";
+import GlobalOffices from "../components/aboutus/GlobalOffices";
 import Footer from "@/components/Footer";
-import SocialSection from "./SocialSection";
+import SocialSection from "../components/aboutus/SocialSection";
 
 function ContactUs() {
   return (
@@ -46,7 +46,15 @@ function ContactUs() {
           </div>
         </div>
       </div>
-      <Footer />
+      <div className="w-full bg-black">
+        {" "}
+        {/* Full width container */}
+        <div className="max-w-[1400px] w-full mx-auto">
+          {" "}
+          {/* Centered max width container */}
+          <Footer />
+        </div>
+      </div>
     </div>
   );
 }

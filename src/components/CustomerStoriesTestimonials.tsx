@@ -117,14 +117,19 @@ const renderStars = (rating: number, maxStars: number = 5) => {
 // 📌 Component: Customer Stories
 export const CustomerStories: React.FC<{
   stories?: CustomerStory[];
-}> = ({ stories = defaultStories }) => {
+  theme?: "light" | "dark";
+}> = ({ stories = defaultStories, theme = "dark" }) => {
   const [index, setIndex] = useState(0);
   const story = stories[index];
 
   return (
-    <div className="text-white mt-20 pt-20 px-4">
+    <div
+      className={`${
+        theme === "dark" ? "text-white" : "text-black"
+      }  pt-20 px-4`}
+    >
       <div className="flex justify-between items-center mb-8">
-        <h2 className="text-[61px] sm:text-[61px] font-normal font-questrial leading-tight sm:leading-tight leading-[0.9]">
+        <h2 className="text-[61px]  sm:text-[61px] font-normal font-questrial leading-tight sm:leading-tight leading-[0.9]">
           Customer stories
         </h2>
         <div className="flex gap-2">

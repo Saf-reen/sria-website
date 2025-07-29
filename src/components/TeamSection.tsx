@@ -89,7 +89,7 @@ const leaders = [
 
 const TeamSection = () => {
   return (
-    <div className="bg-white py-12 px-4 md:px-12">
+    <div className="bg-white py-12 relative z-10 px-4 md:px-12">
       <h2 className="text-3xl font-light text-center text-gray-900 mb-12">
         Meet Leadership Team
       </h2>

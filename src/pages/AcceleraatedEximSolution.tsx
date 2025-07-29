@@ -349,8 +349,8 @@ function AcceleratedEximSolution() {
       </div>
 
       {/* Certifications Section - Responsive */}
-      <div className="p-4 lg:p-8 rounded-lg mt-8">
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-6 lg:gap-8 max-w-6xl mx-auto">
+      <div className="p-8 relative  bg-white z-10">
+        <div className="flex flex-wrap justify-center items-center gap-8">
           {[
             { src: "/fixedIcons/1.png", label: "ISO 9001" },
             { src: "/fixedIcons/2.png", label: "ISO 27001" },
@@ -361,12 +361,12 @@ function AcceleratedEximSolution() {
           ].map((item, index) => (
             <div
               key={index}
-              className="flex flex-col items-center justify-center p-2 lg:p-4"
+              className="flex flex-col items-center justify-center w-40 h-40 p-2"
             >
               <img
                 src={item.src}
                 alt={item.label}
-                className="h-16 sm:h-20 lg:h-24 mb-2 object-contain"
+                className="h-24 mb-2 object-contain"
               />
             </div>
           ))}

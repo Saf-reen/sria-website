@@ -8,10 +8,15 @@ import Contact from "./pages/Contact";
 import NotFound from "./pages/NotFound";
 import AcceleraatedEximSolution from "./pages/AcceleraatedEximSolution";
 import SAPManagedServices from "./pages/SAPManagedServices";
-import ContactUs from "@/components/aboutus/ContactUs";
+import ContactUs from "@/pages/ContactUs";
 import SapS4hana from "./pages/SapS4hana";
 import LeaderShip from "./pages/LeaderShip";
 import AboutUs from "./pages/AboutUs";
+import Location from "./pages/Location";
+import CustomerStory1 from "./pages/CustomerStory1";
+import News1 from "./pages/News1";
+import Resources1 from "./pages/Resources1";
+import ScrollToTop from "./components/ScrollToTop";
 
 const queryClient = new QueryClient();
 
@@ -21,6 +26,7 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+        <ScrollToTop />
         <Routes>
           <Route path="/" element={<Index />} />
           <Route path="/contact" element={<Contact />} />
@@ -32,6 +38,10 @@ const App = () => (
           <Route path="/solutions/sap-s4hana" element={<SapS4hana />} />
           <Route path="/about/leadership" element={<LeaderShip />} />
           <Route path="/aboutus" element={<AboutUs />} />
+          <Route path="/about/locations" element={<Location />} />
+          <Route path="/customerStories1" element={<CustomerStory1 />} />
+          <Route path="/news1" element={<News1 />} />
+          <Route path="/resource1" element={<Resources1 />} />
         </Routes>
       </BrowserRouter>
     </TooltipProvider>

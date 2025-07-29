@@ -7,6 +7,7 @@ import {
   MapPin,
   ArrowRight,
 } from "lucide-react";
+import { Link } from "react-router-dom";
 
 type Event = {
   id: number;
@@ -22,6 +23,7 @@ type News = {
   title: string;
   tag: string;
   description: string;
+  link: string;
 };
 
 type Props = {
@@ -167,7 +169,13 @@ const EventsNewsComponent: React.FC<Props> = ({ events, news }) => {
                     </div>
                     <div className="flex items-center gap-1 text-[16px] text-gray-600 mb-3">
                       <ArrowRight className="w-4 h-4" />
-                      <span>Read more</span>
+                      <Link
+                        to={newsItem.link}
+                        className="flex items-center gap-1 text-blue-600 hover:underline"
+                      >
+                        <span>Read more</span>
+                        <ArrowRight className="w-4 h-4" />
+                      </Link>
                     </div>
                     <p className="text-gray-600 text-sm">
                       {newsItem.description}

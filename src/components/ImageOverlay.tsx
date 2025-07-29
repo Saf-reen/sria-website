@@ -14,7 +14,7 @@ const ImageOverlay: React.FC<ImageOverlayProps> = ({
 }) => {
   return (
     <div
-      className=" sticky top-0 h-[600px] w-full bg-cover bg-center z-10 relative"
+      className="sticky top-0 z-20  lg:block h-[600px] w-full bg-cover bg-center z-10 relative"
       style={{ backgroundImage: `url(${imageUrl})` }}
     >
       {/* Dark overlay */}

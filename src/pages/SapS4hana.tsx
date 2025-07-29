@@ -341,7 +341,7 @@ function SapS4hana() {
       </div>
 
       {/* Main Content - Responsive Layout */}
-      <div className="flex flex-col lg:flex-row w-full max-w-[1450px] mx-auto mt-4 lg:px-8">
+      <div className="flex flex-col lg:flex-row w-full max-w-[1400px] mx-auto mt-4 lg:px-8">
         {/* Sidebar - Hidden on mobile, sticky on desktop */}
         <div className="hidden lg:block lg:w-1/6">
           <div className="sticky top-24">
@@ -442,7 +442,7 @@ function SapS4hana() {
             </div>
           </section>
           <div className="mt-16 sm:mt-20 w-full scroll-mt-24 text-black">
-            <CustomerStories stories={customerStories} />
+            <CustomerStories stories={customerStories} theme="light" />
           </div>
 
           {/* Consultation Section */}

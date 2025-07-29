@@ -159,14 +159,14 @@ function LeaderShip() {
       />
 
       <TeamSection />
-      <div className="w-full bg-black h-[100px] text-white flex items-center p-4 justify-center">
+      <div className="w-full bg-black h-[100px]  relative z-10 text-white flex items-center p-4 justify-center">
         <div className="w-[1400px] flex flex-row justify-between items-center">
           <h1 className="text-[21px]">Learn about Accely and what we do</h1>
           <Requesademobtn text="Get in Touch" />
         </div>
       </div>
 
-      <div className="w-full flex justify-center p-4 sm:p-6 md:p-8 mt-8">
+      <div className="w-full flex justify-center bg-white relative z-10 p-4 sm:p-6 md:p-8 ">
         <div className="w-full max-w-[1400px] flex flex-col md:flex-row gap-8 bg-gray-100 p-6 sm:p-8 rounded-lg">
           {/* Text Content */}
           <div className="md:w-1/2">
@@ -191,7 +191,7 @@ function LeaderShip() {
           </div>
 
           {/* Video Content */}
-          <div className="md:w-1/2">
+          <div className="md:w-1/2 ">
             <div className="w-full h-64 sm:h-80 md:h-[32rem] overflow-hidden rounded-md shadow-md bg-black">
               <iframe
                 className="w-full h-full"
@@ -206,7 +206,7 @@ function LeaderShip() {
         </div>
       </div>
 
-      <div className="p-4 lg:p-8 rounded-lg mt-8">
+      <div className="p-4 lg:p-8 w-full bg-white relative z-10 ">
         <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-6 lg:gap-8 max-w-6xl mx-auto">
           {[
             { src: "/fixedIcons/1.png", label: "ISO 9001" },
@@ -229,8 +229,15 @@ function LeaderShip() {
           ))}
         </div>
       </div>
-
-      <Footer />
+      <div className="w-full  relative z-10 bg-black">
+        {" "}
+        {/* Full width container */}
+        <div className="max-w-[1400px] w-full mx-auto">
+          {" "}
+          {/* Centered max width container */}
+          <Footer />
+        </div>
+      </div>
     </div>
   );
 }

@@ -19,8 +19,25 @@ interface FormData {
   agreeToPolicy: boolean;
 }
 
+interface FormErrors {
+  inquiryType?: string;
+  message?: string;
+  firstName?: string;
+  lastName?: string;
+  company?: string;
+  email?: string;
+  country?: string;
+  phoneCountryCode?: string;
+  phoneNumber?: string;
+  agreeToPolicy?: string;
+}
+
 const ContactForm: React.FC = () => {
   const [countries, setCountries] = useState<Country[]>([]);
+  const [loading, setLoading] = useState<boolean>(false);
+  const [formErrors, setFormErrors] = useState<FormErrors>({});
+  const [submitError, setSubmitError] = useState<string>("");
+  const [submitSuccess, setSubmitSuccess] = useState<string>("");
   const [formData, setFormData] = useState<FormData>({
     inquiryType: "",
     message: "",
@@ -83,12 +100,90 @@ const ContactForm: React.FC = () => {
       ...prev,
       [name]: type === "checkbox" ? checked : value,
     }));
-  };
-  const handleSubmit = async () => {
-    if (!formData.agreeToPolicy) {
-      alert("Please agree to the Privacy Policy and Terms of Service");
-      return;
+
+    // Clear error for this field when user starts typing
+    if (formErrors[name as keyof FormErrors]) {
+      setFormErrors((prev) => ({
+        ...prev,
+        [name]: undefined,
+      }));
     }
+  };
+
+  // Email validation function
+  const isValidEmail = (email: string): boolean => {
+    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+    return emailRegex.test(email);
+  };
+
+  // Phone number validation function
+  const isValidPhoneNumber = (phone: string): boolean => {
+    const phoneRegex = /^[\d\s\-\+\(\)]{7,15}$/;
+    return phoneRegex.test(phone.replace(/\s/g, ""));
+  };
+
+  // Validation function
+  const validateForm = (): boolean => {
+    const errors: FormErrors = {};
+
+    // Required field validations
+    if (!formData.inquiryType.trim()) {
+      errors.inquiryType = "This field is required";
+    }
+
+    if (!formData.message.trim()) {
+      errors.message = "This field is required";
+    }
+
+    if (!formData.firstName.trim()) {
+      errors.firstName = "This field is required";
+    }
+
+    if (!formData.lastName.trim()) {
+      errors.lastName = "This field is required";
+    }
+
+    if (!formData.company.trim()) {
+      errors.company = "This field is required";
+    }
+
+    if (!formData.email.trim()) {
+      errors.email = "This field is required";
+    } else if (!isValidEmail(formData.email)) {
+      errors.email = "Please enter a valid email address";
+    }
+
+    if (!formData.country.trim()) {
+      errors.country = "This field is required";
+    }
+
+    if (!formData.phoneCountryCode.trim()) {
+      errors.phoneCountryCode = "This field is required";
+    }
+
+    if (!formData.phoneNumber.trim()) {
+      errors.phoneNumber = "This field is required";
+    } else if (!isValidPhoneNumber(formData.phoneNumber)) {
+      errors.phoneNumber = "Please enter a valid phone number";
+    }
+
+    if (!formData.agreeToPolicy) {
+      errors.agreeToPolicy =
+        "You must agree to the Privacy Policy and Terms of Service";
+    }
+
+    setFormErrors(errors);
+    return Object.keys(errors).length === 0;
+  };
+
+  const handleSubmit = async (): Promise<void> => {
+    // Validate form before submission
+    const isValid = validateForm();
+    if (!isValid) {
+      console.log("Form is invalid. Errors:", formErrors);
+      return; // ❗ Don't proceed if not valid
+    }
+    setLoading(true);
 
     try {
       const response = await fetch("http://localhost:5000/api/contact", {
@@ -99,9 +194,32 @@ const ContactForm: React.FC = () => {
 
       const data = await response.json();
 
-      alert(data.message);
+      if (response.ok) {
+        setSubmitSuccess("Message sent successfully!");
+        alert("Message sent successfully!");
+        // Reset form on success
+        setFormData({
+          inquiryType: "",
+          message: "",
+          firstName: "",
+          lastName: "",
+          company: "",
+          email: "",
+          country: "",
+          phoneCountryCode: "",
+          phoneNumber: "",
+          agreeToPolicy: false,
+        });
+        setFormErrors({});
+      } else {
+        setSubmitError(data.message || "Failed to send message.");
+        // alert(data.message || "Failed to send message.");
+      }
     } catch (error) {
-      alert("Failed to send message.");
+      setSubmitError("Failed to send message. Please try again.");
+      // alert("Failed to send message. Please try again.");
+    } finally {
+      setLoading(false);
     }
   };
 
@@ -115,12 +233,22 @@ const ContactForm: React.FC = () => {
     "Other",
   ];
 
+  // Helper function to get input class names with error styling
+  const getInputClassName = (fieldName: keyof FormErrors): string => {
+    const baseClass =
+      "w-full px-4 py-3 border rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white";
+    const errorClass = "border-red-500";
+    const normalClass = "border-gray-300";
+
+    return `${baseClass} ${formErrors[fieldName] ? errorClass : normalClass}`;
+  };
+
   return (
-    <div className="bg-white  py-12 px-4 sm:px-6 lg:px-8">
+    <div className="bg-white py-12 px-4 sm:px-6 lg:px-8">
       <div className="max-w-7xl mx-auto">
         <div className="grid grid-cols-1 lg:grid-cols-10 gap-8">
           {/* Left Side - Contact Info (30%) */}
-          <div className="lg:col-span-3 bg-white p-8  ">
+          <div className="lg:col-span-3 bg-white p-8">
             <h2 className="text-3xl font-bold text-gray-900 mb-6">
               Contact Us Today
             </h2>
@@ -132,7 +260,7 @@ const ContactForm: React.FC = () => {
           </div>
 
           {/* Right Side - Form (70%) */}
-          <div className="lg:col-span-7 bg-white p-8 ">
+          <div className="lg:col-span-7 bg-white p-8">
             <div className="space-y-6">
               {/* Inquiry Type Dropdown */}
               <div>
@@ -147,7 +275,7 @@ const ContactForm: React.FC = () => {
                   name="inquiryType"
                   value={formData.inquiryType}
                   onChange={handleInputChange}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white"
+                  className={getInputClassName("inquiryType")}
                   required
                 >
                   <option value="">Select an option</option>
@@ -157,6 +285,11 @@ const ContactForm: React.FC = () => {
                     </option>
                   ))}
                 </select>
+                {formErrors.inquiryType && (
+                  <p className="mt-1 text-sm text-red-600">
+                    {formErrors.inquiryType}
+                  </p>
+                )}
               </div>
 
               {/* Message Field */}
@@ -173,10 +306,15 @@ const ContactForm: React.FC = () => {
                   value={formData.message}
                   onChange={handleInputChange}
                   rows={4}
-                  className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white"
+                  className={getInputClassName("message")}
                   placeholder="Please describe your inquiry..."
                   required
                 />
+                {formErrors.message && (
+                  <p className="mt-1 text-sm text-red-600">
+                    {formErrors.message}
+                  </p>
+                )}
               </div>
 
               {/* First Name and Last Name */}
@@ -194,9 +332,14 @@ const ContactForm: React.FC = () => {
                     name="firstName"
                     value={formData.firstName}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white"
+                    className={getInputClassName("firstName")}
                     required
                   />
+                  {formErrors.firstName && (
+                    <p className="mt-1 text-sm text-red-600">
+                      {formErrors.firstName}
+                    </p>
+                  )}
                 </div>
                 <div>
                   <label
@@ -211,9 +354,14 @@ const ContactForm: React.FC = () => {
                     name="lastName"
                     value={formData.lastName}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white"
+                    className={getInputClassName("lastName")}
                     required
                   />
+                  {formErrors.lastName && (
+                    <p className="mt-1 text-sm text-red-600">
+                      {formErrors.lastName}
+                    </p>
+                  )}
                 </div>
               </div>
 
@@ -232,9 +380,14 @@ const ContactForm: React.FC = () => {
                     name="company"
                     value={formData.company}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white"
+                    className={getInputClassName("company")}
                     required
                   />
+                  {formErrors.company && (
+                    <p className="mt-1 text-sm text-red-600">
+                      {formErrors.company}
+                    </p>
+                  )}
                 </div>
                 <div>
                   <label
@@ -249,9 +402,14 @@ const ContactForm: React.FC = () => {
                     name="email"
                     value={formData.email}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white"
+                    className={getInputClassName("email")}
                     required
                   />
+                  {formErrors.email && (
+                    <p className="mt-1 text-sm text-red-600">
+                      {formErrors.email}
+                    </p>
+                  )}
                 </div>
               </div>
 
@@ -269,7 +427,7 @@ const ContactForm: React.FC = () => {
                     name="country"
                     value={formData.country}
                     onChange={handleInputChange}
-                    className="w-full px-4 py-3 border border-gray-300 rounded-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white"
+                    className={getInputClassName("country")}
                     required
                   >
                     <option value="">Select a country</option>
@@ -279,6 +437,11 @@ const ContactForm: React.FC = () => {
                       </option>
                     ))}
                   </select>
+                  {formErrors.country && (
+                    <p className="mt-1 text-sm text-red-600">
+                      {formErrors.country}
+                    </p>
+                  )}
                 </div>
                 <div>
                   <label
@@ -292,7 +455,11 @@ const ContactForm: React.FC = () => {
                       name="phoneCountryCode"
                       value={formData.phoneCountryCode}
                       onChange={handleInputChange}
-                      className="px-3 py-3 border border-gray-300 rounded-l-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white border-r-0"
+                      className={`px-3 py-3 border rounded-l-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white border-r-0 ${
+                        formErrors.phoneCountryCode
+                          ? "border-red-500"
+                          : "border-gray-300"
+                      }`}
                       required
                     >
                       <option value="">Code</option>
@@ -311,11 +478,20 @@ const ContactForm: React.FC = () => {
                       name="phoneNumber"
                       value={formData.phoneNumber}
                       onChange={handleInputChange}
-                      className="flex-1 px-4 py-3 border border-gray-300 rounded-r-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white"
+                      className={`flex-1 px-4 py-3 border rounded-r-lg focus:ring-2 focus:ring-blue-500 focus:border-blue-500 bg-white ${
+                        formErrors.phoneNumber
+                          ? "border-red-500"
+                          : "border-gray-300"
+                      }`}
                       placeholder="Your phone number"
                       required
                     />
                   </div>
+                  {(formErrors.phoneCountryCode || formErrors.phoneNumber) && (
+                    <p className="mt-1 text-sm text-red-600">
+                      {formErrors.phoneCountryCode || formErrors.phoneNumber}
+                    </p>
+                  )}
                 </div>
               </div>
 
@@ -327,7 +503,9 @@ const ContactForm: React.FC = () => {
                   name="agreeToPolicy"
                   checked={formData.agreeToPolicy}
                   onChange={handleInputChange}
-                  className="mt-1 h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded"
+                  className={`mt-1 h-4 w-4 text-blue-600 focus:ring-blue-500 border-gray-300 rounded ${
+                    formErrors.agreeToPolicy ? "border-red-500" : ""
+                  }`}
                   required
                 />
                 <label
@@ -351,15 +529,31 @@ const ContactForm: React.FC = () => {
                   . *
                 </label>
               </div>
+              {formErrors.agreeToPolicy && (
+                <p className="text-sm text-red-600">
+                  {formErrors.agreeToPolicy}
+                </p>
+              )}
+              {submitError && (
+                <div className="text-red-600 text-sm">{submitError}</div>
+              )}
+              {submitSuccess && (
+                <div className="text-green-600 text-sm">{submitSuccess}</div>
+              )}
 
               {/* Submit Button */}
-              <div className="pt-4">
+              <div>
                 <button
                   type="button"
                   onClick={handleSubmit}
-                  className="w-full bg-blue-600 text-white py-4 px-6 rounded-lg font-semibold text-lg hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2 transition duration-200"
+                  disabled={loading}
+                  className={`w-full py-2 px-2 rounded-lg font-semibold text-lg transition duration-200 ${
+                    loading
+                      ? "bg-gray-400 text-gray-700 cursor-not-allowed"
+                      : "bg-blue-600 text-white hover:bg-blue-700 focus:ring-2 focus:ring-blue-500 focus:ring-offset-2"
+                  }`}
                 >
-                  Submit
+                  {loading ? "Submitting..." : "Submit"}
                 </button>
               </div>
             </div>

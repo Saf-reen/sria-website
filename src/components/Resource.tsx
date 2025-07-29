@@ -71,7 +71,7 @@ const Resource: React.FC<ResourceProps> = ({
             <h3 className="text-sm font-semibold mb-1">{product.title}</h3>
             <p className="text-xs text-gray-600 mb-4">{product.description}</p>
             <a
-              href="#"
+              href="/resource1"
               className="flex items-center text-sm font-medium hover:underline"
             >
               Learn more <ArrowRight className="ml-1 h-4 w-4" />

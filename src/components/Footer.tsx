@@ -191,7 +191,7 @@ const Footer: React.FC = () => {
   return (
     <div className="bg-black w-full text-white font-[Questrial,Arial,Verdana,Tahoma,sans-serif] overflow-hidden">
       <footer className="bg-black text-white py-10  w-full">
-        <div className="mx-auto max-w-[1400px] px-4">
+        <div className="mt-3 w-full ">
           <section className="text-center w-full mb-12">
             <div
               className="bg-cover bg-center bg-red-500 bg-no-repeat py-5 px-2 "
@@ -241,7 +241,7 @@ const Footer: React.FC = () => {
         {/* Newsletter Section */}
         <div className="mt-3 w-full mb-16">
           <div
-            className="py-5 px-2 w-full"
+            className="py-3 px-2 w-full"
             style={{
               background: `linear-gradient(90deg, rgb(34, 34, 34) 0%, rgb(24, 24, 24) 55.5%, rgb(34, 34, 34) 100%)`,
             }}
@@ -255,13 +255,13 @@ const Footer: React.FC = () => {
                   Get the weekly updates and insights right in your inbox.
                 </p>
               </div>
-              <div className="flex flex-col sm:flex-row gap-3 md:w-1/2">
+              <div className="flex flex-col sm:flex-row gap-3 md:w-1/2 ">
                 <input
                   type="email"
                   placeholder="Enter your email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="flex-1 px-2 py-1 bg-gray-800 border border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:border-orange-500"
+                  className="flex-1 px-1 bg-gray-800 border border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:border-orange-500"
                 />
                 <button
                   onClick={handleSubscribe}
