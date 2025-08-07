@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from "react";
 import { Search, Globe, ChevronDown, Menu, X } from "lucide-react";
 import { Link } from "react-router-dom";
+import logo from "../assets/logo.png";
 
 interface DropdownSection {
   title: string;
@@ -18,6 +19,7 @@ interface MegaMenuProps {
 interface NavigationProps {
   enableScrollEffect?: boolean; // New prop to control scroll effect
 }
+// const logo = `${process.env.PUBLIC_URL}/favicon.ico`;
 
 const Navigation: React.FC<NavigationProps> = ({
   enableScrollEffect = false,
@@ -248,50 +250,114 @@ const Navigation: React.FC<NavigationProps> = ({
     label: string;
     sections: DropdownSection[];
     id: string;
-  }> = ({ label, sections, id }) => (
-    <div className="border-b border-gray-700">
-      <button
-        onClick={() =>
-          setActiveMobileDropdown(activeMobileDropdown === id ? null : id)
-        }
-        className="w-full flex items-center justify-between py-4 text-white hover:text-orange-300 transition-colors font-normal text-base font-[Questrial,Arial,Verdana,Tahoma,sans-serif]"
-      >
-        {label}
-        <ChevronDown
-          className={`w-4 h-4 transition-transform duration-200 ${
-            activeMobileDropdown === id ? "rotate-180" : ""
-          }`}
-        />
-      </button>
+  }> = ({ label, sections, id }) => {
+    // Check if this is the About section
+    const isAboutSection = id === "mobile-about";
 
-      <div
-        className={`overflow-hidden transition-all duration-300 ${
-          activeMobileDropdown === id ? "max-h-96 pb-4" : "max-h-0"
-        }`}
-      >
-        {sections.map((section, sectionIdx) => (
-          <div key={sectionIdx} className="mb-4">
-            <h5 className="text-orange-300 font-normal mb-2 text-sm font-[Questrial,Arial,Verdana,Tahoma,sans-serif]">
-              {section.title}
-            </h5>
-            <ul className="space-y-2 ml-4">
-              {section.items.map((item, itemIdx) => (
-                <li key={itemIdx}>
-                  <a
-                    href={item.link}
-                    className="text-gray-300 hover:text-orange-300 transition-colors text-sm block font-normal font-[Questrial,Arial,Verdana,Tahoma,sans-serif]"
-                    onClick={() => setIsMobileMenuOpen(false)}
-                  >
-                    {item.label}
-                  </a>
-                </li>
-              ))}
-            </ul>
+    if (isAboutSection) {
+      return (
+        <div className="border-b border-gray-700">
+          <div className="flex">
+            {/* About link that navigates to /aboutus */}
+            <Link
+              to="/aboutus"
+              onClick={() => setIsMobileMenuOpen(false)}
+              className="flex-1 py-4 text-white hover:text-orange-300 transition-colors font-normal text-base font-[Questrial,Arial,Verdana,Tahoma,sans-serif]"
+            >
+              {label}
+            </Link>
+            {/* Dropdown toggle button */}
+            <button
+              onClick={() =>
+                setActiveMobileDropdown(activeMobileDropdown === id ? null : id)
+              }
+              className="px-4 py-4 text-white hover:text-orange-300 transition-colors"
+            >
+              <ChevronDown
+                className={`w-4 h-4 transition-transform duration-200 ${
+                  activeMobileDropdown === id ? "rotate-180" : ""
+                }`}
+              />
+            </button>
           </div>
-        ))}
+
+          {/* Dropdown content */}
+          <div
+            className={`overflow-hidden transition-all duration-300 ${
+              activeMobileDropdown === id ? "max-h-96 pb-4" : "max-h-0"
+            }`}
+          >
+            {sections.map((section, sectionIdx) => (
+              <div key={sectionIdx} className="mb-4">
+                <h5 className="text-orange-300 font-normal mb-2 text-sm font-[Questrial,Arial,Verdana,Tahoma,sans-serif]">
+                  {section.title}
+                </h5>
+                <ul className="space-y-2 ml-4">
+                  {section.items.map((item, itemIdx) => (
+                    <li key={itemIdx}>
+                      <a
+                        href={item.link}
+                        className="text-gray-300 hover:text-orange-300 transition-colors text-sm block font-normal font-[Questrial,Arial,Verdana,Tahoma,sans-serif]"
+                        onClick={() => setIsMobileMenuOpen(false)}
+                      >
+                        {item.label}
+                      </a>
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            ))}
+          </div>
+        </div>
+      );
+    }
+
+    // Regular dropdown behavior for other sections
+    return (
+      <div className="border-b border-gray-700">
+        <button
+          onClick={() =>
+            setActiveMobileDropdown(activeMobileDropdown === id ? null : id)
+          }
+          className="w-full flex items-center justify-between py-4 text-white hover:text-orange-300 transition-colors font-normal text-base font-[Questrial,Arial,Verdana,Tahoma,sans-serif]"
+        >
+          {label}
+          <ChevronDown
+            className={`w-4 h-4 transition-transform duration-200 ${
+              activeMobileDropdown === id ? "rotate-180" : ""
+            }`}
+          />
+        </button>
+
+        <div
+          className={`overflow-hidden transition-all duration-300 ${
+            activeMobileDropdown === id ? "max-h-96 pb-4" : "max-h-0"
+          }`}
+        >
+          {sections.map((section, sectionIdx) => (
+            <div key={sectionIdx} className="mb-4">
+              <h5 className="text-orange-300 font-normal mb-2 text-sm font-[Questrial,Arial,Verdana,Tahoma,sans-serif]">
+                {section.title}
+              </h5>
+              <ul className="space-y-2 ml-4">
+                {section.items.map((item, itemIdx) => (
+                  <li key={itemIdx}>
+                    <a
+                      href={item.link}
+                      className="text-gray-300 hover:text-orange-300 transition-colors text-sm block font-normal font-[Questrial,Arial,Verdana,Tahoma,sans-serif]"
+                      onClick={() => setIsMobileMenuOpen(false)}
+                    >
+                      {item.label}
+                    </a>
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
       </div>
-    </div>
-  );
+    );
+  };
 
   // Updated background logic - if enableScrollEffect is false, always use black background
   const getNavBackground = () => {
@@ -305,40 +371,40 @@ const Navigation: React.FC<NavigationProps> = ({
     {
       title: "Accelerated Products",
       items: [
-        { label: "EXIM", link: "/products/exim" },
-        { label: "E-Invoice", link: "/products/e-invoice" },
-        { label: "E-Way Bill", link: "/products/e-way-bill" },
-        { label: "GST", link: "/products/gst" },
+        { label: "NxDesk", link: "/products/nxdesk" },
+        { label: "Nxify", link: "/products/nxify" },
+        { label: "Big", link: "/products/big" },
+        { label: "Gate Check", link: "/products/gatecheck" },
       ],
     },
-    {
-      title: "Raapyd Products",
-      items: [
-        { label: "Vendor Management", link: "/products/vendor-management" },
-        { label: "Field Service Management", link: "/products/field-service" },
-        { label: "Real Estate Management", link: "/products/real-estate" },
-        { label: "ICR AI Software", link: "/products/icr-ai" },
-        { label: "Distribution Management", link: "/products/distribution" },
-        { label: "Digital Retail Solution", link: "/products/retail" },
-        { label: "Subscription Billing", link: "/products/subscription" },
-        { label: "Sales Force Automation", link: "/products/sales-force" },
-        {
-          label: "Dealer Management System",
-          link: "/products/dealer-management",
-        },
-        { label: "Asset Management", link: "/products/asset-management" },
-      ],
-    },
-    {
-      title: "Eerly AI Products",
-      items: [
-        { label: "Eerly AI Brain", link: "/products/eerly-ai-brain" },
-        { label: "SAP AI Consultant", link: "/products/sap-ai-consultant" },
-        { label: "Recruitment AI", link: "/products/recruitment-ai" },
-        { label: "Insights AI", link: "/products/insights-ai" },
-        { label: "Process AI", link: "/products/process-ai" },
-      ],
-    },
+    // {
+    //   title: "Raapyd Products",
+    //   items: [
+    //     { label: "Vendor Management", link: "/products/vendor-management" },
+    //     { label: "Field Service Management", link: "/products/field-service" },
+    //     { label: "Real Estate Management", link: "/products/real-estate" },
+    //     { label: "ICR AI Software", link: "/products/icr-ai" },
+    //     { label: "Distribution Management", link: "/products/distribution" },
+    //     { label: "Digital Retail Solution", link: "/products/retail" },
+    //     { label: "Subscription Billing", link: "/products/subscription" },
+    //     { label: "Sales Force Automation", link: "/products/sales-force" },
+    //     {
+    //       label: "Dealer Management System",
+    //       link: "/products/dealer-management",
+    //     },
+    //     { label: "Asset Management", link: "/products/asset-management" },
+    //   ],
+    // },
+    // {
+    //   title: "Eerly AI Products",
+    //   items: [
+    //     { label: "Eerly AI Brain", link: "/products/eerly-ai-brain" },
+    //     { label: "SAP AI Consultant", link: "/products/sap-ai-consultant" },
+    //     { label: "Recruitment AI", link: "/products/recruitment-ai" },
+    //     { label: "Insights AI", link: "/products/insights-ai" },
+    //     { label: "Process AI", link: "/products/process-ai" },
+    //   ],
+    // },
   ];
 
   const solutionsSections: DropdownSection[] = [
@@ -379,51 +445,61 @@ const Navigation: React.FC<NavigationProps> = ({
       title: "SAP HXM",
       items: [{ label: "SuccessFactors", link: "/solutions/successfactors" }],
     },
-    {
-      title: "AI",
-      items: [{ label: "SAP Business AI", link: "/solutions/sap-business-ai" }],
-    },
-    {
-      title: "Sustainability",
-      items: [
-        { label: "SAP Sustainability", link: "/solutions/sustainability" },
-        { label: "ESG Consulting", link: "/solutions/esg-consulting" },
-        { label: "E-Mobility", link: "/solutions/e-mobility" },
-      ],
-    },
-    {
-      title: "Other Technologies",
-      items: [
-        {
-          label: "Digital Transformation",
-          link: "/solutions/digital-transformation",
-        },
-        { label: "ECM", link: "/solutions/ecm" },
-        { label: "RPA", link: "/solutions/rpa" },
-        { label: "Blockchain", link: "/solutions/blockchain" },
-        { label: "IoT", link: "/solutions/iot" },
-      ],
-    },
+    // {
+    //   title: "AI",
+    //   items: [{ label: "SAP Business AI", link: "/solutions/sap-business-ai" }],
+    // },
+    // {
+    //   title: "Sustainability",
+    //   items: [
+    //     { label: "SAP Sustainability", link: "/solutions/sustainability" },
+    //     { label: "ESG Consulting", link: "/solutions/esg-consulting" },
+    //     { label: "E-Mobility", link: "/solutions/e-mobility" },
+    //   ],
+    // },
+    // {
+    //   title: "Other Technologies",
+    //   items: [
+    //     {
+    //       label: "Digital Transformation",
+    //       link: "/solutions/digital-transformation",
+    //     },
+    //     { label: "ECM", link: "/solutions/ecm" },
+    //     { label: "RPA", link: "/solutions/rpa" },
+    //     { label: "Blockchain", link: "/solutions/blockchain" },
+    //     { label: "IoT", link: "/solutions/iot" },
+    //   ],
+    // },
   ];
 
   const servicesSections: DropdownSection[] = [
-    {
-      title: "Strategy and Consulting",
-      items: [
-        { label: "Business Consulting", link: "/services/strategy-consulting" },
-        { label: "Process Consulting", link: "/services/strategy-consulting" },
-        { label: "Tech Consulting", link: "/services/strategy-consulting" },
-      ],
-    },
+    // {
+    //   title: "Strategy and Consulting",
+    //   items: [
+    //     { label: "Business Consulting", link: "/services/business-consulting" },
+    //     { label: "Process Consulting", link: "/services/process-consulting" },
+    //     { label: "Tech Consulting", link: "/services/tech-consulting" },
+    //   ],
+    // },
     {
       title: "SAP Support",
       items: [
         { label: "Managed Services", link: "/sapmanagedservices" },
         { label: "AMS", link: "/ams" },
-        { label: "Migration", link: "/migration" },
-        { label: "Discovery", link: "/discovery" },
-        { label: "Implementation", link: "/implementation" },
-        { label: "Upgrade", link: "/upgrade" },
+        { label: "SAP S/4HANA Implementation Services", link: "/sapimplement" },
+        // { label: "Migration", link: "/migration" },
+        { label: "SAP S/4HANA Consulting Services", link: "/consulting" },
+        { label: "SAP Fiori Development Services", link: "/fioridevelop" },
+        { label: "SAP Business Technology Platform", link: "/businesstech" },
+        { label: "SAP Custom Development and Enhancement", link: "/custom" },
+        { label: "ABAP RESTful Application Programming Model Service", link: "/abap" },
+        { label: "SAP BASIS Support Services", link: "/basicservices" },
+      ],
+    },
+    {
+      title: "Odoo Services",
+      items: [
+        { label: "Odoo Implementation", link: "/odooservices/implementation"}
       ],
     },
   ];
@@ -606,10 +682,15 @@ const Navigation: React.FC<NavigationProps> = ({
         <div className="w-full px-4 sm:px-6 lg:px-8">
           <div className="mx-auto w-full max-w-screen-xl xl:max-w-[1400px] flex items-center justify-between h-16">
             {/* Logo */}
-            <div className="flex items-center">
-              <Link to="/" className="text-xl font-bold text-white">
-                <span className="text-orange-300">S</span>ria{" "}
-                <span className="text-orange-300">I</span>nfotech
+            <div className="flex flex-row items-center">
+              <Link to="/" className="font-bold text-white">
+                <img
+                  src={logo}
+                  alt="Logo"
+                  className="h-10 w-auto"
+                />
+                {/* <span className="text-orange-300">S</span>ria{" "}
+                <span className="text-orange-300">I</span>nfotech  */}
               </Link>
             </div>
 
@@ -619,13 +700,13 @@ const Navigation: React.FC<NavigationProps> = ({
                 id="products"
                 label="Products"
                 sections={productsSections}
-                layout="multi"
+                layout="single"
               />
               <MegaMenu
                 id="solutions"
                 label="Solutions"
                 sections={solutionsSections}
-                layout="two-row"
+                layout="multi"
               />
               <MegaMenu
                 id="services"
@@ -633,7 +714,7 @@ const Navigation: React.FC<NavigationProps> = ({
                 sections={servicesSections}
                 layout="multi"
               />
-              <MegaMenu
+              {/* <MegaMenu
                 id="industries"
                 label="Industries"
                 sections={industriesSections}
@@ -644,7 +725,7 @@ const Navigation: React.FC<NavigationProps> = ({
                 label="Insights"
                 sections={insightsSections}
                 layout="single"
-              />
+              /> */}
               <MegaMenu
                 id="about"
                 label="About"
@@ -756,7 +837,7 @@ const Navigation: React.FC<NavigationProps> = ({
                 sections={servicesSections}
                 id="mobile-services"
               />
-              <MobileMenuItem
+              {/* <MobileMenuItem
                 label="Industries"
                 sections={industriesSections}
                 id="mobile-industries"
@@ -765,7 +846,7 @@ const Navigation: React.FC<NavigationProps> = ({
                 label="Insights"
                 sections={insightsSections}
                 id="mobile-insights"
-              />
+              /> */}
               <MobileMenuItem
                 label="About"
                 sections={aboutSections}

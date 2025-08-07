@@ -26,8 +26,6 @@ type LocationDataMap = {
 
 const Footer: React.FC = () => {
   const [openSections, setOpenSections] = useState<string[]>([]);
-  const [selectedCountry, setSelectedCountry] = useState("United States");
-  const [isDropdownOpen, setIsDropdownOpen] = useState(false);
   const [email, setEmail] = useState("");
 
   const toggleSection = (title: string) => {
@@ -38,149 +36,155 @@ const Footer: React.FC = () => {
 
   const countries: Country[] = [
     { name: "United States", flag: "🇺🇸" },
-    { name: "United Kingdom", flag: "🇬🇧" },
-    { name: "Singapore", flag: "🇸🇬" },
-    { name: "South Africa", flag: "🇿🇦" },
-    { name: "Saudi Arabia", flag: "🇸🇦" },
-    { name: "UAE", flag: "🇦🇪" },
-    { name: "Kuwait", flag: "🇰🇼" },
-    { name: "Greece", flag: "🇬🇷" },
-    { name: "Qatar", flag: "🇶🇦" },
+    // { name: "United Kingdom", flag: "🇬🇧" },
+    // { name: "Singapore", flag: "🇸🇬" },
+    // { name: "South Africa", flag: "🇿🇦" },
+    // { name: "Saudi Arabia", flag: "🇸🇦" },
+    // { name: "UAE", flag: "🇦🇪" },
+    // { name: "Kuwait", flag: "🇰🇼" },
+    // { name: "Greece", flag: "🇬🇷" },
+    // { name: "Qatar", flag: "🇶🇦" },
     { name: "India", flag: "🇮🇳" },
-    { name: "Egypt", flag: "🇪🇬" },
+    // { name: "Egypt", flag: "🇪🇬" },
   ];
 
   const locationData: LocationDataMap = {
     "United States": [
       {
-        address: "381 Blair Rd, Avenel, NJ 07001, USA",
-        phone: "+1 647 408 7887",
-        email: "info.us@sriainfotech.com",
+        address: "18 Hunters Dr Gilbertsville, PA 19525-6601, USA",
+        phone: "+91 99897 95335",
+        email: "hr@sriainfotech.com",
       },
     ],
-    "United Kingdom": [
-      {
-        address: "Berkeley Square House, London, W1J 6BD",
-        phone: "+44 797 982 1621",
-        email: "info.uk@sriainfotech.com",
-      },
-    ],
-    Singapore: [
-      {
-        address: "31 Cantonment Road, P.O. Box: 089747",
-        phone: "+65 9086 0319",
-        email: "info.sg@sriainfotech.com",
-      },
-    ],
-    "South Africa": [
-      {
-        address: "123 Business District, Cape Town, 8001",
-        phone: "+27 21 555 0123",
-        email: "info.za@sriainfotech.com",
-      },
-    ],
-    "Saudi Arabia": [
-      {
-        address: "King Fahd Road, Riyadh 11564, Saudi Arabia",
-        phone: "+966 11 555 0123",
-        email: "info.sa@sriainfotech.com",
-      },
-    ],
-    UAE: [
-      {
-        address: "308 Indigo Tower, Dubai, P.O. Box: 112965",
-        phone: "+971 4 452 9897",
-        email: "info.ae@sriainfotech.com",
-      },
-    ],
-    Kuwait: [
-      {
-        address: "Al-Shuhada Street, Kuwait City, Kuwait",
-        phone: "+965 2555 0123",
-        email: "info.kw@sriainfotech.com",
-      },
-    ],
-    Greece: [
-      {
-        address: "Syntagma Square, Athens 10563, Greece",
-        phone: "+30 210 555 0123",
-        email: "info.gr@sriainfotech.com",
-      },
-    ],
-    Qatar: [
-      {
-        address: "West Bay, Doha, Qatar",
-        phone: "+974 4455 0123",
-        email: "info.qa@sriainfotech.com",
-      },
-    ],
+    // "United Kingdom": [
+    //   {
+    //     address: "Berkeley Square House, London, W1J 6BD",
+    //     phone: "+44 797 982 1621",
+    //     email: "info.uk@sriainfotech.com",
+    //   },
+    // ],
+    // Singapore: [
+    //   {
+    //     address: "31 Cantonment Road, P.O. Box: 089747",
+    //     phone: "+65 9086 0319",
+    //     email: "info.sg@sriainfotech.com",
+    //   },
+    // ],
+    // "South Africa": [
+    //   {
+    //     address: "123 Business District, Cape Town, 8001",
+    //     phone: "+27 21 555 0123",
+    //     email: "info.za@sriainfotech.com",
+    //   },
+    // ],
+    // "Saudi Arabia": [
+    //   {
+    //     address: "King Fahd Road, Riyadh 11564, Saudi Arabia",
+    //     phone: "+966 11 555 0123",
+    //     email: "info.sa@sriainfotech.com",
+    //   },
+    // ],
+    // UAE: [
+    //   {
+    //     address: "308 Indigo Tower, Dubai, P.O. Box: 112965",
+    //     phone: "+971 4 452 9897",
+    //     email: "info.ae@sriainfotech.com",
+    //   },
+    // ],
+    // Kuwait: [
+    //   {
+    //     address: "Al-Shuhada Street, Kuwait City, Kuwait",
+    //     phone: "+965 2555 0123",
+    //     email: "info.kw@sriainfotech.com",
+    //   },
+    // ],
+    // Greece: [
+    //   {
+    //     address: "Syntagma Square, Athens 10563, Greece",
+    //     phone: "+30 210 555 0123",
+    //     email: "info.gr@sriainfotech.com",
+    //   },
+    // ],
+    // Qatar: [
+    //   {
+    //     address: "West Bay, Doha, Qatar",
+    //     phone: "+974 4455 0123",
+    //     email: "info.qa@sriainfotech.com",
+    //   },
+    // ],
     India: [
       {
-        address: "Cyber City, Gurgaon, Haryana 122002, India",
-        phone: "+91 124 555 0123",
-        email: "info.in@sriainfotech.com",
+        address: "First Floor, 1-121/63 Survey No. 63 Part Hotel, Sitara Grand Backside, Miyapur, Hyderabad, Telangana, India 500049",
+        phone: "+91 97013 14138",
+        email: "hr@sriainfotech.com",
       },
-    ],
-    Egypt: [
       {
-        address: "New Cairo, Cairo Governorate, Egypt",
-        phone: "+20 2 555 0123",
-        email: "info.eg@sriainfotech.com",
+        address: "Amaravati, Telangana 500081",
+        phone: "+91 95539 55893",
+        email: "hr@sriainfotech.com",
       },
+      {
+        address: "TASK Center, Mulugu, Telangana 506343",
+        phone: "+91 90145 52492",
+        email: "hr@sriainfotech.com",
+      },
+      
     ],
+    // Egypt: [
+    //   {
+    //     address: "New Cairo, Cairo Governorate, Egypt",
+    //     phone: "+20 2 555 0123",
+    //     email: "info.eg@sriainfotech.com",
+    //   },
+    // ],
   };
 
   const columns = {
     "Company Information": [
-      { label: "About SRia Infotech", href: "/about" },
-      { label: "SAP Partner", href: "/sap-partner" },
-      { label: "Why SRia", href: "/why-sria" },
-      { label: "Current Openings", href: "/careers" },
-      { label: "Life at SRia", href: "/life-at-sria" },
-      { label: "Partner with Us", href: "/partner-with-us" },
+      { label: "About Sria Infotech", href: "/aboutus" },
+      { label: "SAP Partner", href: "/about/sap-partner" },
+      // { label: "Why Sria", href: "/about/why-sria" },
+      { label: "Current Openings", href: "/about/careers" },
+      // { label: "Life at Sria", href: "/about/life-at-sria" },
+      { label: "Partner with Us", href: "/about/partner-with-us" },
     ],
     Solutions: [
       { label: "SAP S/4HANA", href: "/solutions/sap-s4hana" },
       { label: "SAP S/4HANA Private Cloud", href: "/solutions/private-cloud" },
       { label: "SAP S/4HANA Public Cloud", href: "/solutions/public-cloud" },
       { label: "SAP SuccessFactors", href: "/solutions/successfactors" },
-      { label: "SAP BTP", href: "/solutions/btp" },
-      { label: "SAP Analytics Cloud", href: "/solutions/analytics-cloud" },
-      {
-        label: "SAP Customer Experience",
-        href: "/solutions/customer-experience",
-      },
+      { label: "SAP CPI", href: "/solutions/cpi" },
+      { label: "SAP Build Apps", href: "/solutions/build-apps" },
+      { label: "SAP Financial Mgmt", href: "/solutions/financial" },
     ],
     Products: [
-      { label: "Vendor Management", href: "/products/vendor-management" },
-      { label: "Field Service Management", href: "/products/field-service" },
-      { label: "Real Estate Management", href: "/products/real-estate" },
-      { label: "Asset Management", href: "/products/asset-management" },
-      { label: "Distribution Management", href: "/products/distribution" },
-      { label: "Digital Retail Solution", href: "/products/digital-retail" },
-    ],
-    Industries: [
-      { label: "Retail", href: "/industries/retail" },
-      { label: "Consumer Products", href: "/industries/consumer-products" },
-      { label: "Engineering & Construction", href: "/industries/engineering" },
-      {
-        label: "Professional Services",
-        href: "/industries/professional-services",
-      },
-      { label: "Life Sciences & Healthcare", href: "/industries/healthcare" },
-      { label: "Manufacturing", href: "/industries/manufacturing" },
-    ],
-    "Quick Links": [
-      { label: "Customer Stories", href: "/customer-stories" },
-      { label: "Blogs", href: "/blogs" },
-      { label: "Newsroom", href: "/newsroom" },
-      { label: "CSR", href: "/csr" },
-      { label: "Corporate Governance", href: "/governance" },
-      {
-        label: "Labor Condition Application",
-        href: "/labor-condition-application",
-      },
-    ],
+        { label: "NxDesk", link: "/products/nxdesk" },
+        { label: "Nxify", link: "/products/nxify" },
+        { label: "Big", link: "/products/big" },
+        { label: "Gate Check", link: "/products/gatecheck" },
+      ],
+    // Industries: [
+    //   { label: "Retail", href: "/industries/retail" },
+    //   { label: "Consumer Products", href: "/industries/consumer-products" },
+    //   { label: "Engineering & Construction", href: "/industries/engineering" },
+    //   {
+    //     label: "Professional Services",
+    //     href: "/industries/professional-services",
+    //   },
+    //   { label: "Life Sciences & Healthcare", href: "/industries/healthcare" },
+    //   { label: "Manufacturing", href: "/industries/manufacturing" },
+    // ],
+    // "Quick Links": [
+    //   { label: "Customer Stories", href: "/customer-stories" },
+    //   { label: "Blogs", href: "/blogs" },
+    //   { label: "Newsroom", href: "/newsroom" },
+    //   { label: "CSR", href: "/csr" },
+    //   { label: "Corporate Governance", href: "/governance" },
+    //   {
+    //     label: "Labor Condition Application",
+    //     href: "/labor-condition-application",
+    //   },
+    // ],
   };
 
   const handleSubscribe = (): void => {
@@ -191,10 +195,9 @@ const Footer: React.FC = () => {
   return (
     <div className="bg-black w-full text-white font-[Questrial,Arial,Verdana,Tahoma,sans-serif] overflow-hidden">
       <footer className="bg-black text-white py-10  w-full">
-        <div className="mt-3 w-full ">
+        <div className="mt-3 w-full mb-4">
           <section className="text-center w-full mb-12">
-            <div
-              className="bg-cover bg-center bg-red-500 bg-no-repeat py-5 px-2 "
+            <div className="bg-cover bg-center bg-red-500 bg-no-repeat py-5 px-2 "
               style={{
                 backgroundImage:
                   "url('https://www.accely.com/wp-content/themes/accely/assets/images/footer-bg.webp')",
@@ -218,7 +221,7 @@ const Footer: React.FC = () => {
               </button>
             </div>
 
-            <div
+            {/* <div
               className="overflow-hidden pb-10 border-t border-gray-500 whitespace-nowrap"
               style={{
                 background: `linear-gradient(90deg, rgb(34, 34, 34) 0%, rgb(24, 24, 24) 55.5%, rgb(34, 34, 34) 100%)`,
@@ -234,14 +237,14 @@ const Footer: React.FC = () => {
                   />
                 ))}
               </div>
-            </div>
+            </div> */}
           </section>
         </div>
 
         {/* Newsletter Section */}
         <div className="mt-3 w-full mb-16">
           <div
-            className="py-3 px-2 w-full"
+            className="py-5 px-2 w-full"
             style={{
               background: `linear-gradient(90deg, rgb(34, 34, 34) 0%, rgb(24, 24, 24) 55.5%, rgb(34, 34, 34) 100%)`,
             }}
@@ -255,13 +258,13 @@ const Footer: React.FC = () => {
                   Get the weekly updates and insights right in your inbox.
                 </p>
               </div>
-              <div className="flex flex-col sm:flex-row gap-3 md:w-1/2 ">
+              <div className="flex flex-col sm:flex-row gap-3 md:w-1/2">
                 <input
                   type="email"
                   placeholder="Enter your email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="flex-1 px-1 bg-gray-800 border border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:border-orange-500"
+                  className="flex-1 px-2 py-1 bg-gray-800 border border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:border-orange-500"
                 />
                 <button
                   onClick={handleSubscribe}
@@ -276,100 +279,45 @@ const Footer: React.FC = () => {
 
         {/* Location Section */}
         <section className="border-t border-gray-700 pt-10 pb-6">
-          <div className="flex flex-col lg:flex-row gap-8">
-            <div className="lg:w-1/4 ">
-              <div className="mb-6 ">
-                <h3 className="text-[36px] font-normal  text-white mb-2 pl-2">
-                  Location
-                </h3>
-                <div className="flex items-center gap-2 text-orange-400 hover:text-orange-300 cursor-pointer pl-2">
-                  <span>View all locations</span>
-                  <ArrowRight size={16} />
-                </div>
-              </div>
-
-              <div className="p-4 rounded-lg w-full sm:max-w-[300px]">
-                <div className="relative">
-                  <button
-                    onClick={() => setIsDropdownOpen(!isDropdownOpen)}
-                    className="w-full flex items-center justify-between p-3 bg-black border border-gray-600 text-white transition"
-                  >
-                    <div className="flex items-center gap-3">
-                      <span className="text-[16px]">
-                        {
-                          countries.find((c) => c.name === selectedCountry)
-                            ?.flag
-                        }
-                      </span>
-                      <span className="text-sm">{selectedCountry}</span>
-                    </div>
-                    <ArrowRight
-                      size={16}
-                      className={`transform transition-transform ${
-                        isDropdownOpen ? "rotate-90" : ""
-                      }`}
-                    />
-                  </button>
-
-                  {isDropdownOpen && (
-                    <div className="absolute top-full left-0 right-0 w-full mt-1 bg-gray-800 border border-gray-600 rounded shadow-lg z-10 max-h-60 overflow-y-auto">
-                      {countries.map((country) => (
-                        <div
-                          key={country.name}
-                          onClick={() => {
-                            setSelectedCountry(country.name);
-                            setIsDropdownOpen(false);
-                          }}
-                          className={`flex items-center gap-3 p-3 hover:bg-gray-700 cursor-pointer transition ${
-                            selectedCountry === country.name
-                              ? "bg-orange-500 text-white"
-                              : "text-gray-300"
-                          }`}
-                        >
-                          <span className="text-lg">{country.flag}</span>
-                          <span className="text-sm">{country.name}</span>
-                        </div>
-                      ))}
-                    </div>
-                  )}
-                </div>
-              </div>
+          <div className="mb-6">
+            <h3 className="text-[36px] font-normal text-white mb-2 pl-2">
+              Location
+            </h3>
+            <div className="flex items-center gap-2 text-orange-400 hover:text-orange-300 cursor-pointer pl-2">
+              <span>View all locations</span>
+              <ArrowRight size={16} />
             </div>
+          </div>
 
-            <div className="lg:w-3/4">
-              <div className="p-6">
-                <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 gap-6">
-                  {locationData[selectedCountry]?.map((loc, index) => {
-                    const country = countries.find(
-                      (c) => c.name === selectedCountry
-                    );
-                    return (
-                      <div
-                        key={index}
-                        className="bg-gray-900 p-5 border border-gray-700 shadow-md w-full"
-                      >
-                        <div className="flex items-center gap-2 mb-3">
-                          <span className="text-[16px]">{country?.flag}</span>
-                          <span className="text-[16px] font-normal text-white">
-                            {selectedCountry}
-                          </span>
-                        </div>
-                        <p className="text-gray-300 text-[16px] font-normal">
-                          <strong>Address:</strong> {loc.address}
-                        </p>
-                        <p className="flex items-center gap-2 text-gray-300 text-[15px] font-normal mt-2">
-                          <FaPhoneAlt className="text-orange-400" />
-                          <strong>Phone:</strong> {loc.phone}
-                        </p>
-                        <p className="flex items-center gap-2 text-gray-300 text-[15px] font-normal mt-2">
-                          <FaEnvelope className="text-orange-400" />
-                          <strong>Email:</strong> {loc.email}
-                        </p>
-                      </div>
-                    );
-                  })}
-                </div>
-              </div>
+          <div className="p-6">
+            <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-6">
+              {Object.entries(locationData).map(([countryName, locations]) => {
+                const country = countries.find((c) => c.name === countryName);
+                return locations.map((loc, index) => (
+                  <div
+                    key={`${countryName}-${index}`}
+                    className="bg-gray-900 p-5 border border-gray-700 shadow-md w-full"
+                  >
+                    <div className="flex items-center gap-2 mb-3">
+                      <span className="text-[16px]">{country?.flag}</span>
+                      <span className="text-[16px] font-normal text-white">
+                        {countryName}
+                      </span>
+                    </div>
+                    <p className="text-gray-300 text-[16px] font-normal">
+                      <strong>Address:</strong> {loc.address}
+                    </p>
+                    <p className="flex items-center gap-2 text-gray-300 text-[15px] font-normal mt-2">
+                      <FaPhoneAlt className="text-orange-400" />
+                      <strong>Phone:</strong> {loc.phone}
+                    </p>
+                    <p className="flex items-center gap-2 text-gray-300 text-[15px] font-normal mt-2">
+                      <FaEnvelope className="text-orange-400" />
+                      <strong>Email:</strong> {loc.email}
+                    </p>
+                  </div>
+                ));
+              })}
             </div>
           </div>
         </section>
@@ -377,13 +325,13 @@ const Footer: React.FC = () => {
         <hr className="my-8 border-gray-700" />
 
         {/* Desktop Columns */}
-        <section className="hidden md:grid grid-cols-2 md:grid-cols-5 gap-6 text-sm">
+        <section className="hidden md:grid grid-cols-2 md:grid-cols-3 gap-8 text-sm">
           {Object.entries(columns).map(([title, links]) => (
             <div key={title}>
-              <h3 className="text-[16px] font-normal font-semibold mb-3">
+              <h3 className="text-[16px] font-semibold mb-3">
                 {title}
               </h3>
-              <ul className="space-y-2">
+              <ul className="felx justify-between">
                 {links.map(({ label, href }) => (
                   <li key={label}>
                     <a href={href} className="hover:underline">
@@ -448,7 +396,7 @@ const Footer: React.FC = () => {
             <FaYoutube className="hover:text-orange-400 cursor-pointer" />
             <FaInstagram className="hover:text-orange-400 cursor-pointer" />
           </div>
-          <div className="flex flex-wrap gap-2 justify-center md:justify-end text-center">
+          {/* <div className="flex flex-wrap gap-2 justify-center md:justify-end text-center">
             <a href="#" className="hover:text-white">
               Privacy Policy
             </a>
@@ -464,14 +412,22 @@ const Footer: React.FC = () => {
             <a href="#" className="hover:text-white">
               Cookie Preferences
             </a>
-          </div>
+          </div> */}
         </div>
 
         {/* Branding */}
         <div className="w-full flex flex-col sm:flex-row items-center justify-between gap-2 text-center">
-          <div className="text-xl font-bold text-white">Sria Infotech</div>
+          <div className="text-left"><h1 className="text-xl font-bold text-white">Sria Infotech</h1>
+          <div className="text-xs text-gray-50">
+            <p>Smart.</p>
+            <p>Resilient.</p>
+            <p> Inclusive.</p>
+            <p>Agile.</p>
+            <p>Your trusted partner in digital transformation.</p>
+          </div>
+          </div>
           <div>
-            <div className="text-4xl font-bold text-orange-400">2024</div>
+            <div className="text-4xl font-bold text-orange-400">2025</div>
             <div className="mt-2 text-xs text-gray-500">
               All rights reserved
             </div>
