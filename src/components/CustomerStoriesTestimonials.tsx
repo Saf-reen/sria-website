@@ -126,10 +126,10 @@ export const CustomerStories: React.FC<{
     <div
       className={`${
         theme === "dark" ? "text-white" : "text-black"
-      }  pt-20 px-4`}
+      }  pt-20 `}
     >
       <div className="flex justify-between items-center mb-8">
-        <h2 className="text-[61px]  sm:text-[61px] font-normal font-questrial leading-tight sm:leading-tight leading-[0.9]">
+        <h2 className="text-[61px]  sm:text-[61px] font-normal font-questrial leading-tight sm:leading-tight leading-[0.90]">
           Customer stories
         </h2>
         <div className="flex gap-2">
@@ -202,9 +202,9 @@ export const Testimonials: React.FC<{
   );
 
   return (
-    <div className="text-white mt-5 pt-5  mb-5 px-4">
+    <div className="text-white mt-5 pt-5  mb-5 px-2">
       <div className="flex justify-between items-center mb-8">
-        <h2 className="text-[61px] sm:text-[61px] font-normal font-questrial leading-tight sm:leading-tight leading-[0.9]">
+        <h2 className="text-[61px] sm:text-[61px] font-normal font-questrial leading-tight sm:leading-tight leading-[0.90]">
           What Clients are Saying
         </h2>
         <div className="flex gap-2">

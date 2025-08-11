@@ -331,7 +331,7 @@ const Navigation: React.FC<NavigationProps> = ({
 
         <div
           className={`overflow-hidden transition-all duration-300 ${
-            activeMobileDropdown === id ? "max-h-96 pb-4" : "max-h-0"
+            activeMobileDropdown === id ? "max-h-[1000px] pb-4" : "max-h-0"
           }`}
         >
           {sections.map((section, sectionIdx) => (
@@ -687,7 +687,7 @@ const Navigation: React.FC<NavigationProps> = ({
                 <img
                   src={logo}
                   alt="Logo"
-                  className="h-10 w-auto"
+                  className="h-20 w-auto"
                 />
                 {/* <span className="text-orange-300">S</span>ria{" "}
                 <span className="text-orange-300">I</span>nfotech  */}
@@ -738,10 +738,10 @@ const Navigation: React.FC<NavigationProps> = ({
             <div className="flex items-center space-x-3">
               {/* Desktop Search and Language - Hidden on mobile */}
               <div className="hidden md:flex items-center space-x-3">
-                <Search className="w-4 h-4 text-white hover:text-orange-300 cursor-pointer transition-colors" />
+             
 
                 {/* Language Selector */}
-                <div className="relative">
+                {/* <div className="relative">
                   <button
                     onClick={() => setShowLanguages(true)}
                     onMouseEnter={() => setShowLanguages(true)}
@@ -776,7 +776,7 @@ const Navigation: React.FC<NavigationProps> = ({
                       ))}
                     </div>
                   )}
-                </div>
+                </div> */}
               </div>
 
               <Link
@@ -854,18 +854,15 @@ const Navigation: React.FC<NavigationProps> = ({
               />
 
               {/* Mobile Search and Language */}
-              <div className="border-t border-gray-700 pt-4 mt-4">
+              {/* <div className="border-t border-gray-700 pt-4 mt-4">
                 <div className="flex items-center space-x-4 mb-4">
-                  <button className="flex items-center text-white hover:text-orange-300 transition-colors">
-                    <Search className="w-4 h-4 mr-2" />
-                    Search
-                  </button>
+                 
                   <button className="flex items-center text-white hover:text-orange-300 transition-colors">
                     <Globe className="w-4 h-4 mr-2" />
                     Global
                   </button>
                 </div>
-              </div>
+              </div> */}
             </div>
           </div>
         </div>

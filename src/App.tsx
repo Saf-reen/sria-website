@@ -4,7 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
-import Contact from "./pages/Contact";
+
 import NotFound from "./pages/NotFound";
 import Big from "./pages/Products/Big";
 import GateCheck from "./pages/Products/GateCheck";
@@ -34,7 +34,7 @@ import PublicCloud from "./pages/Solutions/SAPERP/PublicCloud";
 import PrivateCloud from "./pages/Solutions/SAPERP/PrivateCloud";
 import CloudPlanning from "./pages/Solutions/SAPANALITICSCLOUD/CloudPlanning";
 import GroupReporting from "./pages/Solutions/SAPANALITICSCLOUD/GroupReporting";
-import PaPM from "./pages/Solutions/SAPANALITICSCLOUD/PaPm";
+import PaPM from "./pages/Solutions/SAPANALITICSCLOUD/PaPM";
 import SAPFinancialMgmt from "./pages/Solutions/SAPANALITICSCLOUD/SAPFinancialMgmt";
 import CommerceCloud from "./pages/Solutions/SAPCRM/CommerceCloud";
 import Emarsys from "./pages/Solutions/SAPCRM/Emarsys";
@@ -50,6 +50,13 @@ import ComingSoon from "./pages/About/ComingSoon";
 import Partner from "./pages/About/Partners"
 import Locations from "./pages/About/Location";
 import AboutUs from "./pages/AboutUs";
+import ScrollToTop from "./components/ScrollToTop";
+import BTP from "./pages/Solutions/SAPBTP/BTP";
+// import CustomerStory1 from "./pages/CustomerStory1";s
+import News1 from "./pages/News1";
+import HillsStory from "./pages/HillsStory";
+import LvkPharma from "./pages/LvkPharma";
+import Patil from "./pages/Patil";
 
 const queryClient = new QueryClient();
 
@@ -59,9 +66,10 @@ const App = () => (
       <Toaster />
       <Sonner />
       <BrowserRouter>
+      <ScrollToTop/>
         <Routes>
           <Route path="/" element={<Index />} />
-          <Route path="/contact" element={<Contact />} />
+          <Route path="/contact" element={<ContactUs />} />
           {/* ADD ALL CUSTOM ROUTES ABOVE THE CATCH-ALL "*" ROUTE */}
           <Route path="*" element={<NotFound />} />
           <Route path="/services/business-consulting" element={<BusinessConsulting />} />
@@ -88,7 +96,9 @@ const App = () => (
           <Route path="/products/eerly-ai-brain" element={<EerlyAIBrain />} /> */}
           <Route path="/contactus" element={<ContactUs />} />
           <Route path="/solutions/sap-s4hana" element={<SapS4hana />} />
+          <Route path="/news1" element={<News1/>}/>
           <Route path="/solutions/public-cloud" element={<PublicCloud />}/>
+          <Route path="/solutions/btp" element ={<BTP/>}/>
           <Route path="/solutions/private-cloud" element={<PrivateCloud />}/>
           <Route path="/solutions/financial" element={<SAPFinancialMgmt />}/>
           <Route path="/solutions/group-reporting" element={<GroupReporting />}/>
@@ -101,15 +111,8 @@ const App = () => (
           <Route path="/solutions/cpi" element={<CPI />} />
           <Route path="/solutions/build-apps" element={<BuildApps />} />
           <Route path="/solutions/successfactors" element={<SuccessFactors />} />
-          <Route path="/solutions/sap-business-ai" element={<SAPBusinessAI />} />
-          <Route path="/solutions/e-mobility" element={<EMobility />} />
-          <Route path="/solutions/esg-consulting" element={<ESGConsulting />} />
-          <Route path="/solutions/sustainability" element={<SAPSustainability />} />
-          <Route path="/solutions/blockchain" element={<BlockChain />} />
-          <Route path="/solutions/digital-transformation" element={<DigitalTransformation />} />
-          <Route path="/solutions/ecm" element={<ECM />} />
-          <Route path="/solutions/iot" element={<IoT />} />
-          <Route path="/solutions/rpa" element={<RPA />} />
+          
+        
           <Route path="/about/leadership" element={<LeaderShip />} />
           <Route path="/about/sap-partner" element={<ComingSoon />}/>
           <Route path="/about/careers" element={<Careers />} />
@@ -118,6 +121,12 @@ const App = () => (
           <Route path="/about/events" element={<Partner />}/>
           <Route path="/about/locations" element={<Locations />} />
           <Route path="/aboutus" element={<AboutUs />} />
+          
+           <Route path="/hills" element={<HillsStory/>}/>
+               <Route path="/Lvk" element={<LvkPharma/>}/>
+                             <Route path="/patil" element={<Patil/>}/>
+
+
         </Routes>
       </BrowserRouter>
     </TooltipProvider>

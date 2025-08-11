@@ -6,41 +6,16 @@ type Feature = {
   image: string;
 };
 
-const features: Feature[] = [
-  {
-    title: "Plans and Licensing Administration",
-    description:
-      "We offer full 360-degree end-to-end management of license & scheme development, in addition to simple and seamless scheme management services.",
-    image: "/Axim/1.png",
-  },
-  {
-    title: "Managing Export Incentive Faster",
-    description:
-      "Optimize your incentive processing with automated EXIM tools.",
-    image: "/Axim/2.png",
-  },
-  {
-    title: "Expense Management for Logistics",
-    description:
-      "Control and monitor logistics expenses across borders efficiently.",
-    image: "/Axim/3.png",
-  },
-  {
-    title: "Extraordinary Record-keeping",
-    description:
-      "Maintain accurate, auditable records for all your EXIM transactions.",
-    image: "/Axim/4.png",
-  },
-  {
-    title: "Controlling Exchange Currency",
-    description:
-      "Manage currency fluctuations and streamline forex operations.",
-    image: "/Axim/5.png",
-  },
-];
+type FeatureTabsProps = {
+  features: Feature[];
+};
 
-const FeatureTabs: React.FC = () => {
+const FeatureTabs: React.FC<FeatureTabsProps> = ({ features }) => {
   const [activeIndex, setActiveIndex] = useState(0);
+
+  if (!features || features.length === 0) {
+    return <div>No features to display.</div>; // fallback
+  }
 
   return (
     <div className="flex flex-col md:flex-row p-8 rounded-lg">
@@ -53,7 +28,6 @@ const FeatureTabs: React.FC = () => {
               className={`relative py-5 pl-6 pr-4 cursor-pointer transition-all`}
               onClick={() => setActiveIndex(index)}
             >
-              {/* Yellow Line - Absolutely positioned over the left border */}
               {activeIndex === index && (
                 <div className="absolute left-0 top-0 h-full w-1 bg-yellow-400 z-10" />
               )}

@@ -8,6 +8,7 @@ import {
   FaPhoneAlt,
   FaEnvelope,
 } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 interface Country {
   name: string;
@@ -140,13 +141,13 @@ const Footer: React.FC = () => {
   };
 
   const columns = {
-    "Company Information": [
-      { label: "About Sria Infotech", href: "/aboutus" },
-      { label: "SAP Partner", href: "/about/sap-partner" },
+    "Services": [
+      { label: "Managed Services", href: "/sapmanagedservices" },
+      { label: "AMS", href: "/ams" },
       // { label: "Why Sria", href: "/about/why-sria" },
-      { label: "Current Openings", href: "/about/careers" },
+      { label: "SAP Implementation Services", href: "/sapimplement" },
       // { label: "Life at Sria", href: "/about/life-at-sria" },
-      { label: "Partner with Us", href: "/about/partner-with-us" },
+      { label: "ABAP", href: "/abap" },
     ],
     Solutions: [
       { label: "SAP S/4HANA", href: "/solutions/sap-s4hana" },
@@ -215,9 +216,11 @@ const Footer: React.FC = () => {
               </div>
 
               <button className="mt-6 mb-10 text-[16px] bg-orange-500 hover:bg-orange-600 text-white px-6 py-2 transition">
-                <div className="flex flex-row justify-center items-center gap-2">
+                <Link  to={"/contactus"} className="flex flex-row justify-center items-center gap-2">
+                
                   Get started <ArrowRight />
-                </div>
+                  </Link>
+              
               </button>
             </div>
 
@@ -322,10 +325,10 @@ const Footer: React.FC = () => {
           </div>
         </section>
 
-        <hr className="my-8 border-gray-700" />
+        <hr className="my-8  border-gray-700" />
 
         {/* Desktop Columns */}
-        <section className="hidden md:grid grid-cols-2 md:grid-cols-3 gap-8 text-sm">
+        <section className="hidden md:grid grid-cols-2 md:grid-cols-3 gap-8  px-2 text-sm">
           {Object.entries(columns).map(([title, links]) => (
             <div key={title}>
               <h3 className="text-[16px] font-semibold mb-3">
@@ -345,7 +348,7 @@ const Footer: React.FC = () => {
         </section>
 
         {/* Mobile Collapsible Columns */}
-        <section className="md:hidden">
+        <section className="md:hidden ">
           {Object.entries(columns).map(([title, links]) => (
             <div key={title} className="mb-4">
               <button
@@ -372,7 +375,7 @@ const Footer: React.FC = () => {
               </button>
 
               {openSections.includes(title) && (
-                <ul className="pl-4 space-y-1 bg-gray-800">
+                <ul className="pl-4 space-y-1 px-2 bg-gray-800">
                   {links.map(({ label, href }) => (
                     <li key={label}>
                       <a href={href} className="hover:underline">
@@ -389,7 +392,7 @@ const Footer: React.FC = () => {
         <hr className="my-8 border-gray-700" />
 
         {/* Social and Links */}
-        <div className="flex flex-col sm:flex-col md:flex-row justify-between items-center gap-4 text-[16px] font-normal text-gray-400 mb-6">
+        <div className="flex flex-col sm:flex-col px-2 md:flex-row justify-between items-center gap-4 text-[16px] font-normal text-gray-400 mb-6">
           <div className="flex justify-center gap-4 text-lg text-white">
             <FaLinkedinIn className="hover:text-orange-400 cursor-pointer" />
             <FaFacebookF className="hover:text-orange-400 cursor-pointer" />
@@ -416,7 +419,7 @@ const Footer: React.FC = () => {
         </div>
 
         {/* Branding */}
-        <div className="w-full flex flex-col sm:flex-row items-center justify-between gap-2 text-center">
+        <div className="w-full flex flex-col px-2 sm:flex-row items-center justify-between gap-2 text-center">
           <div className="text-left"><h1 className="text-xl font-bold text-white">Sria Infotech</h1>
           <div className="text-xs text-gray-50">
             <p>Smart.</p>

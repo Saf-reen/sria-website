@@ -7,7 +7,7 @@ interface RightSectionProps {
 
 const RightSection: React.FC<RightSectionProps> = ({ children }) => {
   return (
-    <div className="w-full md:w-1/2 min-h-[300px] md:h-auto  flex items-center justify-center">
+    <div className="w-full md:w-1/2 h-[400px]  flex items-center justify-center">
       {children}
     </div>
   );

@@ -127,7 +127,7 @@ const EventsNewsComponent: React.FC<Props> = ({ events, news }) => {
         </div>
 
         {/* Latest News Section */}
-        <div className="mb-16">
+        {/* <div className="mb-16">
           <div className="flex flex-row sm:flex-row items-center justify-between mb-8">
             <h2 className="text-[42px] sm:text-[61px] text-gray-800 leading-tight">
               Latest News
@@ -203,7 +203,7 @@ const EventsNewsComponent: React.FC<Props> = ({ events, news }) => {
               </div>
             </div>
           </div>
-        </div>
+        </div> */}
       </div>
     </div>
   );

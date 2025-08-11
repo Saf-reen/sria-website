@@ -35,29 +35,7 @@ function AboutUs() {
           <GlobalOffices />
         </div>
       </div>
-      <div className="p-4 lg:p-8   bg-white relative z-10">
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-6 lg:gap-8 max-w-6xl mx-auto">
-          {[
-            { src: "/fixedIcons/1.png", label: "ISO 9001" },
-            { src: "/fixedIcons/2.png", label: "ISO 27001" },
-            { src: "/fixedIcons/3.png", label: "CMMI Level 5" },
-            { src: "/fixedIcons/4.png", label: "AWS Partner" },
-            { src: "/fixedIcons/5.png", label: "Microsoft Gold" },
-            { src: "/fixedIcons/6.png", label: "ISO 9001" },
-          ].map((item, index) => (
-            <div
-              key={index}
-              className="flex flex-col items-center justify-center p-2 lg:p-4"
-            >
-              <img
-                src={item.src}
-                alt={item.label}
-                className="h-46 sm:h-40 lg:h-40 mb-2 object-contain"
-              />
-            </div>
-          ))}
-        </div>
-      </div>
+     
       <div className="w-full bg-black relative z-10">
         {" "}
         {/* Full width container */}

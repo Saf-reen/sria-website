@@ -115,21 +115,26 @@ function SAPManagedServices() {
       title: "Field Service Management",
       description:
         "Efficiently manage remote teams, assets, and processes to enhance service delivery.",
+        link:"/"
     },
+
     {
       title: "Real Estate Management",
       description:
         "Automate property management tasks, including rent collection and maintenance.",
+           link:"/"
     },
     {
       title: "Intelligent Character Recognition",
       description:
         "Transforming document processing to achieve greater automation and efficiency.",
+           link:"/"
     },
     {
       title: "Digital Logistics",
       description:
         "Modernize logistics operations for more efficient and reliable deliveries.",
+           link:"/"
     },
   ];
 
@@ -365,7 +370,7 @@ function SAPManagedServices() {
               </section>{" "}
               <section
                 id="customer stories"
-                className=" max-w-[1400px]  w-full pb-10 bg-black "
+                className=" max-w-[1400px] px-2  w-full pb-10 bg-black "
               >
                 <CustomerStories stories={customerStories} />
               </section>{" "}
@@ -398,7 +403,7 @@ function SAPManagedServices() {
                         "Comprehensive guide to international trade practices.",
                       image:
                         "https://www.accely.com/wp-content/uploads/2022/07/What-Is-Included-In-SAP-Managed-Services.webp",
-                    },
+                   link:"" },
                   ]}
                 />
               </section>

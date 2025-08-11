@@ -3,10 +3,10 @@ import React from "react";
 import { Link } from "react-router-dom";
 
 const sapSolutions = [
-  { title: "RISE with SAP" },
-  { title: "GROW with SAP" },
-  { title: "SAP SuccessFactors" },
-  { title: "SAP BTP" },
+  { title: "RISE with SAP",link:"/solutions/sap-s4hana" },
+  { title: "GROW with SAP", link:"/solutions/financial" },
+  { title: "SAP SuccessFactors", link:"/solutions/successfactors" },
+  { title: "SAP CPI",link:"/solutions/cpi" },
 ];
 
 const Hero = () => {
@@ -40,7 +40,7 @@ const Hero = () => {
           {/* Badge */}
           <div className="inline-block mb-4">
             <span className="text-white px-5 py-1 rounded-full text-sm shadow-lg uppercase tracking-wide">
-              WE ARE A PREMIER SAP GOLD PARTNER
+              WE ARE A PREMIER SAP DIGITAL PARTNER
             </span>
           </div>
 
@@ -87,8 +87,10 @@ const Hero = () => {
 
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-4 ">
             {sapSolutions.map((solution, index) => (
-              <div
+              <Link
+
                 key={index}
+                to={solution.link}
                 className="group relative border border-gray-600 bg-black/40 text-white px-5 py-5 overflow-hidden transition-all duration-300 hover:shadow-xl hover:border-yellow-400 cursor-pointer"
               >
                 <div className="transition-all duration-300 ease-in-out group-hover:-translate-y-1.5">
@@ -102,6 +104,7 @@ const Hero = () => {
                   <p className="text-[10px] text-gray-400 tracking-widest mb-1 text-start group-hover:scale-105 transition-transform">
                     SOLUTION
                   </p>
+
                   <div className="flex items-start justify-between">
                     <h3 className="text-base group-hover:text-yellow-400">
                       {solution.title}
@@ -111,7 +114,7 @@ const Hero = () => {
                     </span>
                   </div>
                 </div>
-              </div>
+            </Link>
             ))}
           </div>
         </div>

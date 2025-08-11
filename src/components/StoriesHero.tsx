@@ -38,7 +38,7 @@ const StoriesHero: React.FC<StoriesHeroProps> = ({
           <img
             src={imageSrc}
             alt={imageAlt}
-            className="w-full h-auto rounded-md object-cover"
+            className="w-full h-auto object-cover"
           />
         </div>
       </div>

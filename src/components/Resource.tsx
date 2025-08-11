@@ -5,6 +5,7 @@ interface Product {
   title: string;
   description: string;
   image: string; // Add image source
+  link:string;
 }
 
 interface ResourceProps {
@@ -31,7 +32,7 @@ const Resource: React.FC<ResourceProps> = ({
   };
 
   return (
-    <div className="w-full px-6 py-12">
+    <div className="w-full  py-12">
       <div className="flex justify-between items-center mb-6">
         <div>
           <h2 className="text-3xl font-semibold">{heading}</h2>
@@ -71,7 +72,7 @@ const Resource: React.FC<ResourceProps> = ({
             <h3 className="text-sm font-semibold mb-1">{product.title}</h3>
             <p className="text-xs text-gray-600 mb-4">{product.description}</p>
             <a
-              href="/resource1"
+              href={product.link}
               className="flex items-center text-sm font-medium hover:underline"
             >
               Learn more <ArrowRight className="ml-1 h-4 w-4" />

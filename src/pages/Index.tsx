@@ -4,6 +4,8 @@ import Hero from "@/components/Hero";
 import Navigation from "@/components/Navigation";
 import FloatingChat from "@/components/FloatingChat";
 import { ArrowRight, Link } from "lucide-react";
+import { Link as RouterLink } from "react-router-dom";
+
 import FeatureTabsWithText from "@/components/FeatureTabsWithText";
 import Requesademobtn from "@/components/Requesademobtn";
 import StatCard from "@/components/StatCard";
@@ -25,6 +27,7 @@ import {
   Testimonials,
 } from "@/components/CustomerStoriesTestimonials";
 import EventsNewsComponent from "@/components/EventsNewsComponent";
+import { link } from "fs";
 
 const Index = () => {
   interface Step {
@@ -39,64 +42,56 @@ const Index = () => {
     {
       id: 1,
       image:
-        "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=300&fit=crop",
-      title: "Transforming Business Operations With Innovative Solutions",
-      readMoreLink: "/customerstories1",
+        "/customerStories/patil.jpg",
+      title: "Patil Drives Operational Excellence with End-to-End SAP, AMS & OCR Automation",
+      readMoreLink: "/patil",
     },
     {
       id: 2,
       image:
-        "https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=300&fit=crop",
-      title: "Digital Innovation Success Through Strategic Partnership",
-      readMoreLink: "#",
+        "/customerStories/7hills.jpg",
+      title: "7Hills Restaurant Transforms Guest Experience with Custom Digital Platform",
+      readMoreLink: "/hills",
     },
     {
       id: 3,
       image:
-        "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=400&h=300&fit=crop",
-      title: "Scaling New Heights in Technology Excellence",
-      readMoreLink: "#",
+        "/customerStories/pharma.jpg",
+      title: "LVK Pharma Goes Digital with Odoo CRM, Eliminates Manual Processes",
+      readMoreLink: "/Lvk",
     },
   ];
 
-  const customerReviews = [
-    {
-      id: 1,
-      name: "Sarah Johnson",
-      role: "CEO, TechCorp",
-      rating: 5,
-      review:
-        "Outstanding service and incredible results. The team's dedication to excellence is evident in every aspect of their work. Highly recommend their services to anyone looking for top-tier solutions.",
-      verified: true,
-    },
-    {
-      id: 2,
-      name: "Michael Chen",
-      role: "CTO, InnovateLabs",
-      rating: 4.5,
-      review:
-        "Professional, efficient, and results-driven. They delivered exactly what was promised and more. The communication throughout the project was excellent and the final outcome exceeded expectations.",
-      verified: true,
-    },
-    {
-      id: 3,
-      name: "Emily Rodriguez",
-      role: "Marketing Director, GrowthCo",
-      rating: 5,
-      review:
-        "Exceptional quality and attention to detail. The team's expertise shines through in every deliverable. Working with them has been a game-changer for our business operations and growth strategy.",
-      verified: true,
-    },
-    {
-      id: 4,
-      name: "David Thompson",
-      role: "Founder, StartupX",
-      rating: 4.5,
-      review:
-        "Innovative solutions and outstanding support. The technical expertise and strategic guidance provided has been invaluable to our company's success and continued growth in the market.",
-      verified: true,
-    },
-  ];
+const customerReviews = [
+  {
+    id: 1,
+    name: "V. Jay",
+    role: "Chairman, LVK Pharma",
+    rating: 5,
+    review:
+      "Transitioning from pen and paper to a fully digital CRM with Odoo was a major shift for us. The team made the process seamless and supported us every step of the way. Their professionalism and technical depth have transformed our operations.",
+    verified: true,
+  },
+  {
+    id: 2,
+    name: "Vidyasagar",
+    role: "IT Head, Patil Group",
+    rating: 4.5,
+    review:
+      "From SAP configuration to fund management and PDF OCR automation, their solutions have helped us scale faster and smarter. The team is responsive, strategic, and committed to long-term value. Excellent delivery across all modules.",
+    verified: true,
+  },
+  {
+    id: 3,
+    name: "Mallesh",
+    role: "Owner, 7Hills Restaurant",
+    rating: 5,
+    review:
+      "Our digital transformation has been incredible. From a modern website to real-time POS and inventory control, everything just works smoothly. Guests are happier, and so is my staff. I'm thankful for their vision and execution.",
+    verified: true,
+  },
+];
+
 
   const solutionSections = [
     {
@@ -107,135 +102,117 @@ const Index = () => {
           title: "SAP S/4HANA",
           description:
             "Streamline transactions, analyze with Big Data, and predict smarter business decisions.",
-          link: "#",
+          link: "/solutions/sap-s4hana",
         },
         {
           title: "SAP Private Cloud",
           description:
             "Real-time analytics, intelligent automation, and a user-friendly interface.",
-          link: "#",
+          link: "/solutions/private-cloud",
         },
         {
           title: "SAP SuccessFactors",
           description: "Cloud-based HCM with next-gen business practices.",
-          link: "#",
+          link: "/solutions/successfactors",
         },
         {
-          title: "SAP S/4HANA",
+          title: "SAP CPI",
           description:
             "Streamline transactions, analyze with Big Data, and predict smarter business decisions.",
-          link: "#",
+          link: "/solutions/cpi",
         },
         {
-          title: "SAP Private Cloud",
+          title: "SAP Public Cloud",
           description:
             "Real-time analytics, intelligent automation, and a user-friendly interface.",
-          link: "#",
-        },
-        {
-          title: "SAP SuccessFactors",
-          description: "Cloud-based HCM with next-gen business practices.",
-          link: "#",
+          link: "/solutions/public-cloud",
         },
       ],
     },
 
     {
-      title: "Raapyd",
+      title: "Odoo",
       icon: Cpu,
       items: [
         {
-          title: "Vendor Management",
+          title: "Odoo Implementation",
 
           description:
-            "Systematic processes for onboarding vendors and contract negotiation.",
-          link: "#",
+            "All-in-one open-source business management suite with integrated apps for CRM, accounting, inventory, HR, and more.",
+          link: "/odooservices/implementation",
         },
       ],
     },
-    {
-      title: "Hyland",
-      icon: Layers,
-      items: [
-        {
-          title: "Hyland ECM",
-          description:
-            "Enterprise content management for secure document workflows.",
-          link: "#",
-        },
-      ],
-    },
-    {
-      title: "Eerly AI",
-      icon: Layers,
-      items: [
-        {
-          title: "Vendor Management",
+    // {
+    //   title: "Hyland",
+    //   icon: Layers,
+    //   items: [
+    //     {
+    //       title: "Hyland ECM",
+    //       description:
+    //         "Enterprise content management for secure document workflows.",
+    //       link: "#",
+    //     },
+    //   ],
+    // },
+    // {
+    //   title: "Eerly AI",
+    //   icon: Layers,
+    //   items: [
+    //     {
+    //       title: "Vendor Management",
 
-          description:
-            "Systematic processes for onboarding vendors and contract negotiation.",
-          link: "#",
-        },
-      ],
-    },
-    {
-      title: "Automation Anywhere",
-      icon: Layers,
-      items: [
-        {
-          title: "Vendor Management",
+    //       description:
+    //         "Systematic processes for onboarding vendors and contract negotiation.",
+    //       link: "#",
+    //     },
+    //   ],
+    // },
+    // {
+    //   title: "Automation Anywhere",
+    //   icon: Layers,
+    //   items: [
+    //     {
+    //       title: "Vendor Management",
 
-          description:
-            "Systematic processes for onboarding vendors and contract negotiation.",
-          link: "#",
-        },
-      ],
-    },
+    //       description:
+    //         "Systematic processes for onboarding vendors and contract negotiation.",
+    //       link: "#",
+    //     },
+    //   ],
+    // },
   ];
 
   const sapSolutions = [
-    { title: "SAP Discovery & Evaluation" },
-    { title: "SAP Implementation" },
-    { title: "SAP Upgrade Services" },
-    { title: "SAP S/4HANA Migration" },
-    { title: "SAP Managed Services" },
+    { title: "SAP Managed Services ", link: "/sapmanagedservices/" },
+    { title: "SAP S/4HANA Implementation", link: "/sapimplement" },
+    { title: "SAP  S/4HANA Consulting Services", link: "/consulting" },
+    { title: "SAP Business Technology", link: "/businesstech/" },
+    { title: "Odoo", link: "/odooservices/implementation/" },
   ];
 
   // sampleData.ts
-  const sampleEvents = [
-    {
-      id: 1,
-      image: "https://via.placeholder.com/300x200/4F46E5/FFFFFF?text=Event+1",
-      title: "Tech Innovation Summit 2025",
-      tag: "In-person",
-      date: "May 28, 2025",
-      venue: "Dubai",
-    },
-    {
-      id: 2,
-      image: "https://via.placeholder.com/300x200/7C3AED/FFFFFF?text=Event+2",
-      title: "Digital Transformation Conference",
-      tag: "Virtual",
-      date: "June 15, 2025",
-      venue: "New York",
-    },
-    {
-      id: 3,
-      image: "https://via.placeholder.com/300x200/059669/FFFFFF?text=Event+3",
-      title: "AI & Machine Learning Workshop",
-      tag: "Hybrid",
-      date: "July 10, 2025",
-      venue: "London",
-    },
-    {
-      id: 4,
-      image: "https://via.placeholder.com/300x200/DC2626/FFFFFF?text=Event+4",
-      title: "Cloud Computing Expo",
-      tag: "In-person",
-      date: "August 20, 2025",
-      venue: "Singapore",
-    },
-  ];
+const sampleEvents = [
+  {
+    id: 1,
+    image: "/Events/sapevent.jpg", // Replace with your real banner if available
+    title: "SAP Inside Track 2025 – Edition 2",
+    tag: "In-person",
+    date: "August 23, 2025",
+    venue: "India (Venue TBA)",
+  },
+  
+  {
+    id: 2,
+    image: "/Events/launch.jpg", // Use real photo of the office or launch event banner
+    title: "New Office Launch – Mulugu District, Hyderabad",
+    tag: "In-person",
+    date: "August 11, 2025",
+    venue: "Mulugu, Hyderabad",
+  },
+];
+
+
 
   const sampleNews = [
     {
@@ -308,22 +285,22 @@ const Index = () => {
             <div className="w-full lg:w-1/2 ">
               <div className="w-full lg:w-full ">
                 <p className="text-[18px] lg:text-[21px] text-[rgba(255,255,255,0.72)] font-[Questrial,Arial,Verdana,Tahoma,sans-serif] font-normal">
-                  Accely offers top-tier SAP consulting services using refined
-                  methodologies and innovation, thus creating a synergy of the
-                  latest technology and vast accumulated experience. Renowned
-                  for our technical expertise and rapid return on investment
-                  (ROI), we serve small-medium businesses to Fortune 500
-                  Companies. We deliver high-value, end-to-end solutions as an
-                  SAP Value Added Reseller (VAR) partner.
+                  Sria Infotech offers top-tier SAP consulting services using
+                  refined methodologies and innovation, creating a synergy of
+                  cutting-edge technology and extensive industry experience.
+                  Renowned for our technical expertise and swift ROI, we serve
+                  businesses ranging from emerging enterprises to globally
+                  recognized industry leaders. We deliver high-value, end-to-end
+                  solutions tailored to meet diverse business needs.
                 </p>
 
                 <div className="mt-4 flex flex-col gap-2">
-                  <p className="text-white flex items-center text-[16px]">
+                  <RouterLink
+                    to="/aboutus"
+                    className="text-white flex items-center text-[16px]"
+                  >
                     Know more about us <ArrowRight className="ml-2" />
-                  </p>
-                  <p className="text-white flex items-center text-[16px]">
-                    Download corporate profile <ArrowRight className="ml-2" />
-                  </p>
+                  </RouterLink>
                 </div>
               </div>
             </div>
@@ -332,32 +309,32 @@ const Index = () => {
         <div className="w-full bg-[#0F0F0F] py-10">
           <div className="max-w-[1400px] mx-auto px-4 grid grid-cols-2 sm:grid-cols-2 lg:grid-cols-4 gap-8">
             <StatCard
-              percentage="480+"
+              percentage="20+"
               description="Projects Completed."
               delay={0.4}
             />
             <StatCard
-              percentage="20+"
+              percentage="4+"
               description="Global Offices"
               delay={0.0}
             />
             <StatCard
-              percentage="25+"
+              percentage="5+"
               description="Years of Experience"
               delay={0.6}
             />
             <StatCard
-              percentage="1800+"
+              percentage="50+"
               description="Group Employees"
               delay={0.2}
             />
           </div>
         </div>
-        <div className="bg-[#0F0F0F] w-full  py-10">
+        {/* <div className="bg-[#0F0F0F] w-full  py-10">
           <div className="max-w-[1400px] mx-auto ">
             <StrategicPartners />
           </div>
-        </div>
+        </div> */}
         <div className="mt-20 py-20 bg-white w-full">
           <div className="max-w-[1400px] mx-auto flex flex-col lg:flex-row items-center lg:items-start px-4 gap-10">
             {/* Left Column */}
@@ -375,10 +352,13 @@ const Index = () => {
                   empowering you to envision, plan, and implement transformative
                   solutions.
                 </p>
-                <p className="mt-2 text-yellow-500 flex items-center text-[16px] font-[Questrial,Arial,Verdana,Tahoma,sans-serif] font-normal">
+                <RouterLink
+                  to="/contactus"
+                  className="mt-2 text-yellow-500 flex items-center text-[16px] font-[Questrial,Arial,Verdana,Tahoma,sans-serif] font-normal"
+                >
                   Request a consultation
                   <ArrowRight className="ml-2" />
-                </p>
+                </RouterLink>
               </div>
             </div>
           </div>
@@ -388,20 +368,21 @@ const Index = () => {
             {sapSolutions.map((solution, index) => {
               let IconComponent = Box;
 
-              if (solution.title.toLowerCase().includes("discovery"))
+              if (solution.title.toLowerCase().includes("managed"))
                 IconComponent = Search;
               else if (solution.title.toLowerCase().includes("implementation"))
                 IconComponent = Rocket;
               else if (solution.title.toLowerCase().includes("upgrade"))
                 IconComponent = ArrowUp;
-              else if (solution.title.toLowerCase().includes("migration"))
+              else if (solution.title.toLowerCase().includes("business"))
                 IconComponent = Repeat;
-              else if (solution.title.toLowerCase().includes("managed"))
+              else if (solution.title.toLowerCase().includes("odoo"))
                 IconComponent = Settings;
 
               return (
-                <div
+                <RouterLink
                   key={index}
+                  to={solution.link || "#"}
                   className="group w-full sm:w-[260px] h-auto min-h-[150px] flex flex-col justify-between bg-[rgb(247,247,247)] border border-gray-300 text-black p-6 transition-all duration-300 hover:bg-white hover:scale-[1.03] hover:z-10 cursor-pointer"
                 >
                   <div>
@@ -413,21 +394,24 @@ const Index = () => {
                       <span className="text-xl shrink-0">→</span>
                     </div>
                   </div>
-                </div>
+                </RouterLink>
               );
             })}
           </div>
         </div>
-        <div className="mt-20 py-20 bg-white w-full">
+        <div className="mt-20 py-10 bg-white w-full">
           <div className="max-w-[1400px] mx-auto flex flex-col lg:flex-row items-center lg:items-start px-4 gap-10">
             <div className="w-full flex justify-between items-center">
               <h1 className="text-[2rem] sm:text-[2.8rem] md:text-[3.2rem] lg:text-[61px] font-[Questrial,Arial,Verdana,Tahoma,sans-serif] font-normal text-black leading-tight text-left">
                 Industries we modernize
               </h1>
-              <h1 className="text-yellow-500 flex items-center text-[16px] font-[Questrial,Arial,Verdana,Tahoma,sans-serif] font-normal flex-row gap-2 cursor-pointer text-right">
+              <RouterLink
+                to="/contactus"
+                className="text-yellow-500 flex items-center text-[16px] font-[Questrial,Arial,Verdana,Tahoma,sans-serif] font-normal flex-row gap-2 cursor-pointer text-right"
+              >
                 Request a consultation
                 <ArrowRight />
-              </h1>
+              </RouterLink>
             </div>
           </div>
         </div>
@@ -453,10 +437,13 @@ const Index = () => {
                   Being an SAP consulting company, we are a bunch of innovators
                   passionate about creating technologies...
                 </h1>
-                <h1 className="mt-2 text-yellow-500 flex items-center text-[15px] sm:text-[16px] font-[Questrial,Arial,Verdana,Tahoma,sans-serif] font-normal flex-row gap-2 cursor-pointer">
+                <RouterLink
+                  to="/contactus"
+                  className="mt-2 text-yellow-500 flex items-center text-[15px] sm:text-[16px] font-[Questrial,Arial,Verdana,Tahoma,sans-serif] font-normal flex-row gap-2 cursor-pointer"
+                >
                   Get in touch
                   <ArrowRight />
-                </h1>
+                </RouterLink>
               </div>
             </div>
           </div>
@@ -467,7 +454,7 @@ const Index = () => {
           </div>
         </div>
         <div className="mb-20 w-full bg-black flex flex-col lg:flex-row justify-around">
-          <div className="max-w-[1400px] w-full mx-auto flex flex-col gap-16 px-0 sm:px-4 ">
+          <div className="max-w-[1400px] w-full mx-auto flex flex-col gap-16 px-2 sm:px-4 ">
             <CustomerStories stories={customerStories} />
             <Testimonials
               reviews={customerReviews}
@@ -525,31 +512,9 @@ const Index = () => {
           </div>
         </div>
 
-        <div className="p-4 lg:p-8 rounded-lg mt-8">
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-6 lg:gap-8 max-w-6xl mx-auto">
-            {[
-              { src: "/fixedIcons/1.png", label: "ISO 9001" },
-              { src: "/fixedIcons/2.png", label: "ISO 27001" },
-              { src: "/fixedIcons/3.png", label: "CMMI Level 5" },
-              { src: "/fixedIcons/4.png", label: "AWS Partner" },
-              { src: "/fixedIcons/5.png", label: "Microsoft Gold" },
-              { src: "/fixedIcons/6.png", label: "ISO 9001" },
-            ].map((item, index) => (
-              <div
-                key={index}
-                className="flex flex-col items-center justify-center p-2 lg:p-4"
-              >
-                <img
-                  src={item.src}
-                  alt={item.label}
-                  className="h-46 sm:h-40 lg:h-40 mb-2 object-contain"
-                />
-              </div>
-            ))}
-          </div>
-        </div>
+     
 
-        <div className="w-full bg-black">
+        <div className="w-full mt-5 bg-black">
           {" "}
           {/* Full width container */}
           <div className="max-w-[1400px] w-full mx-auto">

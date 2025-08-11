@@ -23,7 +23,7 @@ const FAQSection: React.FC<FAQSectionProps> = ({
   };
 
   return (
-    <div className="w-full  mx-auto my-16 px-4">
+    <div className="w-full  mx-auto my-16 ">
       <h2 className="text-4xl font-semibold mb-8">{title}</h2>
       <div className="space-y-6 bg-gray-100 p-2">
         {faqs.map((faq, index) => (

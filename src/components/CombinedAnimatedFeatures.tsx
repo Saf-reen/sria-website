@@ -6,55 +6,55 @@ const partners = [
     id: 1,
     title: "Retail",
     description:
-      "Comprehensive retail solutions for modern commerce and customer experience.",
+      "The retail industry is evolving rapidly, and customer expectations are higher than ever. We help retail brands stay ahead by integrating SAP solutions for supply chain management, inventory optimization, and point-of-sale systems. Our custom web and mobile applications empower omnichannel commerce, personalized shopping experiences, and real-time analytics. From backend automation to consumer-facing platforms, we deliver end-to-end digital transformation for both physical and online retail.",
     image: "/partners/retail.jpg",
   },
   {
     id: 2,
     title: "Consumer products",
     description:
-      "Innovative consumer product development and market strategies.",
-    image: "/partners/consumer.jpg",
+      "In the fast-moving consumer goods (FMCG) and broader consumer products space, speed, visibility, and customer insight are key. Our team modernizes operations by implementing SAP S/4HANA for seamless integration across procurement, production, distribution, and customer service. We build mobile dashboards, custom reporting tools, and interactive platforms that provide instant access to performance data, helping brands adapt quickly to market trends and consumer behavior.",
+    image: "/partners/consumer.avif",
   },
   {
     id: 3,
     title: "Engineering and construction",
     description:
-      "Advanced engineering solutions and construction project management.",
+      "Engineering and construction firms operate in complex environments with long project cycles and intricate workflows. We enable these organizations to digitize operations with SAP-based project systems, procurement planning, workforce management, and contract lifecycle solutions. Our mobile apps bring site-level visibility, allowing field teams to collaborate in real time, manage assets efficiently, and reduce project delays through actionable data and automated reporting.",
     image: "/partners/engineering.jpg",
   },
   {
     id: 4,
     title: "Professional services",
     description:
-      "Expert professional services tailored to your business needs.",
+      "Time and expertise are the currency in professional services — and we help firms maximize both. Our SAP-based solutions streamline project and resource planning, automate billing and time tracking, and improve client relationship management. Through custom-built portals and dashboards, we help service organizations gain visibility into key performance indicators, reduce manual work, and deliver greater value to their clients with agility and transparency.",
     image: "/partners/professional.jpg",
   },
   {
     id: 5,
     title: "Life sciences & Healthcare",
     description:
-      "Cutting-edge life sciences and healthcare technology solutions.",
+      "Regulatory compliance, data accuracy, and patient safety are non-negotiable in the life sciences and healthcare sectors. We deliver secure, HIPAA/GDPR-compliant systems that integrate seamlessly with laboratory, hospital, and supply chain operations. From drug inventory management using SAP modules to mobile apps for remote patient monitoring, we build digital ecosystems that support clinical excellence, research, and operational efficiency at scale.",
     image: "/partners/healthcare.jpg",
   },
   {
     id: 6,
     title: "Manufacturing",
-    description: "Smart manufacturing solutions and industrial automation.",
-    image: "/partners/manufacturing.jpg",
+    description: " In the Industry 4.0 era, manufacturers must digitize to remain competitive. We bring smart factory solutions through SAP Manufacturing Execution Systems (MES), real-time production monitoring, quality assurance platforms, and IoT integration. Our mobile and web development capabilities allow stakeholders to access dashboards, manage inventory, and track KPIs anytime, anywhere. Whether discrete or process manufacturing, we help optimize throughput, minimize waste, and improve decision-making.",
+    image: "/partners/manufacturing.webp",
   },
   {
     id: 7,
     title: "Education",
-    description: "Educational technology and learning management solutions.",
+    description: "We support educational institutions in redefining learning experiences and streamlining administration through modern digital tools. From SAP Student Lifecycle Management to custom-built learning management systems (LMS), we offer scalable solutions for admissions, attendance, content delivery, and student analytics. Our web and mobile applications enhance communication between students, teachers, and parents — building a more connected and intelligent education ecosystem.",
     image: "/partners/education.jpg",
   },
   {
     id: 8,
     title: "High-Tech",
     description:
-      "Advanced high-tech solutions and digital transformation services.",
-    image: "/partners/hightech.jpg",
+      "The high-tech industry demands agility, scalability, and rapid product innovation. We help tech firms integrate SAP ERP systems with CRM, PLM, and SCM tools to support every stage of product and service delivery. Our development team builds custom applications that support high-volume transactions, subscription billing, customer portals, and AI-driven insights — helping high-tech companies innovate faster, operate efficiently, and lead the digital economy.",
+    image: "/partners/hightech.avif",
   },
 ];
 
@@ -65,6 +65,8 @@ const CombinedAnimatedFeatures = () => {
   const [showDescription, setShowDescription] = useState(false);
   const [hoveredId, setHoveredId] = useState<number | null>(null);
   const [isMobile, setIsMobile] = useState(false);
+   const expandedHeight = isMobile ? 950 : 600;
+  const collapsedHeight = 400;
 
   useEffect(() => {
     const checkMobile = () => {
@@ -111,7 +113,7 @@ const CombinedAnimatedFeatures = () => {
 
   return (
     <motion.div
-      animate={{ height: showDescription ? 800 : 600 }}
+      animate={{ height: showDescription ? expandedHeight : collapsedHeight }}
       transition={{ duration: 0.8, ease: "easeInOut" }}
       className="w-full text-black overflow-hidden relative font-[Questrial,Arial,Verdana,Tahoma,sans-serif] font-normal"
     >
@@ -156,12 +158,12 @@ const CombinedAnimatedFeatures = () => {
                 initial={{ x: 0, y: 0, opacity: 1 }}
                 animate={
                   isSettled
-                    ? { x: "-600px", y: 750, opacity: 1 }
+                    ? { x: "-600px", y: 500, opacity: 1 }
                     : { x: "-600px", y: 0, opacity: 1 }
                 }
                 exit={{
                   x: ["-600px", "-600px", "50%"],
-                  y: [750, 0, 0],
+                  y: [500, 0, 0],
                   opacity: [1, 1, 0],
                   transition: {
                     times: [0, 0.6, 1],
@@ -203,14 +205,14 @@ const CombinedAnimatedFeatures = () => {
               >
                 <div className="w-full max-w-7xl mx-auto pt-6 pb-10">
                   {/* ✅ Back Button (Mobile Only) */}
-                  {isMobile && (
+             
                     <button
                       onClick={handleReset}
-                      className="block md:hidden text-sm text-orange-600 mb-6 hover:underline"
+                      className="block  text-sm text-orange-600 mb-6 hover:underline"
                     >
                       ← Back
                     </button>
-                  )}
+                
 
                   <div className="flex flex-col md:flex-row gap-10 items-start justify-around">
                     {/* Image */}
@@ -218,7 +220,7 @@ const CombinedAnimatedFeatures = () => {
                       <img
                         src={activePartner.image}
                         alt={activePartner.title}
-                        className="w-full max-w-md h-[200px] shadow-md object-cover"
+                        className="w-full max-w-md h-[400px] shadow-md object-cover"
                       />
                     </div>
 
@@ -230,7 +232,7 @@ const CombinedAnimatedFeatures = () => {
                       <p className="text-gray-700 mb-6 text-lg">
                         {activePartner.description}
                       </p>
-                      <button
+                      {/* <button
                         onClick={handleReset}
                         className="bg-orange-500 text-white px-6 py-3 hover:bg-orange-600 transition"
                       >
@@ -256,7 +258,7 @@ const CombinedAnimatedFeatures = () => {
                         >
                           Home & Personal Care →
                         </a>
-                      </div>
+                      </div> */}
                     </div>
                   </div>
                 </div>

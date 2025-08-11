@@ -15,32 +15,32 @@ const Partnerstabs = [
   {
     icon: <Cloud className="w-10 h-10 text-white" />,
     description:
-      "Through its partnership with Hyland, Accely implements intelligent content management solutions that streamline workflows and enhance productivity.",
+      "Through its partnership with Hyland, Sria Infotech implements intelligent content management solutions that streamline workflows and enhance productivity.",
   },
   {
     icon: <Monitor className="w-10 h-10 text-white" />,
     description:
-      "Accely leverages Microsoft Azure’s robust infrastructure to design scalable cloud solutions, enabling businesses to operate with agility and drive sustainable growth.",
+      "Sria Infotech leverages Microsoft Azure’s robust infrastructure to design scalable cloud solutions, enabling businesses to operate with agility and drive sustainable growth.",
   },
   {
     icon: <Server className="w-10 h-10 text-white" />,
     description:
-      "Accely teams up with Automation Anywhere to implement powerful RPA solutions, automating complex processes to save time and boost operational efficiency.",
+      "Sria Infotech teams up with Automation Anywhere to implement powerful RPA solutions, automating complex processes to save time and boost operational efficiency.",
   },
   {
     icon: <Shield className="w-10 h-10 text-white" />,
     description:
-      "With Accely’s CRM expertise and Salesforce’s advanced tools, we drive customer engagement and deliver impactful sales strategies.",
+      "With Sria Infotech CRM expertise and Salesforce’s advanced tools, we drive customer engagement and deliver impactful sales strategies.",
   },
   {
     icon: <Settings className="w-10 h-10 text-white" />,
     description:
-      "Accely utilizes Precisely’s data precision solutions to empower businesses with trusted insights, fostering smarter, data-driven decisions.",
+      "Sria Infotech utilizes Precisely’s data precision solutions to empower businesses with trusted insights, fostering smarter, data-driven decisions.",
   },
   {
     icon: <Activity className="w-10 h-10 text-white" />,
     description:
-      "Accely partners with Emarsys to deliver AI-powered omnichannel marketing solutions, empowering businesses to personalize customer journeys at scale.",
+      "Sria Infotech partners with Emarsys to deliver AI-powered omnichannel marketing solutions, empowering businesses to personalize customer journeys at scale.",
   },
 ];
 

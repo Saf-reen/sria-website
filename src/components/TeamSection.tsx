@@ -4,87 +4,32 @@ import LeadershipCard from "./LeadershipCard";
 
 const leaders = [
   {
-    name: "Nilesh Shah",
-    designation: "CEO – Accely Group",
+    name: "Sai Kumar Bonakurthi",
+    designation: "Director - Sria Infotech",
     description:
-      "Accelerator & Builder of Accely’s Global Operations. Seasoned & Habituated SAP Entrepreneur for High & Mid Tier SAP Engagements.",
-    image: "/team/nilesh.jpg",
+      "Director at Sria Infotech, guiding strategic direction and fostering innovation to drive business excellence.",
+    image: "/user.jpg",
     linkedinUrl: "#",
-    email: "nilesh@example.com",
+    email: "saikumarb@sriainfotech.com",
   },
   {
-    name: "Sameer Satpute",
-    designation: "CEO, Singapore & South East Asia",
+    name: "Ravikumar Rangari",
+    designation: "COO - Sria Infotech",
     description:
-      "25+ years of expertise in business development, IT strategies, sales, and global delivery.",
-    image: "/team/sameer.jpg",
+      "COO of Sria Infotech, overseeing operations and driving efficiency to ensure seamless project execution and growth.",
+    image: "/user.jpg",
     linkedinUrl: "#",
-    email: "sameer@example.com",
+    email: "ravirangari@sriainfotech.com",
   },
   {
-    name: "Akshat Joshi",
-    designation: "CEO, Roaypd & BTP Practice Director",
+    name: "Siri Chandra Valasa",
+    designation: "CEO - Sria Infotech",
     description:
-      "Expert in PAAS, Cloudification, Open API, Microservices, AI/ML, and more.",
-    image: "/team/akshat.jpg",
+      "CEO of Sria Infotech, leading innovation and growth through technology-driven solutions.",
+    image: "/user.jpg",
     linkedinUrl: "#",
-    email: "akshat@example.com",
+    email: "siri@sriainfotech.com",
   },
-  {
-    name: "Nilesh Shah",
-    designation: "CEO – Accely Group",
-    description:
-      "Accelerator & Builder of Accely’s Global Operations. Seasoned & Habituated SAP Entrepreneur for High & Mid Tier SAP Engagements.",
-    image: "/team/nilesh.jpg",
-    linkedinUrl: "#",
-    email: "nilesh@example.com",
-  },
-  {
-    name: "Sameer Satpute",
-    designation: "CEO, Singapore & South East Asia",
-    description:
-      "25+ years of expertise in business development, IT strategies, sales, and global delivery.",
-    image: "/team/sameer.jpg",
-    linkedinUrl: "#",
-    email: "sameer@example.com",
-  },
-  {
-    name: "Akshat Joshi",
-    designation: "CEO, Roaypd & BTP Practice Director",
-    description:
-      "Expert in PAAS, Cloudification, Open API, Microservices, AI/ML, and more.",
-    image: "/team/akshat.jpg",
-    linkedinUrl: "#",
-    email: "akshat@example.com",
-  },
-  {
-    name: "Nilesh Shah",
-    designation: "CEO – Accely Group",
-    description:
-      "Accelerator & Builder of Accely’s Global Operations. Seasoned & Habituated SAP Entrepreneur for High & Mid Tier SAP Engagements.",
-    image: "/team/nilesh.jpg",
-    linkedinUrl: "#",
-    email: "nilesh@example.com",
-  },
-  {
-    name: "Sameer Satpute",
-    designation: "CEO, Singapore & South East Asia",
-    description:
-      "25+ years of expertise in business development, IT strategies, sales, and global delivery.",
-    image: "/team/sameer.jpg",
-    linkedinUrl: "#",
-    email: "sameer@example.com",
-  },
-  {
-    name: "Akshat Joshi",
-    designation: "CEO, Roaypd & BTP Practice Director",
-    description:
-      "Expert in PAAS, Cloudification, Open API, Microservices, AI/ML, and more.",
-    image: "/team/akshat.jpg",
-    linkedinUrl: "#",
-    email: "akshat@example.com",
-  },
-  // Add more...
 ];
 
 const TeamSection = () => {

@@ -56,162 +56,171 @@ const productData = [
       "Modernize logistics operations for more efficient and reliable deliveries.",
   },
 ];
+const features = [
+  {
+    title: "Centralized Financial Management",
+    description:
+      "Gain real-time insights into financial performance, cash flow, and reporting with a unified finance platform.",
+    image: "/S4HANA/finance.png",
+  },
+  {
+    title: "Smart Procurement & Sourcing",
+    description:
+      "Streamline supplier collaboration, automate procurement processes, and optimize purchasing strategies.",
+    image: "/S4HANA/procurement.png",
+  },
+  {
+    title: "Integrated Logistics & Supply Chain",
+    description:
+      "Enhance supply chain visibility, warehouse management, and logistics with live data integration.",
+    image: "/S4HANA/logistics.png",
+  },
+  {
+    title: "Predictive Analytics & Reporting",
+    description:
+      "Utilize embedded analytics and predictive intelligence to make proactive business decisions.",
+    image: "/S4HANA/analytics.png",
+  },
+  {
+    title: "Simplified User Experience",
+    description:
+      "Empower users with an intuitive, role-based interface through SAP Fiori and mobile-ready dashboards.",
+    image: "/S4HANA/fiori.png",
+  },
+];
 
 const faqs = [
   {
-    question:
-      "What is the Accelerated SAP EXIM solution, and how does it benefit my business?",
-    answer: "",
-  },
-  {
-    question:
-      "How does Accelerated EXIM address common challenges in export-import operations?",
-    answer: "",
-  },
-  {
-    question:
-      "What are the key benefits of using accelerated SAP EXIM solutions?",
-    answer: "",
-  },
-  {
-    question:
-      "How does Accelerated EXIM ensure compliance with export-import regulations?",
-    answer: "",
-  },
-  {
-    question:
-      "Does managed logistics cost and export incentive benefit from Accelerated EXIM?",
+    question: "What is SAP S/4HANA and how does it differ from SAP ECC?",
     answer:
-      "Yes, Accelerated EXIM provides tools for tracking logistics expenses and managing export incentives with high precision. It enables detailed tracking of costs, helps manage license and scheme development, and automates processes to avoid loss of export income due to manual errors.",
+      "SAP S/4HANA is SAP’s next-gen ERP that runs on the in-memory HANA database, enabling real-time analytics, simplified data models, and enhanced user experience compared to SAP ECC.",
+  },
+  {
+    question: "What deployment options are available for SAP S/4HANA?",
+    answer:
+      "SAP S/4HANA can be deployed on-premise, in a private cloud, or as a public cloud solution, offering flexibility based on your business needs.",
+  },
+  {
+    question: "How can SAP S/4HANA improve business processes?",
+    answer:
+      "It streamlines processes across finance, supply chain, manufacturing, and more by enabling automation, real-time reporting, and integrated workflows.",
+  },
+  {
+    question: "Is SAP S/4HANA suitable for small and medium enterprises?",
+    answer:
+      "Yes. With public cloud options and rapid deployment methodologies, SAP S/4HANA is scalable and fits SMEs as well as large enterprises.",
+  },
+  {
+    question: "How long does it take to migrate to SAP S/4HANA?",
+    answer:
+      "Timelines vary based on complexity, but many organizations complete greenfield or brownfield migrations within 6 to 12 months.",
   },
 ];
+
 
 const tabs = [
   {
     icon: <Star className="w-10 h-10 text-yellow-500" />,
-    title: "Live Tracking",
+    title: "Real-Time Analytics",
     description:
-      "Monitor schemes, licenses, and letters of credit in real-time for better control and efficiency.",
+      "Get instant insights across all departments with built-in analytics powered by SAP HANA.",
   },
   {
     icon: <Globe className="w-10 h-10 text-blue-500" />,
-    title: "Bank and Bond Management",
+    title: "Global Scalability",
     description:
-      "Handle bond and bank guarantee details seamlessly for various business purposes and requirements.",
+      "Support multinational operations with localized compliance and scalable architecture.",
   },
   {
     icon: <Shield className="w-10 h-10 text-green-500" />,
-    title: "Seamless Integration",
+    title: "Advanced Security",
     description:
-      "Effortlessly integrate with SAP logistics, SD/MM, and financial modules to streamline financial accounting, sales, distribution, and material management.",
+      "Protect your enterprise data with integrated governance and risk controls.",
   },
   {
     icon: <Rocket className="w-10 h-10 text-purple-500" />,
-    title: "Efficient Letter of Credit Handling",
+    title: "Faster Decision-Making",
     description:
-      "Coordinate letters of credit for import and export, including managing bank limits, acceptance, and amendments.",
+      "Use predictive analytics and AI to drive intelligent decision-making.",
   },
   {
     icon: <BarChart2 className="w-10 h-10 text-pink-500" />,
-    title: "Enhanced Operational Efficiency",
+    title: "Streamlined Processes",
     description:
-      "Optimize business operations and import processes with reduced manual input and increased automation.",
+      "Automate workflows across finance, procurement, and operations with simplified data models.",
   },
   {
     icon: <Database className="w-10 h-10 text-orange-500" />,
-    title: "Streamlined Documentation Process",
+    title: "Unified Data Platform",
     description:
-      "Generate pre- and post-shipment documents based on Letter of Credit conditions for efficient customs clearance.",
+      "Consolidate data from multiple sources into one single source of truth.",
   },
   {
     icon: <Users className="w-10 h-10 text-red-500" />,
-    title: "Error Reduction",
+    title: "Improved User Experience",
     description:
-      "Coordinate with your Automate import and export processes to minimize manual errors, enhancing efficiency and accuracy. ",
+      "Leverage SAP Fiori for a responsive, intuitive, and role-based interface.",
   },
   {
     icon: <Settings className="w-10 h-10 text-gray-500" />,
-    title: "Custom Banking Transparency",
+    title: "Flexible Deployment",
     description:
-      "Tailor the experience Access critical data and insights to ensure transparency in the import-export procedures.",
+      "Choose from on-premise, private cloud, or public cloud deployment based on your needs.",
   },
 ];
 
+
 const sampleSolutions = [
   {
-    title: "Supervised infrastructure, migration, and equipping",
-    heading: "SAP security compliance",
+    title: "End-to-End Financial Management",
+    heading: "SAP S/4HANA for Finance",
     description:
-      "Our SAP security services focus on data protection, security plans, and vulnerability assessments. Our strong governance approach offers role-based access management.",
+      "Transform financial operations with real-time accounting, reporting, and predictive insights.",
     points: [
-      "Round-the-clock Security Operation Center (SOC).",
-      "Up-to-date dashboards for events and alerts.",
-      "Adherence to geographic and industry-specific compliance rules.",
-      "Ensures improved SAP security.",
+      "Automated financial close",
+      "Real-time cash flow visibility",
+      "Regulatory compliance",
+      "Advanced financial analytics",
     ],
   },
   {
-    title: "Regular monitoring and auditing",
-    heading: "Empower Your Workforce",
+    title: "Smart Manufacturing",
+    heading: "SAP S/4HANA for Manufacturing",
     description:
-      "Drive workforce transformation and improve employee experience.",
+      "Streamline production planning, asset management, and shop floor control.",
     points: [
-      "HR automation",
-      "Talent management",
-      "Performance tracking",
-      "Employee engagement",
+      "Production monitoring",
+      "Digital twins and IoT",
+      "Predictive maintenance",
+      "Seamless inventory control",
     ],
   },
   {
-    title: "Management and quality",
-    heading: "Empower Your Workforce",
+    title: "Efficient Supply Chain",
+    heading: "SAP S/4HANA for Supply Chain",
     description:
-      "Drive workforce transformation and improve employee experience.",
+      "Enhance logistics, order fulfillment, and demand forecasting with real-time capabilities.",
     points: [
-      "HR automation",
-      "Talent management",
-      "Performance tracking",
-      "Employee engagement",
+      "Automated warehouse operations",
+      "Smart sourcing",
+      "Advanced planning tools",
+      "Improved order accuracy",
     ],
   },
   {
-    title: "Downtime management and business progression",
-    heading: "Empower Your Workforce",
+    title: "Procurement Transformation",
+    heading: "SAP S/4HANA for Procurement",
     description:
-      "Drive workforce transformation and improve employee experience.",
+      "Digitalize procurement cycles for better supplier collaboration and cost control.",
     points: [
-      "HR automation",
-      "Talent management",
-      "Performance tracking",
-      "Employee engagement",
+      "Vendor performance tracking",
+      "Contract management",
+      "Catalog buying",
+      "Invoice automation",
     ],
   },
-  {
-    title: "SAP implementation and support",
-    heading: "Empower Your Workforce",
-    description:
-      "Drive workforce transformation and improve employee experience.",
-    points: [
-      "HR automation",
-      "Talent management",
-      "Performance tracking",
-      "Employee engagement",
-    ],
-  },
-  {
-    title: "SAP security compliance",
-    heading: "Empower Your Workforce",
-    description:
-      "Drive workforce transformation and improve employee experience.",
-    points: [
-      "HR automation",
-      "Talent management",
-      "Performance tracking",
-      "Employee engagement",
-    ],
-  },
-  // Add more items as needed
 ];
+
 
 const menuItems = [
   "Overview",
@@ -227,7 +236,7 @@ const sapData = {
   heading: "What is SAP S/4HANA?",
   description:
     "SAP S/4HANA is a next-generation ERP suite offering real-time analytics, streamlined workflows, and enhanced user experience for optimized business processes.",
-  imageUrl: "/Solutions/Banner-Image.png",
+  imageUrl: "/Solutions/s4hana.webp",
   imageAlt: "Digital technology visualization",
   items: [
     {
@@ -250,41 +259,42 @@ const sapData = {
   ],
 };
 
-const customerStories = [
-  {
-    id: 1,
-    image:
-      "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=300&fit=crop",
-    title: "Transforming Business Operations With Innovative Solutions",
-    readMoreLink: "#",
-  },
-  {
-    id: 2,
-    image:
-      "https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=300&fit=crop",
-    title: "Digital Innovation Success Through Strategic Partnership",
-    readMoreLink: "#",
-  },
-  {
-    id: 3,
-    image:
-      "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=400&h=300&fit=crop",
-    title: "Scaling New Heights in Technology Excellence",
-    readMoreLink: "#",
-  },
-];
+ const customerStories = [
+    {
+      id: 1,
+      image:
+        "/customerStories/patil.jpg",
+      title: "Patil Drives Operational Excellence with End-to-End SAP, AMS & OCR Automation",
+      readMoreLink: "/patil",
+    },
+    {
+      id: 2,
+      image:
+        "/customerStories/7hills.jpg",
+      title: "7Hills Restaurant Transforms Guest Experience with Custom Digital Platform",
+      readMoreLink: "/hills",
+    },
+    {
+      id: 3,
+      image:
+        "/customerStories/pharma.jpg",
+      title: "LVK Pharma Goes Digital with Odoo CRM, Eliminates Manual Processes",
+      readMoreLink: "/Lvk",
+    },
+  ];
 
 const insights = {
-  heading: "Explore related business solutions",
+  heading: "Explore SAP S/4HANA Use Cases",
   description:
-    "From strategy to execution, find the perfect solution to accelerate your journey toward success.",
+    "Discover industry-specific applications and real-world business value powered by SAP S/4HANA.",
   ctaText: "Talk to an expert",
   ctaLink: "/contact",
   solutions: [
-    { title: "SAP S/4HANA Public Cloud", href: "/solutions/public-cloud" },
-    { title: "SAP S/4HANA Private Cloud", href: "/solutions/private-cloud" },
+    { title: "SAP S/4HANA for Manufacturing", href: "/solutions/manufacturing" },
+    { title: "SAP S/4HANA for Finance", href: "/solutions/finance" },
   ],
 };
+
 
 const insightsData = [
   {
@@ -330,7 +340,7 @@ function SapS4hana() {
             right={
               <RightSection>
                 <img
-                  src="/Solutions/Banner-Image.png"
+                  src="/Solutions/s4hana.webp"
                   alt="Visual"
                   className="w-full h-full object-cover"
                 />
@@ -416,7 +426,7 @@ function SapS4hana() {
               </p>
             </div>
             <section className="my-8 sm:my-10 w-full">
-              <FeatureTabs />
+              <FeatureTabs  features={features}/>
             </section>
           </section>
 
@@ -481,7 +491,7 @@ function SapS4hana() {
 
           {/* Resources Section */}
 
-          <InsightsSection insights={insightsData} />
+          {/* <InsightsSection insights={insightsData} /> */}
           <RelatedSolutions {...insights} />
 
           <section id="resources" className="mt-12 sm:mt-16 scroll-mt-24">
@@ -494,6 +504,7 @@ function SapS4hana() {
                   description:
                     "Comprehensive guide to international trade practices.",
                   image: "/images/trade-guide.jpg",
+                  link:""
                 },
               ]}
             />
@@ -502,29 +513,7 @@ function SapS4hana() {
       </div>
 
       {/* Certifications Section - Responsive */}
-      <div className="p-4 lg:p-8 rounded-lg mt-8">
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-6 lg:gap-8 max-w-6xl mx-auto">
-          {[
-            { src: "/fixedIcons/1.png", label: "ISO 9001" },
-            { src: "/fixedIcons/2.png", label: "ISO 27001" },
-            { src: "/fixedIcons/3.png", label: "CMMI Level 5" },
-            { src: "/fixedIcons/4.png", label: "AWS Partner" },
-            { src: "/fixedIcons/5.png", label: "Microsoft Gold" },
-            { src: "/fixedIcons/6.png", label: "ISO 9001" },
-          ].map((item, index) => (
-            <div
-              key={index}
-              className="flex flex-col items-center justify-center p-2 lg:p-4"
-            >
-              <img
-                src={item.src}
-                alt={item.label}
-                className="h-16 sm:h-20 lg:h-24 mb-2 object-contain"
-              />
-            </div>
-          ))}
-        </div>
-      </div>
+  
 
       <div className="w-full bg-black">
         {" "}

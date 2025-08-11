@@ -24,7 +24,7 @@ const RelatedSolutions: React.FC<RelatedSolutionsProps> = ({
   solutions,
 }) => {
   return (
-    <div className="bg-gray-50 p-6 md:p-10 lg:p-14 rounded-lg shadow-sm w-full">
+    <div className="bg-gray-50 p-6 md:p-10 lg:p-14 rounded-lg shadow-sm mt-5 w-full">
       <div className="max-w-6xl mx-auto grid md:grid-cols-2 gap-12 items-start">
         {/* Left content */}
         <div>

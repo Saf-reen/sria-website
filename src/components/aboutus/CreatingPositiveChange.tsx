@@ -4,22 +4,70 @@ const accordionData = [
   {
     title: "Leadership",
     content: {
-      text: `Accely’s leadership team embodies a blend of expertise and forward-thinking vision, steering the company to deliver cutting-edge solutions. With a focus on ERP, Mobility Solutions, Ecommerce, and Business Analytics through SAP’s suite of applications, our leaders drive innovation and excellence. Their technical depth, hands-on experience, and customer-first approach enable us to craft tailored solutions that deliver rapid ROI. By combining agility, technological expertise, and a commitment to quality, the team ensures we exceed client expectations at every step.`,
+      text: "At Sria Infotech, our leadership team is a blend of visionary strategists, technology experts, and passionate innovators—each committed to driving digital transformation, operational excellence, and lasting business value.",
       link: "#",
       image: "https://images.unsplash.com/photo-1600880292089-90a7e086ee3a", // Replace with actual image
     },
   },
   {
-    title: "Corporate governance",
+    title: "Core Values",
+    content: {
+      text: `Smart We leverage cutting-edge technology and data-driven insights to provide intelligent solutions that meet the evolving needs of our clients.
+	           Resilient We design solutions that are built to endure challenges and continue to perform under pressure, ensuring long-term success for our clients.
+	           Inclusive We believe in fostering an inclusive work culture and ensuring that our services create opportunities for everyone, empowering communities and businesses alike.
+             Agile Our flexible, adaptive approach allows us to respond swiftly to market changes, enabling us to stay ahead of the curve and deliver timely solutions to our clients.`,
+      link: "#",
+      image: "https://images.unsplash.com/photo-1600880292089-90a7e086ee3a", // Replace with actual image
+    },
   },
   {
-    title: "Alliances",
+    title: "Our Services",
+    content: {
+      text: `SAP Consulting & Implementation
+Expert SAP solutions to streamline your enterprise processes and drive digital transformation.
+Enterprise Application Development
+Tailored applications that improve business efficiency and collaboration.
+Cloud Solutions
+Scalable and secure cloud services to elevate your infrastructure, enhance business agility, and ensure seamless operations.
+AI & Machine Learning
+Advanced AI-driven solutions to boost automation, improve decision-making, and create smarter business processes.
+IT Consulting & Managed Services
+Comprehensive IT advisory and support services to ensure smooth day-to-day operations and future growth.`,
+      link: "#",
+      image: "https://images.unsplash.com/photo-1600880292089-90a7e086ee3a", // Replace with actual image
+    },
   },
   {
-    title: "Corporate social responsibility",
+    title: "Why Choose Us?",
+    content: {
+      text: `Proven Expertise: Our team brings years of industry expertise, focusing on delivering customized, high-quality solutions.
+Client-Centric Approach: We place your business needs at the center of everything we do, ensuring your success is our priority.
+Innovation: We stay ahead of technology trends to ensure we deliver the most innovative solutions for your business.
+Collaborative Culture: Our collaborative approach ensures seamless integration with your teams and maximizes value.`,
+      link: "#",
+      image: "https://images.unsplash.com/photo-1600880292089-90a7e086ee3a", // Replace with actual image
+    },
+    
+  },
+   {
+    title: "Vision",
+    content: {
+      text: `At Sria Infotech, our vision is to build a future where technology empowers every business and individual to thrive.
+We stand for being Smart in our solutions, Resilient in our execution, Inclusive in our impact, and Agile in adapting to tomorrow’s challenges.`,
+      link: "#",
+      image: "https://images.unsplash.com/photo-1600880292089-90a7e086ee3a", // Replace with actual image
+    },
+    
   },
   {
-    title: "Business partners",
+    title: "Mission",
+    content: {
+      text: `Our mission is to deliver world-class digital services—ranging from enterprise software to AI and IT consulting—by embracing the core values of being Smart, Resilient, Inclusive, and Agile.
+We are committed to transforming businesses, uplifting communities, and fostering innovation for a better digital future.`,
+      link: "#",
+      image: "https://images.unsplash.com/photo-1600880292089-90a7e086ee3a", // Replace with actual image
+    },
+    
   },
 ];
 
