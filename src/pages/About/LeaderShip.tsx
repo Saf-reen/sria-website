@@ -161,7 +161,7 @@ function LeaderShip() {
       <TeamSection />
       <div className="w-full bg-black h-[100px]  relative z-10 text-white flex items-center p-4 justify-center">
         <div className="w-[1400px] flex flex-row justify-between items-center">
-          <h1 className="text-[21px]">Learn about Accely and what we do</h1>
+          <h1 className="text-[21px]">Learn about Sria Infotech and what we do</h1>
           <Requesademobtn text="Get in Touch" />
         </div>
       </div>
@@ -176,7 +176,7 @@ function LeaderShip() {
             </h4>
 
             <p className="text-gray-500 text-base mb-4 leading-relaxed">
-              Accely uses Information Technology to make processes not just more
+              Sria Infotech uses Information Technology to make processes not just more
               efficient, but also much more effective. We look at automation as
               an opportunity to allow refined methodologies and innovation to
               create a synergy of the latest technology and vast accumulated
@@ -186,7 +186,7 @@ function LeaderShip() {
               on investment.
             </p>
             <p className="text-gray-800 text-base font-medium mt-2">
-              - Mr. Nilesh Shah, CEO at Accely Group
+              — Sai Kumar Bonakurthi, Founder & Director at Sria Infotech
             </p>
           </div>
 
@@ -207,7 +207,7 @@ function LeaderShip() {
       </div>
 
       <div className="p-4 lg:p-8 w-full bg-white relative z-10 ">
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-6 lg:gap-8 max-w-6xl mx-auto">
+        {/* <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-6 lg:gap-8 max-w-6xl mx-auto">
           {[
             { src: "/fixedIcons/1.png", label: "ISO 9001" },
             { src: "/fixedIcons/2.png", label: "ISO 27001" },
@@ -227,7 +227,7 @@ function LeaderShip() {
               />
             </div>
           ))}
-        </div>
+        </div> */}
       </div>
       <div className="w-full  relative z-10 bg-black">
         {" "}

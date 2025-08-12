@@ -115,10 +115,10 @@ const App = () => (
         
           <Route path="/about/leadership" element={<LeaderShip />} />
           <Route path="/about/sap-partner" element={<ComingSoon />}/>
-          <Route path="/about/careers" element={<Careers />} />
-          <Route path="/about/alliances" element={<Alliances />}/>          
-          <Route path="/about/partner-with-us" element={<Partner />} />
-          <Route path="/about/events" element={<Partner />}/>
+          <Route path="/about/careers" element={<ComingSoon />} />
+          <Route path="/about/alliances" element={<ComingSoon />}/>          
+          <Route path="/about/partner-with-us" element={<ComingSoon />} />
+          <Route path="/about/events" element={<ComingSoon />}/>
           <Route path="/about/locations" element={<Locations />} />
           <Route path="/aboutus" element={<AboutUs />} />
           

@@ -190,7 +190,7 @@ const EventsNewsComponent: React.FC<Props> = ({ events, news }) => {
                 <p className="text-gray-700 mb-4">
                   Stay up to date with the latest news: includes articles,
                   in-depth studies, extras and stories about the collaborations
-                  and bonds between Accely and its clients.
+                  and bonds between Sria Infotech and its clients.
                 </p>
                 <div className="flex items-center gap-2 text-blue-600 mb-2 cursor-pointer hover:text-blue-800">
                   <span className="text-sm">Get notified</span>

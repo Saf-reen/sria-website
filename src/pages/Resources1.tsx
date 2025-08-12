@@ -8,7 +8,7 @@ import { FaLinkedin, FaFacebookF, FaTwitter, FaCopy } from "react-icons/fa";
 function Resources1() {
   const menuItems = [
     "Introduction",
-    "What Role Does Accely Import EXIM Solutions Play",
+    "What Role Does Sria Infotech Import EXIM Solutions Play",
     "How Can SION Benefit You",
     "The benefit of the Letter of Credit Management",
   ];
@@ -17,10 +17,10 @@ function Resources1() {
       <Navigation />
       <div className=" w-full flex sticky top-0 ">
         <StoriesHero
-          imageSrc="https://www.accely.com/wp-content/uploads/2020/03/Accely-Import-EXIM-Solutions_-The-Key-Features-and-Major-Benefits.webp"
+          imageSrc="https://www.accely.com/wp-content/uploads/2020/03/Sria Infotech-Import-EXIM-Solutions_-The-Key-Features-and-Major-Benefits.webp"
           imageAlt="Doctor at laptop"
           category=""
-          title="Accely Import EXIM Solutions: The Key Features and Major Benefits
+          title="Sria Infotech Import EXIM Solutions: The Key Features and Major Benefits
 
 "
           tag="EXIM"
@@ -50,7 +50,7 @@ function Resources1() {
                 suite S/4 HANA transforms the whole international trade
                 management scenario. Now, another innovative Import EXIM
                 software solution has arrived to simplify the international
-                trade process. Accely has created an Import EXIM software to
+                trade process. Sria Infotech has created an Import EXIM software to
                 ease the trade process in India.
                 {/* Use your full paragraph content here */}
               </p>
@@ -61,10 +61,10 @@ function Resources1() {
               className="scroll-mt-24 mb-12"
             >
               <h2 className="text-3xl font-semibold mb-4">
-                What Role Does Accely Import EXIM Solutions Play
+                What Role Does Sria Infotech Import EXIM Solutions Play
               </h2>
               <p>
-                Accely Import EXIM solutions play a vital role in handling the
+                Sria Infotech Import EXIM solutions play a vital role in handling the
                 export promotion schemes. It deals with important tasks such as
                 managing licenses, handling pre and post-shipping documentation,
                 and providing the letter of credit. Obtaining an international
@@ -72,10 +72,10 @@ function Resources1() {
                 asks for companies that import and export products. They had
                 been searching for a cutting-edge technology that focuses on
                 reducing the complexities while operating an export-import
-                business. This is where Accely Import EXIM comes into play. It
+                business. This is where Sria Infotech Import EXIM comes into play. It
                 smoothly streamlines the end-to-end license management process.
                 Process management takes place from applications, assignments,
-                status management, and history. Accely Import EXIM allows you to
+                status management, and history. Sria Infotech Import EXIM allows you to
                 access Standard Input Output Norms (SION) and refers to the
                 export shipping bills.
                 {/* Use full content for this section here */}
@@ -97,24 +97,24 @@ function Resources1() {
                 also be a flexible space for you to develop document sets as
                 well as pre and post shipping documents. The document is
                 prepared on the basis of SAP sourced documents. Let’s now
-                discuss the major features and benefits of the Accely Import
+                discuss the major features and benefits of the Sria Infotech Import
                 EXIM Solutions. Eliminating the Manual Error Process You don’t
                 have to indulge in the manual process to conduct the export and
-                import activities. Instead, the Accely Import EXIM solution
+                import activities. Instead, the Sria Infotech Import EXIM solution
                 allows you to automate the manual steps that reduce the error.
                 The accuracy of data will allow you to minimize your mistakes
                 and you can prevent business revenue loss. A Single Window The
-                Accely Export and Import Services provide business enterprises
+                Sria Infotech Export and Import Services provide business enterprises
                 with a single-window or view for Export Promotion scheme
                 management. A single view will also help you manage licenses,
                 track import shipping details, handle shipment documentation,
                 manage bank guarantees, and secure letters of credit. Get
-                Real-time Tracking With Accely Import EXIM solutions, you have
+                Real-time Tracking With Sria Infotech Import EXIM solutions, you have
                 the leverage to track licenses, schemes, and the letter of
                 credit in real-time. Facility for Real-time Analytics and
                 Insights Getting real-time analytics and insights will help you
                 access greater role-based visibility and monitor the
-                export-import process. Allows a Smooth Integration Accely
+                export-import process. Allows a Smooth Integration Sria Infotech
                 Export-Import Solutions allows you to seamlessly integrate the
                 standard SAP logistics module. This includes a number of
                 processes such as sales and distribution, financial accounting,
@@ -130,7 +130,7 @@ function Resources1() {
                 provide on-the-fly alerts regarding export-import data, which
                 helps you to effectively handle international trade management.
                 Managing the Licence or Scheme The government keeps on revising
-                all the dynamic schemes on a yearly basis. Accely Import EXIM
+                all the dynamic schemes on a yearly basis. Sria Infotech Import EXIM
                 helps to manage the scheme through end-to-end functionality. It
                 also allows the management of licensed lifecycles. This can
                 streamline advanced authorization, duty-free authorization,
@@ -138,7 +138,7 @@ function Resources1() {
                 the Export Initiative Management The automation of the export
                 incentive process, MIES, and duty drawback help to put your
                 business in a commanding position. You can even take control of
-                the material based incentive rate and tariff number. Accely
+                the material based incentive rate and tariff number. Sria Infotech
                 Import EXIM will help you in calculating the eligibility of the
                 incentive-based on the generation of export invoices and
                 received BRC. Facility for Import Shipment Tracking It is a
@@ -157,17 +157,17 @@ function Resources1() {
               </h2>
               <p>
                 You can even streamline the letters of credit management during
-                the import and export process. Apart from that, Accely Import
+                the import and export process. Apart from that, Sria Infotech Import
                 EXIM also allows you to maintain the bank limits and manage the
                 acceptance, retirement, and amendment process. You can have
                 access to the scanned documents to read the LC details and
                 update the same automatically. Exporting Documents and Process
                 Management Gets Simpler The pre and post shipping documents play
-                a pivotal role in creating the customs clearance. Accely Import
+                a pivotal role in creating the customs clearance. Sria Infotech Import
                 EXIM lets you export obligations with a comprehensive tracking
                 process. You can also generate post-shipment documentation based
                 on the Letter of Credit terms and conditions. Getting Bonds and
-                Bank Guarantee Accely Import EXIM allows seamlessly manage the
+                Bank Guarantee Sria Infotech Import EXIM allows seamlessly manage the
                 bond and bank guarantee details that are issued and received for
                 a different purpose.
                 {/* Use full content for this section here */}
@@ -179,7 +179,7 @@ function Resources1() {
                     A
                   </div>
                   <div>
-                    <div className="font-medium text-sm">Accely Group</div>
+                    <div className="font-medium text-sm">Sria Infotech</div>
                     <div className="text-xs text-gray-600">
                       Official News & Media Team
                     </div>
@@ -200,7 +200,7 @@ function Resources1() {
 
               {/* Bottom Description */}
               <p className="text-xs text-gray-600 mt-4">
-                Accely’s news and media team delivers the latest company news,
+                Sria Infotech’s news and media team delivers the latest company news,
                 client milestones, and strategic insights driving digital
                 transformation across global enterprises.
               </p>

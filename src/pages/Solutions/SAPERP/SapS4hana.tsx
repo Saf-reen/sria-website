@@ -236,7 +236,7 @@ const sapData = {
   heading: "What is SAP S/4HANA?",
   description:
     "SAP S/4HANA is a next-generation ERP suite offering real-time analytics, streamlined workflows, and enhanced user experience for optimized business processes.",
-  imageUrl: "/Solutions/s4hana.webp",
+  imageUrl: "/Solutions/s4hana.png",
   imageAlt: "Digital technology visualization",
   items: [
     {
@@ -340,7 +340,7 @@ function SapS4hana() {
             right={
               <RightSection>
                 <img
-                  src="/Solutions/s4hana.webp"
+                  src="/Solutions/s4hana.png"
                   alt="Visual"
                   className="w-full h-full object-cover"
                 />

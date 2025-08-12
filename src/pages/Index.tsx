@@ -481,7 +481,7 @@ const sampleEvents = [
               </h4>
 
               <p className="text-gray-500 text-base mb-4 leading-relaxed">
-                Accely uses Information Technology to make processes not just
+                Sria Infotech uses Information Technology to make processes not just
                 more efficient, but also much more effective. We look at
                 automation as an opportunity to allow refined methodologies and
                 innovation to create a synergy of the latest technology and vast
@@ -492,7 +492,7 @@ const sampleEvents = [
               </p>
 
               <p className="text-gray-800 text-base font-medium mt-2">
-                - Mr. Nilesh Shah, CEO at Accely Group
+                — Sai Kumar Bonakurthi, Founder & Director at Sria Infotech
               </p>
             </div>
 

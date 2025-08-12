@@ -267,7 +267,7 @@ const highlightData = [
         <ImageOverlay
           imageUrl="https://www.accely.com/wp-content/uploads/2024/12/SAP-Managed-Service-1.webp"
           title="SAP Managed Services"
-          description="Achieve stability, reliability, and adaptability with Accely’s automation-driven SAP Managed Services."
+          description="Achieve stability, reliability, and adaptability with Sria Infotech’s automation-driven SAP Managed Services."
         />
         <section className="relative min-h-[500px]  sticky top-0 z-20  bg-black bg-cover bg-center overflow-hidden">
           {/* Dark Overlay */}
@@ -279,14 +279,14 @@ const highlightData = [
             <div className="flex flex-col md:flex-row justify-between gap-8 mb-10">
               <div className="w-full md:w-1/2">
                 <h1 className="text-[47px]  leading-tight">
-                  Maximize your SAP investment with Accely
+                  Maximize your SAP investment with Sria Infotech
                 </h1>
               </div>
               <div className="w-full md:w-1/2">
                 <p className="text-base md:text-lg leading-relaxed">
                   The management and optimization of your SAP environment are
                   more important than ever in the current fast-paced digital
-                  world. One of the top SAP managed service providers, Accely
+                  world. One of the top SAP managed service providers, Sria Infotech
                   offers all-inclusive solutions that will optimize your SAP
                   operations and guarantee that they are effective, safe, and
                   completely aligned with your business goals.

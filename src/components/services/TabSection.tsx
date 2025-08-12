@@ -89,7 +89,7 @@ const TabSection: React.FC = () => {
         <div className="w-full sm:max-w-sm">
           <div className="bg-[#f5f5f5] p-6 rounded-md flex flex-col gap-4">
             <p className="text-[16px] text-[#484850]">
-              Bring a revolutionary change to your enterprise with Accely’s
+              Bring a revolutionary change to your enterprise with Sria Infotech’s
               efficient business solutions.
             </p>
             <button className="flex items-center gap-2 text-black hover:underline text-[16px]">

@@ -63,7 +63,7 @@ const ParallaxScrollingComponent: React.FC = () => {
           style={{ top: "10%" }}
         >
           <h1 className="text-3xl font-bold mb-4">
-            Step in the world of Accely’s SAP Services and Support
+            Step in the world of Sria Infotech’s SAP Services and Support
           </h1>
           <Requesademobtn text="Book a Consultation" />
         </div>

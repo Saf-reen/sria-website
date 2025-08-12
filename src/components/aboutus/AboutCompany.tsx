@@ -1,12 +1,13 @@
 import React from "react";
+import {Link} from "react-router-dom";
 
 const stats = [
-  { value: "20+", label: "Global Offices" },
-  { value: "$100 Mn", label: "Group Turnover" },
-  { value: "25+", label: "Years of Experience" },
-  { value: "1800+", label: "Group Employees" },
-  { value: "1000+", label: "Referenceable Clients" },
-  { value: "480+", label: "Projects" },
+  { value: "4+", label: "Global Offices" },
+  { value: "₹1Cr+", label: "Group Turnover" },
+  { value: "5+", label: "Years of Experience" },
+  { value: "50+", label: "Group Employees" },
+  // { value: "0+", label: "Referenceable Clients" },
+  { value: "20+", label: "Projects" },
   { value: "98%", label: "Customer satisfaction" },
   { value: "14+", label: "Industry solutions" },
 ];
@@ -23,7 +24,7 @@ const AboutCompany: React.FC = () => {
         </div>
         <div className="lg:w-1/2 text-gray-300">
           <p className="text-base leading-relaxed mb-4">
-            Accely is a global SAP gold partner consulting company that offers
+            Sria Infotech is a global SAP gold partner consulting company that offers
             world-class services using refined methodologies and innovation,
             thus creating a synergy of the latest technology and vast
             accumulated experience. From SAP S/4HANA migration to custom
@@ -58,17 +59,17 @@ const AboutCompany: React.FC = () => {
             Starting a revolution
           </h2>
           <blockquote className="text-white text-lg leading-relaxed border-l-4 border-orange-400 pl-6 mb-6">
-            “Accely uses Information Technology to make processes not just more
+            “Sria Infotech uses Information Technology to make processes not just more
             efficient but also much more effective. We find automation as an
             opportunity to allow refined methodologies and innovation to create
             a synergy of the latest technology and vast accumulated experience.”
           </blockquote>
           <p className="text-gray-400 font-medium mb-2">
-            — Nilesh Shah, CEO at Accely Group
+            — Sai Kumar Bonakurthi, Founder & Director at Sria Infotech
           </p>
-          <a href="#team" className="text-white font-medium hover:underline">
+          <Link to="/about/leadership" className="text-white font-medium hover:underline">
             Meet the team →
-          </a>
+          </Link>
         </div>
 
         <div className="lg:w-1/3">

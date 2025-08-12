@@ -74,7 +74,7 @@ const CompanyTimeline: React.FC = () => {
         {/* Top row: title + timeline controller */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-12 gap-4">
           <h2 className="text-4xl font-semibold text-black">
-            Iconic moments in Accely history
+            Iconic moments in Sria Infotech history
           </h2>
           <div className="flex items-center gap-4">
             <span className="text-gray-600">{startYear}</span>

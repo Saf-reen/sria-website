@@ -100,7 +100,7 @@ function News1() {
 
             <p className="text-sm text-gray-800">
               Throughout the entire implementation process, the mining company
-              was assisted by Accely, an established digital transformation
+              was assisted by Sria Infotech, an established digital transformation
               company and technology consulting partner, which contributed a
               thorough understanding of the regulatory frameworks and
               industry-specific complications.
@@ -115,7 +115,7 @@ function News1() {
                 A
               </div>
               <div>
-                <div className="font-medium text-sm">Accely Group</div>
+                <div className="font-medium text-sm">Sria Infotech</div>
                 <div className="text-xs text-gray-600">
                   Official News & Media Team
                 </div>
@@ -136,7 +136,7 @@ function News1() {
 
           {/* Bottom Description */}
           <p className="text-xs text-gray-600 mt-4">
-            Accely’s news and media team delivers the latest company news,
+            Sria Infotech’s news and media team delivers the latest company news,
             client milestones, and strategic insights driving digital
             transformation across global enterprises.
           </p>
