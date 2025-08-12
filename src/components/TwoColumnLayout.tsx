@@ -7,8 +7,8 @@ interface TwoColumnLayoutProps {
 
 const TwoColumnLayout: React.FC<TwoColumnLayoutProps> = ({ left, right }) => {
   return (
-    <div className="mt-16 w-full min-h-[400px] flex justify-center items-center bg-gray-100 px-4">
-      <div className="flex flex-col md:flex-row w-full md:max-w-[80vw] h-full">
+    <div className="mt-16 w-full min-h-[400px] flex justify-between items-center bg-gray-100 ">
+      <div className="flex flex-col md:flex-row w-full  h-full">
         {left}
         {right}
       </div>
