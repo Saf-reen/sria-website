@@ -207,8 +207,7 @@ const Footer: React.FC = () => {
             >
               <div className=" w-full mx-auto px-4 text-center">
                 <p className="text-[18px] sm:text-[20px] md:text-[21px] font-light text-white leading-relaxed">
-                  Join over 350+ global businesses already growing with Sria
-                  Infotech
+                  Join global businesses already growing with Sria Infotech.
                 </p>
                 <h2 className="text-3xl sm:text-4xl md:text-5xl font-normal mt-4 sm:mt-6 text-white leading-tight">
                   Let's transform your business landscape

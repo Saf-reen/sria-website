@@ -8,6 +8,7 @@ import SidebarMenu from "@/components/SidebarMenu";
 import FeatureCard from "@/components/FeatureCard";
 import FeatureTabs from "@/components/FeatureTabs";
 import StatCard from "@/components/StatCard";
+import {Link} from "react-router-dom";
 import InfoTab from "@/components/InfoTab";
 import {
   Star,
@@ -172,7 +173,7 @@ const menuItems = [
   "Benefits",
   "Find Your Answers",
   "Other Products",
-  "Resources",
+  // "Resources",
 ];
 
 const sapData = {
@@ -203,28 +204,28 @@ const sapData = {
 };
 
 const customerStories = [
-  {
-    id: 1,
-    image:
-      "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=300&fit=crop",
-    title: "Transforming Financial Operations With SAP Financial Management",
-    readMoreLink: "#",
-  },
-  {
-    id: 2,
-    image:
-      "https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=300&fit=crop",
-    title: "Achieving Financial Excellence Through Digital Transformation",
-    readMoreLink: "#",
-  },
-  {
-    id: 3,
-    image:
-      "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=400&h=300&fit=crop",
-    title: "Streamlining Global Financial Processes with SAP Solutions",
-    readMoreLink: "#",
-  },
-];
+    {
+      id: 1,
+      image:
+        "/customerStories/patil.jpg",
+      title: "Patil Drives Operational Excellence with End-to-End SAP, AMS & OCR Automation",
+      readMoreLink: "/patil",
+    },
+    {
+      id: 2,
+      image:
+        "/customerStories/7hills.jpg",
+      title: "7Hills Restaurant Transforms Guest Experience with Custom Digital Platform",
+      readMoreLink: "/hills",
+    },
+    {
+      id: 3,
+      image:
+        "/customerStories/pharma.jpg",
+      title: "LVK Pharma Goes Digital with Odoo CRM, Eliminates Manual Processes",
+      readMoreLink: "/Lvk",
+    },
+  ];
 
 const insights = {
   heading: "Explore related financial solutions",
@@ -241,31 +242,31 @@ const features = [
   {
     title: "Unified Ledger",
     description:
-      "One source of financial truth with integrated accounts for real-time insights and reporting.",
+      "A single source of financial truth that integrates accounts, enabling real-time insights and accurate reporting.",
     image: "/finance/unified-ledger.png",
   },
   {
     title: "Accelerated Financial Close",
     description:
-      "Automate and streamline period-end closing processes across global entities.",
+      "Streamline and automate closing processes to reduce cycle times and improve accuracy.",
     image: "/finance/financial-close.png",
   },
   {
     title: "Predictive Planning",
     description:
-      "Utilize embedded AI to forecast outcomes and support strategic decisions.",
+      "Leverage AI-driven forecasting and scenario planning to make proactive financial decisions.",
     image: "/finance/predictive-planning.png",
   },
   {
     title: "Compliance and Control",
     description:
-      "Ensure governance with audit trails, access control, and automated compliance checks.",
+      "Ensure adherence to regulatory standards with built-in compliance and risk management tools.",
     image: "/finance/compliance.png",
   },
   {
     title: "Real-Time Treasury",
     description:
-      "Monitor cash flow, manage risk exposure, and optimize liquidity across regions.",
+      "Manage cash flow, liquidity, and financial risk with up-to-date treasury insights.",
     image: "/finance/treasury.png",
   },
 ];
@@ -305,10 +306,12 @@ function SAPFinancialMgmt() {
           <TwoColumnLayout
             left={
               <LeftSection
-                title="SAP S/4HANA"
-                description="Transform your business with SAP S/4HANA, a next-gen ERP system that uses intelligent automation, real-time analytics, and seamless integration to support fast, data-driven decisions."
+                title="SAP Financial Mgmt"
+                description="Transform Your Business with SAP Financial Management Powered by SAP S/4HANA, SAP Financial Management leverages intelligent automation, real-time analytics, and seamless integration to help organizations make faster, data-driven financial decisions that drive growth and efficiency."
               >
+                <Link to='/contactus'>
                 <Requesademobtn text="Book a Consultation" />
+                </Link>
               </LeftSection>
             }
             right={
@@ -348,8 +351,8 @@ function SAPFinancialMgmt() {
               <ConsultationTabsSection
                 solutions={sampleSolutions}
                 mainHeading="Explore our wide range of offerings"
-                mainDescription="SAP Managed Services provide the full range of functional, technical, and cloud possibilities."
-                ctaText="Get a Consultation"
+                mainDescription="SAP Financial Management delivers comprehensive functional, technical, and cloud capabilities to streamline your finance operations and drive business value."
+                // ctaText="Get a Consultation"
               />
             </div>
           </section>
@@ -363,27 +366,27 @@ function SAPFinancialMgmt() {
             <div className="py-8 sm:py-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10 bg-white">
               <StatCardStable
                 percentage="25%"
-                description="Reduction in direct and indirect expenses related to import-export activities within a year."
+                description="Reduction in operational finance costs through automation and process optimization within the first year."
               />
               <StatCardStable
                 percentage="50%"
-                description="Improvement within the initial 6 months of implementation."
+                description="Improvement in financial reporting accuracy and speed within the initial 6 months of SAP Financial Management implementation."
               />
               <StatCardStable
                 percentage="100%"
-                description="Productivity with seamless mobile integration in EXIM solution."
+                description="Productivity increase with real-time mobile access to financial dashboards and approval workflows."
               />
             </div>
 
             {/* CTA Section - Responsive */}
             <div className="bg-black mt-8 sm:mt-10 w-full flex flex-col lg:flex-row items-center lg:items-start rounded-lg overflow-hidden">
               <h1 className="text-white text-xl sm:text-2xl md:text-[27px] p-4 lg:p-10 w-full lg:w-3/4 leading-relaxed">
-                Streamline your Export-Import operations with the SAP Certified
-                Accelerated EXIM solution. Get a hold of complete control,
-                visibility, and ease in compliance and documentation procedures.
+                Streamline your financial operations with SAP Financial Management. Gain complete control, real-time visibility, and simplified compliance across accounting, reporting, and risk management processes.
               </h1>
               <div className="p-4 lg:p-10 w-full lg:w-auto flex justify-center lg:justify-end">
+                <Link to="/contactus">
                 <Requesademobtn text="Book a demo" />
+                </Link>
               </div>
             </div>
           </section>
@@ -395,8 +398,7 @@ function SAPFinancialMgmt() {
                 Key features
               </h2>
               <p className="mt-4 text-lg sm:text-xl md:text-2xl text-gray-500">
-                Accelerated EXIM solution offers license management, export
-                incentives, expense tracking, and automation.
+                SAP Financial Management offers automated financial close, real-time cash flow tracking, regulatory compliance, predictive analytics, and seamless integration with core business processes
               </p>
             </div>
             <section className="my-8 sm:my-10 w-full">
@@ -412,8 +414,7 @@ function SAPFinancialMgmt() {
               Unlock powerful benefits
             </h2>
             <p className="mt-4 text-lg sm:text-xl md:text-2xl w-full lg:w-3/4 text-gray-500">
-              Accelerated EXIM solution enhances import-export management with
-              tracking, SAP integration, and efficiency.
+              SAP Financial Management enhances financial operations with real-time tracking, seamless SAP integration, improved accuracy, and greater operational efficiency.
             </p>
 
             {/* Benefits Grid - Responsive */}
@@ -450,26 +451,27 @@ function SAPFinancialMgmt() {
                   Empowering global trade for businesses
                 </h1>
                 <div className="flex-shrink-0">
-                  <Requesademobtn text="Book a demo" />
+                  <Link to="/contactus">
+                <Requesademobtn text="Book a demo" />
+                </Link>
                 </div>
               </div>
 
               {/* Paragraph */}
               <p className="mt-6 text-base sm:text-lg lg:text-xl w-full lg:w-3/4 text-white leading-relaxed">
-                Streamline your Export-Import operations with the SAP Certified
-                Accelerated EXIM solution. Get a hold of complete control,
-                visibility, and ease in compliance and documentation procedures.
+                Streamline your finance operations with SAP Financial Management. Achieve complete control, real-time visibility, and simplified compliance across accounting, reporting, and risk management processes.
               </p>
             </div>
           </section>
 
           {/* Resources Section */}
 
-          <InsightsSection insights={insightsData} />
-          <RelatedSolutions {...insights} />
+          {/* <InsightsSection insights={insightsData} /> */}
+         
 
-          <section id="resources" className="mt-12 sm:mt-16 scroll-mt-24">
-            <Resource
+          <section id="other products" className="mt-12 sm:mt-16 scroll-mt-24">
+             <RelatedSolutions {...insights} />
+            {/* <Resource
               heading="Explore Our Resources"
               paragraph="Helpful tools and insights for your export-import operations"
               products={[
@@ -481,14 +483,14 @@ function SAPFinancialMgmt() {
                   link: "/resources/financial-management-guide",
                 },
               ]}
-            />
+            /> */}
           </section>
         </div>
       </div>
 
       {/* Certifications Section - Responsive */}
       <div className="p-4 lg:p-8 rounded-lg mt-8">
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-6 lg:gap-8 max-w-6xl mx-auto">
+        {/* <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-6 lg:gap-8 max-w-6xl mx-auto">
           {[
             { src: "/fixedIcons/1.png", label: "ISO 9001" },
             { src: "/fixedIcons/2.png", label: "ISO 27001" },
@@ -508,7 +510,7 @@ function SAPFinancialMgmt() {
               />
             </div>
           ))}
-        </div>
+        </div> */}
       </div>
 
       <div className="w-full bg-black">

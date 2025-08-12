@@ -165,7 +165,7 @@ const menuItems = [
   "Benefits",
   "Find Your Answers",
   "Other Products",
-  "Resources",
+  // "Resources",
 ];
 
 const sapData = {
@@ -195,28 +195,28 @@ const sapData = {
 };
 
 const customerStories = [
-  {
-    id: 1,
-    image:
-      "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=300&fit=crop",
-    title: "Transforming Business Operations With Innovative Solutions",
-    readMoreLink: "#",
-  },
-  {
-    id: 2,
-    image:
-      "https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=300&fit=crop",
-    title: "Digital Innovation Success Through Strategic Partnership",
-    readMoreLink: "#",
-  },
-  {
-    id: 3,
-    image:
-      "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=400&h=300&fit=crop",
-    title: "Scaling New Heights in Technology Excellence",
-    readMoreLink: "#",
-  },
-];
+    {
+      id: 1,
+      image:
+        "/customerStories/patil.jpg",
+      title: "Patil Drives Operational Excellence with End-to-End SAP, AMS & OCR Automation",
+      readMoreLink: "/patil",
+    },
+    {
+      id: 2,
+      image:
+        "/customerStories/7hills.jpg",
+      title: "7Hills Restaurant Transforms Guest Experience with Custom Digital Platform",
+      readMoreLink: "/hills",
+    },
+    {
+      id: 3,
+      image:
+        "/customerStories/pharma.jpg",
+      title: "LVK Pharma Goes Digital with Odoo CRM, Eliminates Manual Processes",
+      readMoreLink: "/Lvk",
+    },
+  ];
 const features = [
   {
     title: "Real-Time Collaborative Planning",
@@ -341,7 +341,7 @@ function CloudPlanning () {
                 solutions={sampleSolutions}
                 mainHeading="Explore our wide range of offerings"
                 mainDescription="SAP Managed Services provide the full range of functional, technical, and cloud possibilities."
-                ctaText="Get a Consultation"
+                // ctaText="Get a Consultation"
               />
             </div>
           </section>
@@ -457,11 +457,12 @@ function CloudPlanning () {
 
           {/* Resources Section */}
 
-          <InsightsSection insights={insightsData} />
-          <RelatedSolutions {...insights} />
+          {/* <InsightsSection insights={insightsData} /> */}
+          
 
-          <section id="resources" className="mt-12 sm:mt-16 scroll-mt-24">
-            <Resource
+          <section id="other products" className="mt-12 sm:mt-16 scroll-mt-24">
+            <RelatedSolutions {...insights} />
+            {/* <Resource
               heading="Explore Our Resources"
               paragraph="Helpful tools and insights for your export-import operations"
               products={[
@@ -480,14 +481,14 @@ function CloudPlanning () {
     link:"/"
   },
 ]}
-            />
+            /> */}
           </section>
         </div>
       </div>
 
       {/* Certifications Section - Responsive */}
       <div className="p-4 lg:p-8 rounded-lg mt-8">
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-6 lg:gap-8 max-w-6xl mx-auto">
+        {/* <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-6 lg:gap-8 max-w-6xl mx-auto">
           {[
             { src: "/fixedIcons/1.png", label: "ISO 9001" },
             { src: "/fixedIcons/2.png", label: "ISO 27001" },
@@ -507,7 +508,7 @@ function CloudPlanning () {
               />
             </div>
           ))}
-        </div>
+        </div> */}
       </div>
 
       <div className="w-full bg-black">

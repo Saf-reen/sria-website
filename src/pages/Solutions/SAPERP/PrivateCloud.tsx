@@ -8,6 +8,7 @@ import SidebarMenu from "@/components/SidebarMenu";
 import FeatureCard from "@/components/FeatureCard";
 import FeatureTabs from "@/components/FeatureTabs";
 import StatCard from "@/components/StatCard";
+import {Link} from "react-router-dom";
 import InfoTab from "@/components/InfoTab";
 import {
   Shield,
@@ -43,31 +44,31 @@ const features = [
   {
     title: "Flexible Customization",
     description:
-      "Modify core ERP processes, interfaces, and configurations to match unique business needs.",
+      "Modify core ERP processes, interfaces, and configurations to align perfectly with your unique business requirements.",
     image: "/privateCloud/customization.png",
   },
   {
     title: "Controlled Upgrades",
     description:
-      "Manage upgrade cycles and testing schedules independently to reduce disruption.",
+      "Manage upgrades on your schedule with minimized disruption and full control over deployment.",
     image: "/privateCloud/upgrades.png",
   },
   {
     title: "Enhanced Security & Compliance",
     description:
-      "Meet industry-specific security and compliance requirements in a private environment.",
+      "Ensure enterprise-grade security and meet regulatory requirements with dedicated infrastructure and advanced controls.",
     image: "/privateCloud/security.png",
   },
   {
     title: "Scalable Infrastructure",
     description:
-      "Adapt computing resources dynamically as your operations expand or contract.",
+      "Scale resources seamlessly to match business growth while maintaining high performance.",
     image: "/privateCloud/scalability.png",
   },
   {
     title: "Dedicated Landscape",
     description:
-      "Deploy on a dedicated infrastructure for complete isolation and performance assurance.",
+      "Benefit from an isolated, dedicated environment tailored exclusively to your enterprise.",
     image: "/privateCloud/landscape.png",
   },
 ];
@@ -79,7 +80,7 @@ const faqs = [
   {
     question: "What is SAP S/4HANA Private Cloud?",
     answer:
-      "It is a deployment model offering the benefits of cloud infrastructure with the flexibility of on-premise ERP customization.",
+      "SAP S/4HANA Private Cloud combines the flexibility and customization of on-premise solutions with the scalability and agility of cloud computing, delivering tailored deployments, full control, and secure, scalable infrastructure within a managed environment.",
   },
   {
     question: "How is Private Cloud different from Public Cloud or On-Premise?",
@@ -108,49 +109,49 @@ const tabs = [
     icon: <Settings className="w-10 h-10 text-gray-500" />,
     title: "Flexible Configurations",
     description:
-      "Create ERP setups aligned with your organizational workflows and approval chains.",
+      "Create ERP setups tailored to your organizational workflows and approval processes for maximum efficiency.",
   },
   {
     icon: <Shield className="w-10 h-10 text-green-500" />,
     title: "Data Protection & Governance",
     description:
-      "Ensure compliance with internal policies and regulatory mandates in a private cloud setting.",
+      "EnEnsure compliance with internal policies and regulatory mandates within a secure private cloud environment.",
   },
   {
     icon: <BarChart2 className="w-10 h-10 text-pink-500" />,
     title: "Autonomous Upgrades",
     description:
-      "Control when and how upgrades are rolled out to minimize downtime and ensure testing.",
+      "Control the timing and execution of upgrades to minimize downtime and thoroughly test before rollout.",
   },
   {
     icon: <Globe className="w-10 h-10 text-blue-500" />,
     title: "Global Custom Deployments",
     description:
-      "Deploy in regional data centers while maintaining localization and compliance.",
+      "Deploy SAP S/4HANA Private Cloud in regional data centers to maintain localization and compliance.",
   },
   {
     icon: <Rocket className="w-10 h-10 text-purple-500" />,
     title: "Agility with Custom Logic",
     description:
-      "Deploy tailored enhancements and third-party integrations without constraints.",
+      "Implement tailored enhancements and integrate third-party applications without restrictions.",
   },
   {
     icon: <Users className="w-10 h-10 text-red-500" />,
     title: "Role-Based Experience",
     description:
-      "Offer a streamlined UX based on user roles using SAP Fiori and custom dashboards.",
+      "Deliver a streamlined user experience with SAP Fiori and customizable dashboards based on user roles.",
   },
   {
     icon: <Database className="w-10 h-10 text-orange-500" />,
     title: "Integrated Data Models",
     description:
-      "Seamlessly connect your private ERP with other enterprise platforms and tools.",
+      "Seamlessly connect your private ERP with other enterprise platforms and tools for unified data management.",
   },
   {
     icon: <Star className="w-10 h-10 text-yellow-500" />,
     title: "Consistent Performance",
     description:
-      "Achieve stable performance with infrastructure designed for enterprise-grade loads.",
+      "Maintain stable, enterprise-grade performance with dedicated infrastructure built for heavy workloads.",
   },
 ];
 
@@ -214,7 +215,7 @@ const menuItems = [
   "Benefits",
   "Find Your Answers",
   "Other Products",
-  "Resources",
+  // "Resources",
 ];
 
 const sapData = {
@@ -244,28 +245,28 @@ const sapData = {
 };
 
 const customerStories = [
-  {
-    id: 1,
-    image:
-      "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=300&fit=crop",
-    title: "Transforming Business Operations With Innovative Solutions",
-    readMoreLink: "#",
-  },
-  {
-    id: 2,
-    image:
-      "https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=300&fit=crop",
-    title: "Digital Innovation Success Through Strategic Partnership",
-    readMoreLink: "#",
-  },
-  {
-    id: 3,
-    image:
-      "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=400&h=300&fit=crop",
-    title: "Scaling New Heights in Technology Excellence",
-    readMoreLink: "#",
-  },
-];
+    {
+      id: 1,
+      image:
+        "/customerStories/patil.jpg",
+      title: "Patil Drives Operational Excellence with End-to-End SAP, AMS & OCR Automation",
+      readMoreLink: "/patil",
+    },
+    {
+      id: 2,
+      image:
+        "/customerStories/7hills.jpg",
+      title: "7Hills Restaurant Transforms Guest Experience with Custom Digital Platform",
+      readMoreLink: "/hills",
+    },
+    {
+      id: 3,
+      image:
+        "/customerStories/pharma.jpg",
+      title: "LVK Pharma Goes Digital with Odoo CRM, Eliminates Manual Processes",
+      readMoreLink: "/Lvk",
+    },
+  ];
 
 const insights = {
   heading: "Explore Private Cloud Opportunities",
@@ -316,10 +317,12 @@ function PrivateCloud() {
           <TwoColumnLayout
             left={
               <LeftSection
-                title="SAP S/4HANA"
-                description="Transform your business with SAP S/4HANA, a next-gen ERP system that uses intelligent automation, real-time analytics, and seamless integration to support fast, data-driven decisions."
+                title="Private Cloud Solutions"
+                description="SAP Private Cloud delivers a dedicated, secure, and fully managed cloud environment tailored to your business needs. It combines the agility and scalability of cloud computing with enhanced control, compliance, and customization capabilities — ideal for enterprises requiring data sovereignty and stringent security."
               >
+                <Link to="/contactus">
                 <Requesademobtn text="Book a Consultation" />
+                </Link>
               </LeftSection>
             }
             right={
@@ -359,8 +362,8 @@ function PrivateCloud() {
               <ConsultationTabsSection
                 solutions={sampleSolutions}
                 mainHeading="Explore our wide range of offerings"
-                mainDescription="SAP Managed Services provide the full range of functional, technical, and cloud possibilities."
-                ctaText="Get a Consultation"
+                mainDescription="SAP S/4HANA Private Cloud delivers comprehensive managed services encompassing functional, technical, and cloud capabilities, tailored to your enterprise’s unique needs."
+                // ctaText="Get a Consultation"
               />
             </div>
           </section>
@@ -374,27 +377,27 @@ function PrivateCloud() {
             <div className="py-8 sm:py-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10 bg-white">
               <StatCardStable
                 percentage="25%"
-                description="Reduction in direct and indirect expenses related to import-export activities within a year."
+                description="Reduction in operational costs within the first year through optimized processes and cloud efficiency."
               />
               <StatCardStable
                 percentage="50%"
-                description="Improvement within the initial 6 months of implementation."
+                description="Improvement in business performance within the initial 6 months of SAP S/4HANA Private Cloud implementation."
               />
               <StatCardStable
                 percentage="100%"
-                description="Productivity with seamless mobile integration in EXIM solution."
+                description="Productivity gain with seamless mobile integration and real-time access to critical business functions."
               />
             </div>
 
             {/* CTA Section - Responsive */}
             <div className="bg-black mt-8 sm:mt-10 w-full flex flex-col lg:flex-row items-center lg:items-start rounded-lg overflow-hidden">
               <h1 className="text-white text-xl sm:text-2xl md:text-[27px] p-4 lg:p-10 w-full lg:w-3/4 leading-relaxed">
-                Streamline your Export-Import operations with the SAP Certified
-                Accelerated EXIM solution. Get a hold of complete control,
-                visibility, and ease in compliance and documentation procedures.
+                Streamline your business operations with the SAP S/4HANA Private Cloud. Gain complete control, real-time visibility, and simplified compliance and documentation processes across your enterprise.
               </h1>
               <div className="p-4 lg:p-10 w-full lg:w-auto flex justify-center lg:justify-end">
+                <Link to="/contactus">
                 <Requesademobtn text="Book a demo" />
+                </Link>
               </div>
             </div>
           </section>
@@ -406,8 +409,7 @@ function PrivateCloud() {
                 Key features
               </h2>
               <p className="mt-4 text-lg sm:text-xl md:text-2xl text-gray-500">
-                Accelerated EXIM solution offers license management, export
-                incentives, expense tracking, and automation.
+                SAP S/4HANA Private Cloud offers advanced automation, real-time analytics, seamless integration, and comprehensive process management to drive efficiency and compliance.
               </p>
             </div>
             <section className="my-8 sm:my-10 w-full">
@@ -425,8 +427,7 @@ function PrivateCloud() {
               Unlock powerful benefits
             </h2>
             <p className="mt-4 text-lg sm:text-xl md:text-2xl w-full lg:w-3/4 text-gray-500">
-              Accelerated EXIM solution enhances import-export management with
-              tracking, SAP integration, and efficiency.
+              SAP S/4HANA Private Cloud enhances business management with real-time tracking, seamless SAP integration, and improved operational efficiency across all processes.
             </p>
 
             {/* Benefits Grid - Responsive */}
@@ -463,26 +464,27 @@ function PrivateCloud() {
                   Empowering global trade for businesses
                 </h1>
                 <div className="flex-shrink-0">
-                  <Requesademobtn text="Book a demo" />
+                  <Link to="/contactus">
+                <Requesademobtn text="Book a demo" />
+                </Link>
                 </div>
               </div>
 
               {/* Paragraph */}
               <p className="mt-6 text-base sm:text-lg lg:text-xl w-full lg:w-3/4 text-white leading-relaxed">
-                Streamline your Export-Import operations with the SAP Certified
-                Accelerated EXIM solution. Get a hold of complete control,
-                visibility, and ease in compliance and documentation procedures.
+                Streamline your enterprise operations with SAP S/4HANA Private Cloud. Achieve complete control, real-time visibility, and simplified compliance and documentation across all functions.
               </p>
             </div>
           </section>
 
           {/* Resources Section */}
+{/* 
+          <InsightsSection insights={insightsData} /> */}
+          
 
-          <InsightsSection insights={insightsData} />
-          <RelatedSolutions {...insights} />
-
-          <section id="resources" className="mt-12 sm:mt-16 scroll-mt-24">
-            <Resource
+          <section id="other products" className="mt-12 sm:mt-16 scroll-mt-24">
+            <RelatedSolutions {...insights} />
+            {/* <Resource
               heading="Explore Our Resources"
               paragraph="Helpful tools and insights for your export-import operations"
               products={[
@@ -502,14 +504,14 @@ function PrivateCloud() {
   },
 
               ]}
-            />
+            /> */}
           </section>
         </div>
       </div>
 
       {/* Certifications Section - Responsive */}
       <div className="p-4 lg:p-8 rounded-lg mt-8">
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-6 lg:gap-8 max-w-6xl mx-auto">
+        {/* <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-6 lg:gap-8 max-w-6xl mx-auto">
           {[
             { src: "/fixedIcons/1.png", label: "ISO 9001" },
             { src: "/fixedIcons/2.png", label: "ISO 27001" },
@@ -529,7 +531,7 @@ function PrivateCloud() {
               />
             </div>
           ))}
-        </div>
+        </div> */}
       </div>
 
       <div className="w-full bg-black">

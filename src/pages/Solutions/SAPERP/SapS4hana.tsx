@@ -19,7 +19,7 @@ import {
   Users,
   Settings,
 } from "lucide-react";
-
+import {Link} from "react-router-dom";
 import FAQSection from "@/components/FAQSection";
 
 import ProductRange from "@/components/ProductRange";
@@ -60,31 +60,31 @@ const features = [
   {
     title: "Centralized Financial Management",
     description:
-      "Gain real-time insights into financial performance, cash flow, and reporting with a unified finance platform.",
+      "Gain real-time insights into financial performance, cash flow, and compliance with SAP S/4HANA’s unified finance platform, enabling faster decision-making and improved business outcomes.",
     image: "/S4HANA/finance.png",
   },
   {
     title: "Smart Procurement & Sourcing",
     description:
-      "Streamline supplier collaboration, automate procurement processes, and optimize purchasing strategies.",
+      "Streamline supplier collaboration, automate procurement workflows, and optimize purchasing strategies with SAP S/4HANA’s intelligent sourcing capabilities.",
     image: "/S4HANA/procurement.png",
   },
   {
     title: "Integrated Logistics & Supply Chain",
     description:
-      "Enhance supply chain visibility, warehouse management, and logistics with live data integration.",
+      "Enhance supply chain visibility, optimize warehouse operations, and streamline logistics with SAP S/4HANA’s real-time data integration and predictive insights.",
     image: "/S4HANA/logistics.png",
   },
   {
     title: "Predictive Analytics & Reporting",
     description:
-      "Utilize embedded analytics and predictive intelligence to make proactive business decisions.",
+      "Leverage embedded analytics and predictive intelligence in SAP S/4HANA to make proactive, data-driven business decisions and identify opportunities ahead of time.",
     image: "/S4HANA/analytics.png",
   },
   {
     title: "Simplified User Experience",
     description:
-      "Empower users with an intuitive, role-based interface through SAP Fiori and mobile-ready dashboards.",
+      "Empower users with an intuitive, role-based interface through SAP Fiori in SAP S/4HANA, offering mobile-ready dashboards and personalized workflows for enhanced productivity.",
     image: "/S4HANA/fiori.png",
   },
 ];
@@ -123,49 +123,49 @@ const tabs = [
     icon: <Star className="w-10 h-10 text-yellow-500" />,
     title: "Real-Time Analytics",
     description:
-      "Get instant insights across all departments with built-in analytics powered by SAP HANA.",
+      "Get instant, actionable insights across all departments with built-in analytics powered by SAP HANA in SAP S/4HANA.",
   },
   {
     icon: <Globe className="w-10 h-10 text-blue-500" />,
     title: "Global Scalability",
     description:
-      "Support multinational operations with localized compliance and scalable architecture.",
+      "Support multinational operations with localized compliance, multi-currency capabilities, and scalable architecture.",
   },
   {
     icon: <Shield className="w-10 h-10 text-green-500" />,
     title: "Advanced Security",
     description:
-      "Protect your enterprise data with integrated governance and risk controls.",
+      "Protect enterprise data with integrated governance, risk management, and advanced access controls.",
   },
   {
     icon: <Rocket className="w-10 h-10 text-purple-500" />,
     title: "Faster Decision-Making",
     description:
-      "Use predictive analytics and AI to drive intelligent decision-making.",
+      "Leverage predictive analytics, AI, and machine learning to make intelligent, proactive decisions.",
   },
   {
     icon: <BarChart2 className="w-10 h-10 text-pink-500" />,
     title: "Streamlined Processes",
     description:
-      "Automate workflows across finance, procurement, and operations with simplified data models.",
+      "Automate workflows across finance, procurement, manufacturing, and supply chain with simplified data models.",
   },
   {
     icon: <Database className="w-10 h-10 text-orange-500" />,
     title: "Unified Data Platform",
     description:
-      "Consolidate data from multiple sources into one single source of truth.",
+      "Consolidate data from multiple sources into a single, trusted source of truth.",
   },
   {
     icon: <Users className="w-10 h-10 text-red-500" />,
     title: "Improved User Experience",
     description:
-      "Leverage SAP Fiori for a responsive, intuitive, and role-based interface.",
+      "Enhance productivity with SAP Fiori’s responsive, intuitive, and role-based interface.",
   },
   {
     icon: <Settings className="w-10 h-10 text-gray-500" />,
     title: "Flexible Deployment",
     description:
-      "Choose from on-premise, private cloud, or public cloud deployment based on your needs.",
+      "Deploy SAP S/4HANA on-premise, in a private cloud, or in a public cloud—tailored to your business needs",
   },
 ];
 
@@ -229,7 +229,7 @@ const menuItems = [
   "Benefits",
   "Find Your Answers",
   "Other Products",
-  "Resources",
+  // "Resources",
 ];
 
 const sapData = {
@@ -286,7 +286,7 @@ const sapData = {
 const insights = {
   heading: "Explore SAP S/4HANA Use Cases",
   description:
-    "Discover industry-specific applications and real-world business value powered by SAP S/4HANA.",
+    "Discover industry-specific applications and real-world business value with SAP S/4HANA, enabling organizations to innovate, optimize operations, and drive growth.",
   ctaText: "Talk to an expert",
   ctaLink: "/contact",
   solutions: [
@@ -334,7 +334,9 @@ function SapS4hana() {
                 title="SAP S/4HANA"
                 description="Transform your business with SAP S/4HANA, a next-gen ERP system that uses intelligent automation, real-time analytics, and seamless integration to support fast, data-driven decisions."
               >
+                <Link to="/contactus">
                 <Requesademobtn text="Book a Consultation" />
+                </Link>
               </LeftSection>
             }
             right={
@@ -374,8 +376,8 @@ function SapS4hana() {
               <ConsultationTabsSection
                 solutions={sampleSolutions}
                 mainHeading="Explore our wide range of offerings"
-                mainDescription="SAP Managed Services provide the full range of functional, technical, and cloud possibilities."
-                ctaText="Get a Consultation"
+                mainDescription="SAP S/4HANA provides an intelligent, integrated ERP suite that delivers real-time data processing, simplified business operations, and advanced analytics capabilities to drive digital transformation."
+                // ctaText="Get a Consultation"
               />
             </div>
           </section>
@@ -389,27 +391,27 @@ function SapS4hana() {
             <div className="py-8 sm:py-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10 bg-white">
               <StatCardStable
                 percentage="25%"
-                description="Reduction in direct and indirect expenses related to import-export activities within a year."
+                description="Reduction in operational costs through streamlined processes and real-time decision-making within the first year."
               />
               <StatCardStable
                 percentage="50%"
-                description="Improvement within the initial 6 months of implementation."
+                description="Improvement in process efficiency within the initial 6 months of SAP S/4HANA implementation."
               />
               <StatCardStable
                 percentage="100%"
-                description="Productivity with seamless mobile integration in EXIM solution."
+                description="Productivity boost with seamless mobile integration and anytime, anywhere access to business operations."
               />
             </div>
 
             {/* CTA Section - Responsive */}
             <div className="bg-black mt-8 sm:mt-10 w-full flex flex-col lg:flex-row items-center lg:items-start rounded-lg overflow-hidden">
               <h1 className="text-white text-xl sm:text-2xl md:text-[27px] p-4 lg:p-10 w-full lg:w-3/4 leading-relaxed">
-                Streamline your Export-Import operations with the SAP Certified
-                Accelerated EXIM solution. Get a hold of complete control,
-                visibility, and ease in compliance and documentation procedures.
+                Streamline your business operations with the SAP S/4HANA intelligent ERP suite. Gain complete control, real-time visibility, and simplified compliance and documentation processes across all departments.
               </h1>
               <div className="p-4 lg:p-10 w-full lg:w-auto flex justify-center lg:justify-end">
+                <Link to="/contactus">
                 <Requesademobtn text="Book a demo" />
+                </Link>
               </div>
             </div>
           </section>
@@ -421,8 +423,7 @@ function SapS4hana() {
                 Key features
               </h2>
               <p className="mt-4 text-lg sm:text-xl md:text-2xl text-gray-500">
-                Accelerated EXIM solution offers license management, export
-                incentives, expense tracking, and automation.
+                SAP S/4HANA offers intelligent automation, real-time analytics, seamless integration across business units, and advanced process optimization for enhanced efficiency.
               </p>
             </div>
             <section className="my-8 sm:my-10 w-full">
@@ -438,8 +439,7 @@ function SapS4hana() {
               Unlock powerful benefits
             </h2>
             <p className="mt-4 text-lg sm:text-xl md:text-2xl w-full lg:w-3/4 text-gray-500">
-              Accelerated EXIM solution enhances import-export management with
-              tracking, SAP integration, and efficiency.
+              SAP S/4HANA enhances enterprise management with real-time tracking, seamless SAP integration across processes, and improved operational efficiency.
             </p>
 
             {/* Benefits Grid - Responsive */}
@@ -476,15 +476,15 @@ function SapS4hana() {
                   Empowering global trade for businesses
                 </h1>
                 <div className="flex-shrink-0">
-                  <Requesademobtn text="Book a demo" />
+                  <Link to="/contactus">
+                <Requesademobtn text="Book a demo" />
+                </Link>
                 </div>
               </div>
 
               {/* Paragraph */}
               <p className="mt-6 text-base sm:text-lg lg:text-xl w-full lg:w-3/4 text-white leading-relaxed">
-                Streamline your Export-Import operations with the SAP Certified
-                Accelerated EXIM solution. Get a hold of complete control,
-                visibility, and ease in compliance and documentation procedures.
+                Streamline your enterprise operations with SAP S/4HANA’s intelligent suite. Achieve complete control, real-time visibility, and simplified compliance and documentation processes across all departments.
               </p>
             </div>
           </section>
@@ -494,8 +494,9 @@ function SapS4hana() {
           {/* <InsightsSection insights={insightsData} /> */}
           <RelatedSolutions {...insights} />
 
-          <section id="resources" className="mt-12 sm:mt-16 scroll-mt-24">
-            <Resource
+          <section id="other products" className="mt-12 sm:mt-16 scroll-mt-24">
+            <RelatedSolutions {...insights} />
+            {/* <Resource
               heading="Explore Our Resources"
               paragraph="Helpful tools and insights for your export-import operations"
               products={[
@@ -507,13 +508,35 @@ function SapS4hana() {
                   link:""
                 },
               ]}
-            />
+            /> */}
           </section>
         </div>
       </div>
 
       {/* Certifications Section - Responsive */}
-  
+        <div className="p-4 lg:p-8 rounded-lg mt-8">
+        {/* <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-6 lg:gap-8 max-w-6xl mx-auto">
+          {[
+            { src: "/fixedIcons/1.png", label: "ISO 9001" },
+            { src: "/fixedIcons/2.png", label: "ISO 27001" },
+            { src: "/fixedIcons/3.png", label: "CMMI Level 5" },
+            { src: "/fixedIcons/4.png", label: "AWS Partner" },
+            { src: "/fixedIcons/5.png", label: "Microsoft Gold" },
+            { src: "/fixedIcons/6.png", label: "ISO 9001" },
+          ].map((item, index) => (
+            <div
+              key={index}
+              className="flex flex-col items-center justify-center p-2 lg:p-4"
+            >
+              <img
+                src={item.src}
+                alt={item.label}
+                className="h-16 sm:h-20 lg:h-24 mb-2 object-contain"
+              />
+            </div>
+          ))}
+        </div> */}
+      </div>
 
       <div className="w-full bg-black">
         {" "}

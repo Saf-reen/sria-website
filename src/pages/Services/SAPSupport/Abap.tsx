@@ -20,6 +20,10 @@ import {
   Database,
   Users,
   Settings,
+  Cloud,
+  Monitor,
+  Server,
+  Activity,
 } from "lucide-react";
 import Footer from "@/components/Footer";
 import ConsultationTabsSection from "@/components/services/ConsultationTabsSection";
@@ -34,6 +38,64 @@ import PartnersCarousel from "@/components/services/PartnersCarousel";
 import { CustomerStories } from "@/components/CustomerStoriesTestimonials";
 
 function Abap() {
+  const tabsData2 = [
+  {
+    icon: <Cloud className="w-10 h-10 text-white" />,
+    heading: "Reduced total cost of ownership",
+    description:
+      "SAP managed services can help reduce maintenance costs and total cost of ownership (TCO).",
+  },
+  {
+    icon: <Monitor className="w-10 h-10 text-white" />,
+    heading: "Dedicated technical & functional assistance",
+    description:
+      "Better resource allocation within the company is made possible by technical and functional assistance boosting creativity and production.",
+  },
+  {
+    icon: <Server className="w-10 h-10 text-white" />,
+    heading: "Flexibility to scale",
+    description:
+      "Flexible contracting and data processing systems enable businesses to scale their SAP resources up or down as needed.",
+  },
+  {
+    icon: <Shield className="w-10 h-10 text-white" />,
+    heading: "High availability & guaranteed uptime",
+    description:
+      "Guaranteed uptime and high availability are possible with SAP managed services.",
+  },
+  {
+    icon: <Settings className="w-10 h-10 text-white" />,
+    heading: "Smart patch & upgrade management",
+    description:
+      "Database management, smart patch, upgrades and enhancements.",
+  },
+  {
+    icon: <Activity className="w-10 h-10 text-white" />,
+    heading: "Application & database security audits",
+    description:
+      "Routine database and application audits to make sure there are no vulnerabilities or non-compliances.",
+  },
+];
+  const tabsData = [
+  {
+    icon: <Cloud className="w-10 h-10 text-black" />,
+    heading: "SAP on Cloud Hosting",
+    description:
+      "Improved performance and lower operating expenses, adapting to shift company requirements.",
+  },
+  {
+    icon: <Monitor className="w-10 h-10 text-black" />,
+    heading: "SAP Performance Optimization",
+    description:
+      "Improve the cloud performance of your SAP systems with our customized services.",
+  },
+  {
+    icon: <Server className="w-10 h-10 text-black" />,
+    heading: "SAP Cloud Managed Services",
+    description:
+      "We handle the configuration of your SAP cloud for thorough and ongoing assistance.",
+  },
+];
 const sampleSolutions = [
   {
     title: "Custom ABAP Development",
@@ -342,31 +404,35 @@ const highlightData = [
                   </h2>
 
                   <div className="py-8 sm:py-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10 bg-white">
-             <StatCardStable
-  percentage="40%"
-  description="Reduction in ABAP program execution time after code optimization."
-/>
-<StatCardStable
-  percentage="55%"
-  description="Faster report generation with ABAP on HANA migration."
-/>
-<StatCardStable
-  percentage="70%"
-  description="Increase in process automation using custom ABAP workflows."
-/>
+                  <StatCardStable
+                    percentage="40%"
+                    description="Reduction in ABAP program execution time after code optimization."
+                    />
+                    <StatCardStable
+                    percentage="55%"
+                    description="Faster report generation with ABAP on HANA migration."
+                    />
+                    <StatCardStable
+                    percentage="70%"
+                    description="Increase in process automation using custom ABAP workflows."
+                    />
                   </div>
                 </div>
               </section>
               <section id="services" className="mt-20 w-full scroll-mt-24">
                 <div className="max-w-[1400px] w-full px-4 mx-auto">
-                  <TabSection />
+                  <TabSection headingText="SAP services to support your cloud operations"
+      tabs={tabsData} />
                 </div>
               </section>
               <section
                 id="benefits"
                 className="mt-20 max-w-[1400px] scroll-mt-24"
               >
-                <TopSectionWithTabs />
+                <TopSectionWithTabs
+      tabSectionHeading="Key benefits of SAP Managed Services"
+      tabs={tabsData2}
+    />
               </section>{" "}
               <section
                 id="customer stories"
@@ -413,7 +479,7 @@ const highlightData = [
       </div>
 
       <div className="p-8 rounded-lg mt-8">
-        <div className="flex flex-wrap justify-center items-center gap-8">
+        {/* <div className="flex flex-wrap justify-center items-center gap-8">
           {[
             { src: "/fixedIcons/1.png", label: "ISO 9001" },
             { src: "/fixedIcons/2.png", label: "ISO 27001" },
@@ -433,7 +499,7 @@ const highlightData = [
               />
             </div>
           ))}
-        </div>
+        </div> */}
       </div>
       <div>
         <div className="w-full bg-black">

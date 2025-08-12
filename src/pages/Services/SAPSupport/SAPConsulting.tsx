@@ -20,6 +20,10 @@ import {
   Database,
   Users,
   Settings,
+  Cloud,
+  Monitor,
+  Activity,
+  Server,
 } from "lucide-react";
 import Footer from "@/components/Footer";
 import ConsultationTabsSection from "@/components/services/ConsultationTabsSection";
@@ -34,53 +38,111 @@ import PartnersCarousel from "@/components/services/PartnersCarousel";
 import { CustomerStories } from "@/components/CustomerStoriesTestimonials";
 
 function SAPConsulting() {
+  const tabsData2 = [
+  {
+    icon: <Cloud className="w-10 h-10 text-white" />,
+    heading: "Accelerated Digital Transformation",
+    description:
+      "SAP S/4HANA enables rapid digital transformation with simplified data models and real-time processing capabilities.",
+  },
+  {
+    icon: <Monitor className="w-10 h-10 text-white" />,
+    heading: "Enhanced User Experience",
+    description:
+      "Modern SAP Fiori interface delivers intuitive user experience across all devices, improving productivity and adoption rates.",
+  },
+  {
+    icon: <Server className="w-10 h-10 text-white" />,
+    heading: "Real-time Analytics & Insights",
+    description:
+      "Embedded analytics provide instant business insights with real-time data processing for faster decision-making.",
+  },
+  {
+    icon: <Shield className="w-10 h-10 text-white" />,
+    heading: "Simplified IT Landscape",
+    description:
+      "Reduced system complexity with unified data model eliminates redundancy and streamlines business processes.",
+  },
+  {
+    icon: <Settings className="w-10 h-10 text-white" />,
+    heading: "Future-ready Architecture",
+    description:
+      "Built on SAP HANA in-memory platform with cloud-first approach ensuring scalability and innovation readiness.",
+  },
+  {
+    icon: <Activity className="w-10 h-10 text-white" />,
+    heading: "Advanced Process Automation",
+    description:
+      "Intelligent automation capabilities with machine learning integration to optimize business workflows and reduce manual tasks.",
+  },
+];
+  const tabsData = [
+  {
+    icon: <Cloud className="w-10 h-10 text-black" />,
+    heading: "S/4HANA Migration Planning",
+    description:
+      "Comprehensive migration strategy and roadmap development for seamless transition to SAP S/4HANA.",
+  },
+  {
+    icon: <Monitor className="w-10 h-10 text-black" />,
+    heading: "Implementation & Deployment",
+    description:
+      "End-to-end implementation services including system setup, configuration, and go-live support.",
+  },
+  {
+    icon: <Server className="w-10 h-10 text-black" />,
+    heading: "Post-Implementation Support",
+    description:
+      "Ongoing optimization, maintenance, and enhancement services to maximize your S/4HANA investment.",
+  },
+];
 const sampleSolutions = [
   {
     title: "S/4HANA Readiness Assessment",
-    heading: "Planning and Strategy",
+    heading: "Strategic Planning",
     description:
-      "Evaluate your current ERP landscape to build a robust S/4HANA roadmap.",
+      "Comprehensive evaluation of your current SAP landscape and readiness for S/4HANA transformation.",
     points: [
-      "Business process mapping and GAP analysis",
-      "System and data readiness checks",
-      "Migration strategy and timeline planning",
-      "Risk mitigation and compliance framework",
+      "Current system health check and compatibility analysis",
+      "Custom code analysis and simplification recommendations",
+      "Data quality assessment and cleansing strategy",
+      "Business case development and ROI projection",
     ],
   },
   {
-    title: "Greenfield & Brownfield Migrations",
-    heading: "Implementation Approach",
+    title: "Migration Strategy & Roadmap",
+    heading: "Transformation Approach",
     description:
-      "Choose the right migration path aligned with your business goals.",
+      "Tailored migration approach based on your business requirements and technical landscape.",
     points: [
-      "Greenfield: fresh implementation for digital transformation",
-      "Brownfield: system conversion preserving historical data",
-      "Selective data transition options",
-      "Faster deployment with agile methodology",
+      "Greenfield vs Brownfield migration analysis",
+      "Phased implementation timeline and milestones",
+      "Risk assessment and mitigation strategies",
+      "Change management and user adoption planning",
     ],
   },
   {
-    title: "SAP Fiori & UX Design",
-    heading: "User-Centric Design",
+    title: "Fiori UX Implementation",
+    heading: "Modern User Experience",
     description:
-      "Enhance user adoption and productivity with intuitive interfaces.",
+      "Transform user experience with intuitive SAP Fiori applications and responsive design.",
     points: [
-      "Role-based SAP Fiori apps",
-      "Responsive design for mobile and desktop",
-      "Custom UX development",
-      "Training and change management",
+      "Role-based Fiori app catalog development",
+      "Custom Fiori app creation and enhancement",
+      "Mobile-first responsive design implementation",
+      "User experience optimization and testing",
     ],
   },
   {
-    title: "Post-Go-Live Optimization",
-    heading: "Continuous Improvement",
+    title: "Analytics & Reporting",
+    heading: "Intelligent Insights",
     description:
-      "Ensure long-term success with ongoing performance tuning and support.",
+      "Leverage embedded analytics and real-time reporting capabilities of S/4HANA.",
     points: [
-      "System health checks and audits",
-      "Process optimization workshops",
-      "Performance tuning and automation",
-      "Upgrade and patch management",
+      "Embedded analytics configuration and setup",
+      "Custom KPI and dashboard development",
+      "Real-time reporting and visualization",
+      "Predictive analytics and machine learning integration",
     ],
   },
 ];
@@ -116,29 +178,29 @@ const sampleSolutions = [
   const faqs = [
     {
       question:
-        "What is the Accelerated SAP EXIM solution, and how does it benefit my business?",
-      answer: "",
+        "What is SAP S/4HANA and how does it differ from traditional SAP ERP?",
+      answer: "SAP S/4HANA is the next-generation ERP suite built on the SAP HANA in-memory platform. It offers real-time processing, simplified data models, modern user experience with Fiori, and embedded analytics, unlike traditional SAP ERP systems.",
     },
     {
       question:
-        "How does Accelerated EXIM address common challenges in export-import operations?",
-      answer: "",
+        "What are the different migration approaches for moving to S/4HANA?",
+      answer: "There are three main approaches: Greenfield (new implementation), Brownfield (system conversion), and Selective Data Transition. The choice depends on your current system complexity, business requirements, and transformation goals.",
     },
     {
       question:
-        "What are the key benefits of using accelerated SAP EXIM solutions?",
-      answer: "",
+        "How long does a typical S/4HANA implementation take?",
+      answer: "Implementation timelines vary based on complexity and approach. Greenfield implementations typically take 8-18 months, while Brownfield conversions can take 6-12 months. Factors include customizations, integrations, and change management requirements.",
     },
     {
       question:
-        "How does Accelerated EXIM ensure compliance with export-import regulations?",
-      answer: "",
+        "What are the key benefits of migrating to SAP S/4HANA?",
+      answer: "Key benefits include real-time analytics, improved user experience, simplified data models, reduced TCO, enhanced performance, future-ready architecture, and advanced automation capabilities for digital transformation.",
     },
     {
       question:
-        "Does managed logistics cost and export incentive benefit from Accelerated EXIM?",
+        "Do I need to upgrade to S/4HANA immediately, and what is the timeline?",
       answer:
-        "Yes, Accelerated EXIM provides tools for tracking logistics expenses and managing export incentives with high precision. It enables detailed tracking of costs, helps manage license and scheme development, and automates processes to avoid loss of export income due to manual errors.",
+        "SAP mainstream support for ECC 6.0 ends in 2027, with extended support until 2030. Planning your S/4HANA journey early ensures adequate time for assessment, planning, and implementation without business disruption.",
     },
   ];
 
@@ -336,14 +398,18 @@ const highlightData = [
               </section>
               <section id="services" className="mt-20 w-full scroll-mt-24">
                 <div className="max-w-[1400px] w-full px-4 mx-auto">
-                  <TabSection />
+                  <TabSection headingText="SAP services to support your cloud operations"
+      tabs={tabsData} />
                 </div>
               </section>
               <section
                 id="benefits"
                 className="mt-20 max-w-[1400px] scroll-mt-24"
               >
-                <TopSectionWithTabs />
+                <TopSectionWithTabs
+      tabSectionHeading="Key benefits of SAP Managed Services"
+      tabs={tabsData2}
+    />
               </section>{" "}
               <section
                 id="customer stories"
@@ -390,7 +456,7 @@ const highlightData = [
       </div>
 
       <div className="p-8 rounded-lg mt-8">
-        <div className="flex flex-wrap justify-center items-center gap-8">
+        {/* <div className="flex flex-wrap justify-center items-center gap-8">
           {[
             { src: "/fixedIcons/1.png", label: "ISO 9001" },
             { src: "/fixedIcons/2.png", label: "ISO 27001" },
@@ -410,7 +476,7 @@ const highlightData = [
               />
             </div>
           ))}
-        </div>
+        </div> */}
       </div>
       <div>
         <div className="w-full bg-black">

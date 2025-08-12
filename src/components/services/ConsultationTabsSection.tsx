@@ -12,22 +12,22 @@ interface ConsultationTabsSectionProps {
   solutions: Solution[];
   mainHeading?: string;
   mainDescription?: string;
-  ctaText?: string;
-  onCtaClick?: () => void;
+  // ctaText?: string;
+  // onCtaClick?: () => void;
 }
 
 const ConsultationTabsSection = ({
   solutions,
   mainHeading = "Explore our wide range of offerings",
   mainDescription = "SAP Managed Services provide the full range of functional, technical, and cloud possibilities.",
-  ctaText = "Get a Consultation",
-  onCtaClick,
+  // ctaText = "Get a Consultation",
+  // onCtaClick,
 }: ConsultationTabsSectionProps) => {
   const [activeIndex, setActiveIndex] = useState(0);
 
-  const handleCtaClick = () => {
-    onCtaClick?.();
-  };
+  // const handleCtaClick = () => {
+  //   onCtaClick?.();
+  // };
 
   return (
     <div className="w-full px-4 py-10 mx-auto max-w-[1400px] text-black font-[Questrial,Arial,Verdana,Tahoma,sans-serif]">
@@ -41,7 +41,7 @@ const ConsultationTabsSection = ({
         <div className="md:w-4/5 text-[21px] text-[#484850] font-normal">
           {mainDescription}
         </div>
-        <div className="md:w-1/5 flex items-center justify-end gap-2 whitespace-nowrap">
+        {/* <div className="md:w-1/5 flex items-center justify-end gap-2 whitespace-nowrap">
           <button
             onClick={handleCtaClick}
             className="bg-yellow-400 text-black px-4 py-2 rounded hover:bg-yellow-300 transition-all"
@@ -49,7 +49,7 @@ const ConsultationTabsSection = ({
             {ctaText}
           </button>
           <ArrowRight className="text-yellow-400" />
-        </div>
+        </div> */}
       </div>
 
       {/* Content & Tab List */}

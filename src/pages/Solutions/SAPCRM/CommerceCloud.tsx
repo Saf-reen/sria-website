@@ -507,8 +507,8 @@ function CommerceCloud() {
       </div>
 
       {/* Certifications Section - Responsive */}
-      {/* <div className="p-4 lg:p-8 rounded-lg mt-8">
-        <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-6 lg:gap-8 max-w-6xl mx-auto">
+      <div className="p-4 lg:p-8 rounded-lg mt-8">
+        {/* <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-6 gap-4 sm:gap-6 lg:gap-8 max-w-6xl mx-auto">
           {[
             { src: "/fixedIcons/1.png", label: "ISO 9001" },
             { src: "/fixedIcons/2.png", label: "ISO 27001" },
@@ -528,8 +528,8 @@ function CommerceCloud() {
               />
             </div>
           ))}
-        </div>
-      </div> */}
+        </div> */}
+      </div>
 
       <div className="w-full bg-black">
         {" "}

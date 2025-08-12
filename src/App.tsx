@@ -118,7 +118,7 @@ const App = () => (
           <Route path="/about/careers" element={<ComingSoon />} />
           <Route path="/about/alliances" element={<ComingSoon />}/>          
           <Route path="/about/partner-with-us" element={<ComingSoon />} />
-          <Route path="/about/events" element={<ComingSoon />}/>
+          <Route path="/about/events" element={<Partner />}/>
           <Route path="/about/locations" element={<Locations />} />
           <Route path="/aboutus" element={<AboutUs />} />
           

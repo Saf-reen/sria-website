@@ -1,28 +1,18 @@
 import React, { useRef } from "react";
-import { ArrowRight, ArrowLeft, Cloud, Server, Monitor } from "lucide-react";
+import { ArrowRight, ArrowLeft } from "lucide-react";
 
-const tabs = [
-  {
-    icon: <Cloud className="w-10 h-10 text-black" />,
-    heading: "SAP on Cloud Hosting",
-    description:
-      "Improved performance and lower operating expenses, adapting to shift company requirements.",
-  },
-  {
-    icon: <Monitor className="w-10 h-10 text-black" />,
-    heading: "SAP Performance Optimization",
-    description:
-      "Improve the cloud performance of your SAP systems with our customized services.",
-  },
-  {
-    icon: <Server className="w-10 h-10 text-black" />,
-    heading: "SAP Cloud Managed Services",
-    description:
-      "We handle the configuration of your SAP cloud for thorough and ongoing assistance.",
-  },
-];
+interface TabItem {
+  icon: JSX.Element;
+  heading: string;
+  description: string;
+}
 
-const TabSection: React.FC = () => {
+interface TabSectionProps {
+  headingText: string;
+  tabs: TabItem[];
+}
+
+const TabSection: React.FC<TabSectionProps> = ({ headingText, tabs }) => {
   const scrollRef = useRef<HTMLDivElement>(null);
 
   const scroll = (direction: "left" | "right") => {
@@ -41,11 +31,11 @@ const TabSection: React.FC = () => {
 
   return (
     <div className="w-full bg-white text-black font-[Questrial,Arial,Verdana,Tahoma,sans-serif]">
-      <div className="max-w-[1400px] mx-auto  ">
+      <div className="max-w-[1400px] mx-auto">
         {/* Header */}
         <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-10">
           <h1 className="text-[36px] sm:text-[47px] leading-tight font-normal tracking-tight mb-6 md:mb-0 md:w-2/3">
-            SAP services to support your cloud operations
+            {headingText}
           </h1>
 
           <div className="flex gap-4 w-full md:w-auto justify-end">

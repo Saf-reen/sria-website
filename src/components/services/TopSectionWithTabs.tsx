@@ -1,53 +1,21 @@
 "use client";
 import React from "react";
-import {
-  Cloud,
-  Monitor,
-  Server,
-  Shield,
-  Activity,
-  Settings,
-} from "lucide-react";
 
-const tabs = [
-  {
-    icon: <Cloud className="w-10 h-10 text-white" />,
-    heading: "Reduced total cost of ownership",
-    description:
-      "SAP managed services can help reduce maintenance costs and total cost of ownership (TCO).",
-  },
-  {
-    icon: <Monitor className="w-10 h-10 text-white" />,
-    heading: "Dedicated technical & functional assistance",
-    description:
-      "Better resource allocation within the company is made possible by technical and functional assistance boosting creativity and production.",
-  },
-  {
-    icon: <Server className="w-10 h-10 text-white" />,
-    heading: "Flexibility to scale",
-    description:
-      "Flexible contracting and data processing systems enable businesses to scale their SAP resources up or down as needed.",
-  },
-  {
-    icon: <Shield className="w-10 h-10 text-white" />,
-    heading: "High availability & guaranteed uptime",
-    description:
-      "Guaranteed uptime and high availability are possible with SAP managed services.",
-  },
-  {
-    icon: <Settings className="w-10 h-10 text-white" />,
-    heading: "Smart patch & upgrade management",
-    description: "Database management, smart patch, upgrades and enhancements.",
-  },
-  {
-    icon: <Activity className="w-10 h-10 text-white" />,
-    heading: "Application & database security audits",
-    description:
-      "Routine database and application audits to make sure there are no vulnerabilities or non-compliances.",
-  },
-];
+interface TabItem {
+  icon: JSX.Element;
+  heading: string;
+  description: string;
+}
 
-const TopSectionWithTabs: React.FC = () => {
+interface TopSectionWithTabsProps {
+  tabSectionHeading: string;
+  tabs: TabItem[];
+}
+
+const TopSectionWithTabs: React.FC<TopSectionWithTabsProps> = ({
+  tabSectionHeading,
+  tabs,
+}) => {
   return (
     <>
       {/* Top Banner Section */}
@@ -64,7 +32,7 @@ const TopSectionWithTabs: React.FC = () => {
       <div className="bg-black text-white px-4 sm:px-6 lg:px-8 py-16">
         <div className="max-w-[1400px] mx-auto w-full">
           <h2 className="text-white text-[32px] sm:text-[40px] md:text-[47px] pt-4 mb-10 font-[Questrial,Arial,Verdana,Tahoma,sans-serif] leading-tight w-full md:w-3/4">
-            Key benefits of SAP Managed Services
+            {tabSectionHeading}
           </h2>
 
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
