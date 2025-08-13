@@ -41,59 +41,59 @@ function SAPCustom() {
   const tabsData2 = [
   {
     icon: <Cloud className="w-10 h-10 text-white" />,
-    heading: "Reduced total cost of ownership",
+    heading: "Tailored SAP Solutions",
     description:
-      "SAP managed services can help reduce maintenance costs and total cost of ownership (TCO).",
+      "Develop custom functionalities that align perfectly with your unique business needs.",
   },
   {
     icon: <Monitor className="w-10 h-10 text-white" />,
-    heading: "Dedicated technical & functional assistance",
+    heading: "UI/UX Enhancements",
     description:
-      "Better resource allocation within the company is made possible by technical and functional assistance boosting creativity and production.",
+      "Improve user experience with intuitive designs and streamlined SAP interfaces.",
   },
   {
     icon: <Server className="w-10 h-10 text-white" />,
-    heading: "Flexibility to scale",
+    heading: "Seamless Integrations",
     description:
-      "Flexible contracting and data processing systems enable businesses to scale their SAP resources up or down as needed.",
+      "Connect SAP with other enterprise systems for smooth data flow and operations.",
   },
   {
     icon: <Shield className="w-10 h-10 text-white" />,
-    heading: "High availability & guaranteed uptime",
+    heading: "Performance Optimization",
     description:
-      "Guaranteed uptime and high availability are possible with SAP managed services.",
+      "Boost application speed, reliability, and efficiency through targeted enhancements.",
   },
   {
     icon: <Settings className="w-10 h-10 text-white" />,
-    heading: "Smart patch & upgrade management",
+    heading: "Ongoing Improvements",
     description:
-      "Database management, smart patch, upgrades and enhancements.",
+      "Continuously update and enhance your SAP environment to meet evolving demands.",
   },
   {
     icon: <Activity className="w-10 h-10 text-white" />,
-    heading: "Application & database security audits",
+    heading: "Quality & Security Assurance",
     description:
-      "Routine database and application audits to make sure there are no vulnerabilities or non-compliances.",
+      "Ensure custom developments meet the highest standards for quality, compliance, and security.",
   },
 ];
   const tabsData = [
   {
     icon: <Cloud className="w-10 h-10 text-black" />,
-    heading: "SAP on Cloud Hosting",
+    heading: "Custom Application Development",
     description:
-      "Improved performance and lower operating expenses, adapting to shift company requirements.",
+      "Design and build tailored SAP applications to address your unique business requirements.",
   },
   {
     icon: <Monitor className="w-10 h-10 text-black" />,
-    heading: "SAP Performance Optimization",
+    heading: "Process Enhancements",
     description:
-      "Improve the cloud performance of your SAP systems with our customized services.",
+      "Optimize and extend existing SAP processes to boost efficiency and align with evolving needs.",
   },
   {
     icon: <Server className="w-10 h-10 text-black" />,
-    heading: "SAP Cloud Managed Services",
+    heading: "System Integration & Extensions",
     description:
-      "We handle the configuration of your SAP cloud for thorough and ongoing assistance.",
+      "Seamlessly integrate SAP with third-party systems and add new features for expanded capabilities.",
   },
 ];
 const sampleSolutions = [
@@ -172,32 +172,55 @@ const sampleSolutions = [
 ];
 
   const productData = [
-    {
-      title: "Field Service Management",
-      description:
-        "Efficiently manage remote teams, assets, and processes to enhance service delivery.",
-        link:"/"
-    },
-
-    {
-      title: "Real Estate Management",
-      description:
-        "Automate property management tasks, including rent collection and maintenance.",
-           link:"/"
-    },
-    {
-      title: "Intelligent Character Recognition",
-      description:
-        "Transforming document processing to achieve greater automation and efficiency.",
-           link:"/"
-    },
-    {
-      title: "Digital Logistics",
-      description:
-        "Modernize logistics operations for more efficient and reliable deliveries.",
-           link:"/"
-    },
-  ];
+  {
+    title: "Managed Services",
+    description:
+      "Ongoing, proactive management and support of IT infrastructure, applications, or business processes by a third-party provider—offered under subscription or usage-based models to improve reliability, reduce costs, and align IT with business goals.",
+    link: "/sapmanagedservices"
+  },
+  {
+    title: "AMS",
+    description:
+      "Application Management Services provide continuous maintenance, enhancement, and support for enterprise applications—ensuring optimal performance, adaptability, and alignment with business requirements.",
+    link: "/ams"
+  },
+  {
+    title: "SAP S/4HANA Implementation Services",
+    description:
+      "Comprehensive support for deploying SAP S/4HANA—including planning, deployment (greenfield, brownfield, or selective transition), data migration, system integration, and go-live execution to transform business operations.",
+    link: "/sapimplement"
+  },
+  {
+    title: "SAP S/4HANA Consulting Services",
+    description:
+      "Expert advisory for strategic planning, ERP landscape assessment, migration strategy, system optimization, process redesign, and tailored implementation to maximize the benefits of an SAP S/4HANA deployment.",
+    link: "/consulting"
+  },
+  {
+    title: "SAP Fiori Development Services",
+    description:
+      "Design and customization of SAP Fiori applications to deliver intuitive, role-based, and mobile-friendly user experiences across the SAP S/4HANA ecosystem.",
+    link: "/fioridevelop"
+  },
+  {
+    title: "SAP Business Technology Platform",
+    description:
+      "A unified multi-cloud platform integrating data management, analytics, application development, integration, automation, and AI—enabling businesses to build, extend, and run intelligent enterprise applications.",
+    link: "/businesstech"
+  },
+  {
+    title: "ABAP RESTful Application Programming Model Service",
+    description:
+      "Development of modern, scalable business applications on SAP S/4HANA using the ABAP RESTful Application Programming Model (RAP), enabling RESTful services, clean architecture, and maintainable code.",
+    link: "/abap"
+  },
+  {
+    title: "SAP BASIS Support Services",
+    description:
+      "Foundational administration and technical operations for SAP environments—including system installation, configuration, performance tuning, updates, security, and infrastructure management.",
+    link: "/basicservices"
+  }
+];
 
   const faqs = [
     {
@@ -281,29 +304,29 @@ const sampleSolutions = [
     "Customer stories",
     "Partners",
     "Related services",
-    "Resources",
+    // "Resources",
   ];
   const customerStories = [
     {
       id: 1,
       image:
-        "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=300&fit=crop",
-      title: "Transforming Business Operations With Innovative Solutions",
-      readMoreLink: "#",
+        "/customerStories/patil.jpg",
+      title: "Patil Drives Operational Excellence with End-to-End SAP, AMS & OCR Automation",
+      readMoreLink: "/patil",
     },
     {
       id: 2,
       image:
-        "https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=300&fit=crop",
-      title: "Digital Innovation Success Through Strategic Partnership",
-      readMoreLink: "#",
+        "/customerStories/7hills.jpg",
+      title: "7Hills Restaurant Transforms Guest Experience with Custom Digital Platform",
+      readMoreLink: "/hills",
     },
     {
       id: 3,
       image:
-        "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=400&h=300&fit=crop",
-      title: "Scaling New Heights in Technology Excellence",
-      readMoreLink: "#",
+        "/customerStories/pharma.jpg",
+      title: "LVK Pharma Goes Digital with Odoo CRM, Eliminates Manual Processes",
+      readMoreLink: "/Lvk",
     },
   ];
 
@@ -338,9 +361,9 @@ const highlightData = [
         {/* Hero Pinned */}
 
         <ImageOverlay
-          imageUrl="https://www.accely.com/wp-content/uploads/2024/12/SAP-Managed-Service-1.webp"
-          title="SAP Managed Services"
-          description="Achieve stability, reliability, and adaptability with Sria Infotech’s automation-driven SAP Managed Services."
+          imageUrl="/Services/custom.png"
+          title="SAP Custom Development"
+          description="Enhance your SAP landscape with tailored solutions that align perfectly with your unique business processes."
         />
         <section className="relative min-h-[500px]  sticky top-0 z-20  bg-black bg-cover bg-center overflow-hidden">
           {/* Dark Overlay */}
@@ -352,17 +375,12 @@ const highlightData = [
             <div className="flex flex-col md:flex-row justify-between gap-8 mb-10">
               <div className="w-full md:w-1/2">
                 <h1 className="text-[47px]  leading-tight">
-                  Maximize your SAP investment with Sria Infotech
+                  Drive Innovation with Tailored SAP Solutions from Sria Infotech
                 </h1>
               </div>
               <div className="w-full md:w-1/2">
                 <p className="text-base md:text-lg leading-relaxed">
-                  The management and optimization of your SAP environment are
-                  more important than ever in the current fast-paced digital
-                  world. One of the top SAP managed service providers, Sria Infotech
-                  offers all-inclusive solutions that will optimize your SAP
-                  operations and guarantee that they are effective, safe, and
-                  completely aligned with your business goals.
+                  In today’s rapidly evolving business landscape, standard solutions often fall short of meeting unique operational needs. Sria Infotech’s SAP Custom Development and Enhancement services deliver personalized, scalable solutions designed to align seamlessly with your business processes. From developing new applications to enhancing existing functionalities, we ensure your SAP environment is innovative, efficient, and ready to adapt to future demands.
                 </p>
               </div>
             </div>
@@ -393,8 +411,8 @@ const highlightData = [
                   <ConsultationTabsSection
                     solutions={sampleSolutions}
                     mainHeading="Explore our wide range of offerings"
-                    mainDescription="SAP Managed Services provide the full range of functional, technical, and cloud possibilities."
-                    ctaText="Get a Consultation"
+                    mainDescription="Development of custom SAP applications to address specific business challenges.Enhancement of standard SAP functionalities to improve usability and performance."
+                    // ctaText="Get a Consultation"
                   />
                 </div>
               </section>
@@ -402,21 +420,21 @@ const highlightData = [
               <section id="insights" className="scroll-mt-24 py-16 bg-white">
                 <div className="max-w-[1400px] w-full px-4 mx-auto">
                   <h2 className="text-3xl sm:text-[47px] font-semibold mb-8">
-                    Resourceful insights of SAP Managed Services
+                    Resourceful insights of SAP Custom Development Services
                   </h2>
 
                   <div className="py-8 sm:py-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10 bg-white">
                <StatCardStable
+        percentage="30%"
+        description="SAP Custom Development and Enhancement  improve process alignment"
+      />
+      <StatCardStable
         percentage="40%"
-        description="Reduction in manual effort through process automation within the first year."
+        description="Reduce operational inefficiencies"
       />
       <StatCardStable
-        percentage="55%"
-        description="Increase in user adoption rates after implementing custom UI/UX enhancements."
-      />
-      <StatCardStable
-        percentage="35%"
-        description="Improved system performance and faster report generation after optimization."
+        percentage="45%"
+        description="Enhance user adoption"
       />
 
                   </div>
@@ -462,7 +480,7 @@ const highlightData = [
                 />
               </section>
               <section id="resources" className="mt-10 scroll-mt-24">
-                <Resource
+                {/* <Resource
                   heading="Explore Our Resources"
                   paragraph="Helpful tools and insights for your export-import operations"
                   products={[
@@ -474,7 +492,7 @@ const highlightData = [
                         "https://www.accely.com/wp-content/uploads/2022/07/What-Is-Included-In-SAP-Managed-Services.webp",
                    link:"" },
                   ]}
-                />
+                /> */}
               </section>
             </div>
           </div>

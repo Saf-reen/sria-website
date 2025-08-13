@@ -4,6 +4,7 @@ import TwoColumnLayout from "@/components/TwoColumnLayout";
 import LeftSection from "@/components/LeftSection";
 import RightSection from "@/components/RightSection";
 import Requesademobtn from "@/components/Requesademobtn";
+import {Link} from "react-router-dom";
 import SidebarMenu from "@/components/SidebarMenu";
 import FeatureCard from "@/components/FeatureCard";
 import FeatureTabs from "@/components/FeatureTabs";
@@ -59,7 +60,7 @@ const faqs = [
   {
     question: "What kind of data integrations are possible?",
     answer:
-      "It supports seamless integration with SAP S/4HANA, SAP Analytics Cloud, and third-party data sources for real-time planning.",
+      "It supports seamless integration with Cloud Planning, SAP Analytics Cloud, and third-party data sources for real-time planning.",
   },
   {
     question: "Does SAP Cloud Planning use AI or machine learning?",
@@ -172,7 +173,7 @@ const sapData = {
   heading: "What is SAP Cloud Planning?",
   description:
     "SAP Cloud Planning is an integrated cloud-based solution that unifies planning processes across finance, operations, HR, and more. It enhances agility, accuracy, and collaboration through real-time analytics and intelligent forecasting.",
-  imageUrl: "/Solutions/cloud-planning.webp",
+  imageUrl: "/Solutions/cloud-planning.png",
   imageAlt: "Cloud Planning Illustration",
   items: [
     {
@@ -227,25 +228,25 @@ const features = [
   {
     title: "Predictive Forecasting",
     description:
-      "Leverage machine learning to generate accurate and actionable forecasts.",
+      "Leverage AI and analytics to anticipate trends, demands, and market shifts with precision.",
     image: "/cloud-planning/predictive.png",
   },
   {
     title: "Integrated Business Planning",
     description:
-      "Unify sales, finance, operations, and HR planning on one platform.",
+      " Connect financial, operational, and strategic plans for complete organizational alignment.",
     image: "/cloud-planning/integrated.png",
   },
   {
     title: "Scenario Modeling",
     description:
-      "Quickly create and compare what-if scenarios to support data-driven decisions.",
+      "Simulate “what-if” scenarios to evaluate multiple business strategies before execution.",
     image: "/cloud-planning/scenario.png",
   },
   {
     title: "Version Control & Audit Trails",
     description:
-      "Track planning iterations and ensure data integrity with automated logging.",
+      "Maintain data integrity with detailed history tracking and secure version management.",
     image: "/cloud-planning/audit.png",
   },
 ];
@@ -255,7 +256,7 @@ const insights = {
   description:
     "Cloud Planning ensures you adopt the cloud effectively with minimized risk and optimized costs.",
   ctaText: "Talk to an Expert",
-  ctaLink: "/contact",
+  ctaLink: "/contactus",
   solutions: [
     { title: "Cloud Assessment Services", href: "/solutions/cloud-assessment" },
     { title: "Migration Strategy Services", href: "/solutions/migration" },
@@ -297,10 +298,12 @@ function CloudPlanning () {
           <TwoColumnLayout
             left={
               <LeftSection
-                title="SAP S/4HANA"
-                description="Transform your business with SAP S/4HANA, a next-gen ERP system that uses intelligent automation, real-time analytics, and seamless integration to support fast, data-driven decisions."
+                title="Cloud Planning"
+                description="Optimize your business with Cloud Planning — a next-gen ERP using AI, real-time analytics, and seamless integration for faster, smarter decisions."
               >
+                <Link to="/contactus" >
                 <Requesademobtn text="Book a Consultation" />
+                </Link>
               </LeftSection>
             }
             right={
@@ -340,7 +343,7 @@ function CloudPlanning () {
               <ConsultationTabsSection
                 solutions={sampleSolutions}
                 mainHeading="Explore our wide range of offerings"
-                mainDescription="SAP Managed Services provide the full range of functional, technical, and cloud possibilities."
+                mainDescription="Cloud Planning offers a comprehensive suite of capabilities, including financial planning and budgeting, workforce optimization, supply chain and inventory planning, sales and revenue forecasting, and scenario modeling for strategic decision-making."
                 // ctaText="Get a Consultation"
               />
             </div>
@@ -354,28 +357,28 @@ function CloudPlanning () {
             {/* Stats Cards - Responsive Grid */}
             <div className="py-8 sm:py-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10 bg-white">
               <StatCardStable
-                percentage="25%"
-                description="Reduction in direct and indirect expenses related to import-export activities within a year."
+                percentage="30%"
+                description=" reduce operational costs "
               />
               <StatCardStable
                 percentage="50%"
-                description="Improvement within the initial 6 months of implementation."
+                description="Cloud Planning can boost forecasting accuracy"
               />
               <StatCardStable
-                percentage="100%"
-                description="Productivity with seamless mobile integration in EXIM solution."
+                percentage="60%"
+                description="Cut planning cycles"
               />
             </div>
 
             {/* CTA Section - Responsive */}
             <div className="bg-black mt-8 sm:mt-10 w-full flex flex-col lg:flex-row items-center lg:items-start rounded-lg overflow-hidden">
               <h1 className="text-white text-xl sm:text-2xl md:text-[27px] p-4 lg:p-10 w-full lg:w-3/4 leading-relaxed">
-                Streamline your Export-Import operations with the SAP Certified
-                Accelerated EXIM solution. Get a hold of complete control,
-                visibility, and ease in compliance and documentation procedures.
+                Streamline your business planning with Cloud Planning, gaining complete control, real-time visibility, and seamless integration across operations. Experience ease in forecasting, collaboration, and decision-making with a unified, intelligent cloud platform.
               </h1>
               <div className="p-4 lg:p-10 w-full lg:w-auto flex justify-center lg:justify-end">
+                <Link to="/contactus" >
                 <Requesademobtn text="Book a demo" />
+                </Link>
               </div>
             </div>
           </section>
@@ -387,8 +390,7 @@ function CloudPlanning () {
                 Key features
               </h2>
               <p className="mt-4 text-lg sm:text-xl md:text-2xl text-gray-500">
-                Accelerated EXIM solution offers license management, export
-                incentives, expense tracking, and automation.
+                AI-powered forecasting for accurate predictions, real-time analytics for instant insights, seamless integration with ERP and CRM systems
               </p>
             </div>
             <section className="my-8 sm:my-10 w-full">
@@ -404,8 +406,7 @@ function CloudPlanning () {
               Unlock powerful benefits
             </h2>
             <p className="mt-4 text-lg sm:text-xl md:text-2xl w-full lg:w-3/4 text-gray-500">
-              Accelerated EXIM solution enhances import-export management with
-              tracking, SAP integration, and efficiency.
+              Cloud Planning includes AI-powered forecasting, real-time analytics, and seamless collaboration to ensure accuracy, agility, and faster decision-making. It empowers teams with integrated business processes, optimized resources, and the flexibility to adapt quickly to changing market conditions.
             </p>
 
             {/* Benefits Grid - Responsive */}
@@ -442,15 +443,15 @@ function CloudPlanning () {
                   Empowering global trade for businesses
                 </h1>
                 <div className="flex-shrink-0">
+                  <Link to="/contactus" >
                   <Requesademobtn text="Book a demo" />
+                  </Link>
                 </div>
               </div>
 
               {/* Paragraph */}
               <p className="mt-6 text-base sm:text-lg lg:text-xl w-full lg:w-3/4 text-white leading-relaxed">
-                Streamline your Export-Import operations with the SAP Certified
-                Accelerated EXIM solution. Get a hold of complete control,
-                visibility, and ease in compliance and documentation procedures.
+                Group Reporting delivers a complete suite of capabilities, including real-time financial consolidation across multiple entities, automated intercompany elimination.
               </p>
             </div>
           </section>

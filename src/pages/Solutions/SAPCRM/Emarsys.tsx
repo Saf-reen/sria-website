@@ -6,6 +6,7 @@ import RightSection from "@/components/RightSection";
 import Requesademobtn from "@/components/Requesademobtn";
 import SidebarMenu from "@/components/SidebarMenu";
 import FeatureCard from "@/components/FeatureCard";
+import {Link} from "react-router-dom";
 import FeatureTabs from "@/components/FeatureTabs";
 import StatCard from "@/components/StatCard";
 import InfoTab from "@/components/InfoTab";
@@ -176,14 +177,14 @@ const menuItems = [
   "Benefits",
   "Find Your Answers",
   "Other Products",
-  "Resources",
+  // "Resources",
 ];
 
 const sapData = {
   heading: "What is SAP Emarsys?",
   description:
     "SAP Emarsys is SAP’s AI-powered omnichannel customer engagement platform that enables marketers to build, launch, and scale personalized, cross-channel campaigns to boost customer lifetime value.",
-  imageUrl: "/Emarsys/emarsys_overview.webp", // update to a fresh Emarsys image
+  imageUrl: "/Emarsys/emarsys_overview.png", // update to a fresh Emarsys image
   imageAlt: "Emarsys platform interface",
   items: [
     {
@@ -207,28 +208,28 @@ const sapData = {
 };
 
 const customerStories = [
-  {
-    id: 1,
-    image:
-      "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=300&fit=crop",
-    title: "Transforming Business Operations With Innovative Solutions",
-    readMoreLink: "#",
-  },
-  {
-    id: 2,
-    image:
-      "https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=300&fit=crop",
-    title: "Digital Innovation Success Through Strategic Partnership",
-    readMoreLink: "#",
-  },
-  {
-    id: 3,
-    image:
-      "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=400&h=300&fit=crop",
-    title: "Scaling New Heights in Technology Excellence",
-    readMoreLink: "#",
-  },
-];
+    {
+      id: 1,
+      image:
+        "/customerStories/patil.jpg",
+      title: "Patil Drives Operational Excellence with End-to-End SAP, AMS & OCR Automation",
+      readMoreLink: "/patil",
+    },
+    {
+      id: 2,
+      image:
+        "/customerStories/7hills.jpg",
+      title: "7Hills Restaurant Transforms Guest Experience with Custom Digital Platform",
+      readMoreLink: "/hills",
+    },
+    {
+      id: 3,
+      image:
+        "/customerStories/pharma.jpg",
+      title: "LVK Pharma Goes Digital with Odoo CRM, Eliminates Manual Processes",
+      readMoreLink: "/Lvk",
+    },
+  ];
 
 const insights = {
   heading: "Explore related SAP Customer Experience solutions",
@@ -269,31 +270,31 @@ const features = [
   {
     title: "Unified Data Layer",
     description:
-      "Aggregate customer, commerce, and product data into one platform for seamless personalization.",
+      "Centralizes customer data from all touchpoints to provide a single source of truth for personalized marketing campaigns.",
     image: "/Emarsys/data_integration.png",
   },
   {
     title: "Prebuilt AI-Infused Tactics",
     description:
-      "Leverage hundreds of ready-to-deploy, industry-aligned tactics to accelerate time to campaign launch.",
+      "Leverages AI-driven templates and strategies to accelerate campaign execution and optimize performance.",
     image: "/Emarsys/ai_tactics.png",
   },
   {
     title: "Channel-Agnostic Campaigns",
     description:
-      "Run campaigns across email, SMS, mobile, web, ads, in-store, and direct mail from one dashboard.",
+      "Enables marketers to deliver consistent, personalized messages across email, SMS, social, web, and mobile channels.",
     image: "/Emarsys/omnichannel.png",
   },
   {
     title: "Loyalty & Rewards Automation",
     description:
-      "Design and deploy loyalty journeys with integrated tier, reward, and points management.",
+      "Automates loyalty programs, rewards, and customer incentives to enhance retention and engagement.",
     image: "/Emarsys/loyalty.png",
   },
   {
     title: "Real-Time Insights & Forecasting",
     description:
-      "View performance and forecast outcomes instantly with built-in dashboards and AI forecasting.",
+      "Provides instant analytics and predictive forecasts to help marketers make informed, timely decisions.",
     image: "/Emarsys/analytics.png",
   },
 ];
@@ -308,10 +309,12 @@ function Emarsys() {
           <TwoColumnLayout
             left={
               <LeftSection
-                title="SAP S/4HANA"
-                description="Transform your business with SAP S/4HANA, a next-gen ERP system that uses intelligent automation, real-time analytics, and seamless integration to support fast, data-driven decisions."
+                title="SAP Emarsys"
+                description="Drive personalized, data-driven marketing with Emarsys — a customer engagement platform that empowers businesses to deliver relevant messages, optimize campaigns, and build long-lasting customer relationships."
               >
+                <Link to="/contactus">
                 <Requesademobtn text="Book a Consultation" />
+                </Link>
               </LeftSection>
             }
             right={
@@ -351,8 +354,8 @@ function Emarsys() {
               <ConsultationTabsSection
                 solutions={sampleSolutions}
                 mainHeading="Explore our wide range of offerings"
-                mainDescription="SAP Managed Services provide the full range of functional, technical, and cloud possibilities."
-                ctaText="Get a Consultation"
+                mainDescription="Emarsys enables businesses to unify customer data, automate marketing workflows, and execute targeted campaigns across multiple channels."
+                // ctaText="Get a Consultation"
               />
             </div>
           </section>
@@ -365,28 +368,28 @@ function Emarsys() {
             {/* Stats Cards - Responsive Grid */}
             <div className="py-8 sm:py-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10 bg-white">
               <StatCardStable
-                percentage="25%"
-                description="Reduction in direct and indirect expenses related to import-export activities within a year."
+                percentage="20%"
+                description="AI-driven personalization and automated loyalty programs , enhance customer lifetime value"
               />
               <StatCardStable
-                percentage="50%"
-                description="Improvement within the initial 6 months of implementation."
+                percentage="30%"
+                description="Increase customer retention"
               />
               <StatCardStable
-                percentage="100%"
-                description="Productivity with seamless mobile integration in EXIM solution."
+                percentage="35%"
+                description="Boost marketing ROI"
               />
             </div>
 
             {/* CTA Section - Responsive */}
             <div className="bg-black mt-8 sm:mt-10 w-full flex flex-col lg:flex-row items-center lg:items-start rounded-lg overflow-hidden">
               <h1 className="text-white text-xl sm:text-2xl md:text-[27px] p-4 lg:p-10 w-full lg:w-3/4 leading-relaxed">
-                Streamline your Export-Import operations with the SAP Certified
-                Accelerated EXIM solution. Get a hold of complete control,
-                visibility, and ease in compliance and documentation procedures.
+                Transform your marketing with Emarsys, gaining unified customer data, AI-powered automation, and actionable insights to deliver personalized, high-impact campaigns at scale.
               </h1>
               <div className="p-4 lg:p-10 w-full lg:w-auto flex justify-center lg:justify-end">
+                <Link to="/contactus">
                 <Requesademobtn text="Book a demo" />
+                </Link>
               </div>
             </div>
           </section>
@@ -398,8 +401,7 @@ function Emarsys() {
                 Key features
               </h2>
               <p className="mt-4 text-lg sm:text-xl md:text-2xl text-gray-500">
-                Accelerated EXIM solution offers license management, export
-                incentives, expense tracking, and automation.
+                Emarsys offers a unified data layer, AI-infused prebuilt tactics, and channel-agnostic campaigns to deliver personalized marketing at scale. Loyalty automation and real-time insights ensure higher engagement, retention, and data-driven decision-making.
               </p>
             </div>
             <section className="my-8 sm:my-10 w-full">
@@ -415,8 +417,7 @@ function Emarsys() {
               Unlock powerful benefits
             </h2>
             <p className="mt-4 text-lg sm:text-xl md:text-2xl w-full lg:w-3/4 text-gray-500">
-              Accelerated EXIM solution enhances import-export management with
-              tracking, SAP integration, and efficiency.
+              Emarsys empowers businesses with unified data, AI-driven campaign tactics, and cross-channel personalization.
             </p>
 
             {/* Benefits Grid - Responsive */}
@@ -453,15 +454,15 @@ function Emarsys() {
                   Empowering global trade for businesses
                 </h1>
                 <div className="flex-shrink-0">
+                  <Link to="/contactus">
                   <Requesademobtn text="Book a demo" />
+                  </Link>
                 </div>
               </div>
 
               {/* Paragraph */}
               <p className="mt-6 text-base sm:text-lg lg:text-xl w-full lg:w-3/4 text-white leading-relaxed">
-                Streamline your Export-Import operations with the SAP Certified
-                Accelerated EXIM solution. Get a hold of complete control,
-                visibility, and ease in compliance and documentation procedures.
+                Transform your marketing with Emarsys, gaining unified customer data, AI-powered automation, and actionable insights to deliver personalized, high-impact campaigns at scale.
               </p>
             </div>
           </section>
@@ -469,11 +470,12 @@ function Emarsys() {
           {/* Resources Section */}
 
           
-          <InsightsSection insights={insightsData} />
-          <RelatedSolutions {...insights} />
+          {/* <InsightsSection insights={insightsData} /> */}
+          
 
-          <section id="resources" className="mt-12 sm:mt-16 scroll-mt-24">
-            <Resource
+          <section id="other products" className="mt-12 sm:mt-16 scroll-mt-24">
+            <RelatedSolutions {...insights} />
+            {/* <Resource
               heading="Explore Our SAP Emarsys Resources"
               paragraph="Comprehensive guides and insights for customer engagement transformation"
               products={[
@@ -485,7 +487,7 @@ function Emarsys() {
                   link:""
                 },
               ]}
-            />
+            /> */}
           </section>
         </div>
       </div>

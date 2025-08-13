@@ -1,5 +1,6 @@
 import React, { useEffect, useRef } from "react";
 import Requesademobtn from "../Requesademobtn";
+import {Link} from "react-router-dom";
 
 const ParallaxScrollingComponent: React.FC = () => {
   const blackBoxRef = useRef<HTMLDivElement>(null);
@@ -65,7 +66,9 @@ const ParallaxScrollingComponent: React.FC = () => {
           <h1 className="text-3xl font-bold mb-4">
             Step in the world of Sria Infotech’s SAP Services and Support
           </h1>
+          <Link to="/contactus">
           <Requesademobtn text="Book a Consultation" />
+          </Link>
         </div>
       </div>
     </div>

@@ -5,6 +5,7 @@ import ImageOverlay from "@/components/ImageOverlay";
 import Navigation from "@/components/Navigation";
 import Requesademobtn from "@/components/Requesademobtn";
 import FAQSection from "@/components/FAQSection";
+import {Link} from "react-router-dom";
 import FeatureTabs from "@/components/FeatureTabs";
 import InfoTab from "@/components/InfoTab";
 import ProductRange from "@/components/ProductRange";
@@ -173,32 +174,56 @@ function SAPManagedServices() {
   ];
 
   const productData = [
-    {
-      title: "Field Service Management",
-      description:
-        "Efficiently manage remote teams, assets, and processes to enhance service delivery.",
-        link:"/"
-    },
+  {
+    title: "AMS",
+    description:
+      "Application Management Services provide continuous maintenance, enhancement, and support for enterprise applications—ensuring optimal performance, adaptability, and alignment with business requirements.",
+    link: "/ams"
+  },
+  {
+    title: "SAP S/4HANA Implementation Services",
+    description:
+      "Comprehensive support for deploying SAP S/4HANA—including planning, deployment (greenfield, brownfield, or selective transition), data migration, system integration, and go-live execution to transform business operations.",
+    link: "/sapimplement"
+  },
+  {
+    title: "SAP S/4HANA Consulting Services",
+    description:
+      "Expert advisory for strategic planning, ERP landscape assessment, migration strategy, system optimization, process redesign, and tailored implementation to maximize the benefits of an SAP S/4HANA deployment.",
+    link: "/consulting"
+  },
+  {
+    title: "SAP Fiori Development Services",
+    description:
+      "Design and customization of SAP Fiori applications to deliver intuitive, role-based, and mobile-friendly user experiences across the SAP S/4HANA ecosystem.",
+    link: "/fioridevelop"
+  },
+  {
+    title: "SAP Business Technology Platform",
+    description:
+      "A unified multi-cloud platform integrating data management, analytics, application development, integration, automation, and AI—enabling businesses to build, extend, and run intelligent enterprise applications.",
+    link: "/businesstech"
+  },
+  {
+    title: "SAP Custom Development and Enhancement",
+    description:
+      "Tailored development and extension of SAP systems—using ABAP, SAP UI5, APIs, and other technologies—to create custom functionalities, interfaces, and integrations aligned with unique business needs.",
+    link: "/custom"
+  },
+  {
+    title: "ABAP RESTful Application Programming Model Service",
+    description:
+      "Development of modern, scalable business applications on SAP S/4HANA using the ABAP RESTful Application Programming Model (RAP), enabling RESTful services, clean architecture, and maintainable code.",
+    link: "/abap"
+  },
+  {
+    title: "SAP BASIS Support Services",
+    description:
+      "Foundational administration and technical operations for SAP environments—including system installation, configuration, performance tuning, updates, security, and infrastructure management.",
+    link: "/basicservices"
+  }
+];
 
-    {
-      title: "Real Estate Management",
-      description:
-        "Automate property management tasks, including rent collection and maintenance.",
-           link:"/"
-    },
-    {
-      title: "Intelligent Character Recognition",
-      description:
-        "Transforming document processing to achieve greater automation and efficiency.",
-           link:"/"
-    },
-    {
-      title: "Digital Logistics",
-      description:
-        "Modernize logistics operations for more efficient and reliable deliveries.",
-           link:"/"
-    },
-  ];
 
   const faqs = [
     {
@@ -282,29 +307,29 @@ function SAPManagedServices() {
     "Customer stories",
     "Partners",
     "Related services",
-    "Resources",
+    // "Resources",
   ];
-  const customerStories = [
+const customerStories = [
     {
       id: 1,
       image:
-        "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=300&fit=crop",
-      title: "Transforming Business Operations With Innovative Solutions",
-      readMoreLink: "#",
+        "/customerStories/patil.jpg",
+      title: "Patil Drives Operational Excellence with End-to-End SAP, AMS & OCR Automation",
+      readMoreLink: "/patil",
     },
     {
       id: 2,
       image:
-        "https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=300&fit=crop",
-      title: "Digital Innovation Success Through Strategic Partnership",
-      readMoreLink: "#",
+        "/customerStories/7hills.jpg",
+      title: "7Hills Restaurant Transforms Guest Experience with Custom Digital Platform",
+      readMoreLink: "/hills",
     },
     {
       id: 3,
       image:
-        "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=400&h=300&fit=crop",
-      title: "Scaling New Heights in Technology Excellence",
-      readMoreLink: "#",
+        "/customerStories/pharma.jpg",
+      title: "LVK Pharma Goes Digital with Odoo CRM, Eliminates Manual Processes",
+      readMoreLink: "/Lvk",
     },
   ];
 
@@ -340,7 +365,7 @@ function SAPManagedServices() {
           title="SAP Managed Services"
           description="Achieve stability, reliability, and adaptability with Sria Infotech’s automation-driven SAP Managed Services."
         />
-        <section className="relative min-h-[500px]  sticky top-0 z-20  bg-black bg-cover bg-center overflow-hidden">
+        <section className="relative min-h-[500px] sticky top-0 z-20  bg-black bg-cover bg-center overflow-hidden">
           {/* Dark Overlay */}
           <div className="absolute inset-0 bg-black z-10" />
 
@@ -392,7 +417,7 @@ function SAPManagedServices() {
                     solutions={sampleSolutions}
                     mainHeading="Explore our wide range of offerings"
                     mainDescription="SAP Managed Services provide the full range of functional, technical, and cloud possibilities."
-                    ctaText="Get a Consultation"
+                    // ctaText="Get a Consultation"
                   />
                 </div>
               </section>
@@ -461,7 +486,7 @@ function SAPManagedServices() {
                 />
               </section>
               <section id="resources" className="mt-10 scroll-mt-24">
-                <Resource
+                {/* <Resource
                   heading="Explore Our Resources"
                   paragraph="Helpful tools and insights for your export-import operations"
                   products={[
@@ -473,7 +498,7 @@ function SAPManagedServices() {
                         "https://www.accely.com/wp-content/uploads/2022/07/What-Is-Included-In-SAP-Managed-Services.webp",
                    link:"" },
                   ]}
-                />
+                /> */}
               </section>
             </div>
           </div>

@@ -1,5 +1,6 @@
 import React from "react";
 import Requesademobtn from "./Requesademobtn";
+import {Link} from "react-router-dom";
 
 interface ImageOverlayProps {
   imageUrl: string;
@@ -15,7 +16,7 @@ const ImageOverlay: React.FC<ImageOverlayProps> = ({
   return (
     <div
       className="sticky top-0 z-20  lg:block h-[600px] w-full bg-cover bg-center z-10 relative"
-      style={{ backgroundImage: `url(${imageUrl})` }}
+      style={{ backgroundImage: `url("${imageUrl}")` }}
     >
       {/* Dark overlay */}
       <div className="absolute inset-0 z-0 bg-black/50"></div>
@@ -26,7 +27,9 @@ const ImageOverlay: React.FC<ImageOverlayProps> = ({
           <div className="text-white max-w-2xl">
             <h2 className="text-3xl md:text-5xl font-bold mb-4">{title}</h2>
             <p className="text-base md:text-lg mb-6">{description}</p>
+            <Link to="/contactus">
             <Requesademobtn text="Book a Consultation" />
+            </Link>
           </div>
         </div>
       </div>

@@ -5,6 +5,7 @@ import LeftSection from "@/components/LeftSection";
 import RightSection from "@/components/RightSection";
 import Requesademobtn from "@/components/Requesademobtn";
 import SidebarMenu from "@/components/SidebarMenu";
+import {Link} from "react-router-dom";
 import FeatureCard from "@/components/FeatureCard";
 import FeatureTabs from "@/components/FeatureTabs";
 import StatCard from "@/components/StatCard";
@@ -153,14 +154,14 @@ const menuItems = [
   "Benefits",
   "Find Your Answers",
   "Other Products",
-  "Resources",
+  // "Resources",
 ];
 
 const sapData = {
   heading: "What is SAP PaPM?",
   description:
     "SAP Profitability and Performance Management (PaPM) is a powerful solution that enables businesses to model, simulate, and optimize financial and operational performance in real time.",
-  imageUrl: "/Solutions/papm.webp",
+  imageUrl: "/Solutions/papm-sap.png",
   imageAlt: "SAP PaPM dashboard visualization",
   items: [
     {
@@ -183,28 +184,28 @@ const sapData = {
 };
 
 const customerStories = [
-  {
-    id: 1,
-    image:
-      "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=300&fit=crop",
-    title: "Transforming Profitability Analysis With Advanced Analytics",
-    readMoreLink: "#",
-  },
-  {
-    id: 2,
-    image:
-      "https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=300&fit=crop",
-    title: "Optimizing Performance Through Data-Driven Insights",
-    readMoreLink: "#",
-  },
-  {
-    id: 3,
-    image:
-      "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=400&h=300&fit=crop",
-    title: "Achieving Strategic Excellence Through Integrated Planning",
-    readMoreLink: "#",
-  },
-];
+    {
+      id: 1,
+      image:
+        "/customerStories/patil.jpg",
+      title: "Patil Drives Operational Excellence with End-to-End SAP, AMS & OCR Automation",
+      readMoreLink: "/patil",
+    },
+    {
+      id: 2,
+      image:
+        "/customerStories/7hills.jpg",
+      title: "7Hills Restaurant Transforms Guest Experience with Custom Digital Platform",
+      readMoreLink: "/hills",
+    },
+    {
+      id: 3,
+      image:
+        "/customerStories/pharma.jpg",
+      title: "LVK Pharma Goes Digital with Odoo CRM, Eliminates Manual Processes",
+      readMoreLink: "/Lvk",
+    },
+  ];
 
 const insights = {
   heading: "Explore SAP PaPM Use Cases",
@@ -220,33 +221,33 @@ const insights = {
 
 const features = [
   {
-    title: "Real-Time Simulations",
+    title: "Dynamic Modeling & Simulation",
     description:
-      "Run instant simulations to assess financial and operational impact of decisions.",
+      "Create and test financial and operational models in real time.",
     image: "/PaPM/simulation.png",
   },
   {
-    title: "Flexible Modeling",
+    title: "Advanced Cost & Revenue Allocation",
     description:
-      "Create complex calculation models without heavy coding or technical setup.",
+      "Accurately assign costs and revenues across products, customers, and segments.",
     image: "/PaPM/modeling.png",
   },
   {
-    title: "Data Integration",
+    title: "Driver-Based Planning",
     description:
-      "Integrate data from SAP and non-SAP sources for a unified performance view.",
+      "Align resources and budgets with key performance drivers.",
     image: "/PaPM/integration.png",
   },
   {
-    title: "Rule-Based Processing",
+    title: "Real-Time Profitability Analysis",
     description:
-      "Use business rules to govern calculations and ensure auditability.",
+      "Access instant insights into margins and performance metrics.",
     image: "/PaPM/rules.png",
   },
   {
-    title: "Scalable Architecture",
+    title: "Scenario Planning & Forecasting",
     description:
-      "Built on SAP HANA to handle massive volumes of data efficiently.",
+      "Evaluate multiple strategies before execution.",
     image: "/PaPM/architecture.png",
   },
 ];
@@ -285,10 +286,12 @@ function SAPFinancialMgmt() {
           <TwoColumnLayout
             left={
               <LeftSection
-                title="SAP S/4HANA"
-                description="Transform your business with SAP S/4HANA, a next-gen ERP system that uses intelligent automation, real-time analytics, and seamless integration to support fast, data-driven decisions."
+                title="SAP PaPM"
+                description="Optimize profitability and enhance performance with SAP PaPM — a powerful solution that enables real-time modeling, cost allocation, and profitability analysis across products, customers, and business segments."
               >
+                <Link to="/contactus">
                 <Requesademobtn text="Book a Consultation" />
+                </Link>
               </LeftSection>
             }
             right={
@@ -328,8 +331,8 @@ function SAPFinancialMgmt() {
               <ConsultationTabsSection
                 solutions={sampleSolutions}
                 mainHeading="Explore our wide range of offerings"
-                mainDescription="SAP Managed Services provide the full range of functional, technical, and cloud possibilities."
-                ctaText="Get a Consultation"
+                mainDescription="SAP PaPM delivers dynamic modeling capabilities, advanced cost and revenue allocation, and profitability simulations to evaluate the impact of strategic decisions."
+                // ctaText="Get a Consultation"
               />
             </div>
           </section>
@@ -342,28 +345,28 @@ function SAPFinancialMgmt() {
             {/* Stats Cards - Responsive Grid */}
             <div className="py-8 sm:py-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10 bg-white">
               <StatCardStable
-                percentage="25%"
-                description="Reduction in direct and indirect expenses related to import-export activities within a year."
+                percentage="60%"
+                description="Improve profitability analysis accuracy"
               />
               <StatCardStable
-                percentage="50%"
-                description="Improvement within the initial 6 months of implementation."
+                percentage="65%"
+                description="Accelerate scenario simulations"
               />
               <StatCardStable
-                percentage="100%"
-                description="Productivity with seamless mobile integration in EXIM solution."
+                percentage="70%"
+                description="Reduce cost allocation time"
               />
             </div>
 
             {/* CTA Section - Responsive */}
             <div className="bg-black mt-8 sm:mt-10 w-full flex flex-col lg:flex-row items-center lg:items-start rounded-lg overflow-hidden">
               <h1 className="text-white text-xl sm:text-2xl md:text-[27px] p-4 lg:p-10 w-full lg:w-3/4 leading-relaxed">
-                Streamline your Export-Import operations with the SAP Certified
-                Accelerated EXIM solution. Get a hold of complete control,
-                visibility, and ease in compliance and documentation procedures.
+                Streamline your profitability and performance management with SAP PaPM, gaining complete control, real-time visibility, and actionable insights. Experience faster modeling, smarter analysis, and more confident strategic execution.
               </h1>
               <div className="p-4 lg:p-10 w-full lg:w-auto flex justify-center lg:justify-end">
+                <Link to="/contactus">
                 <Requesademobtn text="Book a demo" />
+                </Link>
               </div>
             </div>
           </section>
@@ -375,8 +378,7 @@ function SAPFinancialMgmt() {
                 Key features
               </h2>
               <p className="mt-4 text-lg sm:text-xl md:text-2xl text-gray-500">
-                Accelerated EXIM solution offers license management, export
-                incentives, expense tracking, and automation.
+                SAP PaPM offers dynamic modeling, advanced cost and revenue allocation, and real-time profitability analysis to optimize performance. It supports driver-based planning, scenario simulations, and secure audit trails for accurate, agile, and compliant decision-making.
               </p>
             </div>
             <section className="my-8 sm:my-10 w-full">
@@ -392,8 +394,7 @@ function SAPFinancialMgmt() {
               Unlock powerful benefits
             </h2>
             <p className="mt-4 text-lg sm:text-xl md:text-2xl w-full lg:w-3/4 text-gray-500">
-              Accelerated EXIM solution enhances import-export management with
-              tracking, SAP integration, and efficiency.
+              SAP PaPM includes real-time profitability analysis, advanced cost allocation, and driver-based planning to ensure precision, agility, and faster decision-making.
             </p>
 
             {/* Benefits Grid - Responsive */}
@@ -430,26 +431,27 @@ function SAPFinancialMgmt() {
                   Empowering global trade for businesses
                 </h1>
                 <div className="flex-shrink-0">
+                  <Link to="/contactus">
                   <Requesademobtn text="Book a demo" />
+                  </Link>
                 </div>
               </div>
 
               {/* Paragraph */}
               <p className="mt-6 text-base sm:text-lg lg:text-xl w-full lg:w-3/4 text-white leading-relaxed">
-                Streamline your Export-Import operations with the SAP Certified
-                Accelerated EXIM solution. Get a hold of complete control,
-                visibility, and ease in compliance and documentation procedures.
+                Streamline your profitability and performance management with SAP PaPM, gaining complete control, real-time visibility, and actionable insights. Experience faster modeling, smarter analysis, and more confident strategic execution.
               </p>
             </div>
           </section>
 
           {/* Resources Section */}
 
-          <InsightsSection insights={insightsData} />
-          <RelatedSolutions {...insights} />
+          {/* <InsightsSection insights={insightsData} /> */}
+          
 
-          <section id="resources" className="mt-12 sm:mt-16 scroll-mt-24">
-            <Resource
+          <section id="other products" className="mt-12 sm:mt-16 scroll-mt-24">
+            <RelatedSolutions {...insights} />
+            {/* <Resource
               heading="Explore Our Resources"
               paragraph="Helpful tools and insights for your export-import operations"
               products={[
@@ -461,7 +463,7 @@ function SAPFinancialMgmt() {
                   link: "/resources/group-reporting-guide",
                 },
               ]}
-            />
+            /> */}
           </section>
         </div>
       </div>

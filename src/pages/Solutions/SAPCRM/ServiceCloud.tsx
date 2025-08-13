@@ -8,6 +8,7 @@ import Requesademobtn from "@/components/Requesademobtn";
 import SidebarMenu from "@/components/SidebarMenu";
 import FeatureCard from "@/components/FeatureCard";
 import FeatureTabs from "@/components/FeatureTabs";
+import {Link} from "react-router-dom";
 import StatCard from "@/components/StatCard";
 import InfoTab from "@/components/InfoTab";
 import {
@@ -195,14 +196,14 @@ const menuItems = [
   "Benefits",
   "Find Your Answers",
   "Other Products",
-  "Resources",
+  // "Resources",
 ];
 
 const sapData = {
   heading: "What is Salesforce Service Cloud?",
   description:
     "Salesforce Service Cloud is a leading customer service platform that delivers faster, smarter support with AI-powered automation, unified agent workspace, and seamless omni-channel experiences.",
-  imageUrl: "/Solutions/service-cloud.webp",
+  imageUrl: "/Solutions/service-cloud.png",
   imageAlt: "Customer support visualization",
   items: [
     {
@@ -226,28 +227,28 @@ const sapData = {
 };
 
 const customerStories = [
-  {
-    id: 1,
-    image:
-      "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=300&fit=crop",
-    title: "Transforming Financial Operations With SAP Financial Management",
-    readMoreLink: "#",
-  },
-  {
-    id: 2,
-    image:
-      "https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=300&fit=crop",
-    title: "Achieving Financial Excellence Through Digital Transformation",
-    readMoreLink: "#",
-  },
-  {
-    id: 3,
-    image:
-      "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=400&h=300&fit=crop",
-    title: "Streamlining Global Financial Processes with SAP Solutions",
-    readMoreLink: "#",
-  },
-];
+    {
+      id: 1,
+      image:
+        "/customerStories/patil.jpg",
+      title: "Patil Drives Operational Excellence with End-to-End SAP, AMS & OCR Automation",
+      readMoreLink: "/patil",
+    },
+    {
+      id: 2,
+      image:
+        "/customerStories/7hills.jpg",
+      title: "7Hills Restaurant Transforms Guest Experience with Custom Digital Platform",
+      readMoreLink: "/hills",
+    },
+    {
+      id: 3,
+      image:
+        "/customerStories/pharma.jpg",
+      title: "LVK Pharma Goes Digital with Odoo CRM, Eliminates Manual Processes",
+      readMoreLink: "/Lvk",
+    },
+  ];
 
 const insightsData = [
   {
@@ -289,31 +290,31 @@ const features = [
   {
     title: "Unified Agent Workspace",
     description:
-      "Agents get a 360° view of customers—interaction history, cases, account info—all in one interface.",
+      "Offers a single interface for agents to access customer information, manage cases, and interact across multiple channels efficiently.",
     image: "/ServiceCloud/workspace.png",
   },
   {
     title: "AI-Driven Automation",
     description:
-      "Let Einstein handle routing, triage, and suggested next steps to supercharge productivity.",
+      "Automates routine tasks, prioritizes tickets, and provides intelligent recommendations to enhance agent productivity and service quality.",
     image: "/ServiceCloud/ai.png",
   },
   {
     title: "Omni-Channel Routing",
     description:
-      "Deliver support across chat, email, phone, and social media with smart queueing.",
+      "Directs customer inquiries to the right agent or team based on skills, availability, and priority, ensuring faster and accurate responses.",
     image: "/ServiceCloud/omni.png",
   },
   {
     title: "Self-Service Portals & Communities",
     description:
-      "Empower customers to help themselves via branded portals, communities, and knowledge resources.",
+      "Enable customers to find answers, submit requests, and interact with peers or experts, reducing dependency on live agents.",
     image: "/ServiceCloud/portal.png",
   },
   {
     title: "Field Service Module",
     description:
-      "Manage on-site operations, technician schedules, and mobile-first service with ease.",
+      "Schedules, dispatches, and tracks mobile service teams, ensuring timely onsite support and operational efficiency.",
     image: "/ServiceCloud/fieldservice.png",
   },
 ];
@@ -329,10 +330,12 @@ function ServiceCloud() {
           <TwoColumnLayout
             left={
               <LeftSection
-                title="SAP Financial "
-                description="SAP Financial Management is a core component of SAP ERP that helps organizations manage their financial operations efficiently. It covers everything from accounting and reporting to risk management and compliance."
+                title="SAP Service Cloud "
+                description="Deliver exceptional customer support with SAP Service Cloud — a unified platform that empowers service teams to resolve issues faster, provide personalized experiences, and improve overall customer satisfaction."
               >
+                <Link to="/contactus">
                 <Requesademobtn text="Book a Consultation" />
+                </Link>
               </LeftSection>
             }
             right={
@@ -371,9 +374,9 @@ function ServiceCloud() {
             <div className="flex justify-center">
               <ConsultationTabsSection
                 solutions={sampleSolutions}
-                mainHeading="Features of SAP Financial"
-                mainDescription="SAP Financial Management provides comprehensive financial capabilities including accounting, controlling, asset management, and advanced analytics for complete financial operations."
-                ctaText="Get a Consultation"
+                mainHeading="Features of SAP Service Cloud"
+                mainDescription="SAP Service Cloud enables unified agent workspaces, AI-driven automation, and omnichannel routing to streamline customer service operations."
+                // ctaText="Get a Consultation"
               />
             </div>
           </section>
@@ -386,28 +389,28 @@ function ServiceCloud() {
             {/* Stats Cards - Responsive Grid */}
             <div className="py-8 sm:py-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10 bg-white">
               <StatCardStable
-                percentage="40%"
-                description="Reduction in financial close time through automated processes and real-time reporting capabilities."
+                percentage="35%"
+                description="Self-service portals and communities can decrease support requests"
+              />
+              <StatCardStable
+                percentage="55%"
+                description="AI-driven automation and omnichannel routing can boost agent productivity"
               />
               <StatCardStable
                 percentage="60%"
-                description="Improvement in financial accuracy and compliance within the first year of implementation."
-              />
-              <StatCardStable
-                percentage="99%"
-                description="Financial data accuracy with integrated validation controls and automated reconciliation processes."
+                description="Field service management improves on-time service delivery"
               />
             </div>
 
             {/* CTA Section - Responsive */}
             <div className="bg-black mt-8 sm:mt-10 w-full flex flex-col lg:flex-row items-center lg:items-start rounded-lg overflow-hidden">
               <h1 className="text-white text-xl sm:text-2xl md:text-[27px] p-4 lg:p-10 w-full lg:w-3/4 leading-relaxed">
-                Transform your financial operations with SAP Financial Management. 
-                Achieve complete visibility, control, and compliance across all financial processes 
-                with real-time insights and automated workflows.
+                Transform your customer service with SAP Service Cloud, gaining real-time visibility, intelligent automation, and seamless workflows to deliver faster, smarter, and more personalized support.
               </h1>
               <div className="p-4 lg:p-10 w-full lg:w-auto flex justify-center lg:justify-end">
+                <Link to="/contactus">
                 <Requesademobtn text="Book a demo" />
+                </Link>
               </div>
             </div>
           </section>
@@ -419,8 +422,7 @@ function ServiceCloud() {
                 Key features
               </h2>
               <p className="mt-4 text-lg sm:text-xl md:text-2xl text-gray-500">
-                SAP Financial offers comprehensive accounting, real-time reporting, 
-                compliance management, and advanced analytics for complete financial control.
+                SAP Service Cloud offers unified agent workspaces, AI-driven automation, and omnichannel routing to streamline support operations.
               </p>
             </div>
             <section className="my-8 sm:my-10 w-full">
@@ -436,8 +438,7 @@ function ServiceCloud() {
               Unlock powerful financial benefits
             </h2>
             <p className="mt-4 text-lg sm:text-xl md:text-2xl w-full lg:w-3/4 text-gray-500">
-              SAP Financial Management enhances financial operations with automated processes, 
-              real-time insights, compliance controls, and strategic planning capabilities.
+              Service Cloud improves agent efficiency with AI-driven automation and unified workspaces, while omnichannel routing ensures timely responses. Self-service portals and field service capabilities boost customer satisfaction, reduce resolution times, and optimize service operations.
             </p>
 
             {/* Benefits Grid - Responsive */}
@@ -474,38 +475,39 @@ function ServiceCloud() {
                   Empowering financial excellence for businesses
                 </h1>
                 <div className="flex-shrink-0">
+                  <Link to="/contactus">
                   <Requesademobtn text="Book a demo" />
+                  </Link>
                 </div>
               </div>
 
               {/* Paragraph */}
               <p className="mt-6 text-base sm:text-lg lg:text-xl w-full lg:w-3/4 text-white leading-relaxed">
-                Transform your financial operations with SAP Financial Management. 
-                Achieve complete visibility, control, and compliance across all financial processes 
-                with real-time insights and automated workflows.
+                Transform your customer service with SAP Service Cloud, gaining real-time visibility, intelligent automation, and seamless workflows to deliver faster, smarter, and more personalized support.
               </p>
             </div>
           </section>
 
           {/* Resources Section */}
 
-          <InsightsSection insights={insightsData} />
-          <RelatedSolutions {...insights} />
+          {/* <InsightsSection insights={insightsData} /> */}
+          
 
-          <section id="resources" className="mt-12 sm:mt-16 scroll-mt-24">
-            <Resource
+          <section id="other products" className="mt-12 sm:mt-16 scroll-mt-24">
+            <RelatedSolutions {...insights} />
+            {/* <Resource
               heading="Explore Our Financial Resources"
               paragraph="Comprehensive guides and insights for optimizing your financial operations"
               products={[
                 {
                   title: "Financial Management Guide",
                   description:
-                    "Complete guide to SAP Financial Management best practices.",
+                    "Complete guide to SAP Service Cloud Management best practices.",
                   image: "/images/financial-guide.jpg",
                   link:""
                 },
               ]}
-            />
+            /> */}
           </section>
         </div>
       </div>

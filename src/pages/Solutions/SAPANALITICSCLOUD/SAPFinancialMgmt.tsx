@@ -180,7 +180,7 @@ const sapData = {
   heading: "What is SAP Financial Management?",
   description:
     "SAP Financial Management provides comprehensive tools for financial planning, analysis, accounting, and compliance—enabling accurate reporting and improved business decisions in real-time.",
-  imageUrl: "/Solutions/financial-management.webp",
+  imageUrl: "/Solutions/financial-management.png",
   imageAlt: "Financial management visualization",
   items: [
     {
@@ -317,7 +317,7 @@ function SAPFinancialMgmt() {
             right={
               <RightSection>
                 <img
-                  src="/Solutions/financial.jpg"
+                  src="/Solutions/financial.png"
                   alt="Visual"
                   className="w-full h-full object-cover"
                 />

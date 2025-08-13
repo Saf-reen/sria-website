@@ -9,6 +9,7 @@ import SidebarMenu from "@/components/SidebarMenu";
 import FeatureCard from "@/components/FeatureCard";
 import FeatureTabs from "@/components/FeatureTabs";
 import StatCard from "@/components/StatCard";
+import {Link} from "react-router-dom";
 import InfoTab from "@/components/InfoTab";
 import {
   Star,
@@ -192,14 +193,14 @@ const menuItems = [
   "Benefits",
   "Find Your Answers",
   "Other Products",
-  "Resources",
+  // "Resources",
 ];
 
 const sapData = {
   heading: "What is SAP Commerce Cloud?",
   description:
     "SAP Commerce Cloud is an enterprise-grade e-commerce platform that enables businesses to deliver seamless, personalized, and scalable digital shopping experiences across all channels.",
-  imageUrl: "/Solutions/commercecloud.webp",
+  imageUrl: "/Solutions/commercecloud.png",
   imageAlt: "E-commerce digital platform",
   items: [
     {
@@ -224,28 +225,28 @@ const sapData = {
 
 
 const customerStories = [
-  {
-    id: 1,
-    image:
-      "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=300&fit=crop",
-    title: "Transforming Financial Operations With SAP Financial Management",
-    readMoreLink: "#",
-  },
-  {
-    id: 2,
-    image:
-      "https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=300&fit=crop",
-    title: "Achieving Financial Excellence Through Digital Transformation",
-    readMoreLink: "#",
-  },
-  {
-    id: 3,
-    image:
-      "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=400&h=300&fit=crop",
-    title: "Streamlining Global Financial Processes with SAP Solutions",
-    readMoreLink: "#",
-  },
-];
+    {
+      id: 1,
+      image:
+        "/customerStories/patil.jpg",
+      title: "Patil Drives Operational Excellence with End-to-End SAP, AMS & OCR Automation",
+      readMoreLink: "/patil",
+    },
+    {
+      id: 2,
+      image:
+        "/customerStories/7hills.jpg",
+      title: "7Hills Restaurant Transforms Guest Experience with Custom Digital Platform",
+      readMoreLink: "/hills",
+    },
+    {
+      id: 3,
+      image:
+        "/customerStories/pharma.jpg",
+      title: "LVK Pharma Goes Digital with Odoo CRM, Eliminates Manual Processes",
+      readMoreLink: "/Lvk",
+    },
+  ];
 
 const insights = {
   heading: "Explore related business solutions",
@@ -262,32 +263,32 @@ const features = [
   {
     title: "Headless Commerce Architecture",
     description:
-      "Deliver flexible front-end experiences while keeping powerful back-end commerce capabilities.",
-    image: "/CommerceCloud/headless.png",
+      "Provides API-driven flexibility to build and deliver personalized front-end experiences independently from the back-end.",
+    image: "/Solutions/headless.png",
   },
   {
     title: "Advanced Search & Merchandising",
     description:
-      "Optimize product discovery with AI-powered search, filters, and merchandising tools.",
-    image: "/CommerceCloud/search.png",
+      "Enhances product discovery with relevant search results, tailored product displays, and dynamic promotions.",
+    image: "/Solutions/search.png",
   },
   {
     title: "Omnichannel Order Management",
     description:
-      "Manage orders from any channel with real-time updates and fulfillment tracking.",
-    image: "/CommerceCloud/omnichannel.png",
+      "Centralizes orders from web, mobile, and in-store channels for seamless fulfillment and visibility.",
+    image: "/Solutions/omnichannel.png",
   },
   {
     title: "AI-Driven Personalization",
     description:
-      "Use customer data to create individualized shopping journeys that drive conversions.",
-    image: "/CommerceCloud/personalization.png",
+      "Uses machine learning to recommend products and content, increasing engagement and conversions.",
+    image: "/Solutions/personalization.png",
   },
   {
     title: "Global Scalability",
     description:
-      "Operate in multiple regions with localized content, currency, and tax configurations.",
-    image: "/CommerceCloud/global.png",
+      "Supports multiple languages, currencies, and regional compliance to expand business operations worldwide.",
+    image: "/Solutions/global.png",
   },
 ];
 
@@ -325,10 +326,12 @@ function CommerceCloud() {
           <TwoColumnLayout
             left={
               <LeftSection
-                title="SAP Financial "
-                description="SAP Financial Management is a core component of SAP ERP that helps organizations manage their financial operations efficiently. It covers everything from accounting and reporting to risk management and compliance."
+                title="SAP Commerce Cloud "
+                description="Deliver exceptional customer experiences with SAP Commerce Cloud — a flexible, scalable platform that enables seamless shopping across all channels."
               >
+                <Link to="/contactus">
                 <Requesademobtn text="Book a Consultation" />
+                </Link>
               </LeftSection>
             }
             right={
@@ -367,9 +370,9 @@ function CommerceCloud() {
             <div className="flex justify-center">
               <ConsultationTabsSection
                 solutions={sampleSolutions}
-                mainHeading="Features of SAP Financial"
-                mainDescription="SAP Financial Management provides comprehensive financial capabilities including accounting, controlling, asset management, and advanced analytics for complete financial operations."
-                ctaText="Get a Consultation"
+                mainHeading="Features of SAP Commerce Cloud"
+                mainDescription="SAP Commerce Cloud offers headless architecture, advanced search, and omnichannel order management to deliver seamless, personalized shopping experiences."
+                // ctaText="Get a Consultation"
               />
             </div>
           </section>
@@ -382,16 +385,16 @@ function CommerceCloud() {
             {/* Stats Cards - Responsive Grid */}
             <div className="py-8 sm:py-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10 bg-white">
               <StatCardStable
-                percentage="40%"
-                description="Reduction in financial close time through automated processes and real-time reporting capabilities."
+                percentage="25%"
+                description="Boost customer retention"
+              />
+              <StatCardStable
+                percentage="50%"
+                description="Reduce order processing time"
               />
               <StatCardStable
                 percentage="60%"
-                description="Improvement in financial accuracy and compliance within the first year of implementation."
-              />
-              <StatCardStable
-                percentage="99%"
-                description="Financial data accuracy with integrated validation controls and automated reconciliation processes."
+                description="Businesses can achieve  faster time-to-market for new products"
               />
             </div>
 
@@ -403,7 +406,9 @@ function CommerceCloud() {
                 with real-time insights and automated workflows.
               </h1>
               <div className="p-4 lg:p-10 w-full lg:w-auto flex justify-center lg:justify-end">
+                <Link to="/contactus">
                 <Requesademobtn text="Book a demo" />
+                </Link>
               </div>
             </div>
           </section>
@@ -415,8 +420,7 @@ function CommerceCloud() {
                 Key features
               </h2>
               <p className="mt-4 text-lg sm:text-xl md:text-2xl text-gray-500">
-                SAP Financial offers comprehensive accounting, real-time reporting, 
-                compliance management, and advanced analytics for complete financial control.
+                SAP Commerce Cloud provides headless architecture, AI-driven personalization, and omnichannel order management for seamless, scalable, and engaging commerce experiences.
               </p>
             </div>
             <section className="my-8 sm:my-10 w-full">
@@ -432,8 +436,7 @@ function CommerceCloud() {
               Unlock powerful financial benefits
             </h2>
             <p className="mt-4 text-lg sm:text-xl md:text-2xl w-full lg:w-3/4 text-gray-500">
-              SAP Financial Management enhances financial operations with automated processes, 
-              real-time insights, compliance controls, and strategic planning capabilities.
+              SAP Commerce Cloud includes headless architecture for design flexibility, AI-driven personalization for higher conversions, and omnichannel order management for seamless fulfillment. It ensures scalability, agility, and consistency to help businesses expand globally while enhancing customer loyalty.
             </p>
 
             {/* Benefits Grid - Responsive */}
@@ -470,26 +473,27 @@ function CommerceCloud() {
                   Empowering financial excellence for businesses
                 </h1>
                 <div className="flex-shrink-0">
+                  <Link to="/contactus">
                   <Requesademobtn text="Book a demo" />
+                  </Link>
                 </div>
               </div>
 
               {/* Paragraph */}
               <p className="mt-6 text-base sm:text-lg lg:text-xl w-full lg:w-3/4 text-white leading-relaxed">
-                Transform your financial operations with SAP Financial Management. 
-                Achieve complete visibility, control, and compliance across all financial processes 
-                with real-time insights and automated workflows.
+                Streamline your digital commerce operations with SAP Commerce Cloud, gaining complete control, real-time visibility, and the agility to deliver personalized experiences across all channels.
               </p>
             </div>
           </section>
 
           {/* Resources Section */}
 
-          <InsightsSection insights={insightsData} />
-          <RelatedSolutions {...insights} />
+          {/* <InsightsSection insights={insightsData} /> */}
+          
 
-          <section id="resources" className="mt-12 sm:mt-16 scroll-mt-24">
-            <Resource
+          <section id="other products" className="mt-12 sm:mt-16 scroll-mt-24">
+            <RelatedSolutions {...insights} />
+            {/* <Resource
               heading="Explore Our Financial Resources"
               paragraph="Comprehensive guides and insights for optimizing your financial operations"
               products={[
@@ -501,7 +505,7 @@ function CommerceCloud() {
                   link:""
                 },
               ]}
-            />
+            /> */}
           </section>
         </div>
       </div>

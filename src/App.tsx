@@ -27,7 +27,8 @@ import SAPBusiness from "./pages/Services/SAPSupport/SAPBusiness";
 import SAPConsulting from "./pages/Services/SAPSupport/SAPConsulting";
 import SAPCustom from "./pages/Services/SAPSupport/SAPCustom";
 import SAPFiori from "./pages/Services/SAPSupport/SAPFiori";
-import OdooImplementation from "./pages/OdooImplementation";
+import OdooImplementation from "./pages/Services/implementation/OdooImplementation";
+import DataAnalytics from "./pages/Services/implementation/DataAnalytics";
 import ContactUs from "@/components/aboutus/ConstctUs";
 import SapS4hana from "./pages/Solutions/SAPERP/SapS4hana";
 import PublicCloud from "./pages/Solutions/SAPERP/PublicCloud";
@@ -85,6 +86,7 @@ const App = () => (
           <Route path="/basicservices" element={<BasicServices />} />
           <Route path="/custom" element={<SAPCustom />} />  
           <Route path="/odooservices/implementation" element={<OdooImplementation />} />
+          <Route path="/odooservices/dataanalytics" element={<DataAnalytics />} />
           <Route path="/products/big" element={<Big />} />
           <Route path="/products/gatecheck" element={<GateCheck />} />
           <Route path="/products/nxdesk" element={<NxDesk />} />

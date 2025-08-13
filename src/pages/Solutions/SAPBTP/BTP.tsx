@@ -238,7 +238,7 @@ const insights = {
   description:
     "Private Cloud is essential for businesses seeking maximum control, security, and compliance. It ensures data sovereignty and tailored infrastructure for mission-critical applications.",
   ctaText: "Talk to an Expert",
-  ctaLink: "/contact",
+  ctaLink: "/contactus",
   solutions: [
     { title: "Private Cloud Services", href: "/solutions/private-cloud" },
     { title: "Hybrid Cloud Solutions", href: "/solutions/hybrid-cloud" },
@@ -356,7 +356,7 @@ function BTP() {
                 solutions={sampleSolutions}
                 mainHeading="Explore our wide range of offerings"
                 mainDescription="SAP Managed Services provide the full range of functional, technical, and cloud possibilities."
-                ctaText="Get a Consultation"
+                // ctaText="Get a Consultation"
               />
             </div>
           </section>

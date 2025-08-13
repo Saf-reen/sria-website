@@ -1,5 +1,6 @@
 "use client";
 import React from "react";
+import {Link} from "react-router-dom";
 
 interface TabItem {
   icon: JSX.Element;
@@ -23,9 +24,11 @@ const TopSectionWithTabs: React.FC<TopSectionWithTabsProps> = ({
         <h2 className="text-white text-[32px] sm:text-[40px] md:text-[47px] leading-tight">
           Unlock multiple possibilities together
         </h2>
+        <Link to="/contactus">
         <button className="text-white bg-black px-6 py-2 mt-4 md:mt-0 text-[16px] rounded">
           Schedule Consultation
         </button>
+        </Link>
       </div>
 
       {/* Tab Section */}

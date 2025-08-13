@@ -222,7 +222,7 @@ const sapData = {
   heading: "What is SAP S/4HANA Private Cloud?",
   description:
     "SAP S/4HANA Private Cloud combines the best of on-premise customization with cloud agility, enabling tailored deployments, full control, and scalable infrastructure within a secure environment.",
-  imageUrl: "/Solutions/private-cloud.webp",
+  imageUrl: "/Solutions/private-cloud.png",
   imageAlt: "Private Cloud Infrastructure Illustration",
   items: [
     {
@@ -273,7 +273,7 @@ const insights = {
   description:
     "Private Cloud is essential for businesses seeking maximum control, security, and compliance. It ensures data sovereignty and tailored infrastructure for mission-critical applications.",
   ctaText: "Talk to an Expert",
-  ctaLink: "/contact",
+  ctaLink: "/contactus",
   solutions: [
     { title: "Private Cloud Services", href: "/solutions/private-cloud" },
     { title: "Hybrid Cloud Solutions", href: "/solutions/hybrid-cloud" },

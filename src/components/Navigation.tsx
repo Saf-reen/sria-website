@@ -497,9 +497,10 @@ const Navigation: React.FC<NavigationProps> = ({
       ],
     },
     {
-      title: "Odoo Services",
+      title: "Odoo Services",//Odoo & Analytic Services
       items: [
-        { label: "Odoo Implementation", link: "/odooservices/implementation"}
+        { label: "Odoo Implementation", link: "/odooservices/implementation"},
+        // { label: "Data Analytics", link: "/odooservices/dataanalytics"},
       ],
     },
   ];

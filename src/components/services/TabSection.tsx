@@ -1,5 +1,6 @@
 import React, { useRef } from "react";
 import { ArrowRight, ArrowLeft } from "lucide-react";
+import {Link} from "react-router-dom";
 
 interface TabItem {
   icon: JSX.Element;
@@ -82,9 +83,11 @@ const TabSection: React.FC<TabSectionProps> = ({ headingText, tabs }) => {
               Bring a revolutionary change to your enterprise with Sria Infotech’s
               efficient business solutions.
             </p>
+            <Link to="/contactus">
             <button className="flex items-center gap-2 text-black hover:underline text-[16px]">
               Talk to an Expert <ArrowRight className="w-5 h-5" />
             </button>
+            </Link>
           </div>
         </div>
       </div>

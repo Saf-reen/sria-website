@@ -207,7 +207,7 @@ const sapData = {
   heading: "What is SAP ERP Public Cloud?",
   description:
     "SAP ERP Public Cloud is a scalable, cloud-based SaaS ERP solution that delivers standardized best practices, rapid deployment, automatic updates, and reduced total cost of ownership (TCO). It’s designed for fast-growing businesses and subsidiaries seeking agility, innovation, and cost efficiency.",
-  imageUrl: "/Solutions/erp-public-cloud.webp",
+  imageUrl: "/Solutions/erp-public-cloud.png",
   imageAlt: "Cloud ERP illustration",
   items: [
     {

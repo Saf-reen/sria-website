@@ -41,59 +41,59 @@ function Abap() {
   const tabsData2 = [
   {
     icon: <Cloud className="w-10 h-10 text-white" />,
-    heading: "Reduced total cost of ownership",
+    heading: "Optimized Development Efficiency",
     description:
-      "SAP managed services can help reduce maintenance costs and total cost of ownership (TCO).",
+      "Accelerate ABAP RAP project delivery with reusable components, simplified coding, and model-driven development.",
   },
   {
     icon: <Monitor className="w-10 h-10 text-white" />,
-    heading: "Dedicated technical & functional assistance",
+    heading: "Dedicated Technical Expertise",
     description:
-      "Better resource allocation within the company is made possible by technical and functional assistance boosting creativity and production.",
+      "Leverage deep ABAP RAP expertise for building scalable, secure, and business-aligned applications.",
   },
   {
     icon: <Server className="w-10 h-10 text-white" />,
-    heading: "Flexibility to scale",
+    heading: "Seamless Scalability",
     description:
-      "Flexible contracting and data processing systems enable businesses to scale their SAP resources up or down as needed.",
+      "Design RAP applications that can grow effortlessly with evolving business and performance needs.",
   },
   {
     icon: <Shield className="w-10 h-10 text-white" />,
-    heading: "High availability & guaranteed uptime",
+    heading: "Secure & Compliant Architecture",
     description:
-      "Guaranteed uptime and high availability are possible with SAP managed services.",
+      "Implement RAP applications with robust security measures and compliance with SAP best practices.",
   },
   {
     icon: <Settings className="w-10 h-10 text-white" />,
-    heading: "Smart patch & upgrade management",
+    heading: "Streamlined Upgrades & Enhancements",
     description:
-      "Database management, smart patch, upgrades and enhancements.",
+      "Easily enhance RAP applications and adapt to future SAP releases with minimal rework.",
   },
   {
     icon: <Activity className="w-10 h-10 text-white" />,
-    heading: "Application & database security audits",
+    heading: "Continuous Performance Monitoring",
     description:
-      "Routine database and application audits to make sure there are no vulnerabilities or non-compliances.",
+      "Monitor RAP application performance to ensure stability, speed, and consistent user experience.",
   },
 ];
   const tabsData = [
   {
     icon: <Cloud className="w-10 h-10 text-black" />,
-    heading: "SAP on Cloud Hosting",
+    heading: "Cloud-Ready ABAP Development",
     description:
-      "Improved performance and lower operating expenses, adapting to shift company requirements.",
+      "Build and deploy ABAP RAP applications seamlessly on SAP BTP or on-premise environments for future-ready solutions.",
   },
   {
     icon: <Monitor className="w-10 h-10 text-black" />,
-    heading: "SAP Performance Optimization",
+    heading: "Enhanced User Experience",
     description:
-      "Improve the cloud performance of your SAP systems with our customized services.",
+      "Deliver intuitive, responsive, and modern SAP Fiori-based interfaces with ABAP RAP’s advanced UI integration.",
   },
   {
     icon: <Server className="w-10 h-10 text-black" />,
-    heading: "SAP Cloud Managed Services",
+    heading: "End-to-End Application Lifecycle",
     description:
-      "We handle the configuration of your SAP cloud for thorough and ongoing assistance.",
+      "From design to deployment, manage the complete lifecycle of ABAP RAP applications with scalable architecture.",
   },
 ];
 const sampleSolutions = [
@@ -252,56 +252,79 @@ const sampleSolutions = [
     "Customer stories",
     "Partners",
     "Related services",
-    "Resources",
+    // "Resources",
   ];
     const productData = [
-    {
-      title: "Field Service Management",
-      description:
-        "Efficiently manage remote teams, assets, and processes to enhance service delivery.",
-        link:"/"
-    },
-
-    {
-      title: "Real Estate Management",
-      description:
-        "Automate property management tasks, including rent collection and maintenance.",
-           link:"/"
-    },
-    {
-      title: "Intelligent Character Recognition",
-      description:
-        "Transforming document processing to achieve greater automation and efficiency.",
-           link:"/"
-    },
-    {
-      title: "Digital Logistics",
-      description:
-        "Modernize logistics operations for more efficient and reliable deliveries.",
-           link:"/"
-    },
-  ];
+  {
+    title: "Managed Services",
+    description:
+      "Ongoing, proactive management and support of IT infrastructure, applications, or business processes by a third-party provider—offered under subscription or usage-based models to improve reliability, reduce costs, and align IT with business goals.",
+    link: "/sapmanagedservices"
+  },
+  {
+    title: "AMS",
+    description:
+      "Application Management Services provide continuous maintenance, enhancement, and support for enterprise applications—ensuring optimal performance, adaptability, and alignment with business requirements.",
+    link: "/ams"
+  },
+  {
+    title: "SAP S/4HANA Implementation Services",
+    description:
+      "Comprehensive support for deploying SAP S/4HANA—including planning, deployment (greenfield, brownfield, or selective transition), data migration, system integration, and go-live execution to transform business operations.",
+    link: "/sapimplement"
+  },
+  {
+    title: "SAP S/4HANA Consulting Services",
+    description:
+      "Expert advisory for strategic planning, ERP landscape assessment, migration strategy, system optimization, process redesign, and tailored implementation to maximize the benefits of an SAP S/4HANA deployment.",
+    link: "/consulting"
+  },
+  {
+    title: "SAP Fiori Development Services",
+    description:
+      "Design and customization of SAP Fiori applications to deliver intuitive, role-based, and mobile-friendly user experiences across the SAP S/4HANA ecosystem.",
+    link: "/fioridevelop"
+  },
+  {
+    title: "SAP Business Technology Platform",
+    description:
+      "A unified multi-cloud platform integrating data management, analytics, application development, integration, automation, and AI—enabling businesses to build, extend, and run intelligent enterprise applications.",
+    link: "/businesstech"
+  },
+  {
+    title: "SAP Custom Development and Enhancement",
+    description:
+      "Tailored development and extension of SAP systems—using ABAP, SAP UI5, APIs, and other technologies—to create custom functionalities, interfaces, and integrations aligned with unique business needs.",
+    link: "/custom"
+  },
+  {
+    title: "SAP BASIS Support Services",
+    description:
+      "Foundational administration and technical operations for SAP environments—including system installation, configuration, performance tuning, updates, security, and infrastructure management.",
+    link: "/basicservices"
+  }
+];
   const customerStories = [
     {
       id: 1,
       image:
-        "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=300&fit=crop",
-      title: "Transforming Business Operations With Innovative Solutions",
-      readMoreLink: "#",
+        "/customerStories/patil.jpg",
+      title: "Patil Drives Operational Excellence with End-to-End SAP, AMS & OCR Automation",
+      readMoreLink: "/patil",
     },
     {
       id: 2,
       image:
-        "https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=300&fit=crop",
-      title: "Digital Innovation Success Through Strategic Partnership",
-      readMoreLink: "#",
+        "/customerStories/7hills.jpg",
+      title: "7Hills Restaurant Transforms Guest Experience with Custom Digital Platform",
+      readMoreLink: "/hills",
     },
     {
       id: 3,
       image:
-        "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=400&h=300&fit=crop",
-      title: "Scaling New Heights in Technology Excellence",
-      readMoreLink: "#",
+        "/customerStories/pharma.jpg",
+      title: "LVK Pharma Goes Digital with Odoo CRM, Eliminates Manual Processes",
+      readMoreLink: "/Lvk",
     },
   ];
 
@@ -336,9 +359,9 @@ const highlightData = [
         {/* Hero Pinned */}
 
         <ImageOverlay
-          imageUrl="https://www.accely.com/wp-content/uploads/2024/12/SAP-Managed-Service-1.webp"
-          title="SAP Managed Services"
-          description="Achieve stability, reliability, and adaptability with Sria Infotech’s automation-driven SAP Managed Services."
+          imageUrl="/Services/abap.png"
+          title="ABAP RESTful Application Services"
+          description="Leverage the power of the ABAP RESTful Application Programming Model (RAP) to build modern, cloud-ready, and scalable SAP applications."
         />
         <section className="relative min-h-[500px]  sticky top-0 z-20  bg-black bg-cover bg-center overflow-hidden">
           {/* Dark Overlay */}
@@ -350,17 +373,12 @@ const highlightData = [
             <div className="flex flex-col md:flex-row justify-between gap-8 mb-10">
               <div className="w-full md:w-1/2">
                 <h1 className="text-[47px]  leading-tight">
-                  Maximize your SAP investment with Sria Infotech
+                  Accelerate Your SAP Development with ABAP RESTful Application Programming Model (RAP)
                 </h1>
               </div>
               <div className="w-full md:w-1/2">
                 <p className="text-base md:text-lg leading-relaxed">
-                  The management and optimization of your SAP environment are
-                  more important than ever in the current fast-paced digital
-                  world. One of the top SAP managed service providers, Sria Infotech
-                  offers all-inclusive solutions that will optimize your SAP
-                  operations and guarantee that they are effective, safe, and
-                  completely aligned with your business goals.
+                  In today’s fast-paced digital era, building modern, scalable, and maintainable SAP applications is crucial. Sria Infotech empowers businesses with cutting-edge ABAP RAP services, enabling rapid development of cloud-ready and on-premise solutions. Our expertise ensures that your applications are efficient, secure, future-proof, and aligned with your evolving business needs.
                 </p>
               </div>
             </div>
@@ -391,8 +409,8 @@ const highlightData = [
                   <ConsultationTabsSection
                     solutions={sampleSolutions}
                     mainHeading="Explore our wide range of offerings"
-                    mainDescription="SAP Managed Services provide the full range of functional, technical, and cloud possibilities."
-                    ctaText="Get a Consultation"
+                    mainDescription="End-to-end RAP-based application development for SAP S/4HANA Cloud and on-premise. Custom OData V4 service creation for optimized data exchange."
+                    // ctaText="Get a Consultation"
                   />
                 </div>
               </section>
@@ -400,21 +418,21 @@ const highlightData = [
               <section id="insights" className="scroll-mt-24 py-16 bg-white">
                 <div className="max-w-[1400px] w-full px-4 mx-auto">
                   <h2 className="text-3xl sm:text-[47px] font-semibold mb-8">
-                    Resourceful insights of SAP Managed Services
+                    Resourceful insights of ABAP RESTfull Application Services
                   </h2>
 
                   <div className="py-8 sm:py-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10 bg-white">
                   <StatCardStable
-                    percentage="40%"
-                    description="Reduction in ABAP program execution time after code optimization."
+                    percentage="25%"
+                    description="Best practices for designing RAP applications with clean separation of concerns."
                     />
                     <StatCardStable
-                    percentage="55%"
-                    description="Faster report generation with ABAP on HANA migration."
+                    percentage="20%"
+                    description="Advantages of OData V4 in RAP for lightweight and efficient data access"
                     />
                     <StatCardStable
-                    percentage="70%"
-                    description="Increase in process automation using custom ABAP workflows."
+                    percentage="20%"
+                    description="Security considerations when building RAP-based service."
                     />
                   </div>
                 </div>
@@ -459,7 +477,7 @@ const highlightData = [
                 />
               </section>
               <section id="resources" className="mt-10 scroll-mt-24">
-                <Resource
+                {/* <Resource
                   heading="Explore Our Resources"
                   paragraph="Helpful tools and insights for your export-import operations"
                   products={[
@@ -471,7 +489,7 @@ const highlightData = [
                         "https://www.accely.com/wp-content/uploads/2022/07/What-Is-Included-In-SAP-Managed-Services.webp",
                    link:"" },
                   ]}
-                />
+                /> */}
               </section>
             </div>
           </div>

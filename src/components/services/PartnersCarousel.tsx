@@ -5,6 +5,7 @@ import {
   ArrowLeft,
   Cloud,
   Monitor,
+  Link,
   Server,
   Shield,
   Activity,
@@ -12,36 +13,36 @@ import {
 } from "lucide-react";
 
 const Partnerstabs = [
-  {
-    icon: <Cloud className="w-10 h-10 text-white" />,
-    description:
-      "Through its partnership with Hyland, Sria Infotech implements intelligent content management solutions that streamline workflows and enhance productivity.",
-  },
+  // {
+  //   icon: <Cloud className="w-10 h-10 text-white" />,
+  //   description:
+  //     "Through its partnership with Hyland, Sria Infotech implements intelligent content management solutions that streamline workflows and enhance productivity.",
+  // },
   {
     icon: <Monitor className="w-10 h-10 text-white" />,
     description:
-      "Sria Infotech leverages Microsoft Azure’s robust infrastructure to design scalable cloud solutions, enabling businesses to operate with agility and drive sustainable growth.",
+      "Sria Infotech partners with Microsoft to deliver intelligent business solutions powered by Azure, Power Platform, and Microsoft 365—enabling seamless integration, secure collaboration, and enterprise-grade scalability.",
   },
+  // {
+  //   icon: <Server className="w-10 h-10 text-white" />,
+  //   description:
+  //     "Sria Infotech teams up with Automation Anywhere to implement powerful RPA solutions, automating complex processes to save time and boost operational efficiency.",
+  // },
   {
-    icon: <Server className="w-10 h-10 text-white" />,
+    icon: <Link className="w-10 h-10 text-white" />,
     description:
-      "Sria Infotech teams up with Automation Anywhere to implement powerful RPA solutions, automating complex processes to save time and boost operational efficiency.",
+      "Through its collaboration with Redington, Sria Infotech accelerates technology adoption by offering trusted IT distribution, cloud enablement, and digital infrastructure solutions tailored to diverse business needs.",
   },
-  {
-    icon: <Shield className="w-10 h-10 text-white" />,
-    description:
-      "With Sria Infotech CRM expertise and Salesforce’s advanced tools, we drive customer engagement and deliver impactful sales strategies.",
-  },
-  {
-    icon: <Settings className="w-10 h-10 text-white" />,
-    description:
-      "Sria Infotech utilizes Precisely’s data precision solutions to empower businesses with trusted insights, fostering smarter, data-driven decisions.",
-  },
-  {
-    icon: <Activity className="w-10 h-10 text-white" />,
-    description:
-      "Sria Infotech partners with Emarsys to deliver AI-powered omnichannel marketing solutions, empowering businesses to personalize customer journeys at scale.",
-  },
+  // {
+  //   icon: <Settings className="w-10 h-10 text-white" />,
+  //   description:
+  //     "Sria Infotech utilizes Precisely’s data precision solutions to empower businesses with trusted insights, fostering smarter, data-driven decisions.",
+  // },
+  // {
+  //   icon: <Activity className="w-10 h-10 text-white" />,
+  //   description:
+  //     "Sria Infotech partners with Emarsys to deliver AI-powered omnichannel marketing solutions, empowering businesses to personalize customer journeys at scale.",
+  // },
 ];
 
 const PartnersCarousel: React.FC = () => {

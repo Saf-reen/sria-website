@@ -61,7 +61,7 @@ const features = [
     title: "Centralized Financial Management",
     description:
       "Gain real-time insights into financial performance, cash flow, and compliance with SAP S/4HANA’s unified finance platform, enabling faster decision-making and improved business outcomes.",
-    image: "/S4HANA/finance.png",
+    image: "/S4HANA/finance.jpg",
   },
   {
     title: "Smart Procurement & Sourcing",

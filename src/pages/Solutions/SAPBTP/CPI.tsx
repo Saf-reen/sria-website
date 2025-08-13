@@ -8,6 +8,7 @@ import SidebarMenu from "@/components/SidebarMenu";
 import FeatureCard from "@/components/FeatureCard";
 import FeatureTabs from "@/components/FeatureTabs";
 import StatCard from "@/components/StatCard";
+import {Link} from "react-router-dom";
 import InfoTab from "@/components/InfoTab";
 import {
   Shield,
@@ -175,14 +176,14 @@ const menuItems = [
   "Benefits",
   "Find Your Answers",
   "Other Products",
-  "Resources",
+  // "Resources",
 ];
 
 const sapData = {
   heading: "What is SAP Cloud Platform Integration (CPI)?",
   description:
     "SAP Cloud Platform Integration (CPI) is a cloud-based integration service that connects applications, processes, and data across cloud and on-premise landscapes. It enables secure, scalable, and real-time data exchange for seamless business operations.",
-  imageUrl: "/Solutions/cpi.webp",
+  imageUrl: "/Solutions/cpi-intigration.png",
   imageAlt: "Cloud integration visualization",
   items: [
     {
@@ -206,28 +207,28 @@ const sapData = {
 };
 
 const customerStories = [
-  {
-    id: 1,
-    image:
-      "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=300&fit=crop",
-    title: "Transforming Business Operations With Innovative Solutions",
-    readMoreLink: "#",
-  },
-  {
-    id: 2,
-    image:
-      "https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=300&fit=crop",
-    title: "Digital Innovation Success Through Strategic Partnership",
-    readMoreLink: "#",
-  },
-  {
-    id: 3,
-    image:
-      "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=400&h=300&fit=crop",
-    title: "Scaling New Heights in Technology Excellence",
-    readMoreLink: "#",
-  },
-];
+    {
+      id: 1,
+      image:
+        "/customerStories/patil.jpg",
+      title: "Patil Drives Operational Excellence with End-to-End SAP, AMS & OCR Automation",
+      readMoreLink: "/patil",
+    },
+    {
+      id: 2,
+      image:
+        "/customerStories/7hills.jpg",
+      title: "7Hills Restaurant Transforms Guest Experience with Custom Digital Platform",
+      readMoreLink: "/hills",
+    },
+    {
+      id: 3,
+      image:
+        "/customerStories/pharma.jpg",
+      title: "LVK Pharma Goes Digital with Odoo CRM, Eliminates Manual Processes",
+      readMoreLink: "/Lvk",
+    },
+  ];
 const insights = {
   heading: "Explore SAP CPI Use Cases",
   description:
@@ -307,16 +308,18 @@ function CPI() {
           <TwoColumnLayout
             left={
               <LeftSection
-                title="SAP S/4HANA"
-                description="Transform your business with SAP S/4HANA, a next-gen ERP system that uses intelligent automation, real-time analytics, and seamless integration to support fast, data-driven decisions."
+                title="SAP CPI"
+                description="Connect applications, data, and processes seamlessly with SAP Cloud Platform Integration (CPI) — a flexible integration platform that enables businesses to streamline workflows, unify systems, and ensure real-time data flow across cloud and on-premise environments."
               >
+                <Link to="/contactus">
                 <Requesademobtn text="Book a Consultation" />
+                </Link>
               </LeftSection>
             }
             right={
               <RightSection>
                 <img
-                  src="/Solutions/cpi.jpg"
+                  src="/Solutions/cpi.png"
                   alt="Visual"
                   className="w-full h-full object-cover"
                 />
@@ -350,8 +353,8 @@ function CPI() {
               <ConsultationTabsSection
                 solutions={sampleSolutions}
                 mainHeading="Explore our wide range of offerings"
-                mainDescription="SAP Managed Services provide the full range of functional, technical, and cloud possibilities."
-                ctaText="Get a Consultation"
+                mainDescription="SAP CPI provides pre-built integration content, API-based connectivity, and event-driven architecture to simplify complex integrations."
+                // ctaText="Get a Consultation"
               />
             </div>
           </section>
@@ -364,28 +367,28 @@ function CPI() {
             {/* Stats Cards - Responsive Grid */}
             <div className="py-8 sm:py-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10 bg-white">
               <StatCardStable
-                percentage="25%"
-                description="Reduction in direct and indirect expenses related to import-export activities within a year."
-              />
-              <StatCardStable
                 percentage="50%"
-                description="Improvement within the initial 6 months of implementation."
+                description="Accelerate time-to-value for new applications"
               />
               <StatCardStable
-                percentage="100%"
-                description="Productivity with seamless mobile integration in EXIM solution."
+                percentage="55%"
+                description="Event-driven architecture and real-time monitoring can enhance operational efficiency"
+              />
+              <StatCardStable
+                percentage="70%"
+                description="Improve data synchronization accuracy"
               />
             </div>
 
             {/* CTA Section - Responsive */}
             <div className="bg-black mt-8 sm:mt-10 w-full flex flex-col lg:flex-row items-center lg:items-start rounded-lg overflow-hidden">
               <h1 className="text-white text-xl sm:text-2xl md:text-[27px] p-4 lg:p-10 w-full lg:w-3/4 leading-relaxed">
-                Streamline your Export-Import operations with the SAP Certified
-                Accelerated EXIM solution. Get a hold of complete control,
-                visibility, and ease in compliance and documentation procedures.
+                Streamline your integrations with SAP Cloud Platform Integration, gaining real-time connectivity, automated workflows, and secure data exchange across cloud and on-premise systems.
               </h1>
               <div className="p-4 lg:p-10 w-full lg:w-auto flex justify-center lg:justify-end">
+                <Link to="/contactus">
                 <Requesademobtn text="Book a demo" />
+                </Link>
               </div>
             </div>
           </section>
@@ -414,8 +417,7 @@ function CPI() {
               Unlock powerful benefits
             </h2>
             <p className="mt-4 text-lg sm:text-xl md:text-2xl w-full lg:w-3/4 text-gray-500">
-              Accelerated EXIM solution enhances import-export management with
-              tracking, SAP integration, and efficiency.
+              SAP CPI provides pre-built integration content, API-based connectivity, and event-driven architecture to accelerate deployment and ensure reliable operations
             </p>
 
             {/* Benefits Grid - Responsive */}
@@ -452,26 +454,27 @@ function CPI() {
                   Empowering global trade for businesses
                 </h1>
                 <div className="flex-shrink-0">
+                  <Link to="/contactus">
                   <Requesademobtn text="Book a demo" />
+                  </Link>
                 </div>
               </div>
 
               {/* Paragraph */}
               <p className="mt-6 text-base sm:text-lg lg:text-xl w-full lg:w-3/4 text-white leading-relaxed">
-                Streamline your Export-Import operations with the SAP Certified
-                Accelerated EXIM solution. Get a hold of complete control,
-                visibility, and ease in compliance and documentation procedures.
+                Streamline your integrations with SAP Cloud Platform Integration, gaining real-time connectivity, automated workflows, and secure data exchange across cloud and on-premise systems.
               </p>
             </div>
           </section>
 
           {/* Resources Section */}
 
-          <InsightsSection insights={insightsData} />
-          <RelatedSolutions {...insights} />
+          {/* <InsightsSection insights={insightsData} /> */}
+          
 
-          <section id="resources" className="mt-12 sm:mt-16 scroll-mt-24">
-            <Resource
+          <section id="other products" className="mt-12 sm:mt-16 scroll-mt-24">
+            <RelatedSolutions {...insights} />
+            {/* <Resource
               heading="Explore Our Resources"
               paragraph="Helpful tools and insights for your export-import operations"
               products={[
@@ -483,7 +486,7 @@ function CPI() {
                   link:"/"
                 },
               ]}
-            />
+            /> */}
           </section>
         </div>
       </div>

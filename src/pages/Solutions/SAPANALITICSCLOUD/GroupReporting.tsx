@@ -4,6 +4,7 @@ import TwoColumnLayout from "@/components/TwoColumnLayout";
 import LeftSection from "@/components/LeftSection";
 import RightSection from "@/components/RightSection";
 import Requesademobtn from "@/components/Requesademobtn";
+import {Link} from "react-router-dom";
 import SidebarMenu from "@/components/SidebarMenu";
 import FeatureCard from "@/components/FeatureCard";
 import FeatureTabs from "@/components/FeatureTabs";
@@ -176,14 +177,14 @@ const menuItems = [
   "Benefits",
   "Find Your Answers",
   "Other Products",
-  "Resources",
+  // "Resources",
 ];
 
 const sapData = {
   heading: "What is SAP Group Reporting?",
   description:
-    "SAP Group Reporting is a comprehensive financial consolidation and close solution integrated with SAP S/4HANA, enabling real-time group financial insights and compliance with global accounting standards.",
-  imageUrl: "/Solutions/group-reporting.webp",
+    "Group Reporting delivers a complete suite of capabilities, including real-time financial consolidation across multiple entities, automated intercompany elimination.",
+  imageUrl: "/Solutions/group-reporting.png",
   imageAlt: "SAP Group Reporting visualization",
   items: [
     {
@@ -207,28 +208,28 @@ const sapData = {
 };
 
 const customerStories = [
-  {
-    id: 1,
-    image:
-      "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=300&fit=crop",
-    title: "Transforming Business Operations With Innovative Solutions",
-    readMoreLink: "#",
-  },
-  {
-    id: 2,
-    image:
-      "https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=300&fit=crop",
-    title: "Digital Innovation Success Through Strategic Partnership",
-    readMoreLink: "#",
-  },
-  {
-    id: 3,
-    image:
-      "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=400&h=300&fit=crop",
-    title: "Scaling New Heights in Technology Excellence",
-    readMoreLink: "#",
-  },
-];
+    {
+      id: 1,
+      image:
+        "/customerStories/patil.jpg",
+      title: "Patil Drives Operational Excellence with End-to-End SAP, AMS & OCR Automation",
+      readMoreLink: "/patil",
+    },
+    {
+      id: 2,
+      image:
+        "/customerStories/7hills.jpg",
+      title: "7Hills Restaurant Transforms Guest Experience with Custom Digital Platform",
+      readMoreLink: "/hills",
+    },
+    {
+      id: 3,
+      image:
+        "/customerStories/pharma.jpg",
+      title: "LVK Pharma Goes Digital with Odoo CRM, Eliminates Manual Processes",
+      readMoreLink: "/Lvk",
+    },
+  ];
 
 const insights = {
    heading: "Explore related financial solutions",
@@ -270,31 +271,31 @@ const features = [
   {
     title: "Real-Time Consolidation",
     description:
-      "Perform financial consolidation on real-time transactional data for accuracy and speed.",
+      "Combine data from multiple entities instantly for a single, accurate financial view.",
     image: "/GroupReporting/realtime.png",
   },
   {
-    title: "Audit-Ready Close Process",
+    title: "Automated Intercompany Elimination",
     description:
-      "Track, document, and validate every consolidation step to ensure full auditability.",
+      "Eliminate duplicate transactions effortlessly to maintain data integrity.",
     image: "/GroupReporting/audit.png",
   },
   {
-    title: "Intercompany Reconciliation",
+    title: "Global Compailance",
     description:
-      "Streamline intercompany matching and eliminations for clean consolidated results.",
+      "Ensure adherence to IFRS, GAAP, and other international accounting standards.",
     image: "/GroupReporting/intercompany.png",
   },
   {
-    title: "Disclosure Management",
+    title: "Currency Translation",
     description:
-      "Automate the generation of regulatory and managerial financial disclosures.",
+      "Handle multi-currency operations with automated and accurate conversions.",
     image: "/GroupReporting/disclosure.png",
   },
   {
-    title: "Cloud or On-Premise Deployment",
+    title: "Integrated Analytics & Reporting",
     description:
-      "Deploy SAP Group Reporting in a model that fits your IT and compliance needs.",
+      "Access real-time dashboards and KPIs for informed decision-making.",
     image: "/GroupReporting/cloud.png",
   },
 ];
@@ -309,10 +310,12 @@ function GroupReporting() {
           <TwoColumnLayout
             left={
               <LeftSection
-                title="SAP S/4HANA"
-                description="Transform your business with SAP S/4HANA, a next-gen ERP system that uses intelligent automation, real-time analytics, and seamless integration to support fast, data-driven decisions."
+                title="Group Reporting"
+                description="Streamline your financial consolidation and reporting with Group Reporting — an advanced solution that delivers real-time data, ensures compliance with global accounting standards, and integrates seamlessly with your financial systems."
               >
+                <Link to="/contactus" >
                 <Requesademobtn text="Book a Consultation" />
+                </Link>
               </LeftSection>
             }
             right={
@@ -352,8 +355,8 @@ function GroupReporting() {
               <ConsultationTabsSection
                 solutions={sampleSolutions}
                 mainHeading="Explore our wide range of offerings"
-                mainDescription="SAP Managed Services provide the full range of functional, technical, and cloud possibilities."
-                ctaText="Get a Consultation"
+                mainDescription="Group Reporting offers powerful currency translation, group-level adjustments, and automated data validation to ensure accuracy. Integrated analytics provide deep insights into performance, while seamless connectivity with ERP systems streamlines data flow."
+                // ctaText="Get a Consultation"
               />
             </div>
           </section>
@@ -366,28 +369,28 @@ function GroupReporting() {
             {/* Stats Cards - Responsive Grid */}
             <div className="py-8 sm:py-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10 bg-white">
               <StatCardStable
-                percentage="25%"
-                description="Reduction in direct and indirect expenses related to import-export activities within a year."
+                percentage="50%"
+                description="Empowering organizations with timely, reliable insights."
               />
               <StatCardStable
                 percentage="50%"
-                description="Improvement within the initial 6 months of implementation."
+                description="Close cycles accelerated."
               />
               <StatCardStable
-                percentage="100%"
-                description="Productivity with seamless mobile integration in EXIM solution."
+                percentage="60%"
+                description="reduce financial consolidation time."
               />
             </div>
 
             {/* CTA Section - Responsive */}
             <div className="bg-black mt-8 sm:mt-10 w-full flex flex-col lg:flex-row items-center lg:items-start rounded-lg overflow-hidden">
               <h1 className="text-white text-xl sm:text-2xl md:text-[27px] p-4 lg:p-10 w-full lg:w-3/4 leading-relaxed">
-                Streamline your Export-Import operations with the SAP Certified
-                Accelerated EXIM solution. Get a hold of complete control,
-                visibility, and ease in compliance and documentation procedures.
+                Streamline your financial consolidation and reporting with Group Reporting, gaining complete control, real-time visibility, and compliance with global accounting standards. Experience ease in data integration, accuracy in reporting, and faster close cycles across all entities.
               </h1>
               <div className="p-4 lg:p-10 w-full lg:w-auto flex justify-center lg:justify-end">
+                <Link to="/contactus" >
                 <Requesademobtn text="Book a demo" />
+                </Link>
               </div>
             </div>
           </section>
@@ -399,8 +402,7 @@ function GroupReporting() {
                 Key features
               </h2>
               <p className="mt-4 text-lg sm:text-xl md:text-2xl text-gray-500">
-                Accelerated EXIM solution offers license management, export
-                incentives, expense tracking, and automation.
+                Group Reporting offers real-time financial consolidation, automated intercompany eliminations, and global compliance with IFRS and GAAP..
               </p>
             </div>
             <section className="my-8 sm:my-10 w-full">
@@ -416,8 +418,7 @@ function GroupReporting() {
               Unlock powerful benefits
             </h2>
             <p className="mt-4 text-lg sm:text-xl md:text-2xl w-full lg:w-3/4 text-gray-500">
-              Accelerated EXIM solution enhances import-export management with
-              tracking, SAP integration, and efficiency.
+              Group Reporting includes currency translation, integrated analytics, and secure audit trails to ensure accuracy, transparency, and faster close cycles.
             </p>
 
             {/* Benefits Grid - Responsive */}
@@ -454,26 +455,27 @@ function GroupReporting() {
                   Empowering global trade for businesses
                 </h1>
                 <div className="flex-shrink-0">
+                  <Link to="/contactus" >
                   <Requesademobtn text="Book a demo" />
+                  </Link>
                 </div>
               </div>
 
               {/* Paragraph */}
               <p className="mt-6 text-base sm:text-lg lg:text-xl w-full lg:w-3/4 text-white leading-relaxed">
-                Streamline your Export-Import operations with the SAP Certified
-                Accelerated EXIM solution. Get a hold of complete control,
-                visibility, and ease in compliance and documentation procedures.
+                Streamline your financial consolidation and reporting with Group Reporting, gaining complete control, real-time visibility, and compliance with global accounting standards. Experience ease in data integration, accuracy in reporting, and faster close cycles across all entities.
               </p>
             </div>
           </section>
 
           {/* Resources Section */}
 
-          <InsightsSection insights={insightsData} />
-          <RelatedSolutions {...insights} />
+          {/* <InsightsSection insights={insightsData} /> */}
+          
 
-          <section id="resources" className="mt-12 sm:mt-16 scroll-mt-24">
-            <Resource
+          <section id="other products" className="mt-12 sm:mt-16 scroll-mt-24">
+            <RelatedSolutions {...insights} />
+            {/* <Resource
               heading="Explore Our Resources"
               paragraph="Helpful tools and insights for your export-import operations"
               products={[
@@ -485,7 +487,7 @@ function GroupReporting() {
                   link:"/"
                 },
               ]}
-            />
+            /> */}
           </section>
         </div>
       </div>

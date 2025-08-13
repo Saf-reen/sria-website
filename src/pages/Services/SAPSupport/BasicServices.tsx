@@ -41,59 +41,59 @@ function BasicServices() {
   const tabsData2 = [
   {
     icon: <Cloud className="w-10 h-10 text-white" />,
-    heading: "Reduced total cost of ownership",
+    heading: "Lower Total Cost of Ownership",
     description:
-      "SAP managed services can help reduce maintenance costs and total cost of ownership (TCO).",
+      "Efficient BASIS management reduces maintenance expenses and optimizes resource utilization, lowering overall TCO.",
   },
   {
     icon: <Monitor className="w-10 h-10 text-white" />,
-    heading: "Dedicated technical & functional assistance",
+    heading: "Expert Technical Support",
     description:
-      "Better resource allocation within the company is made possible by technical and functional assistance boosting creativity and production.",
+      "Round-the-clock BASIS technical assistance to ensure smooth SAP operations and rapid issue resolution.",
   },
   {
     icon: <Server className="w-10 h-10 text-white" />,
-    heading: "Flexibility to scale",
+    heading: "Scalable System Management",
     description:
-      "Flexible contracting and data processing systems enable businesses to scale their SAP resources up or down as needed.",
+      "Easily scale SAP infrastructure and BASIS resources in line with evolving business needs.",
   },
   {
     icon: <Shield className="w-10 h-10 text-white" />,
-    heading: "High availability & guaranteed uptime",
+    heading: "High Availability & Reliability",
     description:
-      "Guaranteed uptime and high availability are possible with SAP managed services.",
+      "Continuous system monitoring ensures uptime, stability, and uninterrupted SAP performance.",
   },
   {
     icon: <Settings className="w-10 h-10 text-white" />,
-    heading: "Smart patch & upgrade management",
+    heading: "Efficient Patch & Upgrade Handling",
     description:
-      "Database management, smart patch, upgrades and enhancements.",
+      "Smooth execution of kernel updates, patches, and system upgrades with minimal downtime.",
   },
   {
     icon: <Activity className="w-10 h-10 text-white" />,
-    heading: "Application & database security audits",
+    heading: "System & Security Audits",
     description:
-      "Routine database and application audits to make sure there are no vulnerabilities or non-compliances.",
+      "Regular SAP BASIS audits to identify vulnerabilities, optimize configurations, and ensure compliance.",
   },
 ];
   const tabsData = [
   {
     icon: <Cloud className="w-10 h-10 text-black" />,
-    heading: "SAP on Cloud Hosting",
+    heading: "Comprehensive BASIS Administration",
     description:
-      "Improved performance and lower operating expenses, adapting to shift company requirements.",
+      "End-to-end SAP BASIS administration, covering system installation, configuration, and daily monitoring for optimal performance.",
   },
   {
     icon: <Monitor className="w-10 h-10 text-black" />,
-    heading: "SAP Performance Optimization",
+    heading: "Performance Monitoring & Optimization",
     description:
-      "Improve the cloud performance of your SAP systems with our customized services.",
+      "Proactive monitoring and fine-tuning of your SAP systems to ensure high availability and peak performance.",
   },
   {
     icon: <Server className="w-10 h-10 text-black" />,
-    heading: "SAP Cloud Managed Services",
+    heading: "Upgrade & Patch Management",
     description:
-      "We handle the configuration of your SAP cloud for thorough and ongoing assistance.",
+      "Seamless execution of SAP upgrades, patches, and kernel updates to maintain stability, security, and compliance.",
   },
 ];
 const sampleSolutions = [
@@ -171,33 +171,56 @@ const sampleSolutions = [
   },
 ];
 
-   const productData = [
-    {
-      title: "Field Service Management",
-      description:
-        "Efficiently manage remote teams, assets, and processes to enhance service delivery.",
-        link:"/"
-    },
-
-    {
-      title: "Real Estate Management",
-      description:
-        "Automate property management tasks, including rent collection and maintenance.",
-           link:"/"
-    },
-    {
-      title: "Intelligent Character Recognition",
-      description:
-        "Transforming document processing to achieve greater automation and efficiency.",
-           link:"/"
-    },
-    {
-      title: "Digital Logistics",
-      description:
-        "Modernize logistics operations for more efficient and reliable deliveries.",
-           link:"/"
-    },
-  ];
+    const productData = [
+  {
+    title: "Managed Services",
+    description:
+      "Ongoing, proactive management and support of IT infrastructure, applications, or business processes by a third-party provider—offered under subscription or usage-based models to improve reliability, reduce costs, and align IT with business goals.",
+    link: "/sapmanagedservices"
+  },
+  {
+    title: "AMS",
+    description:
+      "Application Management Services provide continuous maintenance, enhancement, and support for enterprise applications—ensuring optimal performance, adaptability, and alignment with business requirements.",
+    link: "/ams"
+  },
+  {
+    title: "SAP S/4HANA Implementation Services",
+    description:
+      "Comprehensive support for deploying SAP S/4HANA—including planning, deployment (greenfield, brownfield, or selective transition), data migration, system integration, and go-live execution to transform business operations.",
+    link: "/sapimplement"
+  },
+  {
+    title: "SAP S/4HANA Consulting Services",
+    description:
+      "Expert advisory for strategic planning, ERP landscape assessment, migration strategy, system optimization, process redesign, and tailored implementation to maximize the benefits of an SAP S/4HANA deployment.",
+    link: "/consulting"
+  },
+  {
+    title: "SAP Fiori Development Services",
+    description:
+      "Design and customization of SAP Fiori applications to deliver intuitive, role-based, and mobile-friendly user experiences across the SAP S/4HANA ecosystem.",
+    link: "/fioridevelop"
+  },
+  {
+    title: "SAP Business Technology Platform",
+    description:
+      "A unified multi-cloud platform integrating data management, analytics, application development, integration, automation, and AI—enabling businesses to build, extend, and run intelligent enterprise applications.",
+    link: "/businesstech"
+  },
+  {
+    title: "SAP Custom Development and Enhancement",
+    description:
+      "Tailored development and extension of SAP systems—using ABAP, SAP UI5, APIs, and other technologies—to create custom functionalities, interfaces, and integrations aligned with unique business needs.",
+    link: "/custom"
+  },
+  {
+    title: "ABAP RESTful Application Programming Model Service",
+    description:
+      "Development of modern, scalable business applications on SAP S/4HANA using the ABAP RESTful Application Programming Model (RAP), enabling RESTful services, clean architecture, and maintainable code.",
+    link: "/abap"
+  },
+];
 
   const faqs = [
     {
@@ -281,29 +304,29 @@ const sampleSolutions = [
     "Customer stories",
     "Partners",
     "Related services",
-    "Resources",
+    // "Resources",
   ];
   const customerStories = [
     {
       id: 1,
       image:
-        "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=300&fit=crop",
-      title: "Streamlining Operations with Reliable SAP Support",
-      readMoreLink: "#",
+        "/customerStories/patil.jpg",
+      title: "Patil Drives Operational Excellence with End-to-End SAP, AMS & OCR Automation",
+      readMoreLink: "/patil",
     },
     {
       id: 2,
       image:
-        "https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=300&fit=crop",
-      title: "Achieving Operational Excellence Through Expert SAP Support",
-      readMoreLink: "#",
+        "/customerStories/7hills.jpg",
+      title: "7Hills Restaurant Transforms Guest Experience with Custom Digital Platform",
+      readMoreLink: "/hills",
     },
     {
       id: 3,
       image:
-        "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=400&h=300&fit=crop",
-      title: "Maximizing SAP Investment with Professional Support Services",
-      readMoreLink: "#",
+        "/customerStories/pharma.jpg",
+      title: "LVK Pharma Goes Digital with Odoo CRM, Eliminates Manual Processes",
+      readMoreLink: "/Lvk",
     },
   ];
 
@@ -334,9 +357,9 @@ const highlightData = [
         {/* Hero Pinned */}
 
         <ImageOverlay
-          imageUrl="https://www.accely.com/wp-content/uploads/2024/12/SAP-Managed-Service-1.webp"
-          title="SAP Managed Services"
-          description="Achieve stability, reliability, and adaptability with Sria Infotech’s automation-driven SAP Managed Services."
+          imageUrl="/Services/basis.png"
+          title="SAP Basis Services"
+          description="Enhance the reliability, performance, and security of your SAP landscape with our comprehensive SAP BASIS Support Service."
         />
         <section className="relative min-h-[500px]  sticky top-0 z-20  bg-black bg-cover bg-center overflow-hidden">
           {/* Dark Overlay */}
@@ -348,17 +371,12 @@ const highlightData = [
             <div className="flex flex-col md:flex-row justify-between gap-8 mb-10">
               <div className="w-full md:w-1/2">
                 <h1 className="text-[47px]  leading-tight">
-                  Maximize your SAP investment with Sria Infotech
+                  Maximize Your SAP Performance with Sria Infotech
                 </h1>
               </div>
               <div className="w-full md:w-1/2">
                 <p className="text-base md:text-lg leading-relaxed">
-                  The management and optimization of your SAP environment are
-                  more important than ever in the current fast-paced digital
-                  world. One of the top SAP managed service providers, Sria Infotech
-                  offers all-inclusive solutions that will optimize your SAP
-                  operations and guarantee that they are effective, safe, and
-                  completely aligned with your business goals.
+                  In today’s fast-paced digital landscape, efficient management of your SAP BASIS layer is critical for ensuring system reliability, performance, and security. As a trusted SAP BASIS Support Service provider, Sria Infotech delivers end-to-end solutions, including system administration, performance tuning, upgrades, and proactive monitoring, to keep your SAP environment stable, secure, and aligned with your business objectives.
                 </p>
               </div>
             </div>
@@ -389,8 +407,8 @@ const highlightData = [
                   <ConsultationTabsSection
                     solutions={sampleSolutions}
                     mainHeading="Explore our wide range of offerings"
-                    mainDescription="SAP Managed Services provide the full range of functional, technical, and cloud possibilities."
-                    ctaText="Get a Consultation"
+                    mainDescription="System Monitoring & Administration,Continuous performance tracking and fine-tuning.Patch & Upgrade Management Timely updates to keep systems secure and compliant."
+                    // ctaText="Get a Consultation"
                   />
                 </div>
               </section>
@@ -398,21 +416,21 @@ const highlightData = [
               <section id="insights" className="scroll-mt-24 py-16 bg-white">
                 <div className="max-w-[1400px] w-full px-4 mx-auto">
                   <h2 className="text-3xl sm:text-[47px] font-semibold mb-8">
-                    Resourceful insights of SAP Managed Services
+                    Resourceful insights of SAP Basis Services
                   </h2>
 
                   <div className="py-8 sm:py-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10 bg-white">
      <StatCardStable
-  percentage="99.9%"
-  description="System uptime achieved with proactive SAP Basis monitoring."
-/>
-<StatCardStable
-  percentage="40%"
-  description="Reduction in system downtime after implementing proactive maintenance."
-/>
-<StatCardStable
   percentage="30%"
-  description="Improvement in overall SAP system performance through tuning and optimization."
+  description="Performance Optimization  improvement in system efficiency"
+/>
+<StatCardStable
+  percentage="25%"
+  description="Downtime Reduction decrease in unplanned outages"
+/>
+<StatCardStable
+  percentage="20%"
+  description="Upgrade Efficiency  faster patch and upgrade cycles"
 />
                   </div>
                 </div>
@@ -457,7 +475,7 @@ const highlightData = [
                 />
               </section>
               <section id="resources" className="mt-10 scroll-mt-24">
-                <Resource
+                {/* <Resource
                   heading="Explore Our Resources"
                   paragraph="Helpful tools and insights for your export-import operations"
                   products={[
@@ -469,7 +487,7 @@ const highlightData = [
                         "https://www.accely.com/wp-content/uploads/2022/07/What-Is-Included-In-SAP-Managed-Services.webp",
                    link:"" },
                   ]}
-                />
+                /> */}
               </section>
             </div>
           </div>

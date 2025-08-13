@@ -4,6 +4,7 @@ import TwoColumnLayout from "@/components/TwoColumnLayout";
 import LeftSection from "@/components/LeftSection";
 import RightSection from "@/components/RightSection";
 import Requesademobtn from "@/components/Requesademobtn";
+import {Link} from "react-router-dom";
 import SidebarMenu from "@/components/SidebarMenu";
 import FeatureCard from "@/components/FeatureCard";
 import FeatureTabs from "@/components/FeatureTabs";
@@ -106,31 +107,31 @@ const features = [
   {
     title: "Unified HR Platform",
     description:
-      "Manage core HR, payroll, talent and learning all in one integrated cloud platform.",
+      "Centralizes all HR processes, providing a single source of truth for employee data and organizational insights.",
     image: "/SuccessFactors/platform.png"
   },
   {
     title: "Talent Lifecycle Coverage",
     description:
-      "From recruiting to performance review to learning—supporting every stage in the talent journey.",
+      "Supports end-to-end management of employees, from recruitment and onboarding to performance, development, and succession planning.",
     image: "/SuccessFactors/talent-lifecycle.png"
   },
   {
     title: "Mobile-First Experience",
     description:
-      "Engage employees and managers with intuitive mobile access to HR tasks and learning.",
+      "Enables employees and managers to access HR tools, complete tasks, and engage with workflows on any device.",
     image: "/SuccessFactors/mobile-experience.png"
   },
   {
     title: "People Analytics",
     description:
-      "Transform workforce data into actionable insights with real-time dashboards and predictive models.",
+      "Provides actionable insights into workforce trends, performance, and engagement for data-driven decision-making.",
     image: "/SuccessFactors/analytics.png"
   },
   {
     title: "Compliance & Globalization",
     description:
-      "Support global HR requirements with local compliance, data privacy, and multi-country payroll.",
+      "Ensures adherence to local regulations, labor laws, and global HR standards across multiple regions.",
     image: "/SuccessFactors/global-compliance.png"
   }
 ];
@@ -193,7 +194,7 @@ const menuItems = [
   "Benefits",
   "Find Your Answers",
   "Other Products",
-  "Resources",
+  // "Resources",
 ];
 
 
@@ -201,7 +202,7 @@ const sapData = {
   heading: "What is SAP SuccessFactors?",
   description:
     "SAP SuccessFactors is a cloud-based Human Experience Management (HXM) suite that helps organizations manage core HR, payroll, talent, and employee experience seamlessly.",
-  imageUrl: "/Solutions/successfactors.webp",
+  imageUrl: "/Solutions/successfactors.png",
   imageAlt: "HR cloud experience visualization",
   items: [
     {
@@ -225,35 +226,35 @@ const sapData = {
 };
 
 const customerStories = [
-  {
-    id: 1,
-    image:
-      "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400&h=300&fit=crop",
-    title: "Transforming Workforce Experience with SuccessFactors",
-    readMoreLink: "#",
-  },
-  {
-    id: 2,
-    image:
-      "https://images.unsplash.com/photo-1552664730-d307ca884978?w=400&h=300&fit=crop",
-    title: "AI-Powered HR Operations for Global Enterprise",
-    readMoreLink: "#",
-  },
-  {
-    id: 3,
-    image:
-      "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=400&h=300&fit=crop",
-    title: "Driving Employee Engagement with SAP SuccessFactors",
-    readMoreLink: "#",
-  },
-];
+    {
+      id: 1,
+      image:
+        "/customerStories/patil.jpg",
+      title: "Patil Drives Operational Excellence with End-to-End SAP, AMS & OCR Automation",
+      readMoreLink: "/patil",
+    },
+    {
+      id: 2,
+      image:
+        "/customerStories/7hills.jpg",
+      title: "7Hills Restaurant Transforms Guest Experience with Custom Digital Platform",
+      readMoreLink: "/hills",
+    },
+    {
+      id: 3,
+      image:
+        "/customerStories/pharma.jpg",
+      title: "LVK Pharma Goes Digital with Odoo CRM, Eliminates Manual Processes",
+      readMoreLink: "/Lvk",
+    },
+  ];
 
 const insights = {
   heading: "Explore related HR solutions",
   description:
     "Learn more about how to elevate your HR strategy with AI-powered tools and workforce analytics.",
   ctaText: "Talk to an expert",
-  ctaLink: "/contact",
+  ctaLink: "/contactus",
   solutions: [
     { title: "SAP S/4HANA", href: "/solutions/s4hana" },
     { title: "SAP Analytics Cloud", href: "/solutions/analytics" },
@@ -295,16 +296,18 @@ function SuccessFactors() {
           <TwoColumnLayout
             left={
               <LeftSection
-                title="SAP S/4HANA"
-                description="Transform your business with SAP S/4HANA, a next-gen ERP system that uses intelligent automation, real-time analytics, and seamless integration to support fast, data-driven decisions."
+                title="SAP Success Factors"
+                description="Transform human capital management with SAP SuccessFactors — a unified HR platform that enables businesses to manage the entire employee lifecycle, enhance workforce productivity, and deliver personalized, engaging experiences for employees across the organization."
               >
+                <Link to="/contactus">
                 <Requesademobtn text="Book a Consultation" />
+                </Link>
               </LeftSection>
             }
             right={
               <RightSection>
                 <img
-                  src="/Solutions/successfactors.webp"
+                  src="/Solutions/successfactors.png"
                   alt="Visual"
                   className="w-full h-full object-cover"
                 />
@@ -338,8 +341,8 @@ function SuccessFactors() {
               <ConsultationTabsSection
                 solutions={sampleSolutions}
                 mainHeading="Explore our wide range of offerings"
-                mainDescription="SAP Managed Services provide the full range of functional, technical, and cloud possibilities."
-                ctaText="Get a Consultation"
+                mainDescription="SAP SuccessFactors provides end-to-end HR solutions covering recruitment, onboarding, performance management, learning, compensation, and succession planning."
+                // ctaText="Get a Consultation"
               />
             </div>
           </section>
@@ -352,28 +355,28 @@ function SuccessFactors() {
             {/* Stats Cards - Responsive Grid */}
             <div className="py-8 sm:py-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10 bg-white">
               <StatCardStable
-                percentage="25%"
-                description="Reduction in direct and indirect expenses related to import-export activities within a year."
+                percentage="45%"
+                description="Mobile accessibility and real-time analytics can boost HR productivity"
               />
               <StatCardStable
                 percentage="50%"
-                description="Improvement within the initial 6 months of implementation."
+                description="Reduce onboarding time"
               />
               <StatCardStable
                 percentage="100%"
-                description="Productivity with seamless mobile integration in EXIM solution."
+                description="While integrated compliance tools Reduce risks and administrative effort"
               />
             </div>
 
             {/* CTA Section - Responsive */}
             <div className="bg-black mt-8 sm:mt-10 w-full flex flex-col lg:flex-row items-center lg:items-start rounded-lg overflow-hidden">
               <h1 className="text-white text-xl sm:text-2xl md:text-[27px] p-4 lg:p-10 w-full lg:w-3/4 leading-relaxed">
-                Streamline your Export-Import operations with the SAP Certified
-                Accelerated EXIM solution. Get a hold of complete control,
-                visibility, and ease in compliance and documentation procedures.
+                Transform your HR operations with SAP SuccessFactors, gaining unified processes, actionable insights, and mobile-first tools to engage employees and drive organizational success.
               </h1>
               <div className="p-4 lg:p-10 w-full lg:w-auto flex justify-center lg:justify-end">
+                <Link to="/contactus">
                 <Requesademobtn text="Book a demo" />
+                </Link>
               </div>
             </div>
           </section>
@@ -385,8 +388,7 @@ function SuccessFactors() {
                 Key features
               </h2>
               <p className="mt-4 text-lg sm:text-xl md:text-2xl text-gray-500">
-                Accelerated EXIM solution offers license management, export
-                incentives, expense tracking, and automation.
+                SuccessFactors offers a unified HR platform with end-to-end talent lifecycle management, mobile-first access, and people analytics. 
               </p>
             </div>
             <section className="my-8 sm:my-10 w-full">
@@ -402,8 +404,7 @@ function SuccessFactors() {
               Unlock powerful benefits
             </h2>
             <p className="mt-4 text-lg sm:text-xl md:text-2xl w-full lg:w-3/4 text-gray-500">
-              Accelerated EXIM solution enhances import-export management with
-              tracking, SAP integration, and efficiency.
+              SuccessFactors improves employee engagement, streamlines HR processes, and provides data-driven workforce insights.
             </p>
 
             {/* Benefits Grid - Responsive */}
@@ -440,26 +441,27 @@ function SuccessFactors() {
                   Empowering global trade for businesses
                 </h1>
                 <div className="flex-shrink-0">
+                  <Link to="/contactus">
                   <Requesademobtn text="Book a demo" />
+                  </Link>
                 </div>
               </div>
 
               {/* Paragraph */}
               <p className="mt-6 text-base sm:text-lg lg:text-xl w-full lg:w-3/4 text-white leading-relaxed">
-                Streamline your Export-Import operations with the SAP Certified
-                Accelerated EXIM solution. Get a hold of complete control,
-                visibility, and ease in compliance and documentation procedures.
+                Transform your HR operations with SAP SuccessFactors, gaining unified processes, actionable insights, and mobile-first tools to engage employees and drive organizational success.
               </p>
             </div>
           </section>
 
           {/* Resources Section */}
 
-          <InsightsSection insights={insightsData} />
-          <RelatedSolutions {...insights} />
+          {/* <InsightsSection insights={insightsData} /> */}
+          
 
-          <section id="resources" className="mt-12 sm:mt-16 scroll-mt-24">
-            <Resource
+          <section id="other products" className="mt-12 sm:mt-16 scroll-mt-24">
+            <RelatedSolutions {...insights} />
+            {/* <Resource
               heading="Explore Our Resources"
               paragraph="Helpful tools and insights for your export-import operations"
               products={[
@@ -478,7 +480,7 @@ function SuccessFactors() {
                 link:""
                 },
               ]}
-            />
+            /> */}
           </section>
         </div>
       </div>
