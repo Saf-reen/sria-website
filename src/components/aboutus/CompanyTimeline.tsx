@@ -8,47 +8,55 @@ interface TimelineEvent {
 }
 
 const allEvents: TimelineEvent[] = [
+
   {
-    year: 2001,
-    title: "Incorporated Office",
-    description: "Started our journey by incorporating office in India",
-    imageUrl: "https://i.imgur.com/kKdLbhK.png",
+    year: 2022,
+    title: "Sria Infotech is Launched",
+    description: "Officially launched Sria Infotech.",
+    imageUrl: "https://via.placeholder.com/150", // replace with actual image
   },
   {
-    year: 2001,
-    title: "5+ Projects",
-    description: "Successfully managed and completed 5+ projects",
-    imageUrl: "https://i.imgur.com/qUeTbGT.png",
+    year: 2022,
+    title: "Started with SAP All Modules",
+    description: "Expanded expertise to cover all SAP modules.",
+    imageUrl: "https://via.placeholder.com/150",
   },
   {
-    year: 2005,
-    title: "SAP ECC 5.0",
-    description: "SAP ERP Central Component (ECC) version 5.0 implementation",
-    imageUrl: "https://i.imgur.com/M7YTr9S.png",
+    year: 2023,
+    title: "Started Data Analytics",
+    description: "Ventured into data analytics services.",
+    imageUrl: "https://via.placeholder.com/150",
   },
   {
-    year: 2008,
-    title: "Global Expansion",
-    description: "Opened offices in 3 new countries",
-    imageUrl: "https://i.imgur.com/3YjjYuB.png",
+    year: 2024,
+    title: "Started Application Development",
+    description: "Began delivering cutting-edge application development solutions.",
+    imageUrl: "https://via.placeholder.com/150",
   },
   {
-    year: 2010,
-    title: "100+ Clients",
-    description: "Crossed 100+ enterprise clients worldwide",
-    imageUrl: "https://i.imgur.com/XqNIBfR.png",
+    year: 2025,
+    title: "AMS from Patil Group",
+    description: "Awarded Application Management Services contract from Patil Group.",
+    imageUrl: "https://via.placeholder.com/150",
   },
   {
-    year: 2012,
-    title: "Cloud Integration",
-    description: "Implemented cloud-native ERP solutions",
-    imageUrl: "https://i.imgur.com/rdGhI9b.png",
+    year: 2025,
+    title: "Odoo Implementation Partner",
+    description: "Became official Odoo Implementation Partner.",
+    imageUrl: "https://via.placeholder.com/150",
   },
+  {
+    year: 2025,
+    title: "Branch in Mulugu (Launching Soon)",
+    description: "Preparing to launch our new branch in Mulugu.",
+    imageUrl: "https://via.placeholder.com/150",
+  }
+
 ];
 
 const CompanyTimeline: React.FC = () => {
-  const [startYear, setStartYear] = useState(2001);
-  const yearsPerView = 5;
+  const [startYear, setStartYear] = useState(2022);
+  const yearsPerView = 2;
   const currentYear = new Date().getFullYear();
 
   // Filter events to only include those up to current year
@@ -58,10 +66,10 @@ const CompanyTimeline: React.FC = () => {
     (event) => event.year >= startYear && event.year < startYear + yearsPerView
   );
 
-  const maxStartYear = Math.max(2001, currentYear - yearsPerView + 1);
+  const maxStartYear = Math.max(2022, currentYear - yearsPerView + 1);
 
   const handlePrev = () => {
-    if (startYear > 2001) setStartYear(startYear - yearsPerView);
+    if (startYear > 2022) setStartYear(startYear - yearsPerView);
   };
 
   const handleNext = () => {
@@ -84,7 +92,7 @@ const CompanyTimeline: React.FC = () => {
             </span>
             <button
               onClick={handlePrev}
-              disabled={startYear <= 2001}
+              disabled={startYear <= 2022}
               className="w-8 h-8 border border-gray-300 text-gray-600 flex items-center justify-center disabled:opacity-40"
             >
               ←
