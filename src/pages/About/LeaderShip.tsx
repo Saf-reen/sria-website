@@ -7,6 +7,7 @@ import Requesademobtn from "@/components/Requesademobtn";
 import SidebarMenu from "@/components/SidebarMenu";
 import FeatureCard from "@/components/FeatureCard";
 import FeatureTabs from "@/components/FeatureTabs";
+import {Link} from "react-router-dom";
 import StatCard from "@/components/StatCard";
 import InfoTab from "@/components/InfoTab";
 import {
@@ -153,8 +154,8 @@ function LeaderShip() {
         imageUrl="https://www.accely.com/wp-content/uploads/2024/12/Management-team-1.webp"
         title="Meet leadership team"
         links={[
-          { label: "About us", href: "/about" },
-          { label: "Careers", href: "/careers" },
+          { label: "About us", href: "/aboutus" },
+          { label: "Careers", href: "/about/careers" },
         ]}
       />
 
@@ -162,14 +163,16 @@ function LeaderShip() {
       <div className="w-full bg-black h-[100px]  relative z-10 text-white flex items-center p-4 justify-center">
         <div className="w-[1400px] flex flex-row justify-between items-center">
           <h1 className="text-[21px]">Learn about Sria Infotech and what we do</h1>
+          <Link to="/contactus">
           <Requesademobtn text="Get in Touch" />
+          </Link>
         </div>
       </div>
 
       <div className="w-full flex justify-center bg-white relative z-10 p-4 sm:p-6 md:p-8 ">
         <div className="w-full max-w-[1400px] flex flex-col md:flex-row gap-8 bg-gray-100 p-6 sm:p-8 rounded-lg">
           {/* Text Content */}
-          <div className="md:w-1/2">
+          <div className="lg:w-[35%]">
             <h3 className="text-sm text-gray-400 mb-2">CEO Statement</h3>
             <h4 className="text-3xl sm:text-4xl md:text-[42px] font-semibold text-black mb-6 leading-tight">
               Innovating the Change
@@ -191,7 +194,7 @@ function LeaderShip() {
           </div>
 
           {/* Video Content */}
-          <div className="md:w-1/2 ">
+          <div className="lg:w-[65%]">
             <div className="w-full h-64 sm:h-80 md:h-[32rem] overflow-hidden rounded-md shadow-md bg-black">
               <iframe
                 className="w-full h-full"

@@ -281,9 +281,10 @@ const insights = {
   ctaText: "Talk to an expert",
   ctaLink: "/contact",
   solutions: [
-    { title: "Sales Cloud Integration", href: "/solutions/sales-cloud" },
-    { title: "Marketing Cloud Connect", href: "/solutions/marketing-cloud" },
-  ],
+    { title: "SAP Commerce Cloud", href: "/solutions/commerce-cloud" },
+    { title: "SAP Sales Cloud", href: "/solutions/sales-cloud" },
+    { title: "SAP Emarsys", href: "/solutions/emarsys" },
+  ],
 };
 
 const features = [

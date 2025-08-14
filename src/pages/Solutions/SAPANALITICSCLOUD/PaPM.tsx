@@ -214,8 +214,9 @@ const insights = {
   ctaText: "Talk to a PaPM expert",
   ctaLink: "/contact",
   solutions: [
-    { title: "Profitability Optimization", href: "/solutions/profitability" },
-    { title: "Operational Performance Modeling", href: "/solutions/performance" },
+    { title: "SAP Managed Services", href: "/sapmanagedservices" },
+    { title: "SAP Cloud Planning", href: "/solutions/cloud-planning" },
+    { title: "SAP Group Reporting", href: "/solutions/group-reporting" },
   ],
 };
 

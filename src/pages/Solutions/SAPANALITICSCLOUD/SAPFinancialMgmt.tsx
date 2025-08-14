@@ -234,8 +234,9 @@ const insights = {
   ctaText: "Talk to a financial expert",
   ctaLink: "/contact",
   solutions: [
-    { title: "SAP Financial Planning & Analysis", href: "/solutions/financial-planning" },
-    { title: "SAP Treasury Management", href: "/solutions/treasury-management" },
+    { title: "SAP Cloud Planning", href: "/solutions/cloud-planning" },
+    { title: "SAP Group Reporting", href: "/solutions/group-reporting" },
+    { title: "SAP PaPM", href: "/solutions/papm" },
   ],
 };
 const features = [

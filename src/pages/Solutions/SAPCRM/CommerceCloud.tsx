@@ -255,8 +255,9 @@ const insights = {
   ctaText: "Talk to an expert",
   ctaLink: "/contact",
   solutions: [
-    { title: "SAP S/4HANA Public Cloud", href: "/solutions/public-cloud" },
-    { title: "SAP S/4HANA Private Cloud", href: "/solutions/private-cloud" },
+    { title: "SAP Sales Cloud", href: "/solutions/sales-cloud" },
+    { title: "SAP Service Cloud", href: "/solutions/service-cloud" },
+    { title: "SAP Emarsys", href: "/solutions/emarsys" },
   ],
 };
 const features = [

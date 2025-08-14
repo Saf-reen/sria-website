@@ -236,10 +236,11 @@ const insights = {
   description:
     "From customer data management to commerce optimization, find the perfect solution to accelerate your customer engagement journey.",
   ctaText: "Talk to an expert",
-  ctaLink: "/contact",
+  ctaLink: "/contactus",
   solutions: [
-    { title: "SAP Customer Data Cloud", href: "/solutions/customer-data-cloud" },
     { title: "SAP Commerce Cloud", href: "/solutions/commerce-cloud" },
+    { title: "SAP Sales Cloud", href: "/solutions/sales-cloud" },
+    { title: "SAP Service Cloud", href: "/solutions/service-cloud" },
   ],
 };
 

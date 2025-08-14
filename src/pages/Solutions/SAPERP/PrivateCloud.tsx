@@ -275,8 +275,8 @@ const insights = {
   ctaText: "Talk to an Expert",
   ctaLink: "/contactus",
   solutions: [
-    { title: "Private Cloud Services", href: "/solutions/private-cloud" },
-    { title: "Hybrid Cloud Solutions", href: "/solutions/hybrid-cloud" },
+    { title: "SAP ERP S/4HANA", href: "/solutions/sap-s4hana" },
+    { title: "SAP ERP Public Cloud", href: "/solutions/public-cloud" },
   ],
 };
 

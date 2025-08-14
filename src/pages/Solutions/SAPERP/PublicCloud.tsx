@@ -261,8 +261,8 @@ const insights = {
   ctaText: "Connect with a cloud consultant",
   ctaLink: "/contact",
   solutions: [
-    { title: "SAP ERP Public Cloud for Finance", href: "/solutions/finance-public-cloud" },
-    { title: "SAP ERP Public Cloud for Procurement", href: "/solutions/procurement-public-cloud" },
+    { title: "SAP ERP S/4HANA", href: "/solutions/sap-s4hana" },
+    { title: "SAP ERP Private Cloud", href: "/solutions/private-cloud" },
   ],
 };
 

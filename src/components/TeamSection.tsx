@@ -9,7 +9,7 @@ const leaders = [
     description:
       "Director at Sria Infotech, guiding strategic direction and fostering innovation to drive business excellence.",
     image: "/user.jpg",
-    linkedinUrl: "#",
+    linkedinUrl: "http://linkedin.com/in/saikumarb/",
     email: "saikumarb@sriainfotech.com",
   },
   {
@@ -18,7 +18,7 @@ const leaders = [
     description:
       "COO of Sria Infotech, overseeing operations and driving efficiency to ensure seamless project execution and growth.",
     image: "/user.jpg",
-    linkedinUrl: "#",
+    linkedinUrl: "https://www.linkedin.com/in/ravikumar-r-53265a22a/",
     email: "ravirangari@sriainfotech.com",
   },
   {
@@ -27,7 +27,7 @@ const leaders = [
     description:
       "CEO of Sria Infotech, leading innovation and growth through technology-driven solutions.",
     image: "/user.jpg",
-    linkedinUrl: "#",
+    linkedinUrl: "https://www.linkedin.com/in/sirichandravalasa/",
     email: "siri@sriainfotech.com",
   },
 ];

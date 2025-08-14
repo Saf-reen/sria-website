@@ -54,7 +54,7 @@ const ParallaxScrollingComponent: React.FC = () => {
         ref={heroRef}
         style={{
           backgroundImage:
-            "url('https://www.accely.com/wp-content/uploads/2024/12/Service-Common-image.webp')",
+            "url('/animated.png')",
         }}
       >
         {/* Black box starts in the white area overlapping the image */}

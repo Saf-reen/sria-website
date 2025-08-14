@@ -440,7 +440,7 @@ const sampleSolutions = [
                 className="mt-20 max-w-[1400px] scroll-mt-24"
               >
                 <TopSectionWithTabs
-      tabSectionHeading="Key benefits of SAP Managed Services"
+      tabSectionHeading="Key benefits of SAP Fiori Development Services"
       tabs={tabsData2}
     />
               </section>{" "}

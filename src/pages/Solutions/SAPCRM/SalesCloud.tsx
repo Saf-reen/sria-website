@@ -238,8 +238,9 @@ const insights = {
   ctaText: "Talk to a sales cloud expert",
   ctaLink: "/contact-sales-cloud",
   solutions: [
-    { title: "Sales Cloud for Manufacturing", href: "/solutions/sales-manufacturing" },
-    { title: "Sales Cloud for Consumer Products", href: "/solutions/sales-consumer" },
+    { title: "SAP Commerce Cloud", href: "/solutions/commerce-cloud" },
+    { title: "SAP Service Cloud", href: "/solutions/service-cloud" },
+    { title: "SAP Emarsys", href: "/solutions/emarsys" },
   ],
 };
 

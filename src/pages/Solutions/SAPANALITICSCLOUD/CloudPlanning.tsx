@@ -258,8 +258,9 @@ const insights = {
   ctaText: "Talk to an Expert",
   ctaLink: "/contactus",
   solutions: [
-    { title: "Cloud Assessment Services", href: "/solutions/cloud-assessment" },
-    { title: "Migration Strategy Services", href: "/solutions/migration" },
+    { title: "SAP Managed Services", href: "/sapmanagedservices" },
+    { title: "SAP Group Reporting", href: "/solutions/group-reporting" },
+    { title: "SAP PaPM", href: "/solutions/papm" },
   ],
 };
 

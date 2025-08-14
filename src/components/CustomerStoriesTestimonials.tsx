@@ -6,6 +6,7 @@ import {
   Star,
   Check,
 } from "lucide-react";
+import logo from "../assets/logo.png";
 
 // Types
 export interface CustomerStory {
@@ -26,24 +27,27 @@ export interface CustomerReview {
 
 // Default data (can override with props)
 const defaultStories: CustomerStory[] = [
-  {
-    id: 1,
-    image: "https://images.unsplash.com/photo-1560472354-b33ff0c44a43?w=400",
-    title: "Transforming Business Operations With Innovative Solutions",
-    readMoreLink: "#",
-  },
-  {
-    id: 2,
-    image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=400",
-    title: "Digital Innovation Success Through Strategic Partnership",
-    readMoreLink: "#",
-  },
-  {
-    id: 3,
-    image: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=400",
-    title: "Scaling New Heights in Technology Excellence",
-    readMoreLink: "#",
-  },
+    {
+      id: 1,
+      image:
+        "/customerStories/patil.jpg",
+      title: "Patil Drives Operational Excellence with End-to-End SAP, AMS & OCR Automation",
+      readMoreLink: "/patil",
+    },
+    {
+      id: 2,
+      image:
+        "/customerStories/7hills.jpg",
+      title: "7Hills Restaurant Transforms Guest Experience with Custom Digital Platform",
+      readMoreLink: "/hills",
+    },
+    {
+      id: 3,
+      image:
+        "/customerStories/pharma.jpg",
+      title: "LVK Pharma Goes Digital with Odoo CRM, Eliminates Manual Processes",
+      readMoreLink: "/Lvk",
+    },
 ];
 
 const defaultReviews: CustomerReview[] = [
@@ -194,7 +198,7 @@ export const Testimonials: React.FC<{
   overallRating = 4.9,
   totalStars = 5,
   companyName = "Sria Infotech",
-  poweredByLogo = "https://via.placeholder.com/120x30/6366f1/ffffff?text=Powered+By",
+  poweredByLogo = logo,
 }) => {
   const [index, setIndex] = useState(0);
   const reviewPair = [reviews[index * 2], reviews[index * 2 + 1]].filter(

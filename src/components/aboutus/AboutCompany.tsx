@@ -32,7 +32,7 @@ const AboutCompany: React.FC = () => {
             unlock new possibilities.
           </p>
           <a
-            href="#contact"
+            href="/contactus"
             className="text-white font-medium mt-4 inline-block hover:underline"
           >
             Get in touch →

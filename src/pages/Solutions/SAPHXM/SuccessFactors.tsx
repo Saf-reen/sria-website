@@ -256,8 +256,8 @@ const insights = {
   ctaText: "Talk to an expert",
   ctaLink: "/contactus",
   solutions: [
-    { title: "SAP S/4HANA", href: "/solutions/s4hana" },
-    { title: "SAP Analytics Cloud", href: "/solutions/analytics" },
+    { title: "SAP BTP Build Apps", href: "/solutions/build-apps" },
+    { title: "SAP BTP CPI", href: "/solutions/cpi" },
   ],
 };
 

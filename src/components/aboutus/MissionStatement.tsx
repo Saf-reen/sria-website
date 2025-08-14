@@ -47,7 +47,7 @@ const MissionStatement: React.FC = () => {
           <h2 className="text-4xl font-semibold text-black">
             ACTIVE: Mission Statement
           </h2>
-          <a href="#" className="text-orange-500 font-medium hover:underline">
+          <a href="/contactus" className="text-orange-500 font-medium hover:underline">
             Let’s work together →
           </a>
         </div>

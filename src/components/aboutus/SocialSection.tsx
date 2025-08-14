@@ -5,27 +5,27 @@ const socialLinks = [
   {
     name: "LinkedIn",
     icon: <Linkedin className="w-6 h-6" />,
-    url: "https://www.linkedin.com/company/yourcompany",
+    url: "https://www.linkedin.com/company/sriainfotech/",
   },
   {
     name: "Twitter",
     icon: <Twitter className="w-6 h-6" />,
-    url: "https://twitter.com/yourcompany",
+    url: "https://x.com/sriainfotech",
   },
   {
     name: "Facebook",
     icon: <Facebook className="w-6 h-6" />,
-    url: "https://facebook.com/yourcompany",
+    url: "https://www.facebook.com/sriainfotech/",
   },
   {
     name: "Instagram",
     icon: <Instagram className="w-6 h-6" />,
-    url: "https://instagram.com/yourcompany",
+    url: "https://www.instagram.com/sriainfotech/",
   },
   {
     name: "YouTube",
     icon: <Youtube className="w-6 h-6" />,
-    url: "https://youtube.com/yourcompany",
+    url: "https://www.youtube.com/@sriainfotechpvtltd.4494",
   },
 ];
 

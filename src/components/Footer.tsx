@@ -9,6 +9,7 @@ import {
   FaEnvelope,
 } from "react-icons/fa";
 import { Link } from "react-router-dom";
+import logo from "../assets/logo.png"
 
 interface Country {
   name: string;
@@ -159,10 +160,10 @@ const Footer: React.FC = () => {
       { label: "SAP Financial Mgmt", href: "/solutions/financial" },
     ],
     Products: [
-        { label: "NxDesk", link: "/products/nxdesk" },
-        { label: "Nxify", link: "/products/nxify" },
-        { label: "Big", link: "/products/big" },
-        { label: "Gate Check", link: "/products/gatecheck" },
+        { label: "NxDesk", href: "/products/nxdesk" },
+        { label: "Nxify", href: "/products/nxify" },
+        { label: "Big", href: "/products/big" },
+        { label: "Gate Check", href: "/products/gatecheck" },
       ],
     // Industries: [
     //   { label: "Retail", href: "/industries/retail" },
@@ -246,31 +247,31 @@ const Footer: React.FC = () => {
         {/* Newsletter Section */}
         <div className="mt-3 w-full mb-16">
           <div
-            className="py-5 px-2 w-full"
+            className="py-2 px-2 w-full"
             style={{
               background: `linear-gradient(90deg, rgb(34, 34, 34) 0%, rgb(24, 24, 24) 55.5%, rgb(34, 34, 34) 100%)`,
             }}
           >
-            <div className="flex flex-col md:flex-row justify-between gap-6 p-4">
+            <div className="flex flex-col md:flex-row justify-between gap-6 p-2">
               <div className="w-full flex flex-col">
-                <h3 className="text-[27px] font-normal text-white mb-2">
+                <h3 className="text-[27px] font-normal text-white">
                   Subscribe to our Newsletter
                 </h3>
                 <p className="text-gray-300 text-[16px] font-normal">
                   Get the weekly updates and insights right in your inbox.
                 </p>
               </div>
-              <div className="flex flex-col sm:flex-row gap-3 md:w-1/2">
+              <div className="flex flex-col justify-center align-center sm:flex-row gap-3 md:w-1/2">
                 <input
                   type="email"
                   placeholder="Enter your email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="flex-1 px-2 py-1 bg-gray-800 border border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:border-orange-500"
+                  className="flex-1 h-8 p-2 text-sm bg-gray-800 border border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:border-orange-500"
                 />
                 <button
                   onClick={handleSubscribe}
-                  className="px-6 py-2 font-normal bg-orange-500 hover:bg-orange-600 text-white transition"
+                  className="p-1 h-8 font-normal text-sm bg-orange-500 hover:bg-orange-600 text-white transition"
                 >
                   Subscribe
                 </button>
@@ -393,11 +394,39 @@ const Footer: React.FC = () => {
         {/* Social and Links */}
         <div className="flex flex-col sm:flex-col px-2 md:flex-row justify-between items-center gap-4 text-[16px] font-normal text-gray-400 mb-6">
           <div className="flex justify-center gap-4 text-lg text-white">
-            <FaLinkedinIn className="hover:text-orange-400 cursor-pointer" />
-            <FaFacebookF className="hover:text-orange-400 cursor-pointer" />
-            <FaYoutube className="hover:text-orange-400 cursor-pointer" />
-            <FaInstagram className="hover:text-orange-400 cursor-pointer" />
+            <a
+              href="https://www.linkedin.com/company/sria-infotech-pvt-ltd"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaLinkedinIn className="hover:text-orange-400 cursor-pointer" />
+            </a>
+
+            <a
+              href="https://www.facebook.com/sriainfotech/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaFacebookF className="hover:text-orange-400 cursor-pointer" />
+            </a>
+
+            <a
+              href="https://www.youtube.com/@sriainfotechpvtltd.4494"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaYoutube className="hover:text-orange-400 cursor-pointer" />
+            </a>
+
+            <a
+              href="https://www.instagram.com/sriainfotech/"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <FaInstagram className="hover:text-orange-400 cursor-pointer" />
+            </a>
           </div>
+
           {/* <div className="flex flex-wrap gap-2 justify-center md:justify-end text-center">
             <a href="#" className="hover:text-white">
               Privacy Policy
@@ -419,7 +448,8 @@ const Footer: React.FC = () => {
 
         {/* Branding */}
         <div className="w-full flex flex-col px-2 sm:flex-row items-center justify-between gap-2 text-center">
-          <div className="text-left"><h1 className="text-xl font-bold text-white">Sria Infotech</h1>
+          <div className="text-left"><h1 className="text-xl font-bold text-white">
+            <img src={logo} className="h-20 w-auto" />Sria Infotech</h1>
           <div className="text-xs text-gray-50">
             <p>Smart.</p>
             <p>Resilient.</p>

@@ -206,7 +206,7 @@ const menuItems = [
   "Benefits",
   "Find Your Answers",
   "Other Products",
-  "Resources",
+  // "Resources",
 ];
 
 const sapData = {
@@ -266,8 +266,8 @@ const insights = {
   ctaText: "Talk to an Expert",
   ctaLink: "/contactus",
   solutions: [
-    { title: "Private Cloud Services", href: "/solutions/private-cloud" },
-    { title: "Hybrid Cloud Solutions", href: "/solutions/hybrid-cloud" },
+    { title: "SAP BTP CPI", href: "/solutions/cpi" },
+    { title: "SAP Success Factors", href: "/solutions/successfactors" },
   ],
 };
 

@@ -236,8 +236,8 @@ const insights = {
   ctaText: "Talk to an integration expert",
   ctaLink: "/contact",
   solutions: [
-    { title: "CPI for Finance & ERP Integration", href: "/solutions/cpi-finance" },
-    { title: "CPI for Supply Chain Connectivity", href: "/solutions/cpi-supplychain" },
+    { title: "SAP BTP Build Apps", href: "/solutions/build-apps" },
+    { title: "SAP Success Factors", href: "/solutions/successfactors" },
   ],
 };
 

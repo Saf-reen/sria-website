@@ -290,8 +290,8 @@ const insights = {
   ctaText: "Talk to an expert",
   ctaLink: "/contact",
   solutions: [
-    { title: "SAP S/4HANA for Manufacturing", href: "/solutions/manufacturing" },
-    { title: "SAP S/4HANA for Finance", href: "/solutions/finance" },
+    { title: "SAP ERP Public Cloud", href: "/solutions/public-cloud" },
+    { title: "SAP ERP Private Cloud", href: "/solutions/private-cloud" },
   ],
 };
 
@@ -492,7 +492,6 @@ function SapS4hana() {
           {/* Resources Section */}
 
           {/* <InsightsSection insights={insightsData} /> */}
-          <RelatedSolutions {...insights} />
 
           <section id="other products" className="mt-12 sm:mt-16 scroll-mt-24">
             <RelatedSolutions {...insights} />

@@ -238,8 +238,9 @@ const insights = {
   ctaText: "Talk to an expert",
   ctaLink: "/contact",
   solutions: [
-    { title: "SAP Analytics Cloud", href: "/solutions/analytics-cloud" },
-    { title: "SAP S/4HANA Finance", href: "/solutions/s4hana-finance" },
+    { title: "SAP Managed Services", href: "/sapmanagedservices" },
+    { title: "SAP Cloud Planning", href: "/solutions/cloud-planning" },
+    { title: "SAP PaPM", href: "/solutions/papm" },
   ],
 };
 

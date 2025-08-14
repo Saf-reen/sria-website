@@ -113,8 +113,6 @@ const App = () => (
           <Route path="/solutions/cpi" element={<CPI />} />
           <Route path="/solutions/build-apps" element={<BuildApps />} />
           <Route path="/solutions/successfactors" element={<SuccessFactors />} />
-          
-        
           <Route path="/about/leadership" element={<LeaderShip />} />
           <Route path="/about/sap-partner" element={<ComingSoon />}/>
           <Route path="/about/careers" element={<ComingSoon />} />
@@ -125,8 +123,8 @@ const App = () => (
           <Route path="/aboutus" element={<AboutUs />} />
           
            <Route path="/hills" element={<HillsStory/>}/>
-               <Route path="/Lvk" element={<LvkPharma/>}/>
-                             <Route path="/patil" element={<Patil/>}/>
+            <Route path="/Lvk" element={<LvkPharma/>}/>
+            <Route path="/patil" element={<Patil/>}/>
 
 
         </Routes>
