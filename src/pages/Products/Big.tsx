@@ -56,43 +56,43 @@ const features = [
     title: "Centralized Billing & Payments",
     description:
       "Automate maintenance billing, track dues, and enable residents to pay securely through multiple payment options.",
-    image: "/big/billing-payments.png",
+    image: "/big/Centralized Billing & Payments.png",
   },
   {
     title: "Smart Accounting",
     description:
       "Simplify society accounting with auto-reconciliations, ledgers, expense tracking, and financial reports.",
-    image: "/big/accounting.png",
+    image: "/big/Smart Accounting.png",
   },
   {
     title: "Complaint Management",
     description:
       "Allow residents to raise, track, and resolve issues easily with categorized tickets and real-time updates.",
-    image: "/big/complaints.png",
+    image: "/big/Complaint Management.png",
   },
   {
     title: "Meeting Scheduler & Minutes",
     description:
       "Plan meetings, share agendas, record minutes, and notify members with built-in reminders and document sharing.",
-    image: "/big/meetings.png",
+    image: "/big/Meeting Scheduler & Minutes.png",
   },
   {
     title: "Document Hub",
     description:
       "Store and share important documents like bylaws, invoices, and notices securely in one accessible place.",
-    image: "/big/documents.png",
+    image: "/big/Document Hub.png",
   },
   {
     title: "Resident Directory",
     description:
       "Maintain an up-to-date resident directory with flat-wise contact details and emergency information.",
-    image: "/big/directory.png",
+    image: "/big/Resident Directory.png",
   },
   {
     title: "Polls & Notices",
     description:
       "Engage residents with instant polls, announcements, and community notices sent via app and email.",
-    image: "/big/polls-notices.png",
+    image: "/big/Polls & Notices.png",
   },
 ];
 
@@ -201,7 +201,7 @@ function Big() {
                         right={
                             <RightSection>
                                 <img
-                                    src="/Axim.png"
+                                    src="/Big/BIG APP.png"
                                     alt="Visual"
                                     className="w-full h-full object-cover"
                                 />

@@ -5,7 +5,7 @@ import LeadershipCard from "./LeadershipCard";
 const leaders = [
   {
     name: "Sai Kumar Bonakurthi",
-    designation: "Director - Sria Infotech",
+    designation: "Founder,Director - Sria Infotech",
     description:
       "Director at Sria Infotech, guiding strategic direction and fostering innovation to drive business excellence.",
     image: "/user.jpg",
@@ -14,7 +14,7 @@ const leaders = [
   },
   {
     name: "Ravikumar Rangari",
-    designation: "COO - Sria Infotech",
+    designation: "Co-Founder, Executive Chairman  - Sria Infotech",
     description:
       "COO of Sria Infotech, overseeing operations and driving efficiency to ensure seamless project execution and growth.",
     image: "/user.jpg",

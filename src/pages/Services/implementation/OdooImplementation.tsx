@@ -176,7 +176,7 @@ const sampleSolutions = [
     title: "Data Analytics",
     description:
       "Comprehensive data analysis solutions that transform raw data into actionable insights using modern analytics tools and techniques, enabling informed decision-making and business growth.",
-    link: "/odooservices/dataanalytics"
+    link: "/additionalServices/dataanalytics"
   }
 ];
 

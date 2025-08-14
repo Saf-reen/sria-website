@@ -86,7 +86,7 @@ const App = () => (
           <Route path="/basicservices" element={<BasicServices />} />
           <Route path="/custom" element={<SAPCustom />} />  
           <Route path="/odooservices/implementation" element={<OdooImplementation />} />
-          <Route path="/odooservices/dataanalytics" element={<DataAnalytics />} />
+         
           <Route path="/products/big" element={<Big />} />
           <Route path="/products/gatecheck" element={<GateCheck />} />
           <Route path="/products/nxdesk" element={<NxDesk />} />
@@ -125,6 +125,7 @@ const App = () => (
            <Route path="/hills" element={<HillsStory/>}/>
             <Route path="/Lvk" element={<LvkPharma/>}/>
             <Route path="/patil" element={<Patil/>}/>
+            <Route path="/additionalServices/dataanalytics" element={<DataAnalytics/>}/>
 
 
         </Routes>

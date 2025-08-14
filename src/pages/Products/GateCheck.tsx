@@ -56,43 +56,43 @@ const features = [
     title: "IoT-Enabled Monitoring",
     description:
       "Get real-time visibility into facility conditions with smart sensors for temperature, energy, water, and more.",
-    image: "/gatecheck/iot-monitoring.png",
+    image: "/gatecheck/IoT-Enabled Monitoring.png",
   },
   {
     title: "Predictive Maintenance",
     description:
       "Reduce downtime with automated alerts, maintenance schedules, and asset health insights powered by IoT data.",
-    image: "/gatecheck/maintenance.png",
+    image: "/gatecheck/Predictive Maintenance.png",
   },
   {
     title: "Compliance & Audits",
     description:
       "Digitize checklists, inspections, and audit trails to ensure regulatory compliance and safety standards.",
-    image: "/gatecheck/compliance.png",
+    image: "/gatecheck/Compliance & Audits.png",
   },
   {
     title: "Incident Reporting",
     description:
       "Log, track, and resolve incidents efficiently with mobile-first reporting and automated escalation workflows.",
-    image: "/gatecheck/incidents.png",
+    image: "/gatecheck/Incident Reporting.png",
   },
   {
     title: "Asset & Inventory Tracking",
     description:
       "Monitor critical assets and consumables in real-time to avoid shortages, overstocking, or misuse.",
-    image: "/gatecheck/assets.png",
+    image: "/gatecheck/Asset & Inventory Tracking.png",
   },
   {
     title: "Role-Based Dashboards",
     description:
       "Empower teams with custom dashboards for admins, supervisors, and operators—tailored to their responsibilities.",
-    image: "/gatecheck/dashboards.png",
+    image: "/gatecheck/Role-Based Dashboards.png",
   },
   {
     title: "Cloud-Based Access",
     description:
       "Access data and reports from anywhere with a secure, scalable, and mobile-friendly cloud platform.",
-    image: "/gatecheck/cloud.png",
+    image: "/gatecheck/Cloud-Based Access.png",
   },
 ];
 
@@ -200,7 +200,7 @@ function GateCheck() {
                         right={
                             <RightSection>
                                 <img
-                                    src="/Axim.png"
+                                    src="/gatecheck/GATE CHECK.png"
                                     alt="Visual"
                                     className="w-full h-full object-cover"
                                 />

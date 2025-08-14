@@ -29,6 +29,9 @@ export default {
          animation: {
   marquee: "marquee 20s linear infinite",
 },
+fontFamily: {
+        kabel: ['KabelBKBT', 'sans-serif'],
+      },
    keyframes: {
   marquee: {
     "0%": { transform: "translateX(0%)" },

@@ -10,6 +10,15 @@ All colors MUST be HSL.
 
 /* Ensure only one scrollbar exists */
 
+
+@font-face {
+  font-family: 'KabelBKBT';
+  src: url('/src/assets/fonts/Kabel-BK-BT.woff2') format('woff2'),
+       url('/src/assets/fonts/Kabel Book BT_0.ttf') format('ttf');
+  font-weight: normal;
+  font-style: normal;
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;

@@ -434,7 +434,7 @@ function PublicCloud() {
           </section>
 
           {/* Benefits Section */}
-          <section id="benefits" className="mt-16 sm:mt-20 w-full scroll-mt-24">
+          <section id="benefits" className=" sm:mt-20 w-full scroll-mt-24">
             <h2 className="text-2xl sm:text-3xl md:text-4xl w-full lg:w-3/4 font-semibold">
               Benefits of Public Cloud
             </h2>

@@ -447,10 +447,19 @@ const Footer: React.FC = () => {
         </div>
 
         {/* Branding */}
-        <div className="w-full flex flex-col px-2 sm:flex-row items-center justify-between gap-2 text-center">
-          <div className="text-left"><h1 className="text-xl font-bold text-white">
-            <img src={logo} className="h-20 w-auto" />Sria Infotech</h1>
-          <div className="text-xs text-gray-50">
+        <div className="w-full flex  px-2 sm:flex-row items-center justify-between gap-2 text-center">
+          <div className="text-left">    <div className="flex flex-row items-center">
+                          <Link to="/" className="font-bold flex flex-row items-center">
+                            <img src={logo} alt="Logo" className="h-10 w-auto" />
+                            <span className="ml-2 text-orange-500">Sria</span>
+                            <span className="ml-1">
+                              <span className="text-white">Info</span>
+                              <span className="text-green-500">Tech</span>
+                            </span>
+                          </Link>
+                        </div>
+          <div className="text-xs ml-2 text-gray-50">
+                    
             <p>Smart.</p>
             <p>Resilient.</p>
             <p> Inclusive.</p>
@@ -459,10 +468,16 @@ const Footer: React.FC = () => {
           </div>
           </div>
           <div>
-            <div className="text-4xl font-bold text-orange-400">2025</div>
-            <div className="mt-2 text-xs text-gray-500">
+            {/* <div className="text-4xl font-bold text-orange-400 bg-gradient-to-r from-orange-500 via-white to-green-500 ">2025</div> */}
+<div className="text-4xl font-bold bg-gradient-to-r from-orange-500 via-white to-green-500 bg-clip-text text-transparent">
+  2025
+</div>
+<div className="mt-2 text-xs bg-gradient-to-r from-orange-500 via-white to-green-500 bg-clip-text text-transparent">
+  All rights reserved
+</div>
+            {/* <div className="mt-2 text-xs ">
               All rights reserved
-            </div>
+            </div> */}
           </div>
         </div>
 

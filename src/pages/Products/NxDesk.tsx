@@ -135,31 +135,31 @@ const features = [
     title: "Unified Ticket Inbox",
     description:
       "Centralize all support channels—email, chat, and web—into one smart inbox for streamlined ticket management.",
-    image: "/Axim/1.png",
+    image: "/Nxdesk/Unified Ticket Inbox.png  ",
   },
   {
     title: "Automated Workflows",
     description:
       "Save time with rule-based ticket routing, auto-responses, and SLA tracking to boost efficiency and response speed.",
-    image: "/Axim/2.png",
+    image: "/Nxdesk/Automated Workflows.png",
   },
   {
     title: "AI-Powered Suggestions",
     description:
       "Leverage machine learning to auto-suggest solutions, categorize tickets, and reduce resolution times.",
-    image: "/Axim/3.png",
+    image: "/Nxdesk/AI-Powered Suggestions.png",
   },
   {
     title: "Customizable Dashboards",
     description:
       "Track ticket metrics, team performance, and customer satisfaction in real-time with drag-and-drop widgets.",
-    image: "/Axim/4.png",
+    image: "/Nxdesk/Customizable Dashboards.png",
   },
   {
     title: "Collaborative Ticketing",
     description:
       "Enable internal notes, tag teammates, and share updates seamlessly to resolve complex issues faster.",
-    image: "/Axim/5.png",
+    image: "/Nxdesk/Collaborative Ticketing.png  ",
   },
   //   {
   //     title: "Multi-Channel Support",

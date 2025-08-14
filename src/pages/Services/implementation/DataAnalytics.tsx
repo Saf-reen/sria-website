@@ -39,174 +39,200 @@ import { CustomerStories } from "@/components/CustomerStoriesTestimonials";
 
 function DataAnalytics() {
   const tabsData2 = [
-  {
-    icon: <Cloud className="w-10 h-10 text-white" />,
-    heading: "Reduced total cost of ownership",
-    description:
-      "SAP managed services can help reduce maintenance costs and total cost of ownership (TCO).",
-  },
-  {
-    icon: <Monitor className="w-10 h-10 text-white" />,
-    heading: "Dedicated technical & functional assistance",
-    description:
-      "Better resource allocation within the company is made possible by technical and functional assistance boosting creativity and production.",
-  },
-  {
-    icon: <Server className="w-10 h-10 text-white" />,
-    heading: "Flexibility to scale",
-    description:
-      "Flexible contracting and data processing systems enable businesses to scale their SAP resources up or down as needed.",
-  },
-  {
-    icon: <Shield className="w-10 h-10 text-white" />,
-    heading: "High availability & guaranteed uptime",
-    description:
-      "Guaranteed uptime and high availability are possible with SAP managed services.",
-  },
-  {
-    icon: <Settings className="w-10 h-10 text-white" />,
-    heading: "Smart patch & upgrade management",
-    description:
-      "Database management, smart patch, upgrades and enhancements.",
-  },
-  {
-    icon: <Activity className="w-10 h-10 text-white" />,
-    heading: "Application & database security audits",
-    description:
-      "Routine database and application audits to make sure there are no vulnerabilities or non-compliances.",
-  },
-];
+    {
+      icon: <Cloud className="w-10 h-10 text-white" />,
+      heading: "Reduced Data Management Costs",
+      description:
+        "Data analytics platforms can reduce storage, processing, and maintenance costs while maximizing efficiency.",
+    },
+    {
+      icon: <Monitor className="w-10 h-10 text-white" />,
+      heading: "Dedicated Analytical Expertise",
+      description:
+        "Gain access to skilled analysts and engineers to drive accurate insights and smarter decision-making.",
+    },
+    {
+      icon: <Server className="w-10 h-10 text-white" />,
+      heading: "Scalable Data Infrastructure",
+      description:
+        "Easily scale your analytics capabilities as your data grows, with flexible architectures and processing power.",
+    },
+    {
+      icon: <Shield className="w-10 h-10 text-white" />,
+      heading: "Data Security & Compliance",
+      description:
+        "Ensure secure storage, processing, and access control while meeting all regulatory compliance requirements.",
+    },
+    {
+      icon: <Settings className="w-10 h-10 text-white" />,
+      heading: "Automated Data Pipelines",
+      description:
+        "Streamline data ingestion, transformation, and reporting through automated workflows.",
+    },
+    {
+      icon: <Activity className="w-10 h-10 text-white" />,
+      heading: "Continuous Data Quality Monitoring",
+      description:
+        "Regular audits and validation checks to ensure accuracy, reliability, and consistency of insights.",
+    },
+  ];
+
   const tabsData = [
-  {
-    icon: <Cloud className="w-10 h-10 text-black" />,
-    heading: "SAP on Cloud Hosting",
-    description:
-      "Improved performance and lower operating expenses, adapting to shift company requirements.",
-  },
-  {
-    icon: <Monitor className="w-10 h-10 text-black" />,
-    heading: "SAP Performance Optimization",
-    description:
-      "Improve the cloud performance of your SAP systems with our customized services.",
-  },
-  {
-    icon: <Server className="w-10 h-10 text-black" />,
-    heading: "SAP Cloud Managed Services",
-    description:
-      "We handle the configuration of your SAP cloud for thorough and ongoing assistance.",
-  },
-];
-const sampleSolutions = [
-  {
-    title: "End-to-End Odoo Deployment",
-    heading: "Seamless ERP Implementation",
-    description:
-      "We provide complete Odoo setup from requirement gathering to go-live, ensuring smooth business transition with minimal disruption.",
-    points: [
-      "Requirement analysis & business mapping",
-      "Module configuration & customization",
-      "User training & onboarding",
-      "Go-live support & change management",
-    ],
-  },
-  {
-    title: "Custom Module Development",
-    heading: "Tailored to Your Business Needs",
-    description:
-      "Design and develop custom Odoo modules to fit unique workflows and industry-specific processes.",
-    points: [
-      "Custom ERP workflows",
-      "Industry-specific enhancements",
-      "Third-party API integrations",
-      "Automation of manual tasks",
-    ],
-  },
-  {
-    title: "Data Migration Services",
-    heading: "Secure & Accurate Data Transfer",
-    description:
-      "Migrate your business data from legacy systems to Odoo with 100% accuracy and no downtime.",
-    points: [
-      "Data mapping & cleansing",
-      "Migration scripts & automation",
-      "Testing for data integrity",
-      "Post-migration validation",
-    ],
-  },
-  {
-    title: "Odoo Integration Services",
-    heading: "Connected Business Operations",
-    description:
-      "Integrate Odoo with other software like CRM, e-commerce, payment gateways, and shipping providers.",
-    points: [
-      "Payment gateway integration",
-      "E-commerce platform sync",
-      "Third-party logistics integration",
-      "Real-time API connectivity",
-    ],
-  },
-  {
-    title: "Odoo Support & Maintenance",
-    heading: "Continuous Improvement & Uptime",
-    description:
-      "Keep your Odoo ERP optimized, updated, and secure with our ongoing support services.",
-    points: [
-      "24/7 helpdesk support",
-      "System health checks",
-      "Version upgrades",
-      "Bug fixes & performance tuning",
-    ],
-  },
-  {
-    title: "Odoo Cloud Hosting",
-    heading: "Scalable & Secure Hosting",
-    description:
-      "Run your Odoo instance in a high-performance, secure cloud environment.",
-    points: [
-      "AWS, Azure, and private cloud hosting",
-      "Data backups & disaster recovery",
-      "SSL & security hardening",
-      "Scalable infrastructure",
-    ],
-  },
-];
+    {
+      icon: <Cloud className="w-10 h-10 text-black" />,
+      heading: "Cloud-Based Analytics",
+      description:
+        "Leverage cloud platforms for fast, cost-efficient, and scalable analytics solutions.",
+    },
+    {
+      icon: <Monitor className="w-10 h-10 text-black" />,
+      heading: "Performance Optimization",
+      description:
+        "Optimize data pipelines and queries for faster, more reliable analytics processing.",
+    },
+    {
+      icon: <Server className="w-10 h-10 text-black" />,
+      heading: "Managed Analytics Services",
+      description:
+        "We handle setup, maintenance, and optimization of your analytics stack for end-to-end support.",
+    },
+  ];
+
+  const sampleSolutions = [
+    {
+      title: "End-to-End Analytics Implementation",
+      heading: "From Data to Decisions",
+      description:
+        "We design and deploy complete analytics solutions, from data ingestion to visualization, enabling better business decision-making.",
+      points: [
+        "Requirement gathering & KPI definition",
+        "Data pipeline setup & ETL development",
+        "Dashboard and report creation",
+        "Go-live support & user training",
+      ],
+    },
+    {
+      title: "Custom Data Models",
+      heading: "Tailored Analytical Insights",
+      description:
+        "Build custom machine learning models and analytics workflows suited to your industry and business challenges.",
+      points: [
+        "Predictive modeling",
+        "Anomaly detection",
+        "Recommendation systems",
+        "Custom metrics & calculations",
+      ],
+    },
+    {
+      title: "Data Migration Services",
+      heading: "Secure & Seamless Transfer",
+      description:
+        "Migrate datasets from legacy systems to modern analytics platforms with zero data loss.",
+      points: [
+        "Data mapping & cleansing",
+        "Automated migration scripts",
+        "Integrity validation",
+        "Post-migration support",
+      ],
+    },
+    {
+      title: "Data Integration Services",
+      heading: "Unified Data Sources",
+      description:
+        "Integrate data from CRMs, ERPs, APIs, and other sources into a single analytics ecosystem.",
+      points: [
+        "API-based data integration",
+        "Database synchronization",
+        "Third-party data connectors",
+        "Real-time streaming data",
+      ],
+    },
+    {
+      title: "Analytics Support & Maintenance",
+      heading: "Always-On Insights",
+      description:
+        "Keep your analytics platform optimized, secure, and up-to-date with our ongoing support services.",
+      points: [
+        "24/7 monitoring",
+        "Performance tuning",
+        "Version upgrades",
+        "Bug fixes & enhancements",
+      ],
+    },
+    {
+      title: "Cloud Analytics Hosting",
+      heading: "Fast & Secure Infrastructure",
+      description:
+        "Host your analytics workloads on high-performance cloud environments.",
+      points: [
+        "AWS, Azure, and Google Cloud hosting",
+        "Data backups & disaster recovery",
+        "Security compliance",
+        "Scalable compute resources",
+      ],
+    },
+  ];
 
   const productData = [
-  {
-    title: "Odoo Implementation",
-    description:
-      "End-to-end deployment of Odoo ERP tailored to business needs, including module configuration, customization, integration, and user training to streamline operations and improve efficiency.",
-    link: "/odooservices/implementation"
-  },
-];
+    {
+      title: "Odoo Implementation Services",
+      description:
+        "Comprehensive Odoo ERP solutions including module configuration, customization, integration, and cloud-based hosting to streamline operations and empower smarter business decisions.",
+      link: "/odooservices/implementation",
+    },
+  ];
 
-
-   const faqs = [
+  const faqs = [
     {
-      question: "What is Odoo ERP and why should my business consider it?",
+      question:
+        "What is Data Analytics and why is it important for my business?",
       answer:
-        "Odoo is a modern suite of integrated business apps helping you manage everything—from CRM and sales, to HR, accounting, inventory, and manufacturing—in a single easy-to-use platform. Its modular nature makes it a flexible fit for businesses of all sizes.",
+        "Data analytics involves examining raw data to uncover trends, patterns, and insights that can improve decision-making, optimize operations, and drive growth.",
     },
     {
-      question: "How customizable is Odoo for unique business needs?",
+      question: "How customizable are your analytics solutions?",
       answer:
-        "Odoo is extremely customizable—from workflows and reports, to building entire new modules with Odoo Studio. You can adapt it precisely to your business, integrating new features as you grow.",
-    },
-    {
-      question: "Is Odoo suitable for both small businesses and enterprises?",
-      answer:
-        "Yes! Odoo scales from startups to global enterprises, offering both free Community and advanced Enterprise editions, with a vast range of plug-and-play modules.",
-    },
-    {
-      question: "What deployment options does Odoo support?",
-      answer:
-        "Odoo supports fully cloud-hosted options, on-premise hosting, and hybrid setups, allowing maximum flexibility based on your business and IT resources.",
+        "Our analytics solutions are highly customizable—from data pipelines and dashboards to predictive models—tailored to your business objectives and industry requirements.",
     },
     {
       question:
-        "How easy is it to migrate data and train users on Odoo?",
+        "Is Data Analytics suitable for both small and large enterprises?",
       answer:
-        "Odoo offers tools for seamless data import/export, and the interface is intuitive for end-users. We provide comprehensive training and support to ensure your team is productive from day one.",
+        "Absolutely! Whether you're a startup or a multinational, data analytics can be scaled to suit your data volume, budget, and strategic goals.",
+    },
+    {
+      question: "What deployment options do you offer for analytics platforms?",
+      answer:
+        "We support fully cloud-based, on-premise, and hybrid analytics deployments, depending on your data security and performance needs.",
+    },
+    {
+      question:
+        "How easy is it to migrate data and train teams on analytics tools?",
+      answer:
+        "We ensure smooth migration with zero downtime and provide hands-on training so your team can confidently use the analytics platform from day one.",
+    },
+  ];
+
+  const highlightData = [
+    {
+      title: "Faster Insights",
+      description:
+        "Reduce time-to-insight by up to 50% with optimized data pipelines and real-time dashboards.",
+    },
+    {
+      title: "Cost-Effective Data Solutions",
+      description:
+        "Maximize ROI with tailored analytics setups that fit your budget without sacrificing quality.",
+    },
+    {
+      title: "Seamless Integration",
+      description:
+        "Connect analytics with your existing tools and platforms for a unified data ecosystem.",
+    },
+    {
+      title: "Scalable & Future-Ready",
+      description:
+        "Analytics infrastructure that grows with your business and adapts to new data sources effortlessly.",
     },
   ];
 
@@ -268,49 +294,26 @@ const sampleSolutions = [
   const customerStories = [
     {
       id: 1,
-      image:
-        "/customerStories/patil.jpg",
-      title: "Patil Drives Operational Excellence with End-to-End SAP, AMS & OCR Automation",
+      image: "/customerStories/patil.jpg",
+      title:
+        "Patil Drives Operational Excellence with End-to-End SAP, AMS & OCR Automation",
       readMoreLink: "/patil",
     },
     {
       id: 2,
-      image:
-        "/customerStories/7hills.jpg",
-      title: "7Hills Restaurant Transforms Guest Experience with Custom Digital Platform",
+      image: "/customerStories/7hills.jpg",
+      title:
+        "7Hills Restaurant Transforms Guest Experience with Custom Digital Platform",
       readMoreLink: "/hills",
     },
     {
       id: 3,
-      image:
-        "/customerStories/pharma.jpg",
-      title: "LVK Pharma Goes Digital with Odoo CRM, Eliminates Manual Processes",
+      image: "/customerStories/pharma.jpg",
+      title:
+        "LVK Pharma Goes Digital with Odoo CRM, Eliminates Manual Processes",
       readMoreLink: "/Lvk",
     },
   ];
-
-const highlightData = [
-  {
-    title: "Faster ERP Deployment",
-    description:
-      "Reduce ERP go-live time by up to 40% with our proven Odoo implementation methodology.",
-  },
-  {
-    title: "Cost-Effective Customization",
-    description:
-      "Tailored ERP solutions that match your budget without compromising quality.",
-  },
-  {
-    title: "Seamless Integration",
-    description:
-      "Connect Odoo with your existing tools for a unified business workflow.",
-  },
-  {
-    title: "Scalable & Future-Ready",
-    description:
-      "Odoo setup that grows with your business without costly rework.",
-  },
-];
 
   return (
     <div className="w-full relative overflow-x-hidden lg:overflow-x-visible">
@@ -320,9 +323,9 @@ const highlightData = [
         {/* Hero Pinned */}
 
         <ImageOverlay
-          imageUrl="https://www.accely.com/wp-content/uploads/2024/12/SAP-Managed-Service-1.webp"
-          title="SAP Managed Services"
-          description="Achieve stability, reliability, and adaptability with Sria Infotech’s automation-driven SAP Managed Services."
+          imageUrl="/DATA ANALYTICS.png"
+          title="Data Analytics"
+          description="Achieve stability, reliability, and adaptability with Sria Infotech’s automation-driven Data Analytics Services."
         />
         <section className="relative min-h-[500px]  sticky top-0 z-20  bg-black bg-cover bg-center overflow-hidden">
           {/* Dark Overlay */}
@@ -334,17 +337,18 @@ const highlightData = [
             <div className="flex flex-col md:flex-row justify-between gap-8 mb-10">
               <div className="w-full md:w-1/2">
                 <h1 className="text-[47px]  leading-tight">
-                  Maximize your SAP investment with Sria Infotech
+                  Maximize your data investment with Sria Infotech.
                 </h1>
               </div>
               <div className="w-full md:w-1/2">
                 <p className="text-base md:text-lg leading-relaxed">
-                  The management and optimization of your SAP environment are
-                  more important than ever in the current fast-paced digital
-                  world. One of the top SAP managed service providers, Sria Infotech
-                  offers all-inclusive solutions that will optimize your SAP
-                  operations and guarantee that they are effective, safe, and
-                  completely aligned with your business goals.
+                  The management and optimization of your data environment are
+                  more important than ever in today’s fast-paced digital world.
+                  As one of the top data analytics solution providers, Sria
+                  Infotech offers end-to-end services that transform raw data
+                  into actionable insights, ensuring your analytics systems are
+                  efficient, secure, and fully aligned with your business
+                  objectives.
                 </p>
               </div>
             </div>
@@ -384,30 +388,31 @@ const highlightData = [
               <section id="insights" className="scroll-mt-24 py-16 bg-white">
                 <div className="max-w-[1400px] w-full px-4 mx-auto">
                   <h2 className="text-3xl sm:text-[47px] font-semibold mb-8">
-                    Resourceful insights of SAP Managed Services
+                    Resourceful insights of Data Analytics Services
                   </h2>
 
                   <div className="py-8 sm:py-10 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 lg:gap-10 bg-white">
-                 <StatCardStable
-        percentage="40%"
-        description="Reduction in ERP deployment time with our optimized Odoo methodology."
-      />
-      <StatCardStable
-        percentage="60%"
-        description="Increase in process efficiency within the first year of Odoo adoption."
-      />
-      <StatCardStable
-        percentage="75%"
-        description="Automation of repetitive business tasks through Odoo custom workflows."
-      />
-
+                    <StatCardStable
+                      percentage="50%"
+                      description="Reduction in decision-making time through real-time analytics dashboards."
+                    />
+                    <StatCardStable
+                      percentage="65%"
+                      description="Increase in operational efficiency by leveraging predictive analytics models."
+                    />
+                    <StatCardStable
+                      percentage="80%"
+                      description="Automation of data processing pipelines, reducing manual reporting efforts."
+                    />
                   </div>
                 </div>
               </section>
               <section id="services" className="mt-20 w-full scroll-mt-24">
                 <div className="max-w-[1400px] w-full px-4 mx-auto">
-                  <TabSection headingText="SAP services to support your cloud operations"
-      tabs={tabsData} />
+                  <TabSection
+                    headingText="SAP services to support your cloud operations"
+                    tabs={tabsData}
+                  />
                 </div>
               </section>
               <section
@@ -415,9 +420,9 @@ const highlightData = [
                 className="mt-20 max-w-[1400px] scroll-mt-24"
               >
                 <TopSectionWithTabs
-      tabSectionHeading="Key benefits of SAP Managed Services"
-      tabs={tabsData2}
-    />
+                  tabSectionHeading="Key benefits of Data Analytics Services"
+                  tabs={tabsData2}
+                />
               </section>{" "}
               <section
                 id="customer stories"
