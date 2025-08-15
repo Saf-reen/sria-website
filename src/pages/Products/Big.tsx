@@ -201,7 +201,7 @@ function Big() {
                         right={
                             <RightSection>
                                 <img
-                                    src="/Big/BIG APP.png"
+                                    src="/big/BIG APP.png"
                                     alt="Visual"
                                     className="w-full h-full object-cover"
                                 />

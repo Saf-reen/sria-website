@@ -6,7 +6,7 @@ const accordionData = [
     content: {
       text: "At Sria Infotech, our leadership team is a blend of visionary strategists, technology experts, and passionate innovators—each committed to driving digital transformation, operational excellence, and lasting business value.",
       link: "#",
-      image: "https://images.unsplash.com/photo-1600880292089-90a7e086ee3a", // Replace with actual image
+      image: "/aboutus/leadership.png", // Replace with actual image
     },
   },
   {
@@ -17,7 +17,7 @@ const accordionData = [
 	           Inclusive We believe in fostering an inclusive work culture and ensuring that our services create opportunities for everyone, empowering communities and businesses alike.
              Agile Our flexible, adaptive approach allows us to respond swiftly to market changes, enabling us to stay ahead of the curve and deliver timely solutions to our clients.`,
       link: "#",
-      image: "https://images.unsplash.com/photo-1600880292089-90a7e086ee3a", // Replace with actual image
+      image: "/aboutus/corevalues.png", // Replace with actual image
     },
   },
   {
@@ -34,7 +34,7 @@ Advanced AI-driven solutions to boost automation, improve decision-making, and c
 IT Consulting & Managed Services
 Comprehensive IT advisory and support services to ensure smooth day-to-day operations and future growth.`,
       link: "#",
-      image: "https://images.unsplash.com/photo-1600880292089-90a7e086ee3a", // Replace with actual image
+      image: "/aboutus/ourservices.png", // Replace with actual image
     },
   },
   {
@@ -45,7 +45,7 @@ Client-Centric Approach: We place your business needs at the center of everythin
 Innovation: We stay ahead of technology trends to ensure we deliver the most innovative solutions for your business.
 Collaborative Culture: Our collaborative approach ensures seamless integration with your teams and maximizes value.`,
       link: "#",
-      image: "https://images.unsplash.com/photo-1600880292089-90a7e086ee3a", // Replace with actual image
+      image: "/aboutus/chooseus.png", // Replace with actual image
     },
     
   },
@@ -55,7 +55,7 @@ Collaborative Culture: Our collaborative approach ensures seamless integration w
       text: `At Sria Infotech, our vision is to build a future where technology empowers every business and individual to thrive.
 We stand for being Smart in our solutions, Resilient in our execution, Inclusive in our impact, and Agile in adapting to tomorrow’s challenges.`,
       link: "#",
-      image: "https://images.unsplash.com/photo-1600880292089-90a7e086ee3a", // Replace with actual image
+      image: "/aboutus/vision.png", // Replace with actual image
     },
     
   },
@@ -65,7 +65,7 @@ We stand for being Smart in our solutions, Resilient in our execution, Inclusive
       text: `Our mission is to deliver world-class digital services—ranging from enterprise software to AI and IT consulting—by embracing the core values of being Smart, Resilient, Inclusive, and Agile.
 We are committed to transforming businesses, uplifting communities, and fostering innovation for a better digital future.`,
       link: "#",
-      image: "https://images.unsplash.com/photo-1600880292089-90a7e086ee3a", // Replace with actual image
+      image: "/aboutus/mission.png", // Replace with actual image
     },
     
   },
@@ -109,25 +109,25 @@ const CreatingPositiveChange: React.FC = () => {
 
               {/* Expanded Content */}
               {activeIndex === index && item.content && (
-                <div className="px-6 py-6 flex flex-col lg:flex-row gap-8 bg-gray-50">
+                <div className="px-6 py-6 flex flex-col justify-between lg:flex-row gap-8 bg-gray-50">
                   {/* Text */}
                   <div className="lg:w-1/2 text-gray-700">
                     <p className="text-base leading-relaxed mb-4">
                       {item.content.text}
                     </p>
-                    <a
+                    {/* <a
                       href={item.content.link}
                       className="text-black font-medium hover:underline"
                     >
                       Learn more →
-                    </a>
+                    </a> */}
                   </div>
                   {/* Image */}
-                  <div className="lg:w-1/2">
+                  <div className="lg:w-3/2">
                     <img
                       src={item.content.image}
                       alt={item.title}
-                      className="w-full h-auto rounded-md object-cover max-h-64 lg:max-h-full"
+                      className="rounded-lg shadow-lg w-full h-[200px] object-cover"
                     />
                   </div>
                 </div>

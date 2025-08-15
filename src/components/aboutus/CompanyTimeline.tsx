@@ -13,43 +13,43 @@ const allEvents: TimelineEvent[] = [
     year: 2022,
     title: "Sria Infotech is Launched",
     description: "Officially launched Sria Infotech.",
-    imageUrl: "https://via.placeholder.com/150", // replace with actual image
+    imageUrl: "/favicon.ico", // replace with actual image
   },
   {
     year: 2022,
     title: "Started with SAP All Modules",
     description: "Expanded expertise to cover all SAP modules.",
-    imageUrl: "https://via.placeholder.com/150",
+    imageUrl: "/favicon.ico",
   },
   {
     year: 2023,
     title: "Started Data Analytics",
     description: "Ventured into data analytics services.",
-    imageUrl: "https://via.placeholder.com/150",
+    imageUrl: "/favicon.ico",
   },
   {
     year: 2024,
     title: "Started Application Development",
     description: "Began delivering cutting-edge application development solutions.",
-    imageUrl: "https://via.placeholder.com/150",
+    imageUrl: "/favicon.ico",
   },
   {
     year: 2025,
     title: "AMS from Patil Group",
     description: "Awarded Application Management Services contract from Patil Group.",
-    imageUrl: "https://via.placeholder.com/150",
+    imageUrl: "/favicon.ico",
   },
   {
     year: 2025,
     title: "Odoo Implementation Partner",
     description: "Became official Odoo Implementation Partner.",
-    imageUrl: "https://via.placeholder.com/150",
+    imageUrl: "/favicon.ico",
   },
   {
     year: 2025,
     title: "Branch in Mulugu (Launching Soon)",
     description: "Preparing to launch our new branch in Mulugu.",
-    imageUrl: "https://via.placeholder.com/150",
+    imageUrl: "/favicon.ico",
   }
 
 ];
