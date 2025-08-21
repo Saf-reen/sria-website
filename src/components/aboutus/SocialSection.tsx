@@ -36,7 +36,7 @@ const SocialSection: React.FC = () => {
         {/* Left Image */}
         <div className="md:w-1/3 w-full h-64 md:h-auto">
           <img
-            src="https://www.accely.com/wp-content/uploads/2025/01/Contact-Banner-1.webp"
+            src="/contactus.jpg"
             alt="Get Social"
             className="w-full h-full object-cover"
           />

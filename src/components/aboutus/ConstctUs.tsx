@@ -14,7 +14,7 @@ function ContactUs() {
         <Navigation enableScrollEffect={true} />
 
         <ContactImageOverlay
-          imageUrl="https://www.accely.com/wp-content/uploads/2025/01/Contact-Banner-1.webp"
+          imageUrl="/contactus.jpg"
           title="We are Here to Help You"
         />
         <div className="w-full relative bg-black z-10">

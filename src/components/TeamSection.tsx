@@ -4,20 +4,29 @@ import LeadershipCard from "./LeadershipCard";
 
 const leaders = [
   {
-    name: "Sai Kumar Bonakurthi",
-    designation: "Founder,Director - Sria Infotech",
+    name: "Ashwini Ganji",
+    designation: "Chairman - Sria Group of Companies",
     description:
-      "Director at Sria Infotech, guiding strategic direction and fostering innovation to drive business excellence.",
-    image: "/user.jpg",
+      "Chairman - SRIA Group of Companies, leading organizational growth through visionary leadership and sustainable business practices.",
+    image: "/chairman.jpg",
+    linkedinUrl: "http://linkedin.com/in/saikumarb/",
+    email: "saikumarb@sriainfotech.com",
+  },
+  {
+    name: "Sai Kumar Bonakurthi",
+    designation: "Founder,Director - Sria Group of Companies",
+    description:
+      "Founder, Managing Director, CEO - SRIA Group of Companies, guiding strategic direction and fostering innovation to drive business excellence.",
+    image: "/sai.png",
     linkedinUrl: "http://linkedin.com/in/saikumarb/",
     email: "saikumarb@sriainfotech.com",
   },
   {
     name: "Ravikumar Rangari",
-    designation: "Co-Founder, Executive Chairman  - Sria Infotech",
+    designation: "Co-Founder, Executive Chairman  - Sria Group of Companies",
     description:
-      "COO of Sria Infotech, overseeing operations and driving efficiency to ensure seamless project execution and growth.",
-    image: "/user.jpg",
+      "Co-Founder, Executive Chairman - SRIA Group of Companies, overseeing operations and driving efficiency to ensure seamless project execution and growth.",
+    image: "/ravi.jpg",
     linkedinUrl: "https://www.linkedin.com/in/ravikumar-r-53265a22a/",
     email: "ravirangari@sriainfotech.com",
   },
@@ -26,7 +35,7 @@ const leaders = [
     designation: "CEO - Sria Infotech",
     description:
       "CEO of Sria Infotech, leading innovation and growth through technology-driven solutions.",
-    image: "/user.jpg",
+    image: "/siri.jpg",
     linkedinUrl: "https://www.linkedin.com/in/sirichandravalasa/",
     email: "siri@sriainfotech.com",
   },

@@ -29,6 +29,7 @@ type LocationDataMap = {
 const Footer: React.FC = () => {
   const [openSections, setOpenSections] = useState<string[]>([]);
   const [email, setEmail] = useState("");
+  const [successMessage, setSuccessMessage] = useState("");
 
   const toggleSection = (title: string) => {
     setOpenSections((prev) =>
@@ -192,6 +193,8 @@ const Footer: React.FC = () => {
   const handleSubscribe = (): void => {
     console.log("Subscribed with email:", email);
     setEmail("");
+    setSuccessMessage("Subscribed successfully!");
+    setTimeout(() => setSuccessMessage(""), 3000);
   };
 
   return (
@@ -261,20 +264,25 @@ const Footer: React.FC = () => {
                   Get the weekly updates and insights right in your inbox.
                 </p>
               </div>
-              <div className="flex flex-col justify-center align-center sm:flex-row gap-3 md:w-1/2">
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="flex-1 h-8 p-2 text-sm bg-gray-800 border border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:border-orange-500"
-                />
-                <button
-                  onClick={handleSubscribe}
-                  className="p-1 h-8 font-normal text-sm bg-orange-500 hover:bg-orange-600 text-white transition"
-                >
-                  Subscribe
-                </button>
+              <div >
+                <div className="flex flex-col justify-center align-left sm:flex-row gap-3 md:w-1/2">
+                  <input
+                    type="email"
+                    placeholder="Enter your email"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    className="flex-1 h-8 p-2 text-sm bg-gray-800 border border-gray-600 text-white placeholder-gray-400 focus:outline-none focus:border-orange-500"
+                  />
+                  <button
+                    onClick={handleSubscribe}
+                    className="p-1 h-8 font-normal text-sm bg-orange-500 hover:bg-orange-600 text-white transition"
+                  >
+                    Subscribe
+                  </button>
+                </div>
+                  {successMessage && (
+                    <p className="text-green-400 text-sm mt-2 sm:mt-0">{successMessage}</p>
+                  )}
               </div>
             </div>
           </div>
@@ -286,10 +294,12 @@ const Footer: React.FC = () => {
             <h3 className="text-[36px] font-normal text-white mb-2 pl-2">
               Location
             </h3>
+            <Link to="/about/locations">
             <div className="flex items-center gap-2 text-orange-400 hover:text-orange-300 cursor-pointer pl-2">
               <span>View all locations</span>
               <ArrowRight size={16} />
             </div>
+            </Link>
           </div>
 
           <div className="p-6">
@@ -411,7 +421,7 @@ const Footer: React.FC = () => {
             </a>
 
             <a
-              href="https://www.youtube.com/@sriainfotechpvtltd.4494"
+              href="https://www.youtube.com/@SriaInfotech"
               target="_blank"
               rel="noopener noreferrer"
             >
@@ -450,12 +460,7 @@ const Footer: React.FC = () => {
         <div className="w-full flex  px-2 sm:flex-row items-center justify-between gap-2 text-center">
           <div className="text-left">    <div className="flex flex-row items-center">
                           <Link to="/" className="font-bold flex flex-row items-center">
-                            <img src={logo} alt="Logo" className="h-10 w-auto" />
-                            <span className="ml-2 text-orange-500">Sria</span>
-                            <span className="ml-1">
-                              <span className="text-white">Info</span>
-                              <span className="text-green-500">Tech</span>
-                            </span>
+                            <img src={logo} alt="Logo" className="h-20 w-auto" />
                           </Link>
                         </div>
           <div className="text-xs ml-2 text-gray-50">
@@ -469,10 +474,10 @@ const Footer: React.FC = () => {
           </div>
           <div>
             {/* <div className="text-4xl font-bold text-orange-400 bg-gradient-to-r from-orange-500 via-white to-green-500 ">2025</div> */}
-<div className="text-4xl font-bold bg-gradient-to-r from-orange-500 via-white to-green-500 bg-clip-text text-transparent">
+<div className="text-4xl font-bold bg-white bg-clip-text text-transparent">
   2025
 </div>
-<div className="mt-2 text-xs bg-gradient-to-r from-orange-500 via-white to-green-500 bg-clip-text text-transparent">
+<div className="mt-2 text-xs bg-white bg-clip-text text-transparent">
   All rights reserved
 </div>
             {/* <div className="mt-2 text-xs ">

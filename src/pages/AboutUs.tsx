@@ -15,7 +15,7 @@ function AboutUs() {
       {" "}
       <Navigation enableScrollEffect={true} />
       <ContactImageOverlay
-        imageUrl="https://www.accely.com/wp-content/uploads/2024/12/about-banner-1.webp"
+        imageUrl="/aboutus.jpg"
         title="About Sria Infotech"
       />
       <div className="w-full relative bg-black z-10">

@@ -9,7 +9,7 @@ function Location() {
     <div className="w-full min-h-screen">
       <Navigation enableScrollEffect={true} />
       <HeroSectionWithLinks
-        imageUrl="https://www.accely.com/wp-content/uploads/2024/12/Location.webp"
+        imageUrl="/location.jpg"
         title="Global presence"
         links={[
           { label: "About us", href: "/aboutus" },

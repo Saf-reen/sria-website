@@ -697,12 +697,7 @@ const Navigation: React.FC<NavigationProps> = ({
             {/* Logo */}
             <div className="flex flex-row items-center">
               <Link to="/" className="font-bold flex flex-row items-center">
-                <img src={logo} alt="Logo" className="h-10 w-auto" />
-                <span className="ml-2 text-orange-500">Sria</span>
-                <span className="ml-1">
-                  <span className="text-white font-kabel">Info</span>
-                  <span className="text-green-500 font-kabel">Tech</span>
-                </span>
+                <img src={logo} alt="Logo" className="h-20 w-auto" />
               </Link>
             </div>
 
@@ -788,21 +783,18 @@ const Navigation: React.FC<NavigationProps> = ({
                   )}
                 </div> */}
               </div>
-{/* 
-  <Link
+              <Link
                 to="/contactus"
                 className="bg-orange-500 hover:bg-orange-600 text-white px-3 py-2 sm:px-4 rounded font-medium transition-colors text-sm"
               >
                 Contact Us →
-              </Link>  */}
-            <Link
-  to="/contactus"
-  className="bg-gradient-to-r from-orange-500 via-white to-green-500 hover:from-orange-600 hover:via-gray-100 hover:to-green-600 text-black px-3 py-2 sm:px-4 rounded font-medium transition-colors text-sm"
->
-  Contact Us →
-</Link>
-
-
+              </Link> 
+            {/* <Link
+              to="/contactus"
+              className="bg-gradient-to-r from-orange-500 via-white to-green-500 hover:from-orange-600 hover:via-gray-100 hover:to-green-600 text-black px-3 py-2 sm:px-4 rounded font-medium transition-colors text-sm"
+            >
+              Contact Us →
+            </Link> */}
               {/* Mobile Menu Button */}
               <button
                 onClick={() => setIsMobileMenuOpen(true)}

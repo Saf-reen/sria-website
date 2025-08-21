@@ -151,7 +151,7 @@ function LeaderShip() {
     <div className="w-full min-h-screen">
       <Navigation enableScrollEffect={true} />
       <HeroSectionWithLinks
-        imageUrl="https://www.accely.com/wp-content/uploads/2024/12/Management-team-1.webp"
+        imageUrl="/leadership.jpg"
         title="Meet leadership team"
         links={[
           { label: "About us", href: "/aboutus" },
@@ -172,33 +172,30 @@ function LeaderShip() {
       <div className="w-full flex justify-center bg-white relative z-10 p-4 sm:p-6 md:p-8 ">
         <div className="w-full max-w-[1400px] flex flex-col md:flex-row gap-8 bg-gray-100 p-6 sm:p-8 rounded-lg">
           {/* Text Content */}
-          <div className="lg:w-[35%]">
-            <h3 className="text-sm text-gray-400 mb-2">CEO Statement</h3>
+          <div className="lg:w-[45%]">
+            <h3 className="text-sm text-gray-400 mb-2">Director Statement</h3>
             <h4 className="text-3xl sm:text-4xl md:text-[42px] font-semibold text-black mb-6 leading-tight">
               Innovating the Change
             </h4>
 
             <p className="text-gray-500 text-base mb-4 leading-relaxed">
-              Sria Infotech uses Information Technology to make processes not just more
-              efficient, but also much more effective. We look at automation as
-              an opportunity to allow refined methodologies and innovation to
-              create a synergy of the latest technology and vast accumulated
-              experience. Once again, our differentiator is in the depth of
-              technical knowledge, project execution, and problem-solving skills
-              that enable us to provide high-value solutions, and rapid return
-              on investment.
+              At Sria Infotech, we believe technology is more than just a tool—it is a force for empowerment and transformation.
+From our humble beginnings to where we stand today, our journey has always been driven by a single purpose: to deliver innovation with impact. We take pride not only in building ERP and digital solutions, but also in creating opportunities that uplift communities, empower rural talent, and bridge the digital divide.
+In today’s fast-changing world, success depends on agility, inclusiveness, and resilience. These values are at the core of our philosophy—Smart, Resilient, Inclusive, Agile (SRIA)—guiding us in every decision and every partnership.
+As Chairman, I envision Sria Infotech as a company that not only enables businesses to thrive but also shapes the future of young talent by preparing them for the AI-driven era of innovation. With strong partnerships, dedicated teams, and a relentless commitment to excellence, we are confident of building a brighter, more sustainable future.
+Together, let us lead with purpose, innovate with passion, and grow with integrity.
             </p>
             <p className="text-gray-800 text-base font-medium mt-2">
-              — Sai Kumar Bonakurthi, Founder & Director at Sria Infotech
+              — Ashwini Ganji, Chairman of SRIA Group of Companies
             </p>
           </div>
 
           {/* Video Content */}
-          <div className="lg:w-[65%]">
+          <div className="lg:w-[55%]">
             <div className="w-full h-64 sm:h-80 md:h-[32rem] overflow-hidden rounded-md shadow-md bg-black">
               <iframe
                 className="w-full h-full"
-                src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                src="https://www.youtube.com/embed/SNeFDUwpNoY"
                 title="CEO Statement Video"
                 frameBorder="0"
                 allow="accelerometer; clipboard-write; encrypted-media; gyroscope; picture-in-picture"

@@ -72,7 +72,7 @@ const MissionStatement: React.FC = () => {
           {/* Center Image */}
           <div className="w-1/3">
             <img
-              src="https://www.accely.com/wp-content/uploads/2024/12/Mission-Statement_-ACTIVE.webp"
+              src="/mission.jpg"
               alt="Teamwork"
               className="w-full h-auto rounded-md object-cover"
             />
