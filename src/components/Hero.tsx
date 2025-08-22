@@ -11,7 +11,7 @@ const sapSolutions = [
 
 const Hero = () => {
   const videoUrl =
-    "https://www.accely.com/wp-content/uploads/2024/05/Accely-Homepage-Hero-Video-Requirement.mp4";
+    "/Sria Website Video.mp4";
 
   return (
     <section className="relative     min-h-[100vh] bg-[#0F0F0F] font-[Questrial,Arial,Verdana,Tahoma,sans-serif] font-normal">

@@ -405,7 +405,7 @@ const Footer: React.FC = () => {
         <div className="flex flex-col sm:flex-col px-2 md:flex-row justify-between items-center gap-4 text-[16px] font-normal text-gray-400 mb-6">
           <div className="flex justify-center gap-4 text-lg text-white">
             <a
-              href="https://www.linkedin.com/company/sria-infotech-pvt-ltd"
+              href="https://www.linkedin.com/company/sria-infotech-pvt-ltd/"
               target="_blank"
               rel="noopener noreferrer"
             >

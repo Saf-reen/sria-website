@@ -9,12 +9,12 @@ const leaders = [
     description:
       "Chairman - SRIA Group of Companies, leading organizational growth through visionary leadership and sustainable business practices.",
     image: "/chairman.jpg",
-    linkedinUrl: "http://linkedin.com/in/saikumarb/",
-    email: "saikumarb@sriainfotech.com",
+    linkedinUrl: "https://www.linkedin.com/company/sria-infotech-pvt-ltd/",
+    email: "admin@sriainfotech.com",
   },
   {
     name: "Sai Kumar Bonakurthi",
-    designation: "Founder,Director - Sria Group of Companies",
+    designation: "Founder, Director - Sria Group of Companies",
     description:
       "Founder, Managing Director, CEO - SRIA Group of Companies, guiding strategic direction and fostering innovation to drive business excellence.",
     image: "/sai.png",

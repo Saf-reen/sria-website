@@ -5,7 +5,7 @@ const socialLinks = [
   {
     name: "LinkedIn",
     icon: <Linkedin className="w-6 h-6" />,
-    url: "https://www.linkedin.com/company/sriainfotech/",
+    url: "https://www.linkedin.com/company/sria-infotech-pvt-ltd/",
   },
   {
     name: "Twitter",
@@ -25,7 +25,7 @@ const socialLinks = [
   {
     name: "YouTube",
     icon: <Youtube className="w-6 h-6" />,
-    url: "https://www.youtube.com/@sriainfotechpvtltd.4494",
+    url: "https://www.youtube.com/@SriaInfotech",
   },
 ];
 

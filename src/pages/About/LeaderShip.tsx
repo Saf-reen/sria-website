@@ -173,7 +173,7 @@ function LeaderShip() {
         <div className="w-full max-w-[1400px] flex flex-col md:flex-row gap-8 bg-gray-100 p-6 sm:p-8 rounded-lg">
           {/* Text Content */}
           <div className="lg:w-[45%]">
-            <h3 className="text-sm text-gray-400 mb-2">Director Statement</h3>
+            <h3 className="text-sm text-gray-400 mb-2">Chairman's Statement</h3>
             <h4 className="text-3xl sm:text-4xl md:text-[42px] font-semibold text-black mb-6 leading-tight">
               Innovating the Change
             </h4>

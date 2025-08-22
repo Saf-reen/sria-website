@@ -65,7 +65,7 @@ const AboutCompany: React.FC = () => {
             a synergy of the latest technology and vast accumulated experience.”
           </blockquote>
           <p className="text-gray-400 font-medium mb-2">
-            — Sai Kumar Bonakurthi, Founder & Director at Sria Infotech
+            — Sai Kumar Bonakurthi, Founder, Managing Director, CEO of SRIA Group of Companies
           </p>
           <Link to="/about/leadership" className="text-white font-medium hover:underline">
             Meet the team →
@@ -74,8 +74,8 @@ const AboutCompany: React.FC = () => {
 
         <div className="lg:w-1/3">
           <img
-            src="https://i.imgur.com/4M34hi2.jpg" // Replace with actual image path
-            alt="CEO Nilesh Shah"
+            src="/sai.png" // Replace with actual image path
+            alt="Sai Kumar"
             className="rounded-md object-cover w-full max-w-xs mx-auto lg:mx-0"
           />
         </div>
