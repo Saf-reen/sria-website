@@ -715,6 +715,21 @@ const keyframesStyle = `
       <nav
         className={`fixed top-0 w-full z-50 transition-all duration-300 ${getNavBackground()}`}
       >
+        
+        {/* Under Upgrading Notice */}
+        <div className="bg-orange-500 text-white text-left font-medium text-sm overflow-hidden h-5 flex justify-end items-center">
+          <div
+            style={{
+              whiteSpace: "nowrap",
+              display: "inline-block",
+              paddingLeft: "30%",
+              animation: "scroll 20s linear infinite",
+            }}
+          >
+            This website is currently under upgrading. Some features may be temporarily unavailable.
+          </div>
+        </div>
+
         <div className="w-full px-4 sm:px-6 lg:px-8">
           <div className="mx-auto w-full max-w-screen-xl xl:max-w-[1400px] flex items-center justify-between h-16">
             {/* Logo */}
@@ -830,19 +845,6 @@ const keyframesStyle = `
           </div>
         </div>
         
-        {/* Under Upgrading Notice */}
-        <div className="bg-orange-500 text-white text-left font-medium text-sm overflow-hidden h-8 flex justify-end items-center">
-          <div
-            style={{
-              whiteSpace: "nowrap",
-              display: "inline-block",
-              paddingLeft: "30%",
-              animation: "scroll 20s linear infinite",
-            }}
-          >
-            This website is currently under upgrading. Some features may be temporarily unavailable.
-          </div>
-        </div>
       </nav>
 
       {/* Mobile Menu Overlay */}
