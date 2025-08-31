@@ -840,7 +840,7 @@ const keyframesStyle = `
               animation: "scroll s linear infinite",
             }}
           >
-            This website is currently under upgrading. Some features may be temporarily unavailable.
+            This website is currently under upgrading. Some features may be temporarily unavailable. 
           </div>
         </div>
       </nav>
