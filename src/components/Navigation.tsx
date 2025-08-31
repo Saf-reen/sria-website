@@ -837,10 +837,10 @@ const keyframesStyle = `
               whiteSpace: "nowrap",
               display: "inline-block",
               paddingLeft: "30%",
-              animation: "scroll s linear infinite",
+              animation: "scroll 20s linear infinite",
             }}
           >
-            This website is currently under upgrading. Some features may be temporarily unavailable. 
+            This website is currently under upgrading. Some features may be temporarily unavailable.
           </div>
         </div>
       </nav>
