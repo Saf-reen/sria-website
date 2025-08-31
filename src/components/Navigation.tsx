@@ -687,8 +687,31 @@ const Navigation: React.FC<NavigationProps> = ({
     },
   ];
 
+  // In your Navigation.tsx or a CSS file
+const marqueeStyle = {
+  whiteSpace: "nowrap" as const,
+  overflow: "hidden",
+  display: "inline-block",
+  animation: "scroll 20s linear infinite",
+};
+
+const keyframesStyle = `
+  @keyframes scroll {
+    0% { transform: translateX(100%); }
+    100% { transform: translateX(-100%); }
+  }
+`;
+
   return (
     <div className="relative font-[Questrial,Arial,Verdana,Tahoma,sans-serif] font-normal">
+      <style>
+      {`
+        @keyframes scroll {
+          0% { transform: translateX(100%); }
+          100% { transform: translateX(-100%); }
+        }
+      `}
+    </style>
       <nav
         className={`fixed top-0 w-full z-50 transition-all duration-300 ${getNavBackground()}`}
       >
@@ -804,6 +827,20 @@ const Navigation: React.FC<NavigationProps> = ({
                 <Menu className="w-6 h-6" />
               </button>
             </div>
+          </div>
+        </div>
+        
+        {/* Under Upgrading Notice */}
+        <div className="bg-orange-500 text-white text-left font-medium text-sm overflow-hidden h-8 flex justify-end items-center">
+          <div
+            style={{
+              whiteSpace: "nowrap",
+              display: "inline-block",
+              paddingLeft: "30%",
+              animation: "scroll 20s linear infinite",
+            }}
+          >
+            This website is currently under upgrading. Some features may be temporarily unavailable.
           </div>
         </div>
       </nav>

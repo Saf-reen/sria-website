@@ -24,7 +24,7 @@ const AboutCompany: React.FC = () => {
         </div>
         <div className="lg:w-1/2 text-gray-300">
           <p className="text-base leading-relaxed mb-4">
-            Sria Infotech is a global SAP gold partner consulting company that offers
+            Sria Infotech is a global SAP consulting company that offers
             world-class services using refined methodologies and innovation,
             thus creating a synergy of the latest technology and vast
             accumulated experience. From SAP S/4HANA migration to custom

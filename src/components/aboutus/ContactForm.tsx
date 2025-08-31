@@ -51,6 +51,15 @@ const ContactForm: React.FC = () => {
     agreeToPolicy: false,
   });
 
+  useEffect(() => {
+    if (submitSuccess) {
+      const timer = setTimeout(() => {
+        setSubmitSuccess("");
+      }, 5000); // Hide after 5 seconds
+      return () => clearTimeout(timer);
+    }
+  }, [submitSuccess]);
+
   // Fetch countries from REST Countries API
   useEffect(() => {
     const fetchCountries = async (): Promise<void> => {
@@ -177,51 +186,67 @@ const ContactForm: React.FC = () => {
   };
 
   const handleSubmit = async (): Promise<void> => {
-    // Validate form before submission
-    const isValid = validateForm();
-    if (!isValid) {
-      console.log("Form is invalid. Errors:", formErrors);
-      return; // ❗ Don't proceed if not valid
-    }
-    setLoading(true);
-
-    try {
-      const response = await fetch("http://localhost:5000/api/contact", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify(formData),
+  // Validate form before submission
+  const isValid = validateForm();
+  if (!isValid) {
+    console.log("Form is invalid. Errors:", formErrors);
+    return; // Don't proceed if not valid
+  }
+  setLoading(true);
+  try {
+    // Comment out the actual fetch call since there's no backend
+    /*
+    const response = await fetch("http://localhost:5000/api/contact", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify(formData),
+    });
+    const data = await response.json();
+    if (response.ok) {
+      setSubmitSuccess("Message sent successfully!");
+      alert("Message sent successfully!");
+      // Reset form on success
+      setFormData({
+        inquiryType: "",
+        message: "",
+        firstName: "",
+        lastName: "",
+        company: "",
+        email: "",
+        country: "",
+        phoneCountryCode: "",
+        phoneNumber: "",
+        agreeToPolicy: false,
       });
-
-      const data = await response.json();
-
-      if (response.ok) {
-        setSubmitSuccess("Message sent successfully!");
-        alert("Message sent successfully!");
-        // Reset form on success
-        setFormData({
-          inquiryType: "",
-          message: "",
-          firstName: "",
-          lastName: "",
-          company: "",
-          email: "",
-          country: "",
-          phoneCountryCode: "",
-          phoneNumber: "",
-          agreeToPolicy: false,
-        });
-        setFormErrors({});
-      } else {
-        setSubmitError(data.message || "Failed to send message.");
-        // alert(data.message || "Failed to send message.");
-      }
-    } catch (error) {
-      setSubmitError("Failed to send message. Please try again.");
-      // alert("Failed to send message. Please try again.");
-    } finally {
-      setLoading(false);
+      setFormErrors({});
+    } else {
+      setSubmitError(data.message || "Failed to send message.");
     }
-  };
+    */
+    // Simulate a successful submission
+    setSubmitSuccess("Message sent successfully!");
+    alert("Message sent successfully!");
+    // Reset form on success
+    setFormData({
+      inquiryType: "",
+      message: "",
+      firstName: "",
+      lastName: "",
+      company: "",
+      email: "",
+      country: "",
+      phoneCountryCode: "",
+      phoneNumber: "",
+      agreeToPolicy: false,
+    });
+    setFormErrors({});
+  } catch (error) {
+    setSubmitError("Failed to send message. Please try again.");
+  } finally {
+    setLoading(false);
+  }
+};
+
 
   const inquiryOptions: string[] = [
     "General Inquiry",
@@ -535,10 +560,14 @@ const ContactForm: React.FC = () => {
                 </p>
               )}
               {submitError && (
-                <div className="text-red-600 text-sm">{submitError}</div>
+                <div className="p-4 mb-4 text-sm text-red-700 bg-red-100 rounded-lg" role="alert">
+                  {submitError}
+                </div>
               )}
               {submitSuccess && (
-                <div className="text-green-600 text-sm">{submitSuccess}</div>
+                <div className="p-4 mb-4 text-sm text-green-700 rounded-lg" role="alert">
+                  {submitSuccess}
+                </div>
               )}
 
               {/* Submit Button */}
