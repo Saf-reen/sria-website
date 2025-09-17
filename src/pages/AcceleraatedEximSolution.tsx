@@ -263,7 +263,7 @@ function AcceleratedEximSolution() {
                 visibility, and ease in compliance and documentation procedures.
               </h1>
               <div className="p-4 lg:p-10 w-full lg:w-auto flex justify-center lg:justify-end">
-                <Requesademobtn text="Book a demo" />
+                <Requesademobtn text="Request a demo" />
               </div>
             </div>
           </section>
@@ -308,7 +308,7 @@ function AcceleratedEximSolution() {
                   Empowering global trade for businesses
                 </h1>
                 <div className="flex-shrink-0">
-                  <Requesademobtn text="Book a demo" />
+                  <Requesademobtn text="Request a demo" />
                 </div>
               </div>
 

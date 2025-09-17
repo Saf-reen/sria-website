@@ -371,6 +371,7 @@ const Navigation: React.FC<NavigationProps> = ({
     {
       title: "Accelerated Products",
       items: [
+        { label: "Auto Extract", link: "/products/auto-extract"},
         { label: "NxDesk", link: "/products/nxdesk" },
         { label: "Nxify", link: "/products/nxify" },
         { label: "Big", link: "/products/big" },

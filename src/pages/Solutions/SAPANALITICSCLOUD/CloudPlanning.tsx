@@ -378,7 +378,7 @@ function CloudPlanning () {
               </h1>
               <div className="p-4 lg:p-10 w-full lg:w-auto flex justify-center lg:justify-end">
                 <Link to="/contactus" >
-                <Requesademobtn text="Book a demo" />
+                <Requesademobtn text="Request a Demo" />
                 </Link>
               </div>
             </div>
@@ -445,7 +445,7 @@ function CloudPlanning () {
                 </h1>
                 <div className="flex-shrink-0">
                   <Link to="/contactus" >
-                  <Requesademobtn text="Book a demo" />
+                  <Requesademobtn text="Request a Demo" />
                   </Link>
                 </div>
               </div>

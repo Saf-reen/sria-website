@@ -4,7 +4,7 @@ import { TooltipProvider } from "@/components/ui/tooltip";
 import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
 import { BrowserRouter, Routes, Route } from "react-router-dom";
 import Index from "./pages/Index";
-
+import AutoExtract from "./pages/Products/AutoExtract";
 import NotFound from "./pages/NotFound";
 import Big from "./pages/Products/Big";
 import GateCheck from "./pages/Products/GateCheck";
@@ -86,7 +86,7 @@ const App = () => (
           <Route path="/basicservices" element={<BasicServices />} />
           <Route path="/custom" element={<SAPCustom />} />  
           <Route path="/odooservices/implementation" element={<OdooImplementation />} />
-         
+          <Route path="/products/auto-extract" element={<AutoExtract />} />
           <Route path="/products/big" element={<Big />} />
           <Route path="/products/gatecheck" element={<GateCheck />} />
           <Route path="/products/nxdesk" element={<NxDesk />} />
@@ -118,16 +118,13 @@ const App = () => (
           <Route path="/about/careers" element={<ComingSoon />} />
           <Route path="/about/alliances" element={<ComingSoon />}/>          
           <Route path="/about/partner-with-us" element={<ComingSoon />} />
-          <Route path="/about/events" element={<Partner />}/>
+          <Route path="/about/events" element={<ComingSoon />}/>
           <Route path="/about/locations" element={<Locations />} />
           <Route path="/aboutus" element={<AboutUs />} />
-          
-           <Route path="/hills" element={<HillsStory/>}/>
-            <Route path="/Lvk" element={<LvkPharma/>}/>
-            <Route path="/patil" element={<Patil/>}/>
-            <Route path="/additionalServices/dataanalytics" element={<DataAnalytics/>}/>
-
-
+          <Route path="/hills" element={<HillsStory/>}/>
+          <Route path="/Lvk" element={<LvkPharma/>}/>
+          <Route path="/patil" element={<Patil/>}/>
+          <Route path="/additionalServices/dataanalytics" element={<DataAnalytics/>}/>
         </Routes>
       </BrowserRouter>
     </TooltipProvider>

@@ -32,6 +32,12 @@ import { Link } from "react-router-dom";
 
 const productData = [
   {
+    title: "Auto Extract",
+    description:
+      "AI-powered platform that automates data extraction from documents, invoices, receipts, and forms with accuracy and speed.",
+    link: "/products/autoextract",
+  },
+  {
     title: "NxDesk",
     description:
       "Smart ticketing system designed to streamline issue tracking across teams and projects.",
@@ -337,7 +343,7 @@ function Nxify() {
                 to="/contactus"
                 className="p-4 lg:p-10 w-full lg:w-auto flex justify-center lg:justify-end"
               >
-                <Requesademobtn text="Book a demo" />
+                <Requesademobtn text="Request a Demo" />
               </Link>
             </div>
           </section>
@@ -383,7 +389,7 @@ function Nxify() {
                   Automating HR & Payroll for the Modern Workforce
                 </h1>
                 <Link to="/contactus" className="flex-shrink-0">
-                  <Requesademobtn text="Book a demo" />
+                  <Requesademobtn text="Request a Demo" />
                 </Link>
               </div>
 

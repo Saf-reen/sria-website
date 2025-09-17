@@ -195,10 +195,9 @@ const ContactForm: React.FC = () => {
   setLoading(true);
   try {
     // Comment out the actual fetch call since there's no backend
-    /*
     const response = await fetch("http://localhost:5000/api/contact", {
       method: "POST",
-      headers: { "Content-Type": "application/json" },
+      headers: { "Content-Type": "application/json"},
       body: JSON.stringify(formData),
     });
     const data = await response.json();
@@ -222,7 +221,6 @@ const ContactForm: React.FC = () => {
     } else {
       setSubmitError(data.message || "Failed to send message.");
     }
-    */
     // Simulate a successful submission
     setSubmitSuccess("Message sent successfully!");
     alert("Message sent successfully!");
