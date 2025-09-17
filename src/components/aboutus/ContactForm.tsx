@@ -195,7 +195,7 @@ const ContactForm: React.FC = () => {
   setLoading(true);
   try {
     // Comment out the actual fetch call since there's no backend
-    const response = await fetch("https://sria-website-backend.onrender.com", {
+    const response = await fetch("https://sria-website-backend.onrender.com/api/contact", {
       method: "POST",
       headers: { "Content-Type": "application/json"},
       body: JSON.stringify(formData),
